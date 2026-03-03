@@ -1,0 +1,1114 @@
+SOC_Code,SOC_Title,Occupation_Type,Employment_2024,Employment_2034,Employment_Dist_Pct_2024,Employment_Dist_Pct_2034,Change_Numeric,Change_Percent,Percent_Self_Employed,Occupational_Openings,Median_Annual_Wage,Typical_Education,Work_Experience,OJT_Training
+00-0000,"Total, all occupations",Summary,169956.1,175167.9,100,100,5211.8,3.1,5.8,18863.3,49500,—,—,—
+11-0000,Management occupations,Summary,13607.6,14441,8,8.2,833.4,6.1,14.1,1147.9,122090,—,—,—
+11-1000,Top executives,Summary,4049.9,4228.1,2.4,2.4,178.2,4.4,2.8,333.1,104990,—,—,—
+11-1011,Chief executives,Line item,309.4,322.7,0.2,0.2,13.3,4.3,25.9,22.2,206420,Bachelor's degree,5 years or more,None
+11-1021,General and operations managers,Line item,3712.9,3876.8,2.2,2.2,164,4.4,0.9,308.7,102950,Bachelor's degree,5 years or more,None
+11-1031,Legislators,Line item,27.7,28.6,0,0,0.9,3.4,,2.2,44810,Bachelor's degree,Less than 5 years,None
+11-2000,"Advertising, marketing, promotions, public relations, and sales managers",Summary,1182.4,1243.5,0.7,0.7,61.2,5.2,2.2,95.6,144530,—,—,—
+11-2011,Advertising and promotions managers,Line item,27,26.4,0,0,-0.6,-2.2,20.7,2.1,126960,Bachelor's degree,Less than 5 years,None
+11-2020,Marketing and sales managers,Summary,1026.5,1082.2,0.6,0.6,55.7,5.4,2,83.3,148870,—,—,—
+11-2021,Marketing managers,Line item,407,433.7,0.2,0.2,26.7,6.6,3.6,34.3,161030,Bachelor's degree,5 years or more,None
+11-2022,Sales managers,Line item,619.5,648.5,0.4,0.4,29,4.7,0.9,49,138060,Bachelor's degree,Less than 5 years,None
+11-2030,Public relations and fundraising managers,Summary,128.9,134.9,0.1,0.1,6.1,4.7,0.3,10.2,132870,—,—,—
+11-2032,Public relations managers,Line item,83.2,87.3,0,0,4.1,5,0.3,6.6,138520,Bachelor's degree,5 years or more,None
+11-2033,Fundraising managers,Line item,45.7,47.6,0,0,1.9,4.2,0.2,3.6,123480,Bachelor's degree,5 years or more,None
+11-3000,Operations specialties managers,Summary,2789.5,3072.3,1.6,1.8,282.7,10.1,1.4,231.7,140330,—,—,—
+11-3010,Administrative services and facilities managers,Summary,422.6,440.9,0.2,0.3,18.3,4.3,0,36.4,106880,—,—,—
+11-3012,Administrative services managers,Line item,271.2,283.8,0.2,0.2,12.6,4.6,0,23.2,108390,Bachelor's degree,Less than 5 years,None
+11-3013,Facilities managers,Line item,151.4,157.1,0.1,0.1,5.7,3.8,,13.2,104690,Bachelor's degree,Less than 5 years,None
+11-3021,Computer and information systems managers,Line item,667.1,768.7,0.4,0.4,101.6,15.2,0.9,55.6,171200,Bachelor's degree,5 years or more,None
+11-3031,Financial managers,Line item,868.6,997.4,0.5,0.6,128.8,14.8,2.4,74.6,161700,Bachelor's degree,5 years or more,None
+11-3051,Industrial production managers,Line item,241.9,246.5,0.1,0.1,4.6,1.9,2.6,17.1,121440,Bachelor's degree,5 years or more,None
+11-3061,Purchasing managers,Line item,83.5,86.1,0,0,2.6,3.1,0.8,6.4,139510,Bachelor's degree,5 years or more,None
+11-3071,"Transportation, storage, and distribution managers",Line item,216.7,229.8,0.1,0.1,13.1,6.1,1.7,18.5,102010,High school diploma or equivalent,5 years or more,None
+11-3111,Compensation and benefits managers,Line item,20.9,20.9,0,0,0,0.2,1.4,1.5,140360,Bachelor's degree,5 years or more,None
+11-3121,Human resources managers,Line item,221.9,233,0.1,0.1,11.1,5,0.6,17.9,140030,Bachelor's degree,5 years or more,None
+11-3131,Training and development managers,Line item,46.4,49.2,0,0,2.7,5.8,,3.8,127090,Bachelor's degree,5 years or more,None
+11-9000,Other management occupations,Summary,5585.8,5897.1,3.3,3.4,311.3,5.6,31.2,487.4,104030,—,—,—
+11-9013,"Farmers, ranchers, and other agricultural managers",Line item,836.1,825,0.5,0.5,-11.1,-1.3,62.6,85.5,87980,High school diploma or equivalent,5 years or more,None
+11-9021,Construction managers,Line item,550.3,598.4,0.3,0.3,48.1,8.7,35.8,46.8,106980,Bachelor's degree,None,Moderate-term on-the-job training
+11-9030,Education and childcare administrators,Summary,710.2,708.2,0.4,0.4,-2,-0.3,2.2,45.6,100650,—,—,—
+11-9031,"Education and childcare administrators, preschool and daycare",Line item,90.2,87.9,0.1,0.1,-2.3,-2.5,4.9,5.5,56270,Bachelor's degree,Less than 5 years,None
+11-9032,"Education administrators, kindergarten through secondary",Line item,333.3,328.1,0.2,0.2,-5.1,-1.5,1.2,20.8,104070,Master's degree,5 years or more,None
+11-9033,"Education administrators, postsecondary",Line item,226.6,230.5,0.1,0.1,4,1.7,2.2,15.1,103960,Master's degree,Less than 5 years,None
+11-9039,"Education administrators, all other",Line item,60.2,61.7,0,0,1.5,2.5,3.5,4.1,89040,Bachelor's degree,Less than 5 years,None
+11-9041,Architectural and engineering managers,Line item,212.5,220.5,0.1,0.1,8,3.8,0.2,14.5,167740,Bachelor's degree,5 years or more,None
+11-9051,Food service managers,Line item,352.8,375.3,0.2,0.2,22.6,6.4,30.3,42,65310,High school diploma or equivalent,Less than 5 years,Short-term on-the-job training
+11-9070,Entertainment and recreation managers,Summary,48.3,51.7,0,0,3.4,7,8.5,6.1,77650,—,—,—
+11-9071,Gambling managers,Line item,5.1,5.2,0,0,0.1,1.2,7.7,0.6,85580,High school diploma or equivalent,Less than 5 years,None
+11-9072,"Entertainment and recreation managers, except gambling",Line item,43.2,46.5,0,0,3.3,7.7,8.6,5.5,77180,Bachelor's degree,Less than 5 years,None
+11-9081,Lodging managers,Line item,52,53.8,0,0,1.8,3.4,19.1,5.4,68130,High school diploma or equivalent,Less than 5 years,None
+11-9111,Medical and health services managers,Line item,616.2,759.1,0.4,0.4,142.9,23.2,5.1,62.1,117960,Bachelor's degree,Less than 5 years,None
+11-9121,Natural sciences managers,Line item,104.3,108.2,0.1,0.1,3.9,3.7,,8.5,161180,Bachelor's degree,5 years or more,None
+11-9131,Postmasters and mail superintendents,Line item,13.1,12.7,0,0,-0.5,-3.5,,0.9,92730,High school diploma or equivalent,Less than 5 years,Moderate-term on-the-job training
+11-9141,"Property, real estate, and community association managers",Line item,466.1,483.1,0.3,0.3,17,3.6,34,39,66700,High school diploma or equivalent,Less than 5 years,Short-term on-the-job training
+11-9151,Social and community service managers,Line item,219.8,233.9,0.1,0.1,14.1,6.4,5.6,18.6,78240,Bachelor's degree,Less than 5 years,None
+11-9161,Emergency management directors,Line item,13.2,13.6,0,0,0.4,3,,1,86130,Bachelor's degree,5 years or more,None
+11-9170,Personal service managers,Summary,57.1,60.1,0,0,3,5.2,55.3,4.6,70560,—,—,—
+11-9171,Funeral home managers,Line item,32.1,33.4,0,0,1.3,4.1,56.1,2.6,76830,Associate's degree,Less than 5 years,None
+11-9179,"Personal service managers, all other",Line item,25.1,26.7,0,0,1.6,6.5,54.3,2.1,61340,High school diploma or equivalent,Less than 5 years,None
+11-9199,"Managers, all other",Line item,1333.7,1393.5,0.8,0.8,59.8,4.5,48.6,106.7,136550,Bachelor's degree,Less than 5 years,None
+13-0000,Business and financial operations occupations,Summary,11262,11848.9,6.6,6.8,586.9,5.2,4.3,942.5,80920,—,—,—
+13-1000,Business operations specialists,Summary,7921.1,8356.3,4.7,4.8,435.2,5.5,3.7,689.9,80410,—,—,—
+13-1011,"Agents and business managers of artists, performers, and athletes",Line item,21.4,23.2,0,0,1.9,8.7,26.1,2.2,96310,Bachelor's degree,Less than 5 years,None
+13-1020,Buyers and purchasing agents,Line item,522.2,552.3,0.3,0.3,30.1,5.8,4.7,52.2,75650,Bachelor's degree,None,Moderate-term on-the-job training
+13-1030,"Claims adjusters, appraisers, examiners, and investigators",Summary,365.3,346.3,0.2,0.2,-18.9,-5.2,2.2,21.6,76790,—,—,—
+13-1031,"Claims adjusters, examiners, and investigators",Line item,356.1,337.9,0.2,0.2,-18.2,-5.1,2.2,21.1,76790,High school diploma or equivalent,None,Long-term on-the-job training
+13-1032,"Insurance appraisers, auto damage",Line item,9.2,8.4,0,0,-0.8,-8.2,2.7,0.5,76650,Postsecondary nondegree award,None,Moderate-term on-the-job training
+13-1041,Compliance officers,Line item,418,430.3,0.2,0.2,12.3,3,0.4,33.3,78420,Bachelor's degree,None,Moderate-term on-the-job training
+13-1051,Cost estimators,Line item,221.4,212.1,0.1,0.1,-9.3,-4.2,0.3,16.9,77070,Bachelor's degree,None,Moderate-term on-the-job training
+13-1070,Human resources workers,Summary,1013.7,1072.3,0.6,0.6,58.6,5.8,0.5,87.2,74220,—,—,—
+13-1071,Human resources specialists,Line item,944.3,1002.7,0.6,0.6,58.4,6.2,0.5,81.8,72910,Bachelor's degree,None,None
+13-1074,Farm labor contractors,Line item,3.9,4.2,0,0,0.2,6,,0.3,48690,No formal educational credential,Less than 5 years,Short-term on-the-job training
+13-1075,Labor relations specialists,Line item,65.4,65.4,0,0,-0.1,-0.1,0.5,5.1,93500,Bachelor's degree,Less than 5 years,None
+13-1080,Logisticians and project management specialists,Summary,1287.2,1386.2,0.8,0.8,99,7.7,1.5,104.7,98070,—,—,—
+13-1081,Logisticians,Line item,241,281.3,0.1,0.2,40.3,16.7,0.3,26.4,80880,Bachelor's degree,None,None
+13-1082,Project management specialists,Line item,1046.3,1105,0.6,0.6,58.7,5.6,1.8,78.2,100750,Bachelor's degree,None,None
+13-1111,Management analysts,Line item,1075.1,1169.7,0.6,0.7,94.5,8.8,13.7,98.1,101190,Bachelor's degree,Less than 5 years,None
+13-1121,"Meeting, convention, and event planners",Line item,155.8,163.3,0.1,0.1,7.5,4.8,5.1,15.5,59440,Bachelor's degree,None,None
+13-1131,Fundraisers,Line item,134.4,140.2,0.1,0.1,5.8,4.3,1.9,10.2,66490,Bachelor's degree,None,None
+13-1141,"Compensation, benefits, and job analysis specialists",Line item,107,112.7,0.1,0.1,5.6,5.3,,8.5,77020,Bachelor's degree,Less than 5 years,None
+13-1151,Training and development specialists,Line item,452.3,501,0.3,0.3,48.7,10.8,0.5,43.9,65850,Bachelor's degree,Less than 5 years,None
+13-1161,Market research analysts and marketing specialists,Line item,941.7,1004.7,0.6,0.6,63,6.7,5.9,87.2,76950,Bachelor's degree,None,None
+13-1199,"Business operations specialists, all other",Line item,1205.7,1242,0.7,0.7,36.3,3,1.4,108.2,81270,Bachelor's degree,None,None
+13-2000,Financial specialists,Summary,3340.9,3492.6,2,2,151.7,4.5,5.6,252.6,82140,—,—,—
+13-2011,Accountants and auditors,Line item,1579.8,1652.6,0.9,0.9,72.8,4.6,4.6,124.2,81680,Bachelor's degree,None,None
+13-2020,Property appraisers and assessors,Line item,77.3,80.2,0,0,2.9,3.8,21.1,6.3,65420,Bachelor's degree,None,Long-term on-the-job training
+13-2031,Budget analysts,Line item,50.4,51,0,0,0.5,1,,3.1,87930,Bachelor's degree,None,None
+13-2041,Credit analysts,Line item,67.8,64.8,0,0,-3,-4.4,,3.7,80970,Bachelor's degree,None,None
+13-2050,Financial analysts and advisors,Summary,881.9,934.9,0.5,0.5,53,6,8.2,62.3,99990,—,—,—
+13-2051,Financial and investment analysts,Line item,368.5,389.6,0.2,0.2,21.1,5.7,5,25.1,101350,Bachelor's degree,None,None
+13-2052,Personal financial advisors,Line item,326,357.2,0.2,0.2,31.2,9.6,15.8,24.1,102140,Bachelor's degree,None,Long-term on-the-job training
+13-2053,Insurance underwriters,Line item,127,123.7,0.1,0.1,-3.3,-2.6,,8.2,79880,Bachelor's degree,None,Moderate-term on-the-job training
+13-2054,Financial risk specialists,Line item,60.5,64.4,0,0,3.9,6.5,4,4.8,106000,Bachelor's degree,None,None
+13-2061,Financial examiners,Line item,65.1,77.2,0,0,12.1,18.5,0.4,5.7,90400,Bachelor's degree,None,Long-term on-the-job training
+13-2070,Credit counselors and loan officers,Summary,333.2,339.3,0.2,0.2,6.1,1.8,2,22.5,69040,—,—,—
+13-2071,Credit counselors,Line item,31.8,32.9,0,0,1.1,3.3,1.4,2.2,50480,Bachelor's degree,None,Moderate-term on-the-job training
+13-2072,Loan officers,Line item,301.4,306.5,0.2,0.2,5,1.7,2.1,20.3,74180,Bachelor's degree,Less than 5 years,Moderate-term on-the-job training
+13-2080,"Tax examiners, collectors and preparers, and revenue agents",Summary,148.2,151.2,0.1,0.1,3,2.1,9.5,14.7,56160,—,—,—
+13-2081,"Tax examiners and collectors, and revenue agents",Line item,57.6,56.5,0,0,-1,-1.8,,4.3,59740,Bachelor's degree,None,Moderate-term on-the-job training
+13-2082,Tax preparers,Line item,90.6,94.7,0.1,0.1,4.1,4.5,15.5,10.4,50560,High school diploma or equivalent,None,Moderate-term on-the-job training
+13-2099,"Financial specialists, all other",Line item,137.1,141.4,0.1,0.1,4.3,3.1,2.9,10.3,80190,Bachelor's degree,None,None
+15-0000,Computer and mathematical occupations,Summary,5416.7,5962.3,3.2,3.4,545.6,10.1,2,355.4,105850,—,—,—
+15-1200,Computer occupations,Summary,4985.6,5414.4,2.9,3.1,428.8,8.6,2.1,317.7,105990,—,—,—
+15-1210,Computer and information analysts,Summary,703.8,801.4,0.4,0.5,97.6,13.9,1.8,50.2,106890,—,—,—
+15-1211,Computer systems analysts,Line item,521.1,566.5,0.3,0.3,45.5,8.7,2.2,34.2,103790,Bachelor's degree,None,None
+15-1212,Information security analysts,Line item,182.8,234.9,0.1,0.1,52.1,28.5,0.6,16,124910,Bachelor's degree,Less than 5 years,None
+15-1221,Computer and information research scientists,Line item,40.3,48.3,0,0,7.9,19.7,0.9,3.2,140910,Master's degree,None,None
+15-1230,Computer support specialists,Summary,882.3,858,0.5,0.5,-24.2,-2.7,2,50.5,61550,—,—,—
+15-1231,Computer network support specialists,Line item,152.7,155.5,0.1,0.1,2.8,1.8,2,9.6,73340,Associate's degree,None,Moderate-term on-the-job training
+15-1232,Computer user support specialists,Line item,729.5,702.5,0.4,0.4,-27,-3.7,2,40.8,60340,"Some college, no degree",None,Moderate-term on-the-job training
+15-1240,Database and network administrators and architects,Summary,655.6,668.4,0.4,0.4,12.9,2,0.6,33.3,107480,—,—,—
+15-1241,Computer network architects,Line item,179.2,200.6,0.1,0.1,21.4,11.9,0.4,11.2,130390,Bachelor's degree,5 years or more,None
+15-1242,Database administrators,Line item,78,77.5,0,0,-0.5,-0.7,1.2,3.8,104620,Bachelor's degree,None,None
+15-1243,Database architects,Line item,66.9,72.7,0,0,5.8,8.7,1.4,4,135980,Bachelor's degree,Less than 5 years,None
+15-1244,Network and computer systems administrators,Line item,331.5,317.7,0.2,0.2,-13.8,-4.2,0.3,14.3,96800,Bachelor's degree,None,None
+15-1250,"Software and web developers, programmers, and testers",Summary,2231.5,2527.7,1.3,1.4,296.1,13.3,2.3,149.2,129320,—,—,—
+15-1251,Computer programmers,Line item,121.2,113.9,0.1,0.1,-7.2,-6,6.2,5.5,98670,Bachelor's degree,None,None
+15-1252,Software developers,Line item,1693.8,1961.4,1,1.1,267.7,15.8,1.6,115.2,133080,Bachelor's degree,None,None
+15-1253,Software quality assurance analysts and testers,Line item,201.7,221.9,0.1,0.1,20.2,10,0.1,14,102610,Bachelor's degree,None,None
+15-1254,Web developers,Line item,86,92.5,0.1,0.1,6.5,7.5,5.3,5.4,90930,Bachelor's degree,None,None
+15-1255,Web and digital interface designers,Line item,128.9,137.9,0.1,0.1,9,7,10.1,9.1,98090,Bachelor's degree,None,None
+15-1299,"Computer occupations, all other",Line item,472,510.5,0.3,0.3,38.5,8.2,3.9,31.3,108970,Bachelor's degree,None,None
+15-2000,Mathematical science occupations,Summary,431.1,547.9,0.3,0.3,116.8,27.1,1.2,37.7,104620,—,—,—
+15-2011,Actuaries,Line item,33.6,40.9,0,0,7.3,21.8,,2.4,125770,Bachelor's degree,None,Long-term on-the-job training
+15-2021,Mathematicians,Line item,2.4,2.4,0,0,0,-0.7,,0.1,121680,Master's degree,None,None
+15-2031,Operations research analysts,Line item,112.1,136.2,0.1,0.1,24.1,21.5,,9.6,91290,Bachelor's degree,None,None
+15-2041,Statisticians,Line item,32.2,34.9,0,0,2.7,8.5,1.3,2,103300,Master's degree,None,None
+15-2051,Data scientists,Line item,245.9,328.3,0.1,0.2,82.5,33.5,1.8,23.4,112590,Bachelor's degree,None,None
+15-2099,"Mathematical science occupations, all other",Line item,5,5.2,0,0,0.2,4,1.4,0.3,71490,Bachelor's degree,None,None
+17-0000,Architecture and engineering occupations,Summary,2648.4,2788.3,1.6,1.6,139.9,5.3,1.9,186.5,97310,—,—,—
+17-1000,"Architects, surveyors, and cartographers",Summary,215,223.9,0.1,0.1,8.9,4.1,8.3,14.4,82990,—,—,—
+17-1010,"Architects, except naval",Summary,145.4,151,0.1,0.1,5.6,3.8,10.4,9.5,94010,—,—,—
+17-1011,"Architects, except landscape and naval",Line item,123.6,128.4,0.1,0.1,4.8,3.9,10.5,7.8,96690,Bachelor's degree,None,Internship/residency
+17-1012,Landscape architects,Line item,21.8,22.6,0,0,0.8,3.5,10.4,1.7,79660,Bachelor's degree,None,Internship/residency
+17-1020,"Surveyors, cartographers, and photogrammetrists",Summary,69.6,72.9,0,0,3.3,4.8,3.9,4.9,74120,—,—,—
+17-1021,Cartographers and photogrammetrists,Line item,13.4,14.3,0,0,0.9,6.4,2.3,1,78380,Bachelor's degree,None,None
+17-1022,Surveyors,Line item,56.1,58.6,0,0,2.5,4.4,4.3,3.9,72740,Bachelor's degree,None,Internship/residency
+17-2000,Engineers,Summary,1790.3,1913.3,1.1,1.1,123,6.9,1.1,114.6,106070,—,—,—
+17-2011,Aerospace engineers,Line item,71.6,75.9,0,0,4.4,6.1,2.6,4.5,134830,Bachelor's degree,None,None
+17-2021,Agricultural engineers,Line item,1.7,1.8,0,0,0.1,5.9,,0.1,84630,Bachelor's degree,None,None
+17-2031,Bioengineers and biomedical engineers,Line item,22.2,23.3,0,0,1.1,5.2,0.2,1.3,106950,Bachelor's degree,None,None
+17-2041,Chemical engineers,Line item,21.6,22.1,0,0,0.6,2.6,5.1,1.1,121860,Bachelor's degree,None,None
+17-2051,Civil engineers,Line item,368.9,387.5,0.2,0.2,18.5,5,1.3,23.6,99590,Bachelor's degree,None,None
+17-2061,Computer hardware engineers,Line item,76.8,82.4,0,0,5.6,7.3,1.1,4.7,155020,Bachelor's degree,None,None
+17-2070,Electrical and electronics engineers,Summary,287.9,307.6,0.2,0.2,19.7,6.9,1,17.5,118780,—,—,—
+17-2071,Electrical engineers,Line item,192,205.7,0.1,0.1,13.8,7.2,1,11.7,111910,Bachelor's degree,None,None
+17-2072,"Electronics engineers, except computer",Line item,95.9,101.8,0.1,0.1,6,6.2,0.9,5.7,127590,Bachelor's degree,None,None
+17-2081,Environmental engineers,Line item,39.4,41,0,0,1.5,3.9,1,3,104170,Bachelor's degree,None,None
+17-2110,"Industrial engineers, including health and safety",Summary,374.9,414.5,0.2,0.2,39.6,10.6,0.2,26.8,101490,—,—,—
+17-2111,"Health and safety engineers, except mining safety engineers and inspectors",Line item,23.8,24.9,0,0,1.1,4.4,,1.5,109660,Bachelor's degree,None,None
+17-2112,Industrial engineers,Line item,351.1,389.6,0.2,0.2,38.5,11,0.2,25.2,101140,Bachelor's degree,None,None
+17-2121,Marine engineers and naval architects,Line item,8.5,9,0,0,0.5,5.8,,0.6,105670,Bachelor's degree,None,None
+17-2131,Materials engineers,Line item,23,24.3,0,0,1.3,5.7,,1.5,108310,Bachelor's degree,None,None
+17-2141,Mechanical engineers,Line item,293.1,319.6,0.2,0.2,26.5,9.1,1.2,18.1,102320,Bachelor's degree,None,None
+17-2151,"Mining and geological engineers, including mining safety engineers",Line item,7,7,0,0,0,0.7,1.7,0.4,101020,Bachelor's degree,None,None
+17-2161,Nuclear engineers,Line item,15.4,15.3,0,0,-0.2,-1.1,2.4,0.8,127520,Bachelor's degree,None,None
+17-2171,Petroleum engineers,Line item,19.6,19.8,0,0,0.2,1.3,1.7,1.2,141280,Bachelor's degree,None,None
+17-2199,"Engineers, all other",Line item,158.8,162.1,0.1,0.1,3.3,2.1,2.1,9.3,117750,Bachelor's degree,None,None
+17-3000,"Drafters, engineering technicians, and mapping technicians",Summary,643.1,651.2,0.4,0.4,8.1,1.3,1.9,57.5,66390,—,—,—
+17-3010,Drafters,Summary,192.1,191.5,0.1,0.1,-0.6,-0.3,3.2,16.2,65380,—,—,—
+17-3011,Architectural and civil drafters,Line item,110.5,115.1,0.1,0.1,4.6,4.1,0.7,10,64280,Associate's degree,None,None
+17-3012,Electrical and electronics drafters,Line item,21.6,20.4,0,0,-1.2,-5.6,6.6,1.7,73720,Associate's degree,None,None
+17-3013,Mechanical drafters,Line item,42.9,40.1,0,0,-2.8,-6.5,6.6,3.3,68510,Associate's degree,None,None
+17-3019,"Drafters, all other",Line item,17.1,15.9,0,0,-1.2,-6.9,6.5,1.3,62010,Associate's degree,None,None
+17-3020,"Engineering technologists and technicians, except drafters",Summary,391.6,397.7,0.2,0.2,6,1.5,0.9,33.7,70070,—,—,—
+17-3021,Aerospace engineering and operations technologists and technicians,Line item,9.3,10.1,0,0,0.8,8.1,1.4,0.9,79830,Associate's degree,None,None
+17-3022,Civil engineering technologists and technicians,Line item,64.9,66.2,0,0,1.4,2.1,0.8,5.5,64200,Associate's degree,None,None
+17-3023,Electrical and electronic engineering technologists and technicians,Line item,93.7,94.3,0.1,0.1,0.6,0.6,0.1,8.4,77180,Associate's degree,None,None
+17-3024,Electro-mechanical and mechatronics technologists and technicians,Line item,15,15.1,0,0,0.2,1.1,1.5,1.3,70760,Associate's degree,None,None
+17-3025,Environmental engineering technologists and technicians,Line item,12.9,13,0,0,0.1,1.2,1.2,1.1,58890,Associate's degree,None,None
+17-3026,Industrial engineering technologists and technicians,Line item,74.6,75.9,0,0,1.3,1.7,1.5,6.3,64790,Associate's degree,None,None
+17-3027,Mechanical engineering technologists and technicians,Line item,38.3,38.3,0,0,0,0,1.5,3.2,68730,Associate's degree,None,None
+17-3028,Calibration technologists and technicians,Line item,15.8,16.5,0,0,0.7,4.7,1.5,1.4,65040,Associate's degree,None,None
+17-3029,"Engineering technologists and technicians, except drafters, all other",Line item,67.3,68.3,0,0,1,1.5,1,5.7,77390,Associate's degree,None,None
+17-3031,Surveying and mapping technicians,Line item,59.4,62.1,0,0,2.7,4.5,3.6,7.6,51940,High school diploma or equivalent,None,Moderate-term on-the-job training
+19-0000,"Life, physical, and social science occupations",Summary,1609.5,1690.4,0.9,1,80.9,5,4.7,144.7,78980,—,—,—
+19-1000,Life scientists,Summary,404.8,428.8,0.2,0.2,24,5.9,1.3,28.4,90500,—,—,—
+19-1010,Agricultural and food scientists,Summary,38.7,41,0,0,2.3,5.9,2.5,3.1,78770,—,—,—
+19-1011,Animal scientists,Line item,2.8,2.9,0,0,0.2,5.8,2.3,0.2,79120,Bachelor's degree,None,None
+19-1012,Food scientists and technologists,Line item,15.2,16.2,0,0,1,6.5,3.3,1.2,85310,Bachelor's degree,None,None
+19-1013,Soil and plant scientists,Line item,20.7,21.8,0,0,1.1,5.4,2,1.7,71410,Bachelor's degree,None,None
+19-1020,Biological scientists,Summary,138.3,142.3,0.1,0.1,4,2.9,1.1,10.8,93340,—,—,—
+19-1021,Biochemists and biophysicists,Line item,35.6,37.6,0,0,2.1,5.8,1.7,2.9,103650,Doctoral or professional degree,None,None
+19-1022,Microbiologists,Line item,20.7,21.6,0,0,0.8,4.1,1.3,1.7,87330,Bachelor's degree,None,None
+19-1023,Zoologists and wildlife biologists,Line item,18.2,18.5,0,0,0.3,1.6,0.5,1.4,72860,Bachelor's degree,None,None
+19-1029,"Biological scientists, all other",Line item,63.7,64.5,0,0,0.8,1.2,1,4.8,93330,Bachelor's degree,None,None
+19-1030,Conservation scientists and foresters,Summary,42.4,43.5,0,0,1.1,2.7,3.5,3.6,69060,—,—,—
+19-1031,Conservation scientists,Line item,28.5,29.5,0,0,1,3.4,3.5,2.5,67950,Bachelor's degree,None,None
+19-1032,Foresters,Line item,13.8,14,0,0,0.2,1.2,3.4,1.1,70660,Bachelor's degree,None,None
+19-1040,Medical scientists,Summary,177.6,194,0.1,0.1,16.3,9.2,0.6,10.4,99770,—,—,—
+19-1041,Epidemiologists,Line item,12.3,14.3,0,0,2,16.2,,0.8,83980,Master's degree,None,None
+19-1042,"Medical scientists, except epidemiologists",Line item,165.3,179.6,0.1,0.1,14.3,8.7,0.6,9.6,100590,Doctoral or professional degree,None,None
+19-1099,"Life scientists, all other",Line item,7.8,8.1,0,0,0.3,3.7,,0.4,87800,Bachelor's degree,None,None
+19-2000,Physical scientists,Summary,284.9,295.7,0.2,0.2,10.8,3.8,4.3,22.4,92750,—,—,—
+19-2010,Astronomers and physicists,Summary,26.4,27.4,0,0,1,3.9,8.4,1.8,166290,—,—,—
+19-2011,Astronomers,Line item,1.8,1.8,0,0,0,2.2,5.4,0.1,132170,Doctoral or professional degree,None,None
+19-2012,Physicists,Line item,24.6,25.6,0,0,1,4,8.7,1.7,166290,Doctoral or professional degree,None,None
+19-2021,Atmospheric and space scientists,Line item,9.4,9.5,0,0,0.1,0.7,,0.7,97450,Bachelor's degree,None,None
+19-2030,Chemists and materials scientists,Summary,95.5,100.2,0.1,0.1,4.7,4.9,1,7,86620,—,—,—
+19-2031,Chemists,Line item,86.8,91,0.1,0.1,4.3,4.9,1,6.3,84150,Bachelor's degree,None,None
+19-2032,Materials scientists,Line item,8.7,9.1,0,0,0.4,4.9,1.1,0.6,104160,Bachelor's degree,None,None
+19-2040,Environmental scientists and geoscientists,Summary,121.7,126.5,0.1,0.1,4.8,4,2.7,11,82660,—,—,—
+19-2041,"Environmental scientists and specialists, including health",Line item,90.3,94.3,0.1,0.1,4,4.4,1.5,8.5,80060,Bachelor's degree,None,None
+19-2042,"Geoscientists, except hydrologists and geographers",Line item,25.1,26,0,0,0.8,3.2,7,2,99240,Bachelor's degree,None,None
+19-2043,Hydrologists,Line item,6.3,6.3,0,0,0,-0.1,3.1,0.5,92060,Bachelor's degree,None,None
+19-2099,"Physical scientists, all other",Line item,31.9,32.1,0,0,0.2,0.6,17.5,2,117960,Bachelor's degree,None,None
+19-3000,Social scientists and related workers,Summary,339.9,352.5,0.2,0.2,12.6,3.7,14.2,23.1,92900,—,—,—
+19-3011,Economists,Line item,17.6,17.8,0,0,0.2,1.2,3.7,0.9,115440,Master's degree,None,None
+19-3022,Survey researchers,Line item,8.8,8.3,0,0,-0.5,-5.2,4,0.7,63380,Master's degree,None,None
+19-3030,Psychologists,Summary,204.3,216,0.1,0.1,11.8,5.8,22.6,12.9,94310,—,—,—
+19-3032,Industrial-organizational psychologists,Line item,5.6,5.9,0,0,0.3,6.3,80.5,0.4,109840,Master's degree,None,Internship/residency
+19-3033,Clinical and counseling psychologists,Line item,76.3,84.8,0,0,8.5,11.2,2.4,4.8,95830,Doctoral or professional degree,None,Internship/residency
+19-3034,School psychologists,Line item,67.2,67.7,0,0,0.5,0.7,5.3,3.8,86930,Master's degree,None,Internship/residency
+19-3039,"Psychologists, all other",Line item,55.3,57.7,0,0,2.4,4.3,65.9,3.9,117580,Master's degree,None,Internship/residency
+19-3041,Sociologists,Line item,3.4,3.6,0,0,0.1,3.6,3,0.3,101690,Master's degree,None,None
+19-3051,Urban and regional planners,Line item,44.7,46.2,0,0,1.5,3.4,,3.4,83720,Master's degree,None,None
+19-3090,Miscellaneous social scientists and related workers,Summary,61,60.5,0,0,-0.5,-0.9,1.6,4.9,96660,—,—,—
+19-3091,Anthropologists and archeologists,Line item,8.8,9.2,0,0,0.3,3.7,3.6,0.8,64910,Master's degree,None,None
+19-3092,Geographers,Line item,1.5,1.5,0,0,0,-3.1,,0.1,97200,Bachelor's degree,None,None
+19-3093,Historians,Line item,3.4,3.5,0,0,0.1,2.2,2,0.3,74050,Master's degree,None,None
+19-3094,Political scientists,Line item,6.5,6.3,0,0,-0.2,-3.1,1.1,0.5,139380,Master's degree,None,None
+19-3099,"Social scientists and related workers, all other",Line item,40.8,40.1,0,0,-0.7,-1.7,1.3,3.2,100340,Bachelor's degree,None,None
+19-4000,"Life, physical, and social science technicians",Summary,416.2,430.5,0.2,0.2,14.3,3.4,2.2,52.6,55810,—,—,—
+19-4010,Agricultural and food science technicians,Summary,38.9,40.7,0,0,1.8,4.6,6,6.1,48480,—,—,—
+19-4012,Agricultural technicians,Line item,18.6,19.4,0,0,0.8,4.3,5.2,2.9,46790,Associate's degree,None,Moderate-term on-the-job training
+19-4013,Food science technicians,Line item,20.4,21.3,0,0,1,4.8,6.7,3.2,49430,Associate's degree,None,Moderate-term on-the-job training
+19-4021,Biological technicians,Line item,82.7,85.6,0,0,2.9,3.5,,9.1,52000,Bachelor's degree,None,None
+19-4031,Chemical technicians,Line item,57,59,0,0,2.1,3.7,0.7,6.7,57790,Associate's degree,None,Moderate-term on-the-job training
+19-4040,Environmental science and geoscience technicians,Summary,53.4,55.1,0,0,1.7,3.2,,7.3,49690,—,—,—
+19-4042,"Environmental science and protection technicians, including health",Line item,40.4,42.1,0,0,1.6,4,,5.6,49490,Associate's degree,None,None
+19-4043,"Geological technicians, except hydrologic technicians",Line item,9.8,10,0,0,0.1,1.5,,1.3,48390,Associate's degree,None,Moderate-term on-the-job training
+19-4044,Hydrologic technicians,Line item,3.1,3,0,0,-0.1,-2.1,,0.4,58570,Associate's degree,None,Moderate-term on-the-job training
+19-4051,Nuclear technicians,Line item,6,5.5,0,0,-0.5,-7.7,,0.7,104240,Associate's degree,None,Moderate-term on-the-job training
+19-4061,Social science research assistants,Line item,40.6,42.3,0,0,1.8,4.4,4.9,5.2,58040,Bachelor's degree,None,None
+19-4071,Forest and conservation technicians,Line item,33.8,32.7,0,0,-1.1,-3.2,0.7,3.9,54310,Associate's degree,None,None
+19-4090,"Miscellaneous life, physical, and social science technicians",Summary,103.9,109.5,0.1,0.1,5.6,5.4,4.1,13.5,61570,—,—,—
+19-4092,Forensic science technicians,Line item,20.7,23.3,0,0,2.6,12.8,0.9,2.9,67440,Bachelor's degree,None,Moderate-term on-the-job training
+19-4099,"Life, physical, and social science technicians, all other",Line item,83.2,86.2,0,0,2.9,3.5,4.9,10.6,60130,Associate's degree,None,None
+19-5000,Occupational health and safety specialists and technicians,Summary,163.7,183,0.1,0.1,19.2,11.7,0.1,18.3,78900,—,—,—
+19-5011,Occupational health and safety specialists,Line item,131.9,148.4,0.1,0.1,16.5,12.5,0.1,14.9,83910,Bachelor's degree,None,None
+19-5012,Occupational health and safety technicians,Line item,31.9,34.6,0,0,2.7,8.5,,3.4,58440,High school diploma or equivalent,None,Moderate-term on-the-job training
+21-0000,Community and social service occupations,Summary,3196.9,3409.2,1.9,1.9,212.3,6.6,3.7,313.7,57530,—,—,—
+21-1000,"Counselors, social workers, and other community and social service specialists",Summary,2707.5,2913.8,1.6,1.7,206.3,7.6,3.6,265.8,57480,—,—,—
+21-1010,Counselors,Summary,1098.6,1212.8,0.6,0.7,114.2,10.4,6.7,104.4,60200,—,—,—
+21-1012,"Educational, guidance, and career counselors and advisors",Line item,376.3,389.6,0.2,0.2,13.3,3.5,0.6,31,65140,Master's degree,None,None
+21-1013,Marriage and family therapists,Line item,77.8,87.7,0,0.1,9.8,12.6,12.8,7.7,63780,Master's degree,None,Internship/residency
+21-1015,Rehabilitation counselors,Line item,91.9,93.2,0.1,0.1,1.3,1.4,,10,46110,Master's degree,None,None
+21-1018,"Substance abuse, behavioral disorder, and mental health counselors",Line item,483.5,564.6,0.3,0.3,81,16.8,5.9,48.3,59190,Master's degree,None,Internship/residency
+21-1019,"Counselors, all other",Line item,69.1,77.8,0,0,8.7,12.6,48.2,7.4,49830,Master's degree,None,None
+21-1020,Social workers,Summary,810.9,855.6,0.5,0.5,44.7,5.5,2.4,74,61330,—,—,—
+21-1021,"Child, family, and school social workers",Line item,399.9,413.3,0.2,0.2,13.4,3.4,0.2,35.1,58570,Bachelor's degree,None,None
+21-1022,Healthcare social workers,Line item,193.2,208.1,0.1,0.1,14.8,7.7,0.3,18.4,68090,Master's degree,None,Internship/residency
+21-1023,Mental health and substance abuse social workers,Line item,136.8,150.1,0.1,0.1,13.3,9.7,4.8,13.5,60060,Master's degree,None,Internship/residency
+21-1029,"Social workers, all other",Line item,81,84.1,0,0,3.1,3.9,14.5,7,69480,Bachelor's degree,None,None
+21-1090,Miscellaneous community and social service specialists,Summary,798,845.4,0.5,0.5,47.4,5.9,0.4,87.4,48790,—,—,—
+21-1091,Health education specialists,Line item,71.8,75,0,0,3.2,4.5,0.6,7.9,63000,Bachelor's degree,None,None
+21-1092,Probation officers and correctional treatment specialists,Line item,92.3,94.8,0.1,0.1,2.4,2.6,,7.9,64520,Bachelor's degree,None,Moderate-term on-the-job training
+21-1093,Social and human service assistants,Line item,449.6,478.5,0.3,0.3,28.9,6.4,0.3,50.6,45120,High school diploma or equivalent,None,Short-term on-the-job training
+21-1094,Community health workers,Line item,65.1,72.5,0,0,7.4,11.3,0.8,7.8,51030,High school diploma or equivalent,None,Short-term on-the-job training
+21-1099,"Community and social service specialists, all other",Line item,119.2,124.7,0.1,0.1,5.5,4.6,0.6,13.1,54940,Bachelor's degree,None,None
+21-2000,Religious workers,Summary,489.4,495.4,0.3,0.3,6,1.2,4.3,47.9,58570,—,—,—
+21-2011,Clergy,Line item,262,264.6,0.2,0.2,2.6,1,5.7,23,60820,Bachelor's degree,None,Moderate-term on-the-job training
+21-2021,"Directors, religious activities and education",Line item,138.9,141.8,0.1,0.1,2.9,2.1,0.2,13.8,54840,Bachelor's degree,Less than 5 years,None
+21-2099,"Religious workers, all other",Line item,88.4,89,0.1,0.1,0.6,0.6,6.5,11.1,45120,Bachelor's degree,None,None
+23-0000,Legal occupations,Summary,1418.2,1456.5,0.8,0.8,38.3,2.7,8.2,83.8,99990,—,—,—
+23-1000,"Lawyers, judges, and related workers",Summary,933.2,970.4,0.5,0.6,37.2,4,11.2,34.4,144040,—,—,—
+23-1010,Lawyers and judicial law clerks,Summary,879.3,915.5,0.5,0.5,36.2,4.1,11.8,32.5,148600,—,—,—
+23-1011,Lawyers,Line item,864.8,900.7,0.5,0.5,35.9,4.1,11.9,31.5,151160,Doctoral or professional degree,None,None
+23-1012,Judicial law clerks,Line item,14.5,14.9,0,0,0.4,2.5,2.7,1,60400,Doctoral or professional degree,None,None
+23-1020,"Judges, magistrates, and other judicial workers",Summary,53.9,54.9,0,0,0.9,1.8,1.6,1.8,123220,—,—,—
+23-1021,"Administrative law judges, adjudicators, and hearing officers",Line item,17.5,17.4,0,0,-0.1,-0.7,,0.5,115230,Doctoral or professional degree,5 years or more,Short-term on-the-job training
+23-1022,"Arbitrators, mediators, and conciliators",Line item,9.1,9.5,0,0,0.4,4.3,9.1,0.3,67710,Bachelor's degree,Less than 5 years,Moderate-term on-the-job training
+23-1023,"Judges, magistrate judges, and magistrates",Line item,27.3,28,0,0,0.7,2.5,,0.9,156210,Doctoral or professional degree,5 years or more,Short-term on-the-job training
+23-2000,Legal support workers,Summary,484.9,486.1,0.3,0.3,1.1,0.2,2.5,49.4,60930,—,—,—
+23-2011,Paralegals and legal assistants,Line item,376.2,376.8,0.2,0.2,0.6,0.2,1.4,39.3,61010,Associate's degree,None,None
+23-2090,Miscellaneous legal support workers,Summary,108.7,109.3,0.1,0.1,0.5,0.5,6,10.2,60550,—,—,—
+23-2093,"Title examiners, abstractors, and searchers",Line item,57.4,58.5,0,0,1.1,2,8.9,5.4,54980,High school diploma or equivalent,None,Moderate-term on-the-job training
+23-2099,"Legal support workers, all other",Line item,51.3,50.7,0,0,-0.6,-1.2,2.8,4.7,68760,Associate's degree,None,None
+25-0000,Educational instruction and library occupations,Summary,9813.2,9875.4,5.8,5.6,62.2,0.6,1.9,890.3,59220,—,—,—
+25-1000,Postsecondary teachers,Summary,1721.2,1822.1,1,1,100.9,5.9,0.3,136.4,81600,—,—,—
+25-1011,"Business teachers, postsecondary",Line item,103.1,109,0.1,0.1,5.8,5.7,0.3,8.1,97270,Doctoral or professional degree,None,None
+25-1020,"Math and computer science teachers, postsecondary",Summary,103.7,107.4,0.1,0.1,3.7,3.6,0.2,7.9,82390,—,—,—
+25-1021,"Computer science teachers, postsecondary",Line item,44.8,47.2,0,0,2.4,5.3,0.2,3.5,96690,Doctoral or professional degree,None,None
+25-1022,"Mathematical science teachers, postsecondary",Line item,58.9,60.2,0,0,1.3,2.3,0.2,4.4,79350,Doctoral or professional degree,None,None
+25-1030,"Engineering and architecture teachers, postsecondary",Summary,62,66.3,0,0,4.3,7,0.2,5,105690,—,—,—
+25-1031,"Architecture teachers, postsecondary",Line item,11.6,11.9,0,0,0.2,2,,0.9,101480,Doctoral or professional degree,None,None
+25-1032,"Engineering teachers, postsecondary",Line item,50.3,54.4,0,0,4.1,8.1,0.2,4.1,106120,Doctoral or professional degree,None,None
+25-1040,"Life sciences teachers, postsecondary",Summary,78.3,83.6,0,0,5.3,6.8,0.2,6.3,83920,—,—,—
+25-1041,"Agricultural sciences teachers, postsecondary",Line item,10.7,11.2,0,0,0.4,4.1,,0.8,86350,Doctoral or professional degree,None,None
+25-1042,"Biological science teachers, postsecondary",Line item,66,70.8,0,0,4.8,7.3,0.2,5.4,83460,Doctoral or professional degree,None,None
+25-1043,"Forestry and conservation science teachers, postsecondary",Line item,1.6,1.7,0,0,0.1,4,,0.1,100830,Doctoral or professional degree,None,None
+25-1050,"Physical sciences teachers, postsecondary",Summary,65.5,67.1,0,0,1.6,2.5,0.2,4.9,95520,—,—,—
+25-1051,"Atmospheric, earth, marine, and space sciences teachers, postsecondary",Line item,14,14.4,0,0,0.4,2.6,,1,101390,Doctoral or professional degree,None,None
+25-1052,"Chemistry teachers, postsecondary",Line item,25.4,26,0,0,0.6,2.2,0.2,1.9,86220,Doctoral or professional degree,None,None
+25-1053,"Environmental science teachers, postsecondary",Line item,9,9.3,0,0,0.3,2.9,,0.7,87710,Doctoral or professional degree,None,None
+25-1054,"Physics teachers, postsecondary",Line item,17.1,17.5,0,0,0.4,2.5,,1.3,97360,Doctoral or professional degree,None,None
+25-1060,"Social sciences teachers, postsecondary",Summary,151.2,155.2,0.1,0.1,4,2.7,0.3,11.3,83360,—,—,—
+25-1061,"Anthropology and archeology teachers, postsecondary",Line item,6.5,6.7,0,0,0.2,2.7,,0.5,95770,Doctoral or professional degree,None,None
+25-1062,"Area, ethnic, and cultural studies teachers, postsecondary",Line item,14.5,14.8,0,0,0.3,2.4,,1.1,84290,Doctoral or professional degree,None,None
+25-1063,"Economics teachers, postsecondary",Line item,15.8,16.1,0,0,0.3,2.1,,1.2,119980,Doctoral or professional degree,None,None
+25-1064,"Geography teachers, postsecondary",Line item,4,4.2,0,0,0.1,3.3,,0.3,86730,Doctoral or professional degree,None,None
+25-1065,"Political science teachers, postsecondary",Line item,21.8,22.2,0,0,0.4,2,0.3,1.6,94680,Doctoral or professional degree,None,None
+25-1066,"Psychology teachers, postsecondary",Line item,52.5,54.4,0,0,1.9,3.6,0.3,4,80330,Doctoral or professional degree,None,None
+25-1067,"Sociology teachers, postsecondary",Line item,15.4,15.7,0,0,0.3,2.1,,1.1,82540,Doctoral or professional degree,None,None
+25-1069,"Social sciences teachers, postsecondary, all other",Line item,20.7,21.1,0,0,0.4,1.7,,1.5,75040,Doctoral or professional degree,None,None
+25-1070,"Health teachers, postsecondary",Summary,381.2,446.6,0.2,0.3,65.4,17.2,0.3,36,100370,—,—,—
+25-1071,"Health specialties teachers, postsecondary",Line item,289.6,339.7,0.2,0.2,50.1,17.3,0.3,27.4,105620,Doctoral or professional degree,Less than 5 years,None
+25-1072,"Nursing instructors and teachers, postsecondary",Line item,91.6,106.9,0.1,0.1,15.3,16.8,0.4,8.6,79940,Doctoral or professional degree,Less than 5 years,None
+25-1080,"Education and library science teachers, postsecondary",Summary,80,81.8,0,0,1.7,2.2,0.3,5.9,73050,—,—,—
+25-1081,"Education teachers, postsecondary",Line item,74.9,76.5,0,0,1.6,2.1,0.3,5.6,72090,Doctoral or professional degree,Less than 5 years,None
+25-1082,"Library science teachers, postsecondary",Line item,5.1,5.3,0,0,0.2,3,,0.4,78630,Doctoral or professional degree,None,None
+25-1110,"Law, criminal justice, and social work teachers, postsecondary",Summary,62.9,64.2,0,0,1.4,2.2,0.3,4.7,87870,—,—,—
+25-1111,"Criminal justice and law enforcement teachers, postsecondary",Line item,16.2,16.5,0,0,0.3,2,,1.2,71470,Doctoral or professional degree,None,None
+25-1112,"Law teachers, postsecondary",Line item,29.5,30.2,0,0,0.6,2.2,0.3,2.2,126650,Doctoral or professional degree,Less than 5 years,None
+25-1113,"Social work teachers, postsecondary",Line item,17.1,17.5,0,0,0.4,2.3,,1.3,76210,Doctoral or professional degree,None,None
+25-1120,"Arts, communications, history, and humanities teachers, postsecondary",Summary,309.2,312.1,0.2,0.2,2.9,0.9,0.3,22.4,79060,—,—,—
+25-1121,"Art, drama, and music teachers, postsecondary",Line item,122.8,124.8,0.1,0.1,2.1,1.7,0.4,9,80190,Master's degree,None,None
+25-1122,"Communications teachers, postsecondary",Line item,35.8,36.6,0,0,0.8,2.1,0.2,2.7,77800,Doctoral or professional degree,None,None
+25-1123,"English language and literature teachers, postsecondary",Line item,72.2,72.2,0,0,0,0,0.2,5.1,78270,Doctoral or professional degree,None,None
+25-1124,"Foreign language and literature teachers, postsecondary",Line item,26.4,26.4,0,0,0,-0.2,0.3,1.9,77010,Doctoral or professional degree,None,None
+25-1125,"History teachers, postsecondary",Line item,24.6,24.6,0,0,-0.1,-0.2,0.2,1.7,81500,Doctoral or professional degree,None,None
+25-1126,"Philosophy and religion teachers, postsecondary",Line item,27.3,27.5,0,0,0.2,0.7,0.5,2,78050,Doctoral or professional degree,None,None
+25-1190,Miscellaneous postsecondary teachers,Summary,324.2,328.9,0.2,0.2,4.7,1.4,0.3,23.7,68800,—,—,—
+25-1192,"Family and consumer sciences teachers, postsecondary",Line item,3.2,3.3,0,0,0.1,3.4,,0.2,77280,Doctoral or professional degree,None,None
+25-1193,"Recreation and fitness studies teachers, postsecondary",Line item,15.4,15.7,0,0,0.4,2.4,,1.1,75890,Doctoral or professional degree,None,None
+25-1194,"Career/technical education teachers, postsecondary",Line item,122.2,123,0.1,0.1,0.8,0.7,0.4,8.8,61490,Bachelor's degree,Less than 5 years,None
+25-1199,"Postsecondary teachers, all other",Line item,183.4,186.8,0.1,0.1,3.4,1.8,0.3,13.5,78490,Doctoral or professional degree,None,None
+25-2000,"Preschool, elementary, middle, secondary, and special education teachers",Summary,4500.1,4453.2,2.6,2.5,-46.9,-1,0.4,320.9,61960,—,—,—
+25-2010,Preschool and kindergarten teachers,Summary,672.3,693.3,0.4,0.4,21,3.1,0.5,78.2,40090,—,—,—
+25-2011,"Preschool teachers, except special education",Line item,555.1,578.1,0.3,0.3,22.9,4.1,0.6,65.5,37120,Associate's degree,None,None
+25-2012,"Kindergarten teachers, except special education",Line item,117.2,115.2,0.1,0.1,-1.9,-1.6,0.1,12.8,61430,Bachelor's degree,None,None
+25-2020,Elementary and middle school teachers,Summary,2070.4,2029.9,1.2,1.2,-40.6,-2,0.6,132.4,62500,—,—,—
+25-2021,"Elementary school teachers, except special education",Line item,1422.7,1394.8,0.8,0.8,-27.9,-2,0.6,91,62340,Bachelor's degree,None,None
+25-2022,"Middle school teachers, except special and career/technical education",Line item,633.7,621.3,0.4,0.4,-12.4,-2,0.6,40.5,62970,Bachelor's degree,None,None
+25-2023,"Career/technical education teachers, middle school",Line item,14,13.8,0,0,-0.3,-2,,0.9,63620,Bachelor's degree,Less than 5 years,None
+25-2030,Secondary school teachers,Summary,1197.9,1178.2,0.7,0.7,-19.7,-1.6,0,72.4,64530,—,—,—
+25-2031,"Secondary school teachers, except special and career/technical education",Line item,1094.5,1076.7,0.6,0.6,-17.8,-1.6,0,66.2,64580,Bachelor's degree,None,None
+25-2032,"Career/technical education teachers, secondary school",Line item,103.4,101.5,0.1,0.1,-1.9,-1.8,,6.2,63910,Bachelor's degree,Less than 5 years,None
+25-2050,Special education teachers,Summary,559.5,551.8,0.3,0.3,-7.7,-1.4,0.5,37.8,64270,—,—,—
+25-2051,"Special education teachers, preschool",Line item,29.3,29.7,0,0,0.4,1.4,1.8,2.1,62190,Bachelor's degree,None,None
+25-2052,"Special education teachers, kindergarten and elementary school",Line item,230.2,226.1,0.1,0.1,-4.1,-1.8,0.3,15.4,63000,Bachelor's degree,None,None
+25-2057,"Special education teachers, middle school",Line item,94.8,93,0.1,0.1,-1.8,-1.9,0.3,6.3,64880,Bachelor's degree,None,None
+25-2058,"Special education teachers, secondary school",Line item,164.2,161.5,0.1,0.1,-2.6,-1.6,0.5,11.1,69590,Bachelor's degree,None,None
+25-2059,"Special education teachers, all other",Line item,41,41.5,0,0,0.4,1.1,1.6,2.9,67430,Bachelor's degree,None,None
+25-3000,Other teachers and instructors,Summary,1337.7,1357.1,0.8,0.8,19.4,1.4,10.5,171.4,44220,—,—,—
+25-3011,"Adult basic education, adult secondary education, and english as a second language instructors",Line item,40.9,35.3,0,0,-5.6,-13.7,5.6,3.9,59950,Bachelor's degree,None,None
+25-3021,Self-enrichment teachers,Line item,417.5,433,0.2,0.2,15.5,3.7,16.8,51.4,45590,High school diploma or equivalent,Less than 5 years,None
+25-3031,"Substitute teachers, short-term",Line item,510.1,518.5,0.3,0.3,8.4,1.6,5,61.1,38470,Bachelor's degree,None,None
+25-3041,Tutors,Line item,215.5,216.8,0.1,0.1,1.3,0.6,13.7,37.1,40090,"Some college, no degree",None,None
+25-3099,"Teachers and instructors, all other",Line item,153.8,153.5,0.1,0.1,-0.2,-0.1,8.6,18,64690,Bachelor's degree,None,None
+25-4000,"Librarians, curators, and archivists",Summary,260.8,260.1,0.2,0.1,-0.7,-0.3,2.3,31.2,57100,—,—,—
+25-4010,"Archivists, curators, and museum technicians",Summary,40.2,42.4,0,0,2.3,5.6,12,4.8,57100,—,—,—
+25-4011,Archivists,Line item,9.3,9.7,0,0,0.4,3.8,10.4,1.1,61570,Master's degree,None,None
+25-4012,Curators,Line item,15.1,16.2,0,0,1.1,7,13.1,1.8,61770,Master's degree,None,None
+25-4013,Museum technicians and conservators,Line item,15.7,16.5,0,0,0.8,5.4,12,1.9,47460,Bachelor's degree,None,None
+25-4022,Librarians and media collections specialists,Line item,142.1,144.5,0.1,0.1,2.4,1.7,0.9,13.5,64320,Master's degree,None,None
+25-4031,Library technicians,Line item,78.6,73.2,0,0,-5.4,-6.8,,13,39970,Postsecondary nondegree award,None,None
+25-9000,Other educational instruction and library occupations,Summary,1993.3,1982.9,1.2,1.1,-10.5,-0.5,0.6,230.4,36690,—,—,—
+25-9021,Farm and home management educators,Line item,12.4,12.1,0,0,-0.3,-2.5,0.7,1.1,58120,Master's degree,None,None
+25-9031,Instructional coordinators,Line item,232.6,235.5,0.1,0.1,2.9,1.3,3.3,21.9,74720,Master's degree,5 years or more,None
+25-9040,Teaching assistants,Summary,1616.3,1601.3,1,0.9,-15.1,-0.9,0.1,195,35550,—,—,—
+25-9044,"Teaching assistants, postsecondary",Line item,193.6,199.6,0.1,0.1,6,3.1,0.1,24.6,44930,Bachelor's degree,None,None
+25-9045,"Teaching assistants, except postsecondary",Line item,1422.8,1401.7,0.8,0.8,-21.1,-1.5,0.1,170.4,35240,"Some college, no degree",None,None
+25-9099,"Educational instruction and library workers, all other",Line item,132,134,0.1,0.1,2,1.5,2.4,12.5,48400,Bachelor's degree,None,None
+27-0000,"Arts, design, entertainment, sports, and media occupations",Summary,3021.1,3104.6,1.8,1.8,83.5,2.8,24.6,289.4,60140,—,—,—
+27-1000,Art and design workers,Summary,950.3,971.8,0.6,0.6,21.5,2.3,27.7,84.9,53180,—,—,—
+27-1010,Artists and related workers,Summary,244.2,250.8,0.1,0.1,6.7,2.7,60.8,21.7,99060,—,—,—
+27-1011,Art directors,Line item,135,140.7,0.1,0.1,5.7,4.2,61.9,12.3,111040,Bachelor's degree,5 years or more,None
+27-1012,Craft artists,Line item,11.6,11.9,0,0,0.2,2.1,62.6,1,38480,No formal educational credential,None,Long-term on-the-job training
+27-1013,"Fine artists, including painters, sculptors, and illustrators",Line item,26.5,26.2,0,0,-0.3,-1.2,61.6,2.2,60560,Bachelor's degree,None,Long-term on-the-job training
+27-1014,Special effects artists and animators,Line item,57.1,58,0,0,0.9,1.6,61.5,5,99800,Bachelor's degree,None,None
+27-1019,"Artists and related workers, all other",Line item,13.9,14,0,0,0.1,0.8,44,1.2,72760,No formal educational credential,None,Long-term on-the-job training
+27-1020,Designers,Summary,706.1,721,0.4,0.4,14.9,2.1,16.3,63.2,49020,—,—,—
+27-1021,Commercial and industrial designers,Line item,30.6,31.6,0,0,1,3.2,2,2.5,79450,Bachelor's degree,None,None
+27-1022,Fashion designers,Line item,25.7,26.2,0,0,0.5,2,20,2.3,80690,Bachelor's degree,None,None
+27-1023,Floral designers,Line item,43.8,41.2,0,0,-2.6,-5.9,10.7,5.1,36120,High school diploma or equivalent,None,Moderate-term on-the-job training
+27-1024,Graphic designers,Line item,265.9,271.5,0.2,0.2,5.7,2.1,17.7,20,61300,Bachelor's degree,None,None
+27-1025,Interior designers,Line item,87.1,89.9,0.1,0.1,2.8,3.2,21.2,7.8,63490,Bachelor's degree,None,None
+27-1026,Merchandise displayers and window trimmers,Line item,193,199.3,0.1,0.1,6.2,3.2,0.1,20.8,37350,High school diploma or equivalent,None,Short-term on-the-job training
+27-1027,Set and exhibit designers,Line item,31.3,32,0,0,0.7,2.3,63.5,2.5,66280,Bachelor's degree,None,None
+27-1029,"Designers, all other",Line item,28.6,29.2,0,0,0.6,2,66.1,2.2,66220,Bachelor's degree,None,None
+27-2000,"Entertainers and performers, sports and related workers",Summary,854.1,889.4,0.5,0.5,35.3,4.1,22.4,99.7,54870,—,—,—
+27-2010,"Actors, producers, and directors",Summary,223.9,232.4,0.1,0.1,8.4,3.8,13.2,19.1,78000,—,—,—
+27-2011,Actors,Line item,57,57.1,0,0,0.2,0.3,27.9,6.3,,"Some college, no degree",None,Long-term on-the-job training
+27-2012,Producers and directors,Line item,167,175.2,0.1,0.1,8.3,4.9,8.2,12.8,83480,Bachelor's degree,Less than 5 years,None
+27-2020,"Athletes, coaches, umpires, and related workers",Summary,344.9,366.6,0.2,0.2,21.7,6.3,11.3,48.5,45920,—,—,—
+27-2021,Athletes and sports competitors,Line item,19.1,20.2,0,0,1,5.5,20.7,2.1,62360,No formal educational credential,None,Long-term on-the-job training
+27-2022,Coaches and scouts,Line item,306.5,326,0.2,0.2,19.5,6.4,10.2,41.8,45920,Bachelor's degree,None,None
+27-2023,"Umpires, referees, and other sports officials",Line item,19.3,20.4,0,0,1.1,5.7,18.2,4.6,38820,High school diploma or equivalent,None,Moderate-term on-the-job training
+27-2030,Dancers and choreographers,Summary,17,17.8,0,0,0.8,4.9,25.1,2.5,51020,—,—,—
+27-2031,Dancers,Line item,12.3,12.9,0,0,0.6,4.5,25.4,1.8,,No formal educational credential,None,Long-term on-the-job training
+27-2032,Choreographers,Line item,4.6,4.9,0,0,0.3,6.1,24.3,0.7,55600,High school diploma or equivalent,5 years or more,Long-term on-the-job training
+27-2040,"Musicians, singers, and related workers",Summary,217.1,218.8,0.1,0.1,1.7,0.8,42.1,23.7,,—,—,—
+27-2041,Music directors and composers,Line item,47.3,47.2,0,0,-0.1,-0.3,25.6,4.3,63670,Bachelor's degree,Less than 5 years,None
+27-2042,Musicians and singers,Line item,169.8,171.6,0.1,0.1,1.8,1.1,46.8,19.4,,No formal educational credential,None,Long-term on-the-job training
+27-2090,"Miscellaneous entertainers and performers, sports and related workers",Summary,51.2,53.9,0,0,2.7,5.3,53.4,5.8,,—,—,—
+27-2091,"Disc jockeys, except radio",Line item,15.4,16,0,0,0.6,3.8,46.9,1.5,,High school diploma or equivalent,None,Short-term on-the-job training
+27-2099,"Entertainers and performers, sports and related workers, all other",Line item,35.8,38,0,0,2.1,6,56.2,4.4,,No formal educational credential,None,Short-term on-the-job training
+27-3000,Media and communication workers,Summary,824.3,844.4,0.5,0.5,20.1,2.4,18,73.4,70300,—,—,—
+27-3011,Broadcast announcers and radio disc jockeys,Line item,24.1,22.8,0,0,-1.3,-5.5,,2.3,45680,Bachelor's degree,None,None
+27-3023,"News analysts, reporters, and journalists",Line item,49.3,47.4,0,0,-1.9,-3.9,15.6,4.1,60280,Bachelor's degree,None,None
+27-3031,Public relations specialists,Line item,315.9,331,0.2,0.2,15,4.8,1.9,27.6,69780,Bachelor's degree,None,None
+27-3040,Writers and editors,Summary,307.6,313.7,0.2,0.2,6.1,2,32.6,27.7,78100,—,—,—
+27-3041,Editors,Line item,115.8,116.5,0.1,0.1,0.7,0.6,13.2,9.8,75260,Bachelor's degree,Less than 5 years,None
+27-3042,Technical writers,Line item,56.4,56.9,0,0,0.5,0.9,,4.5,91670,Bachelor's degree,Less than 5 years,Short-term on-the-job training
+27-3043,Writers and authors,Line item,135.4,140.3,0.1,0.1,4.9,3.6,62.9,13.4,72270,Bachelor's degree,None,Long-term on-the-job training
+27-3090,Miscellaneous media and communication workers,Summary,127.4,129.5,0.1,0.1,2.2,1.7,26.7,11.6,62500,—,—,—
+27-3091,Interpreters and translators,Line item,75.3,76.6,0,0,1.3,1.7,27,6.9,59440,Bachelor's degree,None,None
+27-3092,Court reporters and simultaneous captioners,Line item,17.7,17.7,0,0,0,-0.3,25.6,1.7,67310,Postsecondary nondegree award,None,Short-term on-the-job training
+27-3099,"Media and communication workers, all other",Line item,34.3,35.3,0,0,0.9,2.7,26.7,3,71770,High school diploma or equivalent,None,Short-term on-the-job training
+27-4000,Media and communication equipment workers,Summary,392.3,398.9,0.2,0.2,6.6,1.7,36.1,31.4,56480,—,—,—
+27-4010,"Broadcast, sound, and lighting technicians",Summary,146.1,147.7,0.1,0.1,1.5,1,11.5,11.1,56600,—,—,—
+27-4011,Audio and video technicians,Line item,92.3,95.4,0.1,0.1,3.1,3.3,11,7.3,54830,Postsecondary nondegree award,None,Short-term on-the-job training
+27-4012,Broadcast technicians,Line item,24.8,24.2,0,0,-0.7,-2.8,12.6,1.8,53920,Associate's degree,None,Short-term on-the-job training
+27-4014,Sound engineering technicians,Line item,16.9,16.6,0,0,-0.3,-1.7,12,1.2,66430,Postsecondary nondegree award,None,Short-term on-the-job training
+27-4015,Lighting technicians,Line item,12.1,11.5,0,0,-0.6,-4.6,13.1,0.8,60560,Postsecondary nondegree award,None,Short-term on-the-job training
+27-4021,Photographers,Line item,151.2,154,0.1,0.1,2.8,1.8,66.3,12.7,42520,High school diploma or equivalent,None,Moderate-term on-the-job training
+27-4030,"Television, video, and film camera operators and editors",Summary,79.9,82.1,0,0,2.2,2.7,29.1,6.4,70570,—,—,—
+27-4031,"Camera operators, television, video, and film",Line item,36.4,36.9,0,0,0.4,1.2,28.8,2.9,68810,Bachelor's degree,None,None
+27-4032,Film and video editors,Line item,43.5,45.2,0,0,1.7,4,29.3,3.6,70980,Bachelor's degree,None,None
+27-4099,"Media and communication equipment workers, all other",Line item,15.1,15.2,0,0,0.1,0.6,8.5,1.1,67190,High school diploma or equivalent,None,Short-term on-the-job training
+29-0000,Healthcare practitioners and technical occupations,Summary,10067.5,10794.4,5.9,6.2,726.9,7.2,2.4,634.9,83090,—,—,—
+29-1000,Healthcare diagnosing or treating practitioners,Summary,6715.1,7241.6,4,4.1,526.4,7.8,3.1,363.3,101370,—,—,—
+29-1011,Chiropractors,Line item,57.2,62.6,0,0,5.4,9.5,34.7,2.8,79000,Doctoral or professional degree,None,None
+29-1020,Dentists,Summary,149.3,155.2,0.1,0.1,5.9,4,11.7,4.5,179210,—,—,—
+29-1021,"Dentists, general",Line item,129.8,135.2,0.1,0.1,5.4,4.1,11.8,3.9,172790,Doctoral or professional degree,None,None
+29-1022,Oral and maxillofacial surgeons,Line item,6.1,6.4,0,0,0.3,4.1,11.9,0.2,">=$239,200",Doctoral or professional degree,None,Internship/residency
+29-1023,Orthodontists,Line item,5.9,6.2,0,0,0.3,4.4,12,0.2,">=$239,200",Doctoral or professional degree,None,Internship/residency
+29-1024,Prosthodontists,Line item,0.9,0.9,0,0,0,4.5,12,0,">=$239,200",Doctoral or professional degree,None,Internship/residency
+29-1029,"Dentists, all other specialists",Line item,6.6,6.6,0,0,0,0.3,7.4,0.2,225770,Doctoral or professional degree,None,Internship/residency
+29-1031,Dietitians and nutritionists,Line item,90.9,95.9,0.1,0.1,5,5.5,12.2,6.2,73850,Bachelor's degree,None,Internship/residency
+29-1041,Optometrists,Line item,47.8,51.6,0,0,3.8,8,11.5,2.4,134830,Doctoral or professional degree,None,None
+29-1051,Pharmacists,Line item,335.1,350.5,0.2,0.2,15.4,4.6,0.6,14.2,137480,Doctoral or professional degree,None,None
+29-1071,Physician assistants,Line item,162.7,195.8,0.1,0.1,33.2,20.4,1.5,12,133260,Master's degree,None,None
+29-1081,Podiatrists,Line item,9.7,9.9,0,0,0.2,1.8,,0.3,152800,Doctoral or professional degree,None,Internship/residency
+29-1120,Therapists,Summary,869.4,975.3,0.5,0.6,106,12.2,8.3,53.5,95010,—,—,—
+29-1122,Occupational therapists,Line item,160,182.1,0.1,0.1,22.1,13.8,2.2,10.2,98340,Master's degree,None,None
+29-1123,Physical therapists,Line item,267.2,296.4,0.2,0.2,29.3,10.9,4.5,13.2,101020,Doctoral or professional degree,None,None
+29-1124,Radiation therapists,Line item,19.2,19.6,0,0,0.4,1.9,,0.9,101990,Associate's degree,None,None
+29-1125,Recreational therapists,Line item,16.1,16.6,0,0,0.5,3.3,,1.3,60280,Bachelor's degree,None,None
+29-1126,Respiratory therapists,Line item,139.6,156.4,0.1,0.1,16.8,12.1,,8.8,80450,Associate's degree,None,None
+29-1127,Speech-language pathologists,Line item,187.4,215.5,0.1,0.1,28.2,15,3.3,13.3,95410,Master's degree,None,Internship/residency
+29-1128,Exercise physiologists,Line item,23.9,26.1,0,0,2.3,9.5,64,1.7,58160,Bachelor's degree,None,None
+29-1129,"Therapists, all other",Line item,56.1,62.5,0,0,6.4,11.5,63.3,4.1,65010,Bachelor's degree,None,None
+29-1131,Veterinarians,Line item,86.4,94.7,0.1,0.1,8.3,9.6,6.1,3,125510,Doctoral or professional degree,None,None
+29-1141,Registered nurses,Line item,3391,3557.1,2,2,166.1,4.9,0.5,189.1,93600,Bachelor's degree,None,None
+29-1151,Nurse anesthetists,Line item,53.8,58.5,0,0,4.6,8.6,3.9,2.7,223210,Master's degree,None,None
+29-1161,Nurse midwives,Line item,8.6,9.5,0,0,0.9,11.1,1,0.5,128790,Master's degree,None,None
+29-1171,Nurse practitioners,Line item,320.4,448.8,0.2,0.3,128.4,40.1,1,29.5,129210,Master's degree,None,None
+29-1181,Audiologists,Line item,15.8,17.3,0,0,1.5,9.5,4.4,0.7,92120,Doctoral or professional degree,None,None
+29-1210,Physicians,Summary,785.6,807.7,0.5,0.5,22.1,2.8,4.2,22.3,">=$239,200",—,—,—
+29-1211,Anesthesiologists,Line item,45.3,46.7,0,0,1.4,3.2,4.7,1.3,">=$239,200",Doctoral or professional degree,None,Internship/residency
+29-1212,Cardiologists,Line item,19.4,20.2,0,0,0.8,4.1,4.7,0.6,">=$239,200",Doctoral or professional degree,None,Internship/residency
+29-1213,Dermatologists,Line item,10.9,11.6,0,0,0.7,6.4,4.8,0.4,">=$239,200",Doctoral or professional degree,None,Internship/residency
+29-1214,Emergency medicine physicians,Line item,36.1,37.1,0,0,1,2.7,4.6,1,">=$239,200",Doctoral or professional degree,None,Internship/residency
+29-1215,Family medicine physicians,Line item,116,119.1,0.1,0.1,3.1,2.7,4.5,3.3,238380,Doctoral or professional degree,None,Internship/residency
+29-1216,General internal medicine physicians,Line item,73.2,75.6,0,0,2.4,3.3,4.3,2.1,236350,Doctoral or professional degree,None,Internship/residency
+29-1217,Neurologists,Line item,8.3,8.8,0,0,0.5,5.4,4.6,0.3,">=$239,200",Doctoral or professional degree,None,Internship/residency
+29-1218,Obstetricians and gynecologists,Line item,21.5,21.7,0,0,0.3,1.2,4.7,0.6,">=$239,200",Doctoral or professional degree,None,Internship/residency
+29-1221,"Pediatricians, general",Line item,46.4,46.8,0,0,0.4,0.8,4.6,1.2,210130,Doctoral or professional degree,None,Internship/residency
+29-1222,"Physicians, pathologists",Line item,12.6,13.1,0,0,0.5,4.2,4.5,0.4,">=$239,200",Doctoral or professional degree,None,Internship/residency
+29-1223,Psychiatrists,Line item,27.1,28.8,0,0,1.7,6.1,3.7,0.9,">=$239,200",Doctoral or professional degree,None,Internship/residency
+29-1224,Radiologists,Line item,28.2,29,0,0,0.8,2.7,4.7,0.8,">=$239,200",Doctoral or professional degree,None,Internship/residency
+29-1229,"Physicians, all other",Line item,340.7,349.3,0.2,0.2,8.6,2.5,3.9,9.6,">=$239,200",Doctoral or professional degree,None,Internship/residency
+29-1240,Surgeons,Summary,53.4,55.5,0,0,2.1,4,0.7,1.3,">=$239,200",—,—,—
+29-1241,"Ophthalmologists, except pediatric",Line item,12.5,13.1,0,0,0.5,4.3,0.7,0.3,">=$239,200",Doctoral or professional degree,None,Internship/residency
+29-1242,"Orthopedic surgeons, except pediatric",Line item,14.7,15.3,0,0,0.6,4.1,0.7,0.4,">=$239,200",Doctoral or professional degree,None,Internship/residency
+29-1243,Pediatric surgeons,Line item,1.1,1.1,0,0,0,1.5,,0,">=$239,200",Doctoral or professional degree,None,Internship/residency
+29-1249,"Surgeons, all other",Line item,25.1,26,0,0,1,3.9,0.7,0.6,">=$239,200",Doctoral or professional degree,None,Internship/residency
+29-1290,Miscellaneous healthcare diagnosing or treating practitioners,Summary,278.3,295.7,0.2,0.2,17.4,6.3,5.8,18.5,94920,—,—,—
+29-1291,Acupuncturists,Line item,15.3,16.4,0,0,1,6.8,44.1,0.9,78140,Master's degree,None,None
+29-1292,Dental hygienists,Line item,221.6,237.2,0.1,0.1,15.5,7,0.5,15.3,94260,Associate's degree,None,None
+29-1299,"Healthcare diagnosing or treating practitioners, all other",Line item,41.3,42.2,0,0,0.8,2,20.3,2.4,113730,Master's degree,None,None
+29-2000,Health technologists and technicians,Summary,3205.6,3393,1.9,1.9,187.4,5.8,0.6,261.4,54270,—,—,—
+29-2010,Clinical laboratory technologists and technicians,Line item,351.2,357.2,0.2,0.2,6,1.7,0.5,22.6,61890,Bachelor's degree,None,None
+29-2030,Diagnostic related technologists and technicians,Summary,451.5,478.8,0.3,0.3,27.3,6.1,2.4,26.1,80660,—,—,—
+29-2031,Cardiovascular technologists and technicians,Line item,64.7,66.6,0,0,1.9,3,3.7,3.8,67260,Associate's degree,None,None
+29-2032,Diagnostic medical sonographers,Line item,90,101.7,0.1,0.1,11.7,13,2.5,5.8,89340,Associate's degree,None,None
+29-2033,Nuclear medicine technologists,Line item,20,20.6,0,0,0.6,3,13.7,0.9,97020,Associate's degree,None,None
+29-2034,Radiologic technologists and technicians,Line item,228,237.8,0.1,0.1,9.8,4.3,0.4,12.9,77660,Associate's degree,None,None
+29-2035,Magnetic resonance imaging technologists,Line item,44.1,47.2,0,0,3.1,7.1,4.6,2.6,88180,Associate's degree,Less than 5 years,None
+29-2036,Medical dosimetrists,Line item,4.8,4.9,0,0,0.2,3.5,13.8,0.2,138110,Bachelor's degree,None,None
+29-2040,Emergency medical technicians and paramedics,Summary,282.9,297.2,0.2,0.2,14.3,5,,19,46350,—,—,—
+29-2042,Emergency medical technicians,Line item,181,190.2,0.1,0.1,9.2,5.1,,14.1,41340,Postsecondary nondegree award,None,None
+29-2043,Paramedics,Line item,101.9,107,0.1,0.1,5.1,5,,4.9,58410,Postsecondary nondegree award,Less than 5 years,None
+29-2050,Health practitioner support technologists and technicians,Summary,994.3,1088.4,0.6,0.6,94.1,9.5,0.2,102.8,45010,—,—,—
+29-2051,Dietetic technicians,Line item,30.9,31.7,0,0,0.8,2.5,0.7,4,37040,Associate's degree,None,None
+29-2052,Pharmacy technicians,Line item,490.4,521.8,0.3,0.3,31.5,6.4,,49,43460,High school diploma or equivalent,None,Moderate-term on-the-job training
+29-2053,Psychiatric technicians,Line item,144.5,173.3,0.1,0.1,28.9,20,,15.9,42590,Postsecondary nondegree award,Less than 5 years,Short-term on-the-job training
+29-2055,Surgical technologists,Line item,115.6,120.8,0.1,0.1,5.2,4.5,0.1,7,62830,Postsecondary nondegree award,None,None
+29-2056,Veterinary technologists and technicians,Line item,134.2,146.4,0.1,0.1,12.2,9.1,1.2,14.3,45980,Associate's degree,None,None
+29-2057,Ophthalmic medical technicians,Line item,78.8,94.4,0,0.1,15.6,19.8,0.7,12.5,44080,Postsecondary nondegree award,None,None
+29-2061,Licensed practical and licensed vocational nurses,Line item,651.4,668.5,0.4,0.4,17.1,2.6,0.3,54.4,62340,Postsecondary nondegree award,None,None
+29-2072,Medical records specialists,Line item,194.8,208.6,0.1,0.1,13.8,7.1,0.8,14.2,50250,Postsecondary nondegree award,None,None
+29-2081,"Opticians, dispensing",Line item,79.9,82.2,0,0,2.3,2.9,,6.8,46560,High school diploma or equivalent,None,Long-term on-the-job training
+29-2090,Miscellaneous health technologists and technicians,Summary,199.6,212.2,0.1,0.1,12.6,6.3,0.5,15.4,49600,—,—,—
+29-2091,Orthotists and prosthetists,Line item,10.1,11.5,0,0,1.3,13.3,,0.9,78310,Master's degree,None,Internship/residency
+29-2092,Hearing aid specialists,Line item,10.7,12.6,0,0,2,18.4,0.5,1,61560,High school diploma or equivalent,None,Moderate-term on-the-job training
+29-2099,"Health technologists and technicians, all other",Line item,178.8,188.1,0.1,0.1,9.3,5.2,0.5,13.6,48790,Postsecondary nondegree award,None,None
+29-9000,Other healthcare practitioners and technical occupations,Summary,146.7,159.8,0.1,0.1,13.1,8.9,7.3,10.2,62820,—,—,—
+29-9021,Health information technologists and medical registrars,Line item,41.9,48.1,0,0,6.2,14.7,7.8,3.2,67310,Associate's degree,None,None
+29-9090,Miscellaneous health practitioners and technical workers,Summary,104.8,111.8,0.1,0.1,6.9,6.6,7.1,7,61890,—,—,—
+29-9091,Athletic trainers,Line item,33.9,37.6,0,0,3.8,11.1,6.2,2.4,60250,Master's degree,None,None
+29-9092,Genetic counselors,Line item,4,4.3,0,0,0.4,9.3,8.1,0.3,98910,Master's degree,None,None
+29-9093,Surgical assistants,Line item,25.3,26.6,0,0,1.3,5.1,8.6,1.6,60290,Postsecondary nondegree award,None,None
+29-9099,"Healthcare practitioners and technical workers, all other",Line item,41.7,43.1,0,0,1.5,3.6,6.8,2.6,64030,Postsecondary nondegree award,None,None
+31-0000,Healthcare support occupations,Summary,7982.8,8971.1,4.7,5.1,988.3,12.4,2.7,1286.7,37180,—,—,—
+31-1100,"Home health and personal care aides; and nursing assistants, orderlies, and psychiatric aides",Summary,5881.6,6655.6,3.5,3.8,774.1,13.2,2.4,983,35940,—,—,—
+31-1120,Home health and personal care aides,Line item,4347.7,5087.5,2.6,2.9,739.8,17,2.8,765.8,34900,High school diploma or equivalent,None,Short-term on-the-job training
+31-1130,"Nursing assistants, orderlies, and psychiatric aides",Summary,1533.9,1568.1,0.9,0.9,34.2,2.2,1.2,217.1,39470,—,—,—
+31-1131,Nursing assistants,Line item,1441.5,1474,0.8,0.8,32.6,2.3,1.3,204.1,39530,Postsecondary nondegree award,None,None
+31-1132,Orderlies,Line item,54,55.8,0,0,1.8,3.3,,7.8,37700,High school diploma or equivalent,None,Short-term on-the-job training
+31-1133,Psychiatric aides,Line item,38.5,38.3,0,0,-0.1,-0.4,1.8,5.3,41590,High school diploma or equivalent,None,Short-term on-the-job training
+31-2000,Occupational therapy and physical therapist assistants and aides,Summary,211.5,246.9,0.1,0.1,35.4,16.7,0.5,34.3,61730,—,—,—
+31-2010,Occupational therapy assistants and aides,Summary,54.4,64,0,0,9.6,17.6,,7.9,66050,—,—,—
+31-2011,Occupational therapy assistants,Line item,49.2,58.7,0,0,9.5,19.2,,7.2,68340,Associate's degree,None,None
+31-2012,Occupational therapy aides,Line item,5.2,5.3,0,0,0.1,2.5,,0.6,37370,High school diploma or equivalent,None,Short-term on-the-job training
+31-2020,Physical therapist assistants and aides,Summary,157.1,182.9,0.1,0.1,25.8,16.4,0.7,26.4,60050,—,—,—
+31-2021,Physical therapist assistants,Line item,111.5,136,0.1,0.1,24.5,22,0.7,19.8,65510,Associate's degree,None,None
+31-2022,Physical therapist aides,Line item,45.6,46.9,0,0,1.3,2.8,0.7,6.6,34520,High school diploma or equivalent,None,Short-term on-the-job training
+31-9000,Other healthcare support occupations,Summary,1889.7,2068.5,1.1,1.2,178.8,9.5,4.2,269.4,45000,—,—,—
+31-9011,Massage therapists,Line item,168,193.9,0.1,0.1,25.9,15.4,41.9,24.7,57950,Postsecondary nondegree award,None,None
+31-9090,Miscellaneous healthcare support occupations,Summary,1721.7,1874.6,1,1.1,152.9,8.9,0.5,244.7,44720,—,—,—
+31-9091,Dental assistants,Line item,381.9,406.3,0.2,0.2,24.4,6.4,0.7,52.9,47300,Postsecondary nondegree award,None,None
+31-9092,Medical assistants,Line item,811,912.2,0.5,0.5,101.2,12.5,,112.3,44200,Postsecondary nondegree award,None,None
+31-9093,Medical equipment preparers,Line item,76.5,84.2,0,0,7.6,10,3.4,10.9,46490,High school diploma or equivalent,None,Moderate-term on-the-job training
+31-9094,Medical transcriptionists,Line item,43.9,41.8,0,0,-2.2,-4.9,0.8,7.4,37550,Postsecondary nondegree award,None,None
+31-9095,Pharmacy aides,Line item,41.1,41.1,0,0,-0.1,-0.1,,6.1,37000,High school diploma or equivalent,None,Short-term on-the-job training
+31-9096,Veterinary assistants and laboratory animal caretakers,Line item,117.8,128.1,0.1,0.1,10.3,8.7,0.2,22.2,37320,High school diploma or equivalent,None,Short-term on-the-job training
+31-9097,Phlebotomists,Line item,139.7,147.5,0.1,0.1,7.9,5.6,,18.4,43660,Postsecondary nondegree award,None,None
+31-9099,"Healthcare support workers, all other",Line item,109.7,113.5,0.1,0.1,3.8,3.5,2.5,14.4,46050,High school diploma or equivalent,None,None
+33-0000,Protective service occupations,Summary,3787.4,3816.6,2.2,2.2,29.1,0.8,0.4,423.6,50580,—,—,—
+33-1000,Supervisors of protective service workers,Summary,408.4,417.1,0.2,0.2,8.7,2.1,0.1,30.8,87050,—,—,—
+33-1010,First-line supervisors of law enforcement workers,Summary,217.9,220.9,0.1,0.1,3,1.4,,15.2,99130,—,—,—
+33-1011,First-line supervisors of correctional officers,Line item,57.1,55.5,0,0,-1.6,-2.8,,4.3,76310,High school diploma or equivalent,Less than 5 years,None
+33-1012,First-line supervisors of police and detectives,Line item,160.8,165.4,0.1,0.1,4.6,2.9,,10.9,105980,High school diploma or equivalent,Less than 5 years,Moderate-term on-the-job training
+33-1021,First-line supervisors of firefighting and prevention workers,Line item,97.2,100.5,0.1,0.1,3.4,3.4,,6.5,92430,Postsecondary nondegree award,Less than 5 years,Moderate-term on-the-job training
+33-1090,"Miscellaneous first-line supervisors, protective service workers",Summary,93.3,95.6,0.1,0.1,2.3,2.5,0.6,9.1,60190,—,—,—
+33-1091,First-line supervisors of security workers,Line item,71.9,73.8,0,0,1.9,2.7,0.7,7,58610,High school diploma or equivalent,Less than 5 years,None
+33-1099,"First-line supervisors of protective service workers, all other",Line item,21.5,21.8,0,0,0.3,1.6,0.3,2.1,74960,High school diploma or equivalent,Less than 5 years,None
+33-2000,Firefighting and prevention workers,Summary,362.5,375.3,0.2,0.2,12.8,3.5,0,28.9,59870,—,—,—
+33-2011,Firefighters,Line item,344.9,356.7,0.2,0.2,11.8,3.4,0,27.1,59530,Postsecondary nondegree award,None,Long-term on-the-job training
+33-2020,Fire inspectors,Summary,17.6,18.6,0,0,1,5.6,,1.8,75480,—,—,—
+33-2021,Fire inspectors and investigators,Line item,14.7,15.2,0,0,0.6,3.8,,1.5,78060,Postsecondary nondegree award,5 years or more,Moderate-term on-the-job training
+33-2022,Forest fire inspectors and prevention specialists,Line item,2.9,3.3,0,0,0.4,14.6,,0.3,52380,High school diploma or equivalent,Less than 5 years,Moderate-term on-the-job training
+33-3000,Law enforcement workers,Summary,1241.6,1232,0.7,0.7,-9.7,-0.8,0.1,94.8,70530,—,—,—
+33-3010,"Bailiffs, correctional officers, and jailers",Summary,406.5,376,0.2,0.2,-30.5,-7.5,0.3,31.9,57950,—,—,—
+33-3011,Bailiffs,Line item,19,18.6,0,0,-0.4,-2.2,6.3,1.8,57050,High school diploma or equivalent,None,Moderate-term on-the-job training
+33-3012,Correctional officers and jailers,Line item,387.5,357.4,0.2,0.2,-30.1,-7.8,,30.1,57970,High school diploma or equivalent,None,Moderate-term on-the-job training
+33-3021,Detectives and criminal investigators,Line item,117.9,117.1,0.1,0.1,-0.8,-0.7,,7.8,93580,High school diploma or equivalent,Less than 5 years,Moderate-term on-the-job training
+33-3031,Fish and game wardens,Line item,7,6.6,0,0,-0.4,-6,,0.5,68180,Bachelor's degree,None,Moderate-term on-the-job training
+33-3041,Parking enforcement workers,Line item,8.4,8.2,0,0,-0.1,-1.5,,0.7,47150,High school diploma or equivalent,None,Short-term on-the-job training
+33-3050,Police officers,Summary,701.9,724,0.4,0.4,22.1,3.1,0.1,53.9,76300,—,—,—
+33-3051,Police and sheriff's patrol officers,Line item,698.8,720.8,0.4,0.4,22,3.1,0.1,53.7,76290,High school diploma or equivalent,None,Moderate-term on-the-job training
+33-3052,Transit and railroad police,Line item,3.1,3.2,0,0,0.1,3,1.8,0.2,82320,High school diploma or equivalent,None,Moderate-term on-the-job training
+33-9000,Other protective service workers,Summary,1774.8,1792.2,1,1,17.4,1,0.6,269,38230,—,—,—
+33-9011,Animal control workers,Line item,12.2,12.7,0,0,0.5,3.9,,1.3,45830,High school diploma or equivalent,None,Moderate-term on-the-job training
+33-9021,Private detectives and investigators,Line item,43.6,46.2,0,0,2.6,6,10.8,3.9,52370,High school diploma or equivalent,Less than 5 years,Moderate-term on-the-job training
+33-9030,Security guards and gambling surveillance officers,Summary,1272.4,1277.5,0.7,0.7,5.1,0.4,0.5,162.3,38390,—,—,—
+33-9031,Gambling surveillance officers and gambling investigators,Line item,10.3,10.3,0,0,0,0.3,,1.3,43900,High school diploma or equivalent,Less than 5 years,Moderate-term on-the-job training
+33-9032,Security guards,Line item,1262.1,1267.1,0.7,0.7,5.1,0.4,0.5,161,38370,High school diploma or equivalent,None,Short-term on-the-job training
+33-9090,Miscellaneous protective service workers,Summary,446.6,455.8,0.3,0.3,9.2,2.1,0,101.4,37120,—,—,—
+33-9091,Crossing guards and flaggers,Line item,91.4,94.7,0.1,0.1,3.3,3.6,,18,37700,No formal educational credential,None,Short-term on-the-job training
+33-9092,"Lifeguards, ski patrol, and other recreational protective service workers",Line item,149.7,158.4,0.1,0.1,8.7,5.8,,42.7,33720,No formal educational credential,None,Short-term on-the-job training
+33-9093,Transportation security screeners,Line item,50.1,47.1,0,0,-3,-6,0.3,4.7,63360,High school diploma or equivalent,None,Short-term on-the-job training
+33-9094,School bus monitors,Line item,71.4,69.5,0,0,-2,-2.7,,12.6,34980,High school diploma or equivalent,None,Short-term on-the-job training
+33-9099,"Protective service workers, all other",Line item,84,86.1,0,0,2.1,2.5,,23.3,41600,High school diploma or equivalent,None,Short-term on-the-job training
+35-0000,Food preparation and serving related occupations,Summary,13805.3,14295.3,8.1,8.2,489.9,3.5,0.7,2625.8,34130,—,—,—
+35-1000,Supervisors of food preparation and serving workers,Summary,1412.3,1499.3,0.8,0.9,87,6.2,2.3,208.3,44140,—,—,—
+35-1011,Chefs and head cooks,Line item,197.3,211.3,0.1,0.1,14,7.1,6.3,24.4,60990,High school diploma or equivalent,5 years or more,None
+35-1012,First-line supervisors of food preparation and serving workers,Line item,1215,1288,0.7,0.7,73,6,1.6,183.9,42010,High school diploma or equivalent,Less than 5 years,None
+35-2000,Cooks and food preparation workers,Summary,3707.8,3807.5,2.2,2.2,99.7,2.7,0.9,580.2,35450,—,—,—
+35-2010,Cooks,Summary,2805.1,2935.7,1.7,1.7,130.6,4.7,1.1,432.2,35760,—,—,—
+35-2011,"Cooks, fast food",Line item,669.5,579.2,0.4,0.3,-90.3,-13.5,,82.1,30160,No formal educational credential,None,Short-term on-the-job training
+35-2012,"Cooks, institution and cafeteria",Line item,466.1,475.4,0.3,0.3,9.3,2,,69.7,36450,No formal educational credential,None,Short-term on-the-job training
+35-2013,"Cooks, private household",Line item,34.2,36,0,0,1.7,5.1,86.9,5.3,44530,Postsecondary nondegree award,Less than 5 years,None
+35-2014,"Cooks, restaurant",Line item,1460.2,1677.2,0.9,1,217,14.9,,250.7,36830,No formal educational credential,Less than 5 years,Moderate-term on-the-job training
+35-2015,"Cooks, short order",Line item,151.1,142.7,0.1,0.1,-8.4,-5.6,,20.6,35620,No formal educational credential,None,Short-term on-the-job training
+35-2019,"Cooks, all other",Line item,24,25.3,0,0,1.3,5.5,,3.7,36210,No formal educational credential,None,Moderate-term on-the-job training
+35-2021,Food preparation workers,Line item,902.7,871.8,0.5,0.5,-30.9,-3.4,0.5,148,34220,No formal educational credential,None,Short-term on-the-job training
+35-3000,Food and beverage serving workers,Summary,7159.6,7429.5,4.2,4.2,269.8,3.8,0.3,1538.6,31470,—,—,—
+35-3011,Bartenders,Line item,756.7,801.5,0.4,0.5,44.8,5.9,0.4,129.6,33530,No formal educational credential,None,Short-term on-the-job training
+35-3023,Fast food and counter workers,Line item,3796,4029.2,2.2,2.3,233.2,6.1,0.1,904.3,30480,No formal educational credential,None,Short-term on-the-job training
+35-3031,Waiters and waitresses,Line item,2329.7,2313.5,1.4,1.3,-16.3,-0.7,0.7,456.7,33760,No formal educational credential,None,Short-term on-the-job training
+35-3041,"Food servers, nonrestaurant",Line item,277.2,285.3,0.2,0.2,8.2,3,0.1,48,34460,No formal educational credential,None,Short-term on-the-job training
+35-9000,Other food preparation and serving related workers,Summary,1525.6,1559,0.9,0.9,33.4,2.2,0.3,298.7,32680,—,—,—
+35-9011,Dining room and cafeteria attendants and bartender helpers,Line item,527.4,560.6,0.3,0.3,33.1,6.3,0.2,99.6,32670,No formal educational credential,None,Short-term on-the-job training
+35-9021,Dishwashers,Line item,477.7,478.6,0.3,0.3,0.9,0.2,0.6,76.8,33670,No formal educational credential,None,Short-term on-the-job training
+35-9031,"Hosts and hostesses, restaurant, lounge, and coffee shop",Line item,429.9,423.5,0.3,0.2,-6.4,-1.5,0.1,107.7,30380,No formal educational credential,None,Short-term on-the-job training
+35-9099,"Food preparation and serving related workers, all other",Line item,90.5,96.3,0.1,0.1,5.8,6.4,,14.6,34830,No formal educational credential,None,Short-term on-the-job training
+37-0000,Building and grounds cleaning and maintenance occupations,Summary,5715.9,5832.9,3.4,3.3,117.1,2,13,788.7,36790,—,—,—
+37-1000,Supervisors of building and grounds cleaning and maintenance workers,Summary,494.5,506.4,0.3,0.3,11.9,2.4,37.7,56.3,49990,—,—,—
+37-1011,First-line supervisors of housekeeping and janitorial workers,Line item,269.8,276.4,0.2,0.2,6.7,2.5,32.6,33,47520,High school diploma or equivalent,Less than 5 years,None
+37-1012,"First-line supervisors of landscaping, lawn service, and groundskeeping workers",Line item,224.7,230,0.1,0.1,5.2,2.3,43.9,23.2,56170,High school diploma or equivalent,Less than 5 years,None
+37-2000,Building cleaning and pest control workers,Summary,3924.9,3984.2,2.3,2.3,59.3,1.5,7.9,560.8,35750,—,—,—
+37-2010,Building cleaning workers,Summary,3822.5,3876.8,2.2,2.2,54.2,1.4,8.1,547.4,35630,—,—,—
+37-2011,"Janitors and cleaners, except maids and housekeeping cleaners",Line item,2447.7,2495.5,1.4,1.4,47.8,2,5.5,351.3,35930,No formal educational credential,None,Short-term on-the-job training
+37-2012,Maids and housekeeping cleaners,Line item,1356.8,1362.8,0.8,0.8,6,0.4,12.8,193.5,34660,No formal educational credential,None,Short-term on-the-job training
+37-2019,"Building cleaning workers, all other",Line item,18.1,18.5,0,0,0.5,2.5,6.8,2.6,42360,No formal educational credential,None,Short-term on-the-job training
+37-2021,Pest control workers,Line item,102.4,107.5,0.1,0.1,5.1,4.9,0.9,13.4,44730,High school diploma or equivalent,None,Moderate-term on-the-job training
+37-3000,Grounds maintenance workers,Summary,1296.4,1342.3,0.8,0.8,45.9,3.5,19,171.6,38470,—,—,—
+37-3011,Landscaping and groundskeeping workers,Line item,1192.5,1235,0.7,0.7,42.4,3.6,19.7,158.2,38090,No formal educational credential,None,Short-term on-the-job training
+37-3012,"Pesticide handlers, sprayers, and applicators, vegetation",Line item,29.6,30.7,0,0,1.1,3.8,1.9,4.1,45200,High school diploma or equivalent,None,Moderate-term on-the-job training
+37-3013,Tree trimmers and pruners,Line item,60.1,62.1,0,0,2,3.3,16.5,7.4,50430,High school diploma or equivalent,None,Short-term on-the-job training
+37-3019,"Grounds maintenance workers, all other",Line item,14.1,14.5,0,0,0.3,2.4,1.4,1.9,43410,No formal educational credential,None,Short-term on-the-job training
+39-0000,Personal care and service occupations,Summary,4464.1,4650.6,2.6,2.7,186.5,4.2,20.7,772.4,35110,—,—,—
+39-1000,Supervisors of personal care and service workers,Summary,304.9,323.4,0.2,0.2,18.5,6.1,22.8,33.1,48050,—,—,—
+39-1010,First-line supervisors of entertainment and recreation workers,Summary,155.8,164.3,0.1,0.1,8.5,5.4,21,16.8,49100,—,—,—
+39-1013,First-line supervisors of gambling services workers,Line item,32.5,33.1,0,0,0.6,2,19.1,3.3,61590,High school diploma or equivalent,Less than 5 years,None
+39-1014,"First-line supervisors of entertainment and recreation workers, except gambling services",Line item,123.3,131.1,0.1,0.1,7.8,6.3,21.5,13.4,46900,High school diploma or equivalent,Less than 5 years,None
+39-1022,First-line supervisors of personal service workers,Line item,149.1,159.1,0.1,0.1,10,6.7,24.7,16.3,47080,High school diploma or equivalent,Less than 5 years,None
+39-2000,Animal care and service workers,Summary,439.4,489.4,0.3,0.3,50,11.4,26.7,81.7,33860,—,—,—
+39-2011,Animal trainers,Line item,47.3,49.8,0,0,2.4,5.1,38.8,7.1,38750,High school diploma or equivalent,None,Moderate-term on-the-job training
+39-2021,Animal caretakers,Line item,392.1,439.6,0.2,0.3,47.6,12.1,25.2,74.6,33470,High school diploma or equivalent,None,Short-term on-the-job training
+39-3000,Entertainment attendants and related workers,Summary,659.8,674.8,0.4,0.4,15,2.3,1.4,159.8,31200,—,—,—
+39-3010,Gambling services workers,Summary,113,111.8,0.1,0.1,-1.2,-1,3.9,17.9,33280,—,—,—
+39-3011,Gambling dealers,Line item,88.7,88.1,0.1,0.1,-0.6,-0.6,3.9,14.1,33280,High school diploma or equivalent,None,Short-term on-the-job training
+39-3012,Gambling and sports book writers and runners,Line item,8.2,7.7,0,0,-0.5,-6.1,4.4,1.2,30460,High school diploma or equivalent,None,Short-term on-the-job training
+39-3019,"Gambling service workers, all other",Line item,16.1,16,0,0,-0.1,-0.6,3.9,2.6,34530,High school diploma or equivalent,None,Short-term on-the-job training
+39-3021,Motion picture projectionists,Line item,2,2,0,0,-0.1,-3.7,,0.5,38180,No formal educational credential,None,Short-term on-the-job training
+39-3031,"Ushers, lobby attendants, and ticket takers",Line item,121.7,123.1,0.1,0.1,1.4,1.2,,30.8,31150,No formal educational credential,None,Short-term on-the-job training
+39-3090,Miscellaneous entertainment attendants and related workers,Summary,423.1,438,0.2,0.3,14.9,3.5,1.1,110.6,31020,—,—,—
+39-3091,Amusement and recreation attendants,Line item,392.3,405.5,0.2,0.2,13.2,3.4,1.1,102.4,30490,No formal educational credential,None,Short-term on-the-job training
+39-3092,Costume attendants,Line item,6.7,7.1,0,0,0.4,5.9,1.2,1.8,54810,High school diploma or equivalent,None,Short-term on-the-job training
+39-3093,"Locker room, coatroom, and dressing room attendants",Line item,15.6,16.6,0,0,1,6.4,1.2,4.2,34800,High school diploma or equivalent,None,Short-term on-the-job training
+39-3099,"Entertainment attendants and related workers, all other",Line item,8.5,8.8,0,0,0.3,3.6,1.1,2.2,34550,High school diploma or equivalent,None,Short-term on-the-job training
+39-4000,Funeral service workers,Summary,66.8,68.8,0,0,2,3,4.9,10.1,39170,—,—,—
+39-4010,Embalmers and crematory operators,Summary,6.8,6.9,0,0,0.2,2.2,4.8,1.2,48610,—,—,—
+39-4011,Embalmers,Line item,3.6,3.7,0,0,0,1.3,4.8,0.6,56280,Associate's degree,None,Long-term on-the-job training
+39-4012,Crematory operators,Line item,3.1,3.2,0,0,0.1,3.3,4.8,0.6,42880,High school diploma or equivalent,None,Short-term on-the-job training
+39-4021,Funeral attendants,Line item,32.5,33.5,0,0,1,3.1,4.8,5.7,34610,High school diploma or equivalent,None,Short-term on-the-job training
+39-4031,"Morticians, undertakers, and funeral arrangers",Line item,27.5,28.4,0,0,0.8,3.1,5,3.2,49800,Associate's degree,None,Long-term on-the-job training
+39-5000,Personal appearance workers,Summary,984.2,1042.4,0.6,0.6,58.2,5.9,43.5,127.3,35310,—,—,—
+39-5010,"Barbers, hairdressers, hairstylists and cosmetologists",Summary,651.2,686.6,0.4,0.4,35.3,5.4,50.8,84.2,35420,—,—,—
+39-5011,Barbers,Line item,76,79.2,0,0,3.1,4.1,75.6,8.4,38960,Postsecondary nondegree award,None,None
+39-5012,"Hairdressers, hairstylists, and cosmetologists",Line item,575.2,607.4,0.3,0.3,32.2,5.6,47.6,75.8,35250,Postsecondary nondegree award,None,None
+39-5090,Miscellaneous personal appearance workers,Summary,333,355.8,0.2,0.2,22.8,6.9,29.3,43.1,35260,—,—,—
+39-5091,"Makeup artists, theatrical and performance",Line item,7,7.6,0,0,0.6,8.1,50.3,1.1,50280,Postsecondary nondegree award,None,None
+39-5092,Manicurists and pedicurists,Line item,210.1,224.8,0.1,0.1,14.7,7,28,24.8,34660,Postsecondary nondegree award,None,None
+39-5093,Shampooers,Line item,18.5,19.6,0,0,1,5.5,50.9,2.7,31470,No formal educational credential,None,Short-term on-the-job training
+39-5094,Skincare specialists,Line item,97.4,103.9,0.1,0.1,6.6,6.7,26.4,14.5,41560,Postsecondary nondegree award,None,None
+39-6000,"Baggage porters, bellhops, and concierges",Summary,78.1,78.6,0,0,0.5,0.7,,11.5,36810,—,—,—
+39-6011,Baggage porters and bellhops,Line item,32.5,32,0,0,-0.5,-1.6,,4.6,36020,High school diploma or equivalent,None,Short-term on-the-job training
+39-6012,Concierges,Line item,45.6,46.7,0,0,1.1,2.3,,6.8,37320,High school diploma or equivalent,None,Moderate-term on-the-job training
+39-7000,Tour and travel guides,Summary,55.8,60.3,0,0,4.5,8.1,9.8,13,36660,—,—,—
+39-7010,Tour and travel guides,Line item,55.8,60.3,0,0,4.5,8.1,9.8,13,36660,High school diploma or equivalent,None,Moderate-term on-the-job training
+39-9000,Other personal care and service workers,Summary,1875.1,1912.9,1.1,1.1,37.8,2,15.6,336,35550,—,—,—
+39-9011,Childcare workers,Line item,991.6,962.4,0.6,0.5,-29.2,-2.9,21.2,160.2,32050,High school diploma or equivalent,None,Short-term on-the-job training
+39-9030,Recreation and fitness workers,Summary,697.8,755.3,0.4,0.4,57.5,8.2,7.8,142.2,37420,—,—,—
+39-9031,Exercise trainers and group fitness instructors,Line item,370.1,414.2,0.2,0.2,44.1,11.9,14.3,74.2,46180,High school diploma or equivalent,None,Short-term on-the-job training
+39-9032,Recreation workers,Line item,327.7,341.1,0.2,0.2,13.4,4.1,0.4,68.1,35380,High school diploma or equivalent,None,Short-term on-the-job training
+39-9041,Residential advisors,Line item,91.2,94.7,0.1,0.1,3.5,3.8,2.2,17.4,39180,High school diploma or equivalent,None,Short-term on-the-job training
+39-9099,"Personal care and service workers, all other",Line item,94.4,100.4,0.1,0.1,6,6.4,26.1,16.1,37900,High school diploma or equivalent,None,Short-term on-the-job training
+41-0000,Sales and related occupations,Summary,14532.6,14234.8,8.6,8.1,-297.8,-2,7.7,1786.8,37460,—,—,—
+41-1000,Supervisors of sales workers,Summary,1752.6,1680.3,1,1,-72.3,-4.1,23.8,149.9,49510,—,—,—
+41-1011,First-line supervisors of retail sales workers,Line item,1432.6,1360.3,0.8,0.8,-72.3,-5,22.5,125.1,47320,High school diploma or equivalent,Less than 5 years,None
+41-1012,First-line supervisors of non-retail sales workers,Line item,320,320,0.2,0.2,0,0,30,24.8,84130,High school diploma or equivalent,Less than 5 years,None
+41-2000,Retail sales workers,Summary,7796.8,7483.8,4.6,4.3,-313,-4,2.2,1178.6,33690,—,—,—
+41-2010,Cashiers,Summary,3179.8,2864.7,1.9,1.6,-315.1,-9.9,0.2,546.7,31200,—,—,—
+41-2011,Cashiers,Line item,3157.2,2843.6,1.9,1.6,-313.6,-9.9,0.2,542.6,31190,No formal educational credential,None,Short-term on-the-job training
+41-2012,Gambling change persons and booth cashiers,Line item,22.6,21.1,0,0,-1.5,-6.4,,4,34810,No formal educational credential,None,Short-term on-the-job training
+41-2020,Counter and rental clerks and parts salespersons,Summary,680.3,701.9,0.4,0.4,21.6,3.2,1.2,76.1,38100,—,—,—
+41-2021,Counter and rental clerks,Line item,408.2,421.3,0.2,0.2,13.1,3.2,0.9,45.9,38540,No formal educational credential,None,Short-term on-the-job training
+41-2022,Parts salespersons,Line item,272.1,280.6,0.2,0.2,8.5,3.1,1.6,30.2,37440,No formal educational credential,None,Moderate-term on-the-job training
+41-2031,Retail salespersons,Line item,3936.7,3917.1,2.3,2.2,-19.6,-0.5,4,555.8,34580,No formal educational credential,None,Short-term on-the-job training
+41-3000,"Sales representatives, services",Summary,2479.4,2550.3,1.5,1.5,70.9,2.9,5.8,224.6,64200,—,—,—
+41-3011,Advertising sales agents,Line item,103.7,97.1,0.1,0.1,-6.6,-6.4,5.3,9.3,61460,High school diploma or equivalent,None,Moderate-term on-the-job training
+41-3021,Insurance sales agents,Line item,568.8,589.8,0.3,0.3,21.1,3.7,12.5,47,60370,High school diploma or equivalent,None,Moderate-term on-the-job training
+41-3031,"Securities, commodities, and financial services sales agents",Line item,514.5,531.6,0.3,0.3,17.1,3.3,6.6,38.1,78140,Bachelor's degree,None,Moderate-term on-the-job training
+41-3041,Travel agents,Line item,65.7,67.2,0,0,1.4,2.2,11.2,7.1,48450,High school diploma or equivalent,None,Moderate-term on-the-job training
+41-3091,"Sales representatives of services, except advertising, insurance, financial services, and travel",Line item,1226.7,1264.7,0.7,0.7,37.9,3.1,2.1,123,66260,High school diploma or equivalent,None,Moderate-term on-the-job training
+41-4000,"Sales representatives, wholesale and manufacturing",Summary,1613.6,1623.8,0.9,0.9,10.1,0.6,2.1,142.1,74100,—,—,—
+41-4011,"Sales representatives, wholesale and manufacturing, technical and scientific products",Line item,303.2,308.9,0.2,0.2,5.7,1.9,2.1,27.2,100070,Bachelor's degree,None,Moderate-term on-the-job training
+41-4012,"Sales representatives, wholesale and manufacturing, except technical and scientific products",Line item,1310.5,1314.9,0.8,0.8,4.4,0.3,2.1,114.8,66780,High school diploma or equivalent,None,Moderate-term on-the-job training
+41-9000,Other sales and related workers,Summary,890.1,896.6,0.5,0.5,6.5,0.7,38.4,91.6,49720,—,—,—
+41-9010,"Models, demonstrators, and product promoters",Summary,85.9,85.7,0.1,0,-0.1,-0.2,18.1,15.2,38760,—,—,—
+41-9011,Demonstrators and product promoters,Line item,79.2,79.1,0,0,-0.1,-0.1,18.2,14,37960,No formal educational credential,None,Short-term on-the-job training
+41-9012,Models,Line item,6.7,6.7,0,0,0,-0.5,16.3,1.2,89990,No formal educational credential,None,None
+41-9020,Real estate brokers and sales agents,Summary,532.2,548.7,0.3,0.3,16.5,3.1,53.9,46.3,58960,—,—,—
+41-9021,Real estate brokers,Line item,111.3,115,0.1,0.1,3.7,3.3,54.5,9.7,72280,High school diploma or equivalent,Less than 5 years,None
+41-9022,Real estate sales agents,Line item,420.9,433.7,0.2,0.2,12.8,3.1,53.7,36.6,56320,High school diploma or equivalent,None,Moderate-term on-the-job training
+41-9031,Sales engineers,Line item,56.8,59.9,0,0,3.1,5.5,,5,121520,Bachelor's degree,None,Moderate-term on-the-job training
+41-9041,Telemarketers,Line item,67.4,52.5,0,0,-14.9,-22.1,0.6,6.5,34410,No formal educational credential,None,Short-term on-the-job training
+41-9090,Miscellaneous sales and related workers,Summary,147.8,149.8,0.1,0.1,2,1.3,26.3,18.7,46000,—,—,—
+41-9091,"Door-to-door sales workers, news and street vendors, and related workers",Line item,25.3,22.8,0,0,-2.5,-10,81.8,2.7,34530,No formal educational credential,None,Short-term on-the-job training
+41-9099,"Sales and related workers, all other",Line item,122.6,127.1,0.1,0.1,4.5,3.7,14.8,16,46370,High school diploma or equivalent,None,None
+43-0000,Office and administrative support occupations,Summary,19325.2,18563.3,11.4,10.6,-761.9,-3.9,2.2,1996.8,46320,—,—,—
+43-1000,Supervisors of office and administrative support workers,Summary,1558.4,1554.4,0.9,0.9,-3.9,-0.3,0.7,144.5,66140,—,—,—
+43-1011,First-line supervisors of office and administrative support workers,Line item,1558.4,1554.4,0.9,0.9,-3.9,-0.3,0.7,144.5,66140,High school diploma or equivalent,Less than 5 years,None
+43-2000,Communications equipment operators,Summary,42.1,31.4,0,0,-10.7,-25.4,,3.2,38600,—,—,—
+43-2011,"Switchboard operators, including answering service",Line item,36.6,27,0,0,-9.6,-26.3,,2.8,38370,High school diploma or equivalent,None,Short-term on-the-job training
+43-2021,Telephone operators,Line item,4,2.9,0,0,-1.1,-27.5,,0.3,39130,High school diploma or equivalent,None,Short-term on-the-job training
+43-2099,"Communications equipment operators, all other",Line item,1.4,1.5,0,0,0,2.5,,0.1,49910,High school diploma or equivalent,None,Short-term on-the-job training
+43-3000,Financial clerks,Summary,2833.6,2642.5,1.7,1.5,-191.1,-6.7,3.2,278.6,47370,—,—,—
+43-3011,Bill and account collectors,Line item,166.9,149.4,0.1,0.1,-17.5,-10.5,0.2,13.7,46040,High school diploma or equivalent,None,Moderate-term on-the-job training
+43-3021,Billing and posting clerks,Line item,429.8,427.9,0.3,0.2,-1.9,-0.4,0.8,42.2,47170,High school diploma or equivalent,None,Moderate-term on-the-job training
+43-3031,"Bookkeeping, accounting, and auditing clerks",Line item,1613.4,1519.1,0.9,0.9,-94.3,-5.8,5.2,170,49210,"Some college, no degree",None,Moderate-term on-the-job training
+43-3041,Gambling cage workers,Line item,14.1,13.4,0,0,-0.7,-5,1.6,1.3,36990,High school diploma or equivalent,None,Short-term on-the-job training
+43-3051,Payroll and timekeeping clerks,Line item,161.1,134.2,0.1,0.1,-27,-16.7,0.9,13,55290,High school diploma or equivalent,None,Moderate-term on-the-job training
+43-3061,Procurement clerks,Line item,61.9,56.6,0,0,-5.4,-8.7,,4.6,48510,High school diploma or equivalent,None,Moderate-term on-the-job training
+43-3071,Tellers,Line item,347.4,302.5,0.2,0.2,-44.9,-12.9,,29.8,39340,High school diploma or equivalent,None,Short-term on-the-job training
+43-3099,"Financial clerks, all other",Line item,38.9,39.4,0,0,0.5,1.4,2.7,4,52150,High school diploma or equivalent,None,Short-term on-the-job training
+43-4000,Information and record clerks,Summary,5511.6,5304.2,3.2,3,-207.4,-3.8,0.8,653,41600,—,—,—
+43-4011,Brokerage clerks,Line item,40.8,36.9,0,0,-3.9,-9.5,,4.1,62940,High school diploma or equivalent,None,Moderate-term on-the-job training
+43-4021,Correspondence clerks,Line item,6.9,6.5,0,0,-0.4,-5.6,5.1,0.7,46740,High school diploma or equivalent,None,Short-term on-the-job training
+43-4031,"Court, municipal, and license clerks",Line item,180.4,185.9,0.1,0.1,5.5,3,1,18.5,47700,High school diploma or equivalent,None,Long-term on-the-job training
+43-4041,"Credit authorizers, checkers, and clerks",Line item,12,11.3,0,0,-0.7,-6.2,,1,49130,High school diploma or equivalent,None,Moderate-term on-the-job training
+43-4051,Customer service representatives,Line item,2814,2660.3,1.7,1.5,-153.7,-5.5,0.8,341.7,42830,High school diploma or equivalent,None,Short-term on-the-job training
+43-4061,"Eligibility interviewers, government programs",Line item,166.8,168.5,0.1,0.1,1.7,1,0.3,14,51500,High school diploma or equivalent,None,Moderate-term on-the-job training
+43-4071,File clerks,Line item,84.3,70.9,0,0,-13.4,-15.9,2.9,7.3,41270,High school diploma or equivalent,None,Short-term on-the-job training
+43-4081,"Hotel, motel, and resort desk clerks",Line item,264.2,274,0.2,0.2,9.9,3.7,,43.6,34270,High school diploma or equivalent,None,Short-term on-the-job training
+43-4111,"Interviewers, except eligibility and loan",Line item,164.3,145.1,0.1,0.1,-19.1,-11.6,0.6,15.8,43830,High school diploma or equivalent,None,Short-term on-the-job training
+43-4121,"Library assistants, clerical",Line item,84.5,78.9,0,0,-5.6,-6.7,,12.8,36010,High school diploma or equivalent,None,Short-term on-the-job training
+43-4131,Loan interviewers and clerks,Line item,177.6,173.5,0.1,0.1,-4.1,-2.3,0.9,13.3,48950,High school diploma or equivalent,None,Short-term on-the-job training
+43-4141,New accounts clerks,Line item,38.9,33.8,0,0,-5.2,-13.2,,2.3,46610,High school diploma or equivalent,None,Moderate-term on-the-job training
+43-4151,Order clerks,Line item,89.5,74.1,0.1,0,-15.4,-17.2,5.5,8,44660,"Some college, no degree",None,Short-term on-the-job training
+43-4161,"Human resources assistants, except payroll and timekeeping",Line item,95.2,88.4,0.1,0.1,-6.8,-7.1,0.3,9,49440,Associate's degree,None,None
+43-4171,Receptionists and information clerks,Line item,1007.2,1007.6,0.6,0.6,0.3,0,0.6,128.5,37230,High school diploma or equivalent,None,Short-term on-the-job training
+43-4181,Reservation and transportation ticket agents and travel clerks,Line item,131.9,135.6,0.1,0.1,3.7,2.8,3,14.4,41460,High school diploma or equivalent,None,Short-term on-the-job training
+43-4199,"Information and record clerks, all other",Line item,153.3,153,0.1,0.1,-0.3,-0.2,,17.8,48360,High school diploma or equivalent,None,Short-term on-the-job training
+43-5000,"Material recording, scheduling, dispatching, and distributing workers",Summary,2492.6,2422.1,1.5,1.4,-70.6,-2.8,7.5,210.5,48090,—,—,—
+43-5011,Cargo and freight agents,Line item,100.6,109.2,0.1,0.1,8.6,8.5,1.2,8.8,49900,High school diploma or equivalent,None,Short-term on-the-job training
+43-5021,Couriers and messengers,Line item,247.2,267.6,0.1,0.2,20.4,8.2,70.2,27.9,38340,High school diploma or equivalent,None,Short-term on-the-job training
+43-5030,Dispatchers,Summary,323.9,325.5,0.2,0.2,1.6,0.5,1.8,29.2,49500,—,—,—
+43-5031,Public safety telecommunicators,Line item,105.2,108.9,0.1,0.1,3.6,3.5,,10.7,50730,High school diploma or equivalent,None,Moderate-term on-the-job training
+43-5032,"Dispatchers, except police, fire, and ambulance",Line item,218.7,216.7,0.1,0.1,-2.1,-0.9,2.7,18.5,48880,High school diploma or equivalent,None,Moderate-term on-the-job training
+43-5041,"Meter readers, utilities",Line item,20.1,17.7,0,0,-2.4,-12,,1.3,49180,High school diploma or equivalent,None,Short-term on-the-job training
+43-5050,Postal service workers,Summary,500,477.1,0.3,0.3,-22.9,-4.6,,34.5,57870,—,—,—
+43-5051,Postal service clerks,Line item,74.2,71.6,0,0,-2.6,-3.5,,6.1,61630,No formal educational credential,None,Short-term on-the-job training
+43-5052,Postal service mail carriers,Line item,319.4,308.1,0.2,0.2,-11.3,-3.5,,20.6,57490,No formal educational credential,None,Short-term on-the-job training
+43-5053,"Postal service mail sorters, processors, and processing machine operators",Line item,106.4,97.5,0.1,0.1,-8.9,-8.4,,7.8,56530,No formal educational credential,None,Short-term on-the-job training
+43-5061,"Production, planning, and expediting clerks",Line item,388.8,381.7,0.2,0.2,-7.1,-1.8,,34.1,57770,High school diploma or equivalent,None,Moderate-term on-the-job training
+43-5071,"Shipping, receiving, and inventory clerks",Line item,862.2,795.8,0.5,0.5,-66.3,-7.7,0.6,69.3,43190,High school diploma or equivalent,None,Short-term on-the-job training
+43-5111,"Weighers, measurers, checkers, and samplers, recordkeeping",Line item,49.8,47.4,0,0,-2.4,-4.8,0.4,5.3,45650,High school diploma or equivalent,None,Short-term on-the-job training
+43-6000,Secretaries and administrative assistants,Summary,3453.1,3440.8,2,2,-12.4,-0.4,1.1,358.3,47460,—,—,—
+43-6011,Executive secretaries and executive administrative assistants,Line item,502.8,494.9,0.3,0.3,-7.9,-1.6,0.2,50,74260,High school diploma or equivalent,Less than 5 years,None
+43-6012,Legal secretaries and administrative assistants,Line item,156.3,147.3,0.1,0.1,-9,-5.8,0.5,19.6,54140,High school diploma or equivalent,None,Moderate-term on-the-job training
+43-6013,Medical secretaries and administrative assistants,Line item,850,885.3,0.5,0.5,35.3,4.2,0,85.9,44640,High school diploma or equivalent,None,Moderate-term on-the-job training
+43-6014,"Secretaries and administrative assistants, except legal, medical, and executive",Line item,1944,1913.2,1.1,1.1,-30.8,-1.6,1.9,202.8,46290,High school diploma or equivalent,None,Short-term on-the-job training
+43-9000,Other office and administrative support workers,Summary,3433.7,3167.9,2,1.8,-265.8,-7.7,1.4,348.7,44030,—,—,—
+43-9020,Data entry and information processing workers,Summary,181.7,130.5,0.1,0.1,-51.2,-28.2,3.3,11.8,41480,—,—,—
+43-9021,Data entry keyers,Line item,141.6,104.9,0.1,0.1,-36.7,-25.9,2.2,9.5,39850,High school diploma or equivalent,None,Short-term on-the-job training
+43-9022,Word processors and typists,Line item,40,25.6,0,0,-14.4,-36.1,7.5,2.2,47850,High school diploma or equivalent,None,Short-term on-the-job training
+43-9031,Desktop publishers,Line item,5,4.4,0,0,-0.6,-12.4,16.8,0.4,53620,Associate's degree,None,Short-term on-the-job training
+43-9041,Insurance claims and policy processing clerks,Line item,256.7,247.2,0.2,0.1,-9.5,-3.7,0.5,20.3,48450,High school diploma or equivalent,None,Moderate-term on-the-job training
+43-9051,"Mail clerks and mail machine operators, except postal service",Line item,67.4,62.9,0,0,-4.4,-6.6,2.1,6.9,38150,High school diploma or equivalent,None,Short-term on-the-job training
+43-9061,"Office clerks, general",Line item,2646,2468.2,1.6,1.4,-177.8,-6.7,0.5,282.4,43630,High school diploma or equivalent,None,Short-term on-the-job training
+43-9071,"Office machine operators, except computer",Line item,25.5,21.6,0,0,-3.9,-15.2,,2.8,39020,High school diploma or equivalent,None,Short-term on-the-job training
+43-9081,Proofreaders and copy markers,Line item,12,11.9,0,0,-0.1,-0.6,31.2,1.9,49210,Bachelor's degree,None,None
+43-9111,Statistical assistants,Line item,6.5,6.3,0,0,-0.2,-2.5,,0.8,51440,Bachelor's degree,None,None
+43-9199,"Office and administrative support workers, all other",Line item,232.9,214.8,0.1,0.1,-18.1,-7.8,9.8,21.3,46040,High school diploma or equivalent,None,Short-term on-the-job training
+45-0000,"Farming, fishing, and forestry occupations",Summary,1008.5,983.3,0.6,0.6,-25.2,-2.5,8.4,142.8,36750,—,—,—
+45-1000,"Supervisors of farming, fishing, and forestry workers",Summary,65.4,67,0,0,1.6,2.5,11.4,8.5,59330,—,—,—
+45-1011,"First-line supervisors of farming, fishing, and forestry workers",Line item,65.4,67,0,0,1.6,2.5,11.4,8.5,59330,High school diploma or equivalent,Less than 5 years,None
+45-2000,Agricultural workers,Summary,866.2,841.8,0.5,0.5,-24.3,-2.8,5.8,123.5,36020,—,—,—
+45-2011,Agricultural inspectors,Line item,14.7,14.9,0,0,0.2,1.5,,2.2,50990,Bachelor's degree,None,Moderate-term on-the-job training
+45-2021,Animal breeders,Line item,7.9,8.1,0,0,0.2,2.4,3.4,1.2,52000,High school diploma or equivalent,None,Short-term on-the-job training
+45-2041,"Graders and sorters, agricultural products",Line item,38.9,36.8,0,0,-2.1,-5.4,,5.1,35430,No formal educational credential,None,Short-term on-the-job training
+45-2090,Miscellaneous agricultural workers,Summary,804.7,782.1,0.5,0.4,-22.6,-2.8,6.3,115,35960,—,—,—
+45-2091,Agricultural equipment operators,Line item,65.2,70.3,0,0,5,7.7,7.1,10.5,42580,No formal educational credential,None,Moderate-term on-the-job training
+45-2092,"Farmworkers and laborers, crop, nursery, and greenhouse",Line item,504.8,488.1,0.3,0.3,-16.8,-3.3,7.9,71.7,35690,No formal educational credential,None,Short-term on-the-job training
+45-2093,"Farmworkers, farm, ranch, and aquacultural animals",Line item,224.6,213.4,0.1,0.1,-11.1,-5,2.3,31.2,36150,No formal educational credential,None,Short-term on-the-job training
+45-2099,"Agricultural workers, all other",Line item,10.1,10.3,0,0,0.2,2.3,5.8,1.5,40390,No formal educational credential,None,Short-term on-the-job training
+45-3000,Fishing and hunting workers,Summary,21.9,20.9,0,0,-1,-4.6,57.1,2.8,,—,—,—
+45-3031,Fishing and hunting workers,Line item,21.9,20.9,0,0,-1,-4.6,57.1,2.8,,No formal educational credential,None,Moderate-term on-the-job training
+45-4000,"Forest, conservation, and logging workers",Summary,55,53.5,0,0,-1.5,-2.8,26.3,8,48390,—,—,—
+45-4011,Forest and conservation workers,Line item,10.8,10.3,0,0,-0.5,-4.7,15.1,2,43680,High school diploma or equivalent,None,Moderate-term on-the-job training
+45-4020,Logging workers,Summary,44.3,43.3,0,0,-1,-2.3,29,6,49540,—,—,—
+45-4021,Fallers,Line item,5.6,5.2,0,0,-0.4,-7.3,29.6,0.7,53900,High school diploma or equivalent,None,Moderate-term on-the-job training
+45-4022,Logging equipment operators,Line item,30.9,30.5,0,0,-0.4,-1.4,29.1,4.2,49210,High school diploma or equivalent,None,Moderate-term on-the-job training
+45-4023,Log graders and scalers,Line item,4.6,4.6,0,0,0,-0.7,28.3,0.6,46710,High school diploma or equivalent,None,Moderate-term on-the-job training
+45-4029,"Logging workers, all other",Line item,3.1,3,0,0,-0.1,-4.7,27.6,0.4,52000,High school diploma or equivalent,None,Moderate-term on-the-job training
+47-0000,Construction and extraction occupations,Summary,7574.7,7968.8,4.5,4.5,394.1,5.2,15.1,649.3,58360,—,—,—
+47-1000,Supervisors of construction and extraction workers,Summary,921.6,970.6,0.5,0.6,49,5.3,11.5,74.4,78690,—,—,—
+47-1011,First-line supervisors of construction trades and extraction workers,Line item,921.6,970.6,0.5,0.6,49,5.3,11.5,74.4,78690,High school diploma or equivalent,5 years or more,None
+47-2000,Construction trades workers,Summary,5752.6,6084.4,3.4,3.5,331.9,5.8,17.6,491.2,56490,—,—,—
+47-2011,Boilermakers,Line item,10.4,10.1,0,0,-0.2,-2.4,,0.8,73340,High school diploma or equivalent,None,Apprenticeship
+47-2020,"Brickmasons, blockmasons, and stonemasons",Summary,86.2,88.2,0.1,0.1,2,2.3,27.1,6.4,60180,—,—,—
+47-2021,Brickmasons and blockmasons,Line item,74.1,76.4,0,0,2.4,3.2,27.1,5.6,60800,High school diploma or equivalent,None,Apprenticeship
+47-2022,Stonemasons,Line item,12.1,11.8,0,0,-0.4,-3,27.3,0.8,51990,High school diploma or equivalent,None,Apprenticeship
+47-2031,Carpenters,Line item,959,1002.1,0.6,0.6,43.1,4.5,26.8,74.1,59310,High school diploma or equivalent,None,Apprenticeship
+47-2040,"Carpet, floor, and tile installers and finishers",Summary,112.3,119,0.1,0.1,6.7,6,25.7,8.4,52000,—,—,—
+47-2041,Carpet installers,Line item,20.3,18.3,0,0,-1.9,-9.6,25.6,1.1,49850,No formal educational credential,None,Short-term on-the-job training
+47-2042,"Floor layers, except carpet, wood, and hard tiles",Line item,33.7,36.9,0,0,3.2,9.5,25.7,2.7,54340,No formal educational credential,None,Moderate-term on-the-job training
+47-2043,Floor sanders and finishers,Line item,5.6,5.8,0,0,0.1,2.6,25.7,0.4,49150,No formal educational credential,None,Moderate-term on-the-job training
+47-2044,Tile and stone setters,Line item,52.6,58,0,0,5.3,10.1,25.7,4.2,52240,No formal educational credential,None,Long-term on-the-job training
+47-2050,"Cement masons, concrete finishers, and terrazzo workers",Summary,208.2,211.8,0.1,0.1,3.6,1.7,1,14.3,54700,—,—,—
+47-2051,Cement masons and concrete finishers,Line item,206.7,210.4,0.1,0.1,3.8,1.8,1,14.3,54660,No formal educational credential,None,Moderate-term on-the-job training
+47-2053,Terrazzo workers and finishers,Line item,1.5,1.3,0,0,-0.2,-11.1,,0.1,57260,High school diploma or equivalent,None,Apprenticeship
+47-2061,Construction laborers,Line item,1457,1563.4,0.9,0.9,106.5,7.3,26.9,129.4,46730,No formal educational credential,None,Short-term on-the-job training
+47-2070,Construction equipment operators,Summary,539.5,559,0.3,0.3,19.5,3.6,2.5,46.2,58320,—,—,—
+47-2071,"Paving, surfacing, and tamping equipment operators",Line item,47,48.6,0,0,1.5,3.2,2.7,4,51650,High school diploma or equivalent,None,Moderate-term on-the-job training
+47-2072,Pile driver operators,Line item,3.2,3.3,0,0,0.1,4.3,3,0.3,70510,High school diploma or equivalent,None,Moderate-term on-the-job training
+47-2073,Operating engineers and other construction equipment operators,Line item,489.3,507.1,0.3,0.3,17.8,3.6,2.5,41.9,58710,High school diploma or equivalent,None,Moderate-term on-the-job training
+47-2080,"Drywall installers, ceiling tile installers, and tapers",Summary,118.6,123,0.1,0.1,4.4,3.7,19.5,8.8,58800,—,—,—
+47-2081,Drywall and ceiling tile installers,Line item,103.1,107.4,0.1,0.1,4.3,4.2,19.5,7.7,58140,No formal educational credential,None,Moderate-term on-the-job training
+47-2082,Tapers,Line item,15.6,15.6,0,0,0,0.1,19.5,1.1,64700,No formal educational credential,None,Moderate-term on-the-job training
+47-2111,Electricians,Line item,818.7,896.1,0.5,0.5,77.4,9.5,7.8,81,62350,High school diploma or equivalent,None,Apprenticeship
+47-2121,Glaziers,Line item,60.5,62.5,0,0,2,3.3,7.1,5.1,55440,High school diploma or equivalent,None,Apprenticeship
+47-2130,Insulation workers,Summary,67.4,70.2,0,0,2.8,4.2,3.4,5.7,50730,—,—,—
+47-2131,"Insulation workers, floor, ceiling, and wall",Line item,40.2,41.7,0,0,1.5,3.8,3.5,3.4,48680,No formal educational credential,None,Short-term on-the-job training
+47-2132,"Insulation workers, mechanical",Line item,27.2,28.5,0,0,1.3,4.7,3.3,2.3,57250,High school diploma or equivalent,None,Apprenticeship
+47-2140,Painters and paperhangers,Summary,344.6,357.7,0.2,0.2,13.1,3.8,33.8,28.3,48660,—,—,—
+47-2141,"Painters, construction and maintenance",Line item,342.2,355.2,0.2,0.2,13,3.8,33.8,28.1,48660,No formal educational credential,None,Moderate-term on-the-job training
+47-2142,Paperhangers,Line item,2.3,2.5,0,0,0.1,5.3,34.8,0.2,48260,No formal educational credential,None,Long-term on-the-job training
+47-2150,"Pipelayers, plumbers, pipefitters, and steamfitters",Summary,538.9,560.1,0.3,0.3,21.3,3.9,7.3,46.4,62210,—,—,—
+47-2151,Pipelayers,Line item,34.4,32.9,0,0,-1.4,-4.1,,2.4,48710,No formal educational credential,None,Short-term on-the-job training
+47-2152,"Plumbers, pipefitters, and steamfitters",Line item,504.5,527.2,0.3,0.3,22.7,4.5,7.8,44,62970,High school diploma or equivalent,None,Apprenticeship
+47-2161,Plasterers and stucco masons,Line item,24.2,25.2,0,0,1,4.1,13.4,1.9,56020,No formal educational credential,None,Long-term on-the-job training
+47-2171,Reinforcing iron and rebar workers,Line item,19.4,20.3,0,0,0.9,4.6,27.7,1.5,59280,High school diploma or equivalent,None,Apprenticeship
+47-2181,Roofers,Line item,166.7,176.5,0.1,0.1,9.8,5.9,18.3,12.7,50970,No formal educational credential,None,Moderate-term on-the-job training
+47-2211,Sheet metal workers,Line item,127,130.1,0.1,0.1,3.1,2.4,6.5,10.6,60850,High school diploma or equivalent,None,Apprenticeship
+47-2221,Structural iron and steel workers,Line item,65.7,68.6,0,0,2.9,4.4,1.9,5.5,62700,High school diploma or equivalent,None,Apprenticeship
+47-2231,Solar photovoltaic installers,Line item,28.6,40.6,0,0,12,42.1,,4.1,51860,High school diploma or equivalent,None,Moderate-term on-the-job training
+47-3000,"Helpers, construction trades",Summary,192.1,195.5,0.1,0.1,3.4,1.8,1.8,20,40430,—,—,—
+47-3011,"Helpers--brickmasons, blockmasons, stonemasons, and tile and marble setters",Line item,16.1,14.4,0,0,-1.7,-10.5,1.8,1.4,46480,No formal educational credential,None,Short-term on-the-job training
+47-3012,Helpers--carpenters,Line item,25.2,26.4,0,0,1.1,4.5,1.8,2.7,41600,No formal educational credential,None,Short-term on-the-job training
+47-3013,Helpers--electricians,Line item,66.6,66.7,0,0,0.1,0.2,1.8,6.8,39890,High school diploma or equivalent,None,Short-term on-the-job training
+47-3014,"Helpers--painters, paperhangers, plasterers, and stucco masons",Line item,7.4,7.6,0,0,0.2,2.3,1.8,0.8,38140,No formal educational credential,None,Short-term on-the-job training
+47-3015,"Helpers--pipelayers, plumbers, pipefitters, and steamfitters",Line item,45.3,47.5,0,0,2.2,4.9,1.8,4.9,39270,High school diploma or equivalent,None,Short-term on-the-job training
+47-3016,Helpers--roofers,Line item,5.2,5.5,0,0,0.3,5.7,1.9,0.6,40590,No formal educational credential,None,Short-term on-the-job training
+47-3019,"Helpers, construction trades, all other",Line item,26.3,27.4,0,0,1.2,4.4,1.7,2.8,40760,No formal educational credential,None,Short-term on-the-job training
+47-4000,Other construction and related workers,Summary,489,499.4,0.3,0.3,10.4,2.1,2.5,43.5,56520,—,—,—
+47-4011,Construction and building inspectors,Line item,147.6,146.5,0.1,0.1,-1.2,-0.8,4.8,14.8,72120,High school diploma or equivalent,5 years or more,Moderate-term on-the-job training
+47-4021,Elevator and escalator installers and repairers,Line item,24.2,25.4,0,0,1.2,5,,2,106580,High school diploma or equivalent,None,Apprenticeship
+47-4031,Fence erectors,Line item,26.4,27.6,0,0,1.2,4.6,11.4,2.3,46940,No formal educational credential,None,Moderate-term on-the-job training
+47-4041,Hazardous materials removal workers,Line item,51.3,51.8,0,0,0.5,1,0.1,5,48490,High school diploma or equivalent,None,Moderate-term on-the-job training
+47-4051,Highway maintenance workers,Line item,159.1,163.9,0.1,0.1,4.8,3,,12.3,49070,High school diploma or equivalent,None,Moderate-term on-the-job training
+47-4061,Rail-track laying and maintenance equipment operators,Line item,15,15.3,0,0,0.2,1.6,,1.1,67370,High school diploma or equivalent,None,Moderate-term on-the-job training
+47-4071,Septic tank servicers and sewer pipe cleaners,Line item,30.4,32.7,0,0,2.3,7.6,2.8,2.9,49140,High school diploma or equivalent,None,Moderate-term on-the-job training
+47-4090,Miscellaneous construction and related workers,Line item,35,36.2,0,0,1.2,3.5,3.2,3.1,48120,High school diploma or equivalent,None,Moderate-term on-the-job training
+47-5000,Extraction workers,Summary,219.4,218.9,0.1,0.1,-0.6,-0.3,2.1,20.2,56020,—,—,—
+47-5010,"Derrick, rotary drill, and service unit operators, oil and gas",Summary,69.9,70.1,0,0,0.2,0.3,1.4,6.3,59660,—,—,—
+47-5011,"Derrick operators, oil and gas",Line item,11.3,11.3,0,0,0.1,0.5,1.4,1,62740,No formal educational credential,Less than 5 years,Short-term on-the-job training
+47-5012,"Rotary drill operators, oil and gas",Line item,13.3,13.4,0,0,0,0.2,1.4,1.2,65010,No formal educational credential,Less than 5 years,Moderate-term on-the-job training
+47-5013,"Service unit operators, oil and gas",Line item,45.2,45.4,0,0,0.2,0.4,1.4,4.1,57980,No formal educational credential,Less than 5 years,Moderate-term on-the-job training
+47-5020,Surface mining machine operators and earth drillers,Summary,54,54.4,0,0,0.4,0.7,3.3,4.7,56020,—,—,—
+47-5022,"Excavating and loading machine and dragline operators, surface mining",Line item,35.8,35.6,0,0,-0.1,-0.4,3.2,3.1,52550,High school diploma or equivalent,Less than 5 years,Moderate-term on-the-job training
+47-5023,"Earth drillers, except oil and gas",Line item,18.3,18.8,0,0,0.5,2.9,3.3,1.7,59600,High school diploma or equivalent,Less than 5 years,Long-term on-the-job training
+47-5032,"Explosives workers, ordnance handling experts, and blasters",Line item,5.8,5.8,0,0,-0.1,-0.9,,0.5,59110,High school diploma or equivalent,Less than 5 years,Long-term on-the-job training
+47-5040,Underground mining machine operators,Summary,27.2,24.9,0,0,-2.3,-8.6,2.8,2.6,66770,—,—,—
+47-5041,Continuous mining machine operators,Line item,14.9,15,0,0,0.1,0.6,2.8,1.6,63380,No formal educational credential,None,Moderate-term on-the-job training
+47-5043,"Roof bolters, mining",Line item,2.3,1.5,0,0,-0.8,-34.2,2.8,0.1,76640,High school diploma or equivalent,None,Moderate-term on-the-job training
+47-5044,"Loading and moving machine operators, underground mining",Line item,6.4,5,0,0,-1.4,-22.3,2.8,0.5,68860,No formal educational credential,None,Short-term on-the-job training
+47-5049,"Underground mining machine operators, all other",Line item,3.6,3.4,0,0,-0.2,-6.1,2.8,0.4,67220,No formal educational credential,None,Moderate-term on-the-job training
+47-5051,"Rock splitters, quarry",Line item,3.2,3.4,0,0,0.1,4.4,3.3,0.4,47460,No formal educational credential,None,Short-term on-the-job training
+47-5071,"Roustabouts, oil and gas",Line item,46,47.1,0,0,1.1,2.5,1.4,4.3,47510,No formal educational credential,None,Moderate-term on-the-job training
+47-5081,Helpers--extraction workers,Line item,7,6.9,0,0,-0.1,-1.7,3.3,0.7,48400,High school diploma or equivalent,None,Moderate-term on-the-job training
+47-5099,"Extraction workers, all other",Line item,6.3,6.4,0,0,0.1,1.4,3.3,0.7,50110,High school diploma or equivalent,None,Moderate-term on-the-job training
+49-0000,"Installation, maintenance, and repair occupations",Summary,6492.9,6794.3,3.8,3.9,301.4,4.6,4.6,608.1,58230,—,—,—
+49-1000,"Supervisors of installation, maintenance, and repair workers",Summary,617.5,636.5,0.4,0.4,19.1,3.1,0.3,52.4,78300,—,—,—
+49-1011,"First-line supervisors of mechanics, installers, and repairers",Line item,617.5,636.5,0.4,0.4,19.1,3.1,0.3,52.4,78300,High school diploma or equivalent,Less than 5 years,None
+49-2000,"Electrical and electronic equipment mechanics, installers, and repairers",Summary,498.5,504.9,0.3,0.3,6.4,1.3,3.1,45.4,60980,—,—,—
+49-2011,"Computer, automated teller, and office machine repairers",Line item,79.1,78.4,0,0,-0.7,-0.9,6.2,7.6,46860,"Some college, no degree",None,Short-term on-the-job training
+49-2020,Radio and telecommunications equipment installers and repairers,Summary,168.6,163.1,0.1,0.1,-5.5,-3.3,1.9,14.3,62710,—,—,—
+49-2021,"Radio, cellular, and tower equipment installers and repairers",Line item,11.7,12.7,0,0,1,8.6,1.7,1.2,64190,Associate's degree,None,Moderate-term on-the-job training
+49-2022,"Telecommunications equipment installers and repairers, except line installers",Line item,156.9,150.4,0.1,0.1,-6.6,-4.2,1.9,13.2,62630,Postsecondary nondegree award,None,Moderate-term on-the-job training
+49-2090,"Miscellaneous electrical and electronic equipment mechanics, installers, and repairers",Summary,250.8,263.5,0.1,0.2,12.7,5.1,2.8,23.4,63120,—,—,—
+49-2091,Avionics technicians,Line item,21.4,23.1,0,0,1.7,8.2,,1.8,81390,Postsecondary nondegree award,None,None
+49-2092,"Electric motor, power tool, and related repairers",Line item,17.1,17.7,0,0,0.6,3.4,1.8,1.7,53990,High school diploma or equivalent,Less than 5 years,Moderate-term on-the-job training
+49-2093,"Electrical and electronics installers and repairers, transportation equipment",Line item,7,7.4,0,0,0.4,6.1,,0.6,82730,Postsecondary nondegree award,None,Long-term on-the-job training
+49-2094,"Electrical and electronics repairers, commercial and industrial equipment",Line item,61.1,60.7,0,0,-0.5,-0.8,,4.7,71300,Postsecondary nondegree award,None,Long-term on-the-job training
+49-2095,"Electrical and electronics repairers, powerhouse, substation, and relay",Line item,23.4,24.7,0,0,1.3,5.5,,2,100940,Postsecondary nondegree award,Less than 5 years,Moderate-term on-the-job training
+49-2096,"Electronic equipment installers and repairers, motor vehicles",Line item,10.3,8.9,0,0,-1.4,-13.6,,0.6,47940,High school diploma or equivalent,None,Moderate-term on-the-job training
+49-2097,Audiovisual equipment installers and repairers,Line item,24.6,26.3,0,0,1.6,6.6,8.4,2.6,50620,Postsecondary nondegree award,None,Short-term on-the-job training
+49-2098,Security and fire alarm systems installers,Line item,85.9,94.9,0.1,0.1,8.9,10.4,5.5,9.4,59300,High school diploma or equivalent,None,Moderate-term on-the-job training
+49-3000,"Vehicle and mobile equipment mechanics, installers, and repairers",Summary,1927.6,2005.5,1.1,1.1,77.9,4,9,172.9,56220,—,—,—
+49-3011,Aircraft mechanics and service technicians,Line item,139.4,145,0.1,0.1,5.6,4,,11.3,78680,Postsecondary nondegree award,None,None
+49-3020,Automotive technicians and repairers,Summary,998.6,1035.7,0.6,0.6,37.1,3.7,13,86,49950,—,—,—
+49-3021,Automotive body and related repairers,Line item,172.6,175.4,0.1,0.1,2.8,1.6,9.9,14.6,51680,High school diploma or equivalent,None,Long-term on-the-job training
+49-3022,Automotive glass installers and repairers,Line item,20.4,21.1,0,0,0.7,3.6,7.2,1.4,47260,High school diploma or equivalent,None,Moderate-term on-the-job training
+49-3023,Automotive service technicians and mechanics,Line item,805.6,839.2,0.5,0.5,33.6,4.2,13.8,70,49670,Postsecondary nondegree award,None,Short-term on-the-job training
+49-3031,Bus and truck mechanics and diesel engine specialists,Line item,319.9,327.7,0.2,0.2,7.8,2.4,6.8,26.5,60640,High school diploma or equivalent,None,Long-term on-the-job training
+49-3040,Heavy vehicle and mobile equipment service technicians and mechanics,Summary,245.6,261.3,0.1,0.1,15.7,6.4,3.2,21.7,62740,—,—,—
+49-3041,Farm equipment mechanics and service technicians,Line item,39,43.3,0,0,4.3,11,3.4,3.7,52080,High school diploma or equivalent,None,Long-term on-the-job training
+49-3042,"Mobile heavy equipment mechanics, except engines",Line item,188.7,199.6,0.1,0.1,10.9,5.8,3.2,16.5,63980,High school diploma or equivalent,None,Long-term on-the-job training
+49-3043,Rail car repairers,Line item,17.9,18.4,0,0,0.5,2.8,3.3,1.5,65680,High school diploma or equivalent,None,Long-term on-the-job training
+49-3050,Small engine mechanics,Summary,78,81.3,0,0,3.3,4.2,7.8,7.6,48240,—,—,—
+49-3051,Motorboat mechanics and service technicians,Line item,26.2,27.8,0,0,1.6,6,7.9,2.6,54950,High school diploma or equivalent,None,Long-term on-the-job training
+49-3052,Motorcycle mechanics,Line item,14.9,15.7,0,0,0.8,5.3,8,1.5,47200,Postsecondary nondegree award,None,Short-term on-the-job training
+49-3053,Outdoor power equipment and other small engine mechanics,Line item,36.9,37.8,0,0,0.9,2.5,7.6,3.5,46560,High school diploma or equivalent,None,Moderate-term on-the-job training
+49-3090,"Miscellaneous vehicle and mobile equipment mechanics, installers, and repairers",Summary,146.2,154.6,0.1,0.1,8.4,5.8,5,19.7,37960,—,—,—
+49-3091,Bicycle repairers,Line item,13.2,12.9,0,0,-0.3,-2.3,5,1.6,40360,High school diploma or equivalent,None,Moderate-term on-the-job training
+49-3092,Recreational vehicle service technicians,Line item,19.5,21.7,0,0,2.2,11.5,5.1,2.8,50540,High school diploma or equivalent,None,Long-term on-the-job training
+49-3093,Tire repairers and changers,Line item,113.4,119.9,0.1,0.1,6.5,5.7,5,15.3,37120,High school diploma or equivalent,None,Short-term on-the-job training
+49-9000,"Other installation, maintenance, and repair occupations",Summary,3449.3,3647.3,2,2.1,198.1,5.7,3.1,337.4,54790,—,—,—
+49-9010,Control and valve installers and repairers,Summary,76.1,80,0,0,3.9,5.1,,6.6,61600,—,—,—
+49-9011,Mechanical door repairers,Line item,28.4,31.7,0,0,3.2,11.4,,2.7,51050,High school diploma or equivalent,None,Moderate-term on-the-job training
+49-9012,"Control and valve installers and repairers, except mechanical door",Line item,47.7,48.3,0,0,0.6,1.3,,3.9,74690,High school diploma or equivalent,None,Moderate-term on-the-job training
+49-9021,"Heating, air conditioning, and refrigeration mechanics and installers",Line item,425.2,459.7,0.3,0.3,34.5,8.1,4.8,40.1,59810,Postsecondary nondegree award,None,Long-term on-the-job training
+49-9031,Home appliance repairers,Line item,37.3,38.3,0,0,1,2.6,14.7,3.1,49410,High school diploma or equivalent,None,Moderate-term on-the-job training
+49-9040,"Industrial machinery installation, repair, and maintenance workers",Summary,539.4,608.4,0.3,0.3,69,12.8,1.4,54.2,63500,—,—,—
+49-9041,Industrial machinery mechanics,Line item,439.6,510.3,0.3,0.3,70.7,16.1,1.7,45.7,63760,High school diploma or equivalent,None,Long-term on-the-job training
+49-9043,"Maintenance workers, machinery",Line item,57.5,55.9,0,0,-1.6,-2.8,,4.8,60500,High school diploma or equivalent,None,Long-term on-the-job training
+49-9044,Millwrights,Line item,41.3,41.3,0,0,0,0,,3.6,65170,High school diploma or equivalent,None,Apprenticeship
+49-9045,"Refractory materials repairers, except brickmasons",Line item,1.1,0.9,0,0,-0.2,-16.9,,0.1,58540,High school diploma or equivalent,None,Moderate-term on-the-job training
+49-9050,Line installers and repairers,Summary,227.3,232.6,0.1,0.1,5.4,2.4,1.4,19.6,81110,—,—,—
+49-9051,Electrical power-line installers and repairers,Line item,127.4,135.8,0.1,0.1,8.4,6.6,1.4,10.7,92560,High school diploma or equivalent,None,Long-term on-the-job training
+49-9052,Telecommunications line installers and repairers,Line item,99.9,96.8,0.1,0.1,-3.1,-3.1,1.3,8.9,70500,High school diploma or equivalent,None,Long-term on-the-job training
+49-9060,Precision instrument and equipment repairers,Summary,88.7,97.5,0.1,0.1,8.7,9.8,9.2,9.1,61430,—,—,—
+49-9061,Camera and photographic equipment repairers,Line item,2.3,1.9,0,0,-0.3,-15.1,8.7,0.2,49300,High school diploma or equivalent,None,Long-term on-the-job training
+49-9062,Medical equipment repairers,Line item,68,76.8,0,0,8.8,12.9,9.4,7.3,62630,Associate's degree,None,Moderate-term on-the-job training
+49-9063,Musical instrument repairers and tuners,Line item,6.2,6.3,0,0,0.1,1.4,9.8,0.6,45320,High school diploma or equivalent,None,Apprenticeship
+49-9064,Watch and clock repairers,Line item,1.4,1.4,0,0,0,-1.1,9.8,0.1,60690,High school diploma or equivalent,None,Long-term on-the-job training
+49-9069,"Precision instrument and equipment repairers, all other",Line item,10.8,11,0,0,0.2,2,7.7,1,67080,High school diploma or equivalent,None,Long-term on-the-job training
+49-9071,"Maintenance and repair workers, general",Line item,1629.7,1692.1,1,1,62.4,3.8,1.1,159.8,48620,High school diploma or equivalent,None,Moderate-term on-the-job training
+49-9081,Wind turbine service technicians,Line item,13.6,20.5,0,0,6.8,49.9,16.7,2.3,62580,Postsecondary nondegree award,None,Long-term on-the-job training
+49-9090,"Miscellaneous installation, maintenance, and repair workers",Summary,411.8,418.4,0.2,0.2,6.6,1.6,10.5,42.6,46970,—,—,—
+49-9091,"Coin, vending, and amusement machine servicers and repairers",Line item,32.5,31.6,0,0,-0.9,-2.9,11.5,3.5,47350,High school diploma or equivalent,None,Short-term on-the-job training
+49-9092,Commercial divers,Line item,4.2,4.5,0,0,0.4,8.5,16.6,0.4,61130,Postsecondary nondegree award,None,Moderate-term on-the-job training
+49-9094,Locksmiths and safe repairers,Line item,18.8,17.2,0,0,-1.6,-8.3,16.2,1.7,50490,High school diploma or equivalent,None,Long-term on-the-job training
+49-9095,Manufactured building and mobile home installers,Line item,3.1,3.3,0,0,0.2,5.9,17,0.3,41080,High school diploma or equivalent,None,Short-term on-the-job training
+49-9096,Riggers,Line item,24.6,25.4,0,0,0.8,3.2,,2.5,62060,High school diploma or equivalent,None,Moderate-term on-the-job training
+49-9097,Signal and track switch repairers,Line item,8.7,8.8,0,0,0.1,1.7,15.3,0.8,83600,High school diploma or equivalent,None,Moderate-term on-the-job training
+49-9098,"Helpers--installation, maintenance, and repair workers",Line item,98.7,101,0.1,0.1,2.2,2.3,,11.8,38860,High school diploma or equivalent,None,Short-term on-the-job training
+49-9099,"Installation, maintenance, and repair workers, all other",Line item,221.2,226.5,0.1,0.1,5.4,2.4,15.4,21.5,48640,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-0000,Production occupations,Summary,9001.2,8901.6,5.3,5.1,-99.6,-1.1,2.5,963.4,45960,—,—,—
+51-1000,Supervisors of production workers,Summary,698.6,706.9,0.4,0.4,8.3,1.2,1.2,67.7,71190,—,—,—
+51-1011,First-line supervisors of production and operating workers,Line item,698.6,706.9,0.4,0.4,8.3,1.2,1.2,67.7,71190,High school diploma or equivalent,Less than 5 years,None
+51-2000,Assemblers and fabricators,Summary,1885.4,1874.2,1.1,1.1,-11.2,-0.6,0.6,198.8,43570,—,—,—
+51-2011,"Aircraft structure, surfaces, rigging, and systems assemblers",Line item,33.6,28.7,0,0,-4.9,-14.5,0.7,2.8,61680,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-2020,"Electrical, electronics, and electromechanical assemblers",Summary,273.6,284.7,0.2,0.2,11.1,4.1,,30.7,44210,—,—,—
+51-2021,"Coil winders, tapers, and finishers",Line item,12.2,11.5,0,0,-0.8,-6.3,,1.2,47260,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-2028,"Electrical, electronic, and electromechanical assemblers, except coil winders, tapers, and finishers",Line item,261.4,273.3,0.2,0.2,11.9,4.6,,29.6,44040,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-2031,Engine and other machine assemblers,Line item,38.4,30.3,0,0,-8.1,-21.1,,2.8,52540,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-2041,Structural metal fabricators and fitters,Line item,53.8,45,0,0,-8.8,-16.3,0.8,4.1,49900,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-2051,Fiberglass laminators and fabricators,Line item,18.6,19.4,0,0,0.8,4.2,0.7,2.1,45760,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-2061,Timing device assemblers and adjusters,Line item,0.2,0.2,0,0,0,-17.5,,0,40790,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-2090,Miscellaneous assemblers and fabricators,Line item,1467.1,1465.9,0.9,0.8,-1.3,-0.1,0.7,156.3,42210,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-3000,Food processing workers,Summary,891.3,931.6,0.5,0.5,40.4,4.5,3.1,121,38200,—,—,—
+51-3011,Bakers,Line item,249.1,263.2,0.1,0.2,14,5.6,6.2,39.9,36650,No formal educational credential,None,Moderate-term on-the-job training
+51-3020,"Butchers and other meat, poultry, and fish processing workers",Summary,359.5,370.5,0.2,0.2,11,3.1,1.8,43.6,38500,—,—,—
+51-3021,Butchers and meat cutters,Line item,143.1,144.5,0.1,0.1,1.4,1,1.8,16.9,38960,No formal educational credential,None,Long-term on-the-job training
+51-3022,"Meat, poultry, and fish cutters and trimmers",Line item,146.8,154.9,0.1,0.1,8.1,5.5,1.8,18.4,37700,No formal educational credential,None,Short-term on-the-job training
+51-3023,Slaughterers and meat packers,Line item,69.6,71.2,0,0,1.5,2.2,1.8,8.4,39790,No formal educational credential,None,Short-term on-the-job training
+51-3090,Miscellaneous food processing workers,Summary,282.6,297.9,0.2,0.2,15.3,5.4,2,37.5,40050,—,—,—
+51-3091,"Food and tobacco roasting, baking, and drying machine operators and tenders",Line item,20.7,20.8,0,0,0.1,0.6,8.8,2.4,42730,No formal educational credential,None,Moderate-term on-the-job training
+51-3092,Food batchmakers,Line item,173.5,185.4,0.1,0.1,11.9,6.9,0.6,24.2,40790,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-3093,Food cooking machine operators and tenders,Line item,29.7,29.9,0,0,0.2,0.6,6.2,4.4,40550,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-3099,"Food processing workers, all other",Line item,58.7,61.8,0,0,3.1,5.3,1.7,6.5,38420,No formal educational credential,None,Moderate-term on-the-job training
+51-4000,Metal workers and plastic workers,Summary,1639.4,1581.5,1,0.9,-57.9,-3.5,2.1,153.8,48660,—,—,—
+51-4020,"Forming machine setters, operators, and tenders, metal and plastic",Summary,97.3,94.5,0.1,0.1,-2.7,-2.8,,9,47460,—,—,—
+51-4021,"Extruding and drawing machine setters, operators, and tenders, metal and plastic",Line item,66,66.8,0,0,0.8,1.2,,6.5,46980,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4022,"Forging machine setters, operators, and tenders, metal and plastic",Line item,8.8,7.2,0,0,-1.7,-18.9,,0.6,49240,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4023,"Rolling machine setters, operators, and tenders, metal and plastic",Line item,22.5,20.6,0,0,-1.9,-8.3,,1.9,48630,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4030,"Machine tool cutting setters, operators, and tenders, metal and plastic",Summary,282.9,247.7,0.2,0.1,-35.2,-12.4,,22.9,45870,—,—,—
+51-4031,"Cutting, punching, and press machine setters, operators, and tenders, metal and plastic",Line item,174.7,153.6,0.1,0.1,-21.1,-12.1,,14.4,45590,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4032,"Drilling and boring machine tool setters, operators, and tenders, metal and plastic",Line item,5.3,4.3,0,0,-1,-19.6,,0.4,46630,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4033,"Grinding, lapping, polishing, and buffing machine tool setters, operators, and tenders, metal and plastic",Line item,70.1,61.7,0,0,-8.4,-12,,5.5,45190,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4034,"Lathe and turning machine tool setters, operators, and tenders, metal and plastic",Line item,18.9,16.4,0,0,-2.6,-13.6,,1.5,48620,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4035,"Milling and planing machine setters, operators, and tenders, metal and plastic",Line item,13.8,11.8,0,0,-2,-14.4,,1.1,48310,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4041,Machinists,Line item,299.5,299.6,0.2,0.2,0,0,0.3,29.5,56150,High school diploma or equivalent,None,Long-term on-the-job training
+51-4050,"Metal furnace operators, tenders, pourers, and casters",Summary,26.7,26,0,0,-0.8,-2.8,1.2,2.6,54100,—,—,—
+51-4051,Metal-refining furnace operators and tenders,Line item,20.8,20.3,0,0,-0.5,-2.3,1.2,2,55770,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4052,"Pourers and casters, metal",Line item,5.9,5.7,0,0,-0.3,-4.7,1.2,0.6,48940,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4060,"Model makers and patternmakers, metal and plastic",Summary,4.8,3.8,0,0,-1,-20.3,,0.4,59530,—,—,—
+51-4061,"Model makers, metal and plastic",Line item,3.2,2.6,0,0,-0.6,-18.2,,0.3,62700,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4062,"Patternmakers, metal and plastic",Line item,1.6,1.2,0,0,-0.4,-24.4,,0.1,54540,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4070,"Molders and molding machine setters, operators, and tenders, metal and plastic",Summary,167.3,158.2,0.1,0.1,-9.1,-5.5,,16.8,41890,—,—,—
+51-4071,Foundry mold and coremakers,Line item,12.7,9.4,0,0,-3.3,-25.9,,0.9,45700,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4072,"Molding, coremaking, and casting machine setters, operators, and tenders, metal and plastic",Line item,154.6,148.8,0.1,0.1,-5.8,-3.8,,15.9,41230,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4081,"Multiple machine tool setters, operators, and tenders, metal and plastic",Line item,131,130.3,0.1,0.1,-0.7,-0.5,1.1,12.8,46060,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4111,Tool and die makers,Line item,55.2,49.3,0,0,-6,-10.8,,4.7,63180,Postsecondary nondegree award,None,Long-term on-the-job training
+51-4120,"Welding, soldering, and brazing workers",Summary,496.2,502.5,0.3,0.3,6.4,1.3,6.3,48.8,50560,—,—,—
+51-4121,"Welders, cutters, solderers, and brazers",Line item,457.3,467.2,0.3,0.3,9.9,2.2,6.3,45.6,51000,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4122,"Welding, soldering, and brazing machine setters, operators, and tenders",Line item,38.9,35.4,0,0,-3.5,-9,6.4,3.2,47060,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4190,Miscellaneous metal workers and plastic workers,Summary,78.4,69.5,0,0,-8.9,-11.4,1,6.4,45050,—,—,—
+51-4191,"Heat treating equipment setters, operators, and tenders, metal and plastic",Line item,14.8,12.9,0,0,-1.9,-12.8,1,1.2,47450,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4192,"Layout workers, metal and plastic",Line item,5.7,5.4,0,0,-0.3,-5.4,,0.5,61870,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4193,"Plating machine setters, operators, and tenders, metal and plastic",Line item,31.7,27.4,0,0,-4.3,-13.6,1,2.5,41600,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4194,"Tool grinders, filers, and sharpeners",Line item,5.8,5.4,0,0,-0.5,-7.8,1,0.5,48970,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-4199,"Metal workers and plastic workers, all other",Line item,20.4,18.5,0,0,-1.9,-9.5,1,1.7,42750,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-5100,Printing workers,Summary,212.1,190.4,0.1,0.1,-21.8,-10.3,4.5,19.3,44830,—,—,—
+51-5111,Prepress technicians and workers,Line item,26.2,22.3,0,0,-3.8,-14.6,12.9,2.8,47300,Postsecondary nondegree award,None,None
+51-5112,Printing press operators,Line item,150.2,138,0.1,0.1,-12.2,-8.1,4.2,13.7,45160,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-5113,Print binding and finishing workers,Line item,35.8,30,0,0,-5.8,-16.1,,2.8,39820,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-6000,"Textile, apparel, and furnishings workers",Summary,520.7,504.2,0.3,0.3,-16.5,-3.2,9.6,66.8,35580,—,—,—
+51-6011,Laundry and dry-cleaning workers,Line item,202.6,213.5,0.1,0.1,10.9,5.4,2.3,31.9,33800,No formal educational credential,None,Short-term on-the-job training
+51-6021,"Pressers, textile, garment, and related materials",Line item,28.4,24.6,0,0,-3.8,-13.5,,2.8,33880,No formal educational credential,None,Short-term on-the-job training
+51-6031,Sewing machine operators,Line item,124,110.7,0.1,0.1,-13.3,-10.8,11.2,13,36000,No formal educational credential,None,Short-term on-the-job training
+51-6040,Shoe and leather workers,Summary,13.6,13.1,0,0,-0.5,-3.8,19.1,1.3,36460,—,—,—
+51-6041,Shoe and leather workers and repairers,Line item,9.5,9.1,0,0,-0.4,-3.8,19.1,0.9,35950,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-6042,Shoe machine operators and tenders,Line item,4.1,3.9,0,0,-0.2,-3.7,19,0.4,38160,High school diploma or equivalent,None,Short-term on-the-job training
+51-6050,"Tailors, dressmakers, and sewers",Summary,44.2,42.1,0,0,-2.1,-4.8,57.4,5.6,39590,—,—,—
+51-6051,"Sewers, hand",Line item,5.4,5,0,0,-0.4,-7,57.2,0.7,33760,No formal educational credential,None,Moderate-term on-the-job training
+51-6052,"Tailors, dressmakers, and custom sewers",Line item,38.8,37.1,0,0,-1.7,-4.5,57.4,5,40860,No formal educational credential,None,Moderate-term on-the-job training
+51-6060,"Textile machine setters, operators, and tenders",Summary,52.5,47.1,0,0,-5.4,-10.2,2.4,5.9,37800,—,—,—
+51-6061,Textile bleaching and dyeing machine operators and tenders,Line item,6.2,5.5,0,0,-0.6,-10.1,2.4,0.7,37320,High school diploma or equivalent,None,Short-term on-the-job training
+51-6062,"Textile cutting machine setters, operators, and tenders",Line item,9.3,8.2,0,0,-1.1,-11.7,2.4,1,37940,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-6063,"Textile knitting and weaving machine setters, operators, and tenders",Line item,15.3,13.6,0,0,-1.7,-11.2,2.4,1.7,38260,High school diploma or equivalent,None,Short-term on-the-job training
+51-6064,"Textile winding, twisting, and drawing out machine setters, operators, and tenders",Line item,21.7,19.8,0,0,-1.9,-9,2.4,2.5,37660,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-6090,"Miscellaneous textile, apparel, and furnishings workers",Summary,55.4,53.1,0,0,-2.2,-4,3.8,6.3,43670,—,—,—
+51-6091,"Extruding and forming machine setters, operators, and tenders, synthetic and glass fibers",Line item,15.2,15,0,0,-0.2,-1.1,,2,44980,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-6092,Fabric and apparel patternmakers,Line item,2.8,2.5,0,0,-0.3,-10.2,,0.3,67670,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-6093,Upholsterers,Line item,22.7,22.3,0,0,-0.4,-1.8,9.2,2.2,46190,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-6099,"Textile, apparel, and furnishings workers, all other",Line item,14.7,13.3,0,0,-1.4,-9.4,,1.7,37010,High school diploma or equivalent,None,Short-term on-the-job training
+51-7000,Woodworkers,Summary,233.5,229.3,0.1,0.1,-4.3,-1.8,11.7,23.3,43640,—,—,—
+51-7011,Cabinetmakers and bench carpenters,Line item,86,84.7,0.1,0,-1.4,-1.6,9,8.1,46020,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-7021,Furniture finishers,Line item,20.5,19.8,0,0,-0.7,-3.3,32,2,42530,High school diploma or equivalent,None,Short-term on-the-job training
+51-7030,"Model makers and patternmakers, wood",Summary,1.4,1.3,0,0,-0.1,-4.6,57.9,0.1,51920,—,—,—
+51-7031,"Model makers, wood",Line item,0.9,0.9,0,0,0,-4.5,57.8,0.1,51850,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-7032,"Patternmakers, wood",Line item,0.5,0.4,0,0,0,-5,58.1,0,52520,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-7040,"Woodworking machine setters, operators, and tenders",Summary,108,106.6,0.1,0.1,-1.4,-1.3,1.6,11.2,40300,—,—,—
+51-7041,"Sawing machine setters, operators, and tenders, wood",Line item,45,44.7,0,0,-0.3,-0.6,3.8,4.8,39950,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-7042,"Woodworking machine setters, operators, and tenders, except sawing",Line item,63.1,61.9,0,0,-1.1,-1.8,,6.4,40440,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-7099,"Woodworkers, all other",Line item,17.6,16.8,0,0,-0.8,-4.4,59.5,1.8,41220,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-8000,Plant and system operators,Summary,297.9,282,0.2,0.2,-15.9,-5.3,0.8,25.8,70740,—,—,—
+51-8010,"Power plant operators, distributors, and dispatchers",Summary,46.6,41.9,0,0,-4.7,-10.1,,3.8,103600,—,—,—
+51-8011,Nuclear power reactor operators,Line item,5.7,4.9,0,0,-0.9,-15.3,,0.4,122610,High school diploma or equivalent,None,Long-term on-the-job training
+51-8012,Power distributors and dispatchers,Line item,9.3,9,0,0,-0.3,-3.2,,0.8,107240,High school diploma or equivalent,None,Long-term on-the-job training
+51-8013,Power plant operators,Line item,31.6,28,0,0,-3.5,-11.2,,2.5,99670,High school diploma or equivalent,None,Long-term on-the-job training
+51-8021,Stationary engineers and boiler operators,Line item,33.3,34,0,0,0.7,2.2,3.1,3.8,75190,High school diploma or equivalent,None,Long-term on-the-job training
+51-8031,Water and wastewater treatment plant and system operators,Line item,132.4,123.8,0.1,0.1,-8.7,-6.5,1.1,10.7,58260,High school diploma or equivalent,None,Long-term on-the-job training
+51-8090,Miscellaneous plant and system operators,Summary,85.6,82.3,0.1,0,-3.2,-3.8,,7.6,81930,—,—,—
+51-8091,Chemical plant and system operators,Line item,18.1,17,0,0,-1.1,-6.1,,1.6,73540,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-8092,Gas plant operators,Line item,16.2,14.8,0,0,-1.4,-8.8,,1.3,83400,High school diploma or equivalent,None,Long-term on-the-job training
+51-8093,"Petroleum pump system operators, refinery operators, and gaugers",Line item,34.9,34,0,0,-1,-2.8,,3.2,97540,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-8099,"Plant and system operators, all other",Line item,16.3,16.6,0,0,0.3,1.6,,1.6,61710,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9000,Other production occupations,Summary,2622.3,2601.5,1.5,1.5,-20.8,-0.8,2.1,286.9,45970,—,—,—
+51-9010,"Chemical processing machine setters, operators, and tenders",Summary,183.2,185.2,0.1,0.1,1.9,1,0.4,19.8,54110,—,—,—
+51-9011,Chemical equipment operators and tenders,Line item,128.9,133.1,0.1,0.1,4.3,3.3,0.4,14.4,57090,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9012,"Separating, filtering, clarifying, precipitating, and still machine setters, operators, and tenders",Line item,54.4,52,0,0,-2.3,-4.3,0.4,5.4,49500,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9020,"Crushing, grinding, polishing, mixing, and blending workers",Summary,141.5,131.5,0.1,0.1,-10.1,-7.1,,12.3,47110,—,—,—
+51-9021,"Crushing, grinding, and polishing machine setters, operators, and tenders",Line item,28.7,27.9,0,0,-0.7,-2.5,,2.7,46890,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9022,"Grinding and polishing workers, hand",Line item,11.8,9.3,0,0,-2.5,-21.2,,0.8,41690,No formal educational credential,None,Moderate-term on-the-job training
+51-9023,"Mixing and blending machine setters, operators, and tenders",Line item,101.1,94.3,0.1,0.1,-6.8,-6.8,,8.8,47680,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9030,Cutting workers,Summary,56,53.6,0,0,-2.4,-4.3,3.3,5.9,45140,—,—,—
+51-9031,"Cutters and trimmers, hand",Line item,7,5.7,0,0,-1.3,-18.1,3.4,0.6,38800,No formal educational credential,None,Short-term on-the-job training
+51-9032,"Cutting and slicing machine setters, operators, and tenders",Line item,49,47.9,0,0,-1.1,-2.3,3.3,5.3,45700,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9041,"Extruding, forming, pressing, and compacting machine setters, operators, and tenders",Line item,57.3,58.4,0,0,1.1,2,,5.2,45130,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9051,"Furnace, kiln, oven, drier, and kettle operators and tenders",Line item,16.5,17,0,0,0.5,3,1.5,1.9,47010,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9061,"Inspectors, testers, sorters, samplers, and weighers",Line item,598,598.1,0.4,0.3,0.1,0,1.4,69.9,47460,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9071,Jewelers and precious stone and metal workers,Line item,35.1,33.2,0,0,-1.9,-5.5,33.9,4,49140,High school diploma or equivalent,None,Long-term on-the-job training
+51-9080,Dental and ophthalmic laboratory technicians and medical appliance technicians,Summary,66.8,66,0,0,-0.7,-1.1,4,7.7,45820,—,—,—
+51-9081,Dental laboratory technicians,Line item,35.2,33.6,0,0,-1.6,-4.7,4,3.9,48310,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9082,Medical appliance technicians,Line item,12,12.4,0,0,0.4,3.7,4,1.5,47060,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9083,Ophthalmic laboratory technicians,Line item,19.6,20,0,0,0.5,2.3,4,2.4,38420,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9111,Packaging and filling machine operators and tenders,Line item,381.2,398.2,0.2,0.2,17,4.5,,45.3,40900,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9120,Painting workers,Summary,174.3,175.6,0.1,0.1,1.3,0.7,3.6,16.7,47390,—,—,—
+51-9123,"Painting, coating, and decorating workers",Line item,8.8,8.9,0,0,0.1,1.4,3.5,0.8,40860,No formal educational credential,None,Moderate-term on-the-job training
+51-9124,"Coating, painting, and spraying machine setters, operators, and tenders",Line item,165.5,166.7,0.1,0.1,1.2,0.7,3.6,15.8,47590,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9141,Semiconductor processing technicians,Line item,31.9,35.4,0,0,3.5,10.9,,3.9,51180,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9151,Photographic process workers and processing machine operators,Line item,11.2,10.9,0,0,-0.3,-2.6,39,1.5,40100,High school diploma or equivalent,None,Short-term on-the-job training
+51-9160,Computer numerically controlled tool operators and programmers,Summary,205.4,190,0.1,0.1,-15.4,-7.5,0.2,16.6,51330,—,—,—
+51-9161,Computer numerically controlled tool operators,Line item,177.1,158.1,0.1,0.1,-19,-10.7,0.2,13.5,49970,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9162,Computer numerically controlled tool programmers,Line item,28.3,31.9,0,0,3.6,12.8,,3.1,65670,Postsecondary nondegree award,None,Moderate-term on-the-job training
+51-9190,Miscellaneous production workers,Summary,663.9,648.4,0.4,0.4,-15.4,-2.3,2.9,76,40960,—,—,—
+51-9191,Adhesive bonding machine operators and tenders,Line item,12.2,12.3,0,0,0.1,1,,1.3,45210,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9192,"Cleaning, washing, and metal pickling equipment operators and tenders",Line item,14.6,15.2,0,0,0.5,3.6,3.7,1.6,41460,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9193,Cooling and freezing equipment operators and tenders,Line item,7.1,7.6,0,0,0.5,7.2,3.7,0.8,40160,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9194,Etchers and engravers,Line item,8.6,8.6,0,0,-0.1,-0.7,3.2,0.9,40450,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9195,"Molders, shapers, and casters, except metal and plastic",Line item,41.7,44.3,0,0,2.6,6.2,14.2,5.5,45690,High school diploma or equivalent,None,Long-term on-the-job training
+51-9196,"Paper goods machine setters, operators, and tenders",Line item,97.5,91.4,0.1,0.1,-6.1,-6.3,1.2,8.1,49390,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9197,Tire builders,Line item,20.9,21.4,0,0,0.5,2.3,,2.5,55580,High school diploma or equivalent,None,Moderate-term on-the-job training
+51-9198,Helpers--production workers,Line item,168.5,153.5,0.1,0.1,-15,-8.9,0.1,23.6,38220,High school diploma or equivalent,None,Short-term on-the-job training
+51-9199,"Production workers, all other",Line item,292.8,294.3,0.2,0.2,1.5,0.5,3.7,31.6,38820,High school diploma or equivalent,None,Moderate-term on-the-job training
+53-0000,Transportation and material moving occupations,Summary,14204.6,14784.4,8.4,8.4,579.9,4.1,4.2,1830,42740,—,—,—
+53-1000,Supervisors of transportation and material moving workers,Summary,619.9,643,0.4,0.4,23.1,3.7,0.8,62.4,61900,—,—,—
+53-1041,Aircraft cargo handling supervisors,Line item,10.3,10.8,0,0,0.5,5.2,0.8,1.1,63940,High school diploma or equivalent,Less than 5 years,None
+53-1047,"First-line supervisors of transportation and material moving workers, except aircraft cargo handling supervisors",Line item,609.6,632.2,0.4,0.4,22.5,3.7,0.8,61.3,61890,High school diploma or equivalent,Less than 5 years,None
+53-2000,Air transportation workers,Summary,327.3,347,0.2,0.2,19.8,6,0.6,41.8,106500,—,—,—
+53-2010,Aircraft pilots and flight engineers,Summary,155.4,162.2,0.1,0.1,6.7,4.3,1.3,18.2,198100,—,—,—
+53-2011,"Airline pilots, copilots, and flight engineers",Line item,100,103.9,0.1,0.1,3.9,3.9,,11.7,226600,Bachelor's degree,Less than 5 years,Moderate-term on-the-job training
+53-2012,Commercial pilots,Line item,55.4,58.3,0,0,2.8,5.1,3.7,6.6,122670,Postsecondary nondegree award,None,Moderate-term on-the-job training
+53-2020,Air traffic controllers and airfield operations specialists,Summary,41,42,0,0,1,2.5,,3.8,98920,—,—,—
+53-2021,Air traffic controllers,Line item,24.1,24.4,0,0,0.3,1.2,,2.2,144580,Associate's degree,None,Long-term on-the-job training
+53-2022,Airfield operations specialists,Line item,16.9,17.6,0,0,0.7,4.2,,1.6,56750,High school diploma or equivalent,None,Long-term on-the-job training
+53-2031,Flight attendants,Line item,130.8,142.9,0.1,0.1,12.1,9.2,,19.8,67130,High school diploma or equivalent,Less than 5 years,Moderate-term on-the-job training
+53-3000,Motor vehicle operators,Summary,4852,5111.1,2.9,2.9,259.1,5.3,10,562.2,48660,—,—,—
+53-3011,"Ambulance drivers and attendants, except emergency medical technicians",Line item,12.3,12.1,0,0,-0.2,-1.3,,1.4,34330,High school diploma or equivalent,None,Moderate-term on-the-job training
+53-3030,Driver/sales workers and truck drivers,Summary,3766.5,3974.4,2.2,2.3,208,5.5,6.9,409.1,49550,—,—,—
+53-3031,Driver/sales workers,Line item,451.5,491.3,0.3,0.3,39.8,8.8,6.9,51.3,37130,High school diploma or equivalent,None,Short-term on-the-job training
+53-3032,Heavy and tractor-trailer truck drivers,Line item,2235.1,2324.4,1.3,1.3,89.3,4,6.9,237.6,57440,Postsecondary nondegree award,None,Short-term on-the-job training
+53-3033,Light truck drivers,Line item,1079.8,1158.6,0.6,0.7,78.9,7.3,6.8,120.2,44140,High school diploma or equivalent,None,Short-term on-the-job training
+53-3050,Passenger vehicle drivers,Summary,994,1040.6,0.6,0.6,46.6,4.7,20,140.6,45530,—,—,—
+53-3051,"Bus drivers, school",Line item,387.3,388.2,0.2,0.2,0.9,0.2,0.4,61,47040,High school diploma or equivalent,None,Short-term on-the-job training
+53-3052,"Bus drivers, transit and intercity",Line item,158.8,165.6,0.1,0.1,6.8,4.3,1.8,20.9,57440,High school diploma or equivalent,None,Moderate-term on-the-job training
+53-3053,Shuttle drivers and chauffeurs,Line item,243.9,260.3,0.1,0.1,16.4,6.7,3.1,36.3,36670,No formal educational credential,None,Short-term on-the-job training
+53-3054,Taxi drivers,Line item,204,226.6,0.1,0.1,22.6,11.1,91.5,22.6,36220,No formal educational credential,None,Short-term on-the-job training
+53-3099,"Motor vehicle operators, all other",Line item,79.3,84,0,0,4.7,6,34.8,11.1,36260,No formal educational credential,None,Short-term on-the-job training
+53-4000,Rail transportation workers,Summary,89.1,90.2,0.1,0.1,1.1,1.2,,7.7,75990,—,—,—
+53-4010,Locomotive engineers and operators,Summary,30.1,30.3,0,0,0.2,0.7,,2.5,77400,—,—,—
+53-4011,Locomotive engineers,Line item,27,27.2,0,0,0.2,0.7,,2.2,77400,High school diploma or equivalent,Less than 5 years,Moderate-term on-the-job training
+53-4013,"Rail yard engineers, dinkey operators, and hostlers",Line item,3.1,3.1,0,0,0,0.3,,0.2,58030,High school diploma or equivalent,None,Moderate-term on-the-job training
+53-4022,"Railroad brake, signal, and switch operators and locomotive firers",Line item,11,11.1,0,0,0.1,1,,1,65480,High school diploma or equivalent,None,Moderate-term on-the-job training
+53-4031,Railroad conductors and yardmasters,Line item,36.8,37.2,0,0,0.4,1.1,,3.1,74080,High school diploma or equivalent,None,Moderate-term on-the-job training
+53-4041,Subway and streetcar operators,Line item,9.6,9.9,0,0,0.3,3.4,,0.9,84830,High school diploma or equivalent,None,Moderate-term on-the-job training
+53-4099,"Rail transportation workers, all other",Line item,1.6,1.6,0,0,0.1,3.9,,0.2,49330,High school diploma or equivalent,None,Moderate-term on-the-job training
+53-5000,Water transportation workers,Summary,84.3,85.4,0,0,1.1,1.3,3.6,9.5,66490,—,—,—
+53-5011,Sailors and marine oilers,Line item,32.1,32.8,0,0,0.7,2.3,,3.9,49610,No formal educational credential,None,Moderate-term on-the-job training
+53-5020,Ship and boat captains and operators,Summary,43.5,43.7,0,0,0.2,0.5,7.1,4.6,82400,—,—,—
+53-5021,"Captains, mates, and pilots of water vessels",Line item,40.7,40.9,0,0,0.2,0.5,7.1,4.3,85540,Postsecondary nondegree award,Less than 5 years,None
+53-5022,Motorboat operators,Line item,2.7,2.8,0,0,0,1.4,6.5,0.3,51880,Postsecondary nondegree award,Less than 5 years,None
+53-5031,Ship engineers,Line item,8.8,9,0,0,0.1,1.6,,1.1,101320,Postsecondary nondegree award,Less than 5 years,None
+53-6000,Other transportation workers,Summary,337.4,344.1,0.2,0.2,6.7,2,0.9,46.2,36060,—,—,—
+53-6011,Bridge and lock tenders,Line item,2.9,2.8,0,0,-0.1,-3.3,,0.3,58490,High school diploma or equivalent,None,Short-term on-the-job training
+53-6021,Parking attendants,Line item,135.7,139.8,0.1,0.1,4,3,,18.5,34600,No formal educational credential,None,Short-term on-the-job training
+53-6030,Transportation service attendants,Summary,128.1,128.5,0.1,0.1,0.4,0.3,0.8,18.8,36000,—,—,—
+53-6031,Automotive and watercraft service attendants,Line item,100,99,0.1,0.1,-1,-1,0.8,14.4,34850,No formal educational credential,None,Short-term on-the-job training
+53-6032,Aircraft service attendants,Line item,28,29.5,0,0,1.4,5.1,0.8,4.3,41540,High school diploma or equivalent,None,Short-term on-the-job training
+53-6041,Traffic technicians,Line item,7.9,8.2,0,0,0.3,3.7,1.1,0.8,58480,High school diploma or equivalent,None,Moderate-term on-the-job training
+53-6051,Transportation inspectors,Line item,25.7,26.1,0,0,0.4,1.7,6.3,2.5,85750,High school diploma or equivalent,None,Moderate-term on-the-job training
+53-6061,Passenger attendants,Line item,25.6,26.8,0,0,1.2,4.7,,4.1,37560,High school diploma or equivalent,None,Short-term on-the-job training
+53-6099,"Transportation workers, all other",Line item,11.5,11.9,0,0,0.4,3.8,2.9,1.2,39630,High school diploma or equivalent,None,Short-term on-the-job training
+53-7000,Material moving workers,Summary,7894.6,8163.5,4.6,4.7,268.9,3.4,1.2,1100.1,38340,—,—,—
+53-7011,Conveyor operators and tenders,Line item,29.1,28.1,0,0,-1,-3.4,8.9,2.6,41230,No formal educational credential,None,Short-term on-the-job training
+53-7021,Crane and tower operators,Line item,42.3,43.5,0,0,1.3,3,,3.8,66370,High school diploma or equivalent,Less than 5 years,Moderate-term on-the-job training
+53-7031,Dredge operators,Line item,1.1,1.2,0,0,0,1.2,8,0.1,48430,High school diploma or equivalent,None,Moderate-term on-the-job training
+53-7041,Hoist and winch operators,Line item,2.7,2.7,0,0,0,-1.1,7.8,0.3,52310,No formal educational credential,None,Short-term on-the-job training
+53-7051,Industrial truck and tractor operators,Line item,792.5,801.6,0.5,0.5,9.1,1.1,0.4,76.4,46390,No formal educational credential,None,Short-term on-the-job training
+53-7060,Laborers and material movers,Summary,6802.1,7059.2,4,4,257.1,3.8,1.2,991.4,37590,—,—,—
+53-7061,Cleaners of vehicles and equipment,Line item,410.1,426.2,0.2,0.2,16,3.9,7.4,56.2,35270,No formal educational credential,None,Short-term on-the-job training
+53-7062,"Laborers and freight, stock, and material movers, hand",Line item,2988.9,3033.1,1.8,1.7,44.3,1.5,1.3,384.3,38940,No formal educational credential,None,Short-term on-the-job training
+53-7063,Machine feeders and offbearers,Line item,46.5,40.4,0,0,-6,-13,0.9,4.7,39700,No formal educational credential,None,Short-term on-the-job training
+53-7064,"Packers and packagers, hand",Line item,591.8,559.7,0.3,0.3,-32.2,-5.4,0.7,74,35580,No formal educational credential,None,Short-term on-the-job training
+53-7065,Stockers and order fillers,Line item,2764.8,2999.8,1.6,1.7,235,8.5,0.2,472.3,37090,No formal educational credential,None,Short-term on-the-job training
+53-7070,Pumping station operators,Summary,37.3,36.7,0,0,-0.6,-1.7,3.6,4.1,63940,—,—,—
+53-7071,Gas compressor and gas pumping station operators,Line item,5.4,5.3,0,0,-0.1,-1.3,3.6,0.6,71510,High school diploma or equivalent,None,Moderate-term on-the-job training
+53-7072,"Pump operators, except wellhead pumpers",Line item,13.1,13.5,0,0,0.3,2.6,3.6,1.5,60020,High school diploma or equivalent,None,Moderate-term on-the-job training
+53-7073,Wellhead pumpers,Line item,18.8,17.9,0,0,-0.9,-4.7,3.6,2,70010,High school diploma or equivalent,Less than 5 years,Moderate-term on-the-job training
+53-7081,Refuse and recyclable material collectors,Line item,147.9,149.2,0.1,0.1,1.3,0.9,3.7,16.9,48350,No formal educational credential,None,Short-term on-the-job training
+53-7121,"Tank car, truck, and ship loaders",Line item,12,12.5,0,0,0.5,4.3,6.6,1.3,58070,No formal educational credential,None,Short-term on-the-job training
+53-7199,"Material moving workers, all other",Line item,27.7,28.9,0,0,1.2,4.3,6.1,3.1,41690,No formal educational credential,None,Short-term on-the-job training

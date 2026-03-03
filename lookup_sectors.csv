@@ -1,0 +1,77 @@
+Delta_Sector_ID,Delta_Sector,Delta_Sub_Industry,NAICS_Code,NAICS_Title,Mapping_Type
+1,Finance & Financial Services,Commercial Banking,52211,Commercial Banking,Direct
+1,Finance & Financial Services,Retail Banking,52212,Savings Institutions,Direct
+1,Finance & Financial Services,Retail Banking,52213,Credit Unions,Direct
+1,Finance & Financial Services,Lending / Fintech (partial),5222,Nondepository Credit Intermediation,Direct
+1,Finance & Financial Services,Financial Services,5223,Activities Related to Credit Intermediation,Direct
+1,Finance & Financial Services,Capital Markets,5231,Securities and Commodity Exchanges,Direct
+1,Finance & Financial Services,Investment Banking / Brokerage,5232,Securities and Commodity Contracts Brokerage,Direct
+1,Finance & Financial Services,Asset Mgmt / PE / VC / Hedge Funds,5239,Other Financial Investment Activities,Direct
+1,Finance & Financial Services,Insurance,5241,Insurance Carriers,Direct
+1,Finance & Financial Services,Insurance,5242,Insurance Agencies and Brokerages,Direct
+1,Finance & Financial Services,Insurance,5251,Insurance and Employee Benefit Funds,Direct
+2,Technology & Software,Software Publishers,5112,Software Publishers,Direct
+2,Technology & Software,Cloud Computing,5182,Computing Infrastructure Providers,Direct
+2,Technology & Software,Search / AI Platforms,51822,Web Search Portals and All Other Info Services,Direct
+2,Technology & Software,IT Services,5415,Computer Systems Design and Related Services,Direct
+2,Technology & Software,Semiconductor,3344,Semiconductor and Electronic Component Mfg,Direct
+2,Technology & Software,Telecommunications,517,Telecommunications,Direct
+3,Healthcare & Life Sciences,Pharmaceuticals,3254,Pharmaceutical and Medicine Manufacturing,Direct
+3,Healthcare & Life Sciences,Medical Devices,3391,Medical Equipment and Supplies Manufacturing,Direct
+3,Healthcare & Life Sciences,Life Sciences R&D,54171,R&D in Physical Engineering and Life Sciences,Direct
+3,Healthcare & Life Sciences,Health Insurance,524114,Direct Health and Medical Insurance Carriers,Composite
+3,Healthcare & Life Sciences,Healthcare Admin,622,Hospitals,Composite
+3,Healthcare & Life Sciences,Healthcare Admin,621,Ambulatory Health Care Services,Composite
+4,Law Firms & Legal Services,Law Practice,5411,Legal Services,Direct
+5,Management Consulting Firms,Management Consulting,5416,Management Scientific and Technical Consulting,Direct
+6,Accounting & Tax Firms,Accounting,5412,Accounting Tax Preparation Bookkeeping Payroll,Direct
+7,Advertising & PR Agencies,Advertising,5418,Advertising PR and Related Services,Direct
+7,Advertising & PR Agencies,Market Research,54191,Marketing Research and Public Opinion Polling,Direct
+8,Staffing & Recruitment Agencies,Staffing,5613,Employment Services,Direct
+9,Real Estate & Property,Real Estate,531,Real Estate,Direct
+10,Education & Academia,Higher Ed,6113,Colleges Universities and Professional Schools,Direct
+10,Education & Academia,K-12,6111,Elementary and Secondary Schools,Composite
+10,Education & Academia,Educational Support,6117,Educational Support Services,Direct
+11,Government & Public Administration,Federal Government,921,Executive Legislative and General Government,Direct
+11,Government & Public Administration,Justice,922,Justice Public Order and Safety Activities,Direct
+11,Government & Public Administration,Economic Programs,926,Administration of Economic Programs,Direct
+11,Government & Public Administration,National Security,928,National Security and International Affairs,Direct
+12,Media Publishing & Entertainment,Publishing,5111,Newspaper Periodical Book and Directory Publishers,Direct
+12,Media Publishing & Entertainment,Film & TV,5121,Motion Picture and Video Industries,Direct
+12,Media Publishing & Entertainment,Music,5122,Sound Recording Industries,Direct
+12,Media Publishing & Entertainment,Broadcasting,516,Broadcasting and Content Providers,Direct
+13,Energy & Utilities,Oil & Gas,2111,Oil and Gas Extraction,Composite
+13,Energy & Utilities,Electric Utilities,2211,Electric Power Generation Transmission Distribution,Direct
+13,Energy & Utilities,Gas Utilities,2212,Natural Gas Distribution,Direct
+14,Architecture & Engineering Firms,Architecture,54131,Architectural Services,Direct
+14,Architecture & Engineering Firms,Engineering,54133,Engineering Services,Direct
+14,Architecture & Engineering Firms,Testing,54138,Testing Laboratories and Services,Direct
+15,Manufacturing,Food Manufacturing,311,Food Manufacturing,Direct
+15,Manufacturing,Beverage & Tobacco,312,Beverage and Tobacco Product Manufacturing,Direct
+15,Manufacturing,Chemical Manufacturing,325,Chemical Manufacturing,Direct
+15,Manufacturing,Plastics & Rubber,326,Plastics and Rubber Products Manufacturing,Direct
+15,Manufacturing,Primary Metals,331,Primary Metal Manufacturing,Direct
+15,Manufacturing,Fabricated Metals,332,Fabricated Metal Product Manufacturing,Direct
+15,Manufacturing,Machinery,333,Machinery Manufacturing,Direct
+15,Manufacturing,Electrical Equipment,335,Electrical Equipment Appliance and Component Mfg,Direct
+15,Manufacturing,Transportation Equipment,336,Transportation Equipment Manufacturing,Direct
+16,Retail Trade,Motor Vehicle Dealers,441,Motor Vehicle and Parts Dealers,Direct
+16,Retail Trade,Food & Beverage Retailers,445,Food and Beverage Retailers,Direct
+16,Retail Trade,General Merchandise,452,General Merchandise Stores,Direct
+16,Retail Trade,Health & Personal Care,455,Health and Personal Care Retailers,Direct
+16,Retail Trade,Clothing & Accessories,456,Clothing Clothing Accessories Shoe and Jewelry Retailers,Direct
+17,Construction,Building Construction,236,Construction of Buildings,Direct
+17,Construction,Heavy & Civil Engineering,237,Heavy and Civil Engineering Construction,Direct
+17,Construction,Specialty Trade Contractors,238,Specialty Trade Contractors,Direct
+18,Transportation & Warehousing,Air Transportation,481,Air Transportation,Direct
+18,Transportation & Warehousing,Rail Transportation,482,Rail Transportation,Direct
+18,Transportation & Warehousing,Truck Transportation,484,Truck Transportation,Direct
+18,Transportation & Warehousing,Transit & Ground Passenger,485,Transit and Ground Passenger Transportation,Direct
+18,Transportation & Warehousing,Support Activities,488,Support Activities for Transportation,Direct
+18,Transportation & Warehousing,Couriers & Messengers,492,Couriers and Messengers,Direct
+18,Transportation & Warehousing,Warehousing & Storage,493,Warehousing and Storage,Direct
+19,Wholesale Trade,Durable Goods,423,Merchant Wholesalers Durable Goods,Direct
+19,Wholesale Trade,Nondurable Goods,424,Merchant Wholesalers Nondurable Goods,Direct
+19,Wholesale Trade,Electronic Markets & Agents,4251,Wholesale Trade Agents and Brokers,Direct
+20,Accommodation & Food Services,Accommodation,721,Accommodation,Direct
+20,Accommodation & Food Services,Food Services & Drinking Places,722,Food Services and Drinking Places,Direct

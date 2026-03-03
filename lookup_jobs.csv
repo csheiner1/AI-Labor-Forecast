@@ -1,0 +1,502 @@
+Custom_Title,Delta_Sector_ID,SOC_Code,SOC_Title,Mapping_Notes
+Investment Banker,1,13-2051,Financial and Investment Analysts,Closest match
+Financial Analyst,1,13-2051,Financial and Investment Analysts,Direct
+Portfolio Manager,1,11-3031,Financial Managers,Closest match
+Quantitative Analyst,1,15-2051,Data Scientists,Closest for quant roles
+Risk Analyst,1,13-2051,Financial and Investment Analysts,Subspecialty
+Actuary,1,15-2011,Actuaries,Direct
+Insurance Underwriter,1,13-2053,Insurance Underwriters,Direct
+Compliance Officer,1,13-1041,Compliance Officers,Direct
+Wealth Advisor,1,13-2052,Personal Financial Advisors,Direct
+Credit Analyst,1,13-2041,Credit Analysts,Direct
+Loan Officer,1,13-2072,Loan Officers,Direct
+Claims Adjuster,1,13-1031,Claims Adjusters Examiners and Investigators,Direct
+Financial Planner,1,13-2052,Personal Financial Advisors,Same SOC
+Treasury Analyst,1,13-2051,Financial and Investment Analysts,Subspecialty
+Fund Accountant,1,13-2011,Accountants and Auditors,Closest
+Software Engineer,2,15-1252,Software Developers,Direct
+DevOps Engineer,2,15-1244,Network and Computer Systems Administrators,Closest
+Data Scientist,2,15-2051,Data Scientists,Direct
+Machine Learning Engineer,2,15-1252,Software Developers,No specific SOC
+Product Manager,2,11-2021,Marketing Managers,Common mapping
+UX/UI Designer,2,15-1255,Web and Digital Interface Designers,Direct
+Cybersecurity Analyst,2,15-1212,Information Security Analysts,Direct
+Cloud Architect,2,15-1241,Computer Network Architects,Closest
+Solutions Architect,2,15-1241,Computer Network Architects,Closest
+QA Engineer,2,15-1253,Software Quality Assurance Analysts and Testers,Direct
+Site Reliability Engineer,2,15-1244,Network and Computer Systems Administrators,Closest
+Frontend Developer,2,15-1254,Web Developers,Closest
+Backend Developer,2,15-1252,Software Developers,Closest
+Data Engineer,2,15-1252,Software Developers,Closest
+Systems Analyst,2,15-1211,Computer Systems Analysts,Direct
+IT Support Specialist,2,15-1232,Computer User Support Specialists,Direct
+Network Engineer,2,15-1241,Computer Network Architects,Closest
+Database Administrator,2,15-1242,Database Administrators,Direct
+Telecom Engineer,2,17-2072,Electronics Engineers Except Computer,Closest
+Healthcare Administrator,3,11-9111,Medical and Health Services Managers,Direct
+Regulatory Affairs Manager,3,11-9199,Managers All Other,Closest
+Clinical Research Associate,3,19-1042,Medical Scientists,Closest
+Biostatistician,3,15-2041,Statisticians,Direct
+Medical Science Liaison,3,19-1042,Medical Scientists,Closest
+Pharmacovigilance Specialist,3,19-1042,Medical Scientists,Closest
+Health Informatics Analyst,3,15-2051,Data Scientists,Closest
+Clinical Data Manager,3,15-2051,Data Scientists,Closest
+Attorney,4,23-1011,Lawyers,Direct
+Paralegal,4,23-2011,Paralegals and Legal Assistants,Direct
+Legal Secretary,4,43-6012,Legal Secretaries and Administrative Assistants,Direct
+Contract Manager,4,23-2011,Paralegals and Legal Assistants,Closest
+Management Consultant,5,13-1111,Management Analysts,Direct
+Strategy Consultant,5,13-1111,Management Analysts,Same SOC
+Business Analyst,5,13-1111,Management Analysts,Same SOC
+IT Consultant,5,15-1211,Computer Systems Analysts,Closest
+Operations Consultant,5,13-1111,Management Analysts,Same SOC
+Auditor,6,13-2011,Accountants and Auditors,Direct
+CPA,6,13-2011,Accountants and Auditors,Direct
+Controller,6,11-3031,Financial Managers,Closest
+Tax Advisor,6,13-2082,Tax Preparers,Closest
+Bookkeeper,6,43-3031,Bookkeeping Accounting and Auditing Clerks,Direct
+Forensic Accountant,6,13-2011,Accountants and Auditors,Subspecialty
+Marketing Manager,7,11-2021,Marketing Managers,Direct
+Growth Marketer,7,13-1161,Market Research Analysts and Marketing Specialists,Closest
+Brand Manager,7,11-2021,Marketing Managers,Closest
+SEO Specialist,7,13-1161,Market Research Analysts and Marketing Specialists,Closest
+PR Manager,7,11-2031,Public Relations Managers,Direct
+Content Strategist,7,27-3043,Writers and Authors,Closest
+Social Media Manager,7,13-1161,Market Research Analysts and Marketing Specialists,Closest
+Copywriter,7,27-3043,Writers and Authors,Closest
+Media Planner,7,13-1161,Market Research Analysts and Marketing Specialists,Closest
+Creative Director,7,11-2021,Marketing Managers,Closest
+Graphic Designer,7,27-1024,Graphic Designers,Direct
+Recruiter,8,13-1071,Human Resources Specialists,Direct
+Staffing Coordinator,8,43-4161,Human Resources Assistants,Closest
+Talent Acquisition Specialist,8,13-1071,Human Resources Specialists,Direct
+Real Estate Broker,9,41-9021,Real Estate Brokers,Direct
+Real Estate Agent,9,41-9022,Real Estate Sales Agents,Direct
+Property Manager,9,11-9141,Property Real Estate and Community Association Managers,Direct
+Real Estate Appraiser,9,13-2020,Property Appraisers and Assessors,Direct
+Professor,10,25-1199,Postsecondary Teachers All Other,Direct
+Academic Administrator,10,11-9032,Education Administrators Postsecondary,Direct
+K-12 Teacher,10,25-2031,Secondary School Teachers,Closest
+School Counselor,10,21-1012,Educational Vocational and School Counselors,Direct
+Instructional Designer,10,25-9031,Instructional Coordinators,Direct
+Policy Analyst,11,13-1111,Management Analysts,Closest
+Urban Planner,11,19-3051,Urban and Regional Planners,Direct
+Government Program Manager,11,13-1082,Project Management Specialists,Closest
+Budget Analyst,11,13-2031,Budget Analysts,Direct
+Intelligence Analyst,11,33-3021,Detectives and Criminal Investigators,Closest
+Editor,12,27-3041,Editors,Direct
+Producer,12,27-2012,Producers and Directors,Direct
+Journalist,12,27-3023,News Analysts Reporters and Journalists,Direct
+Film Editor,12,27-4032,Film and Video Editors,Direct
+Sound Engineer,12,27-4011,Audio and Video Technicians,Closest
+Broadcast Technician,12,27-4012,Broadcast Technicians,Direct
+Energy Analyst,13,13-2051,Financial and Investment Analysts,Closest
+Petroleum Engineer,13,17-2171,Petroleum Engineers,Direct
+Power Plant Operator,13,51-8013,Power Plant Operators,Direct
+Utility Manager,13,11-3071,Transportation Storage and Distribution Managers,Closest
+Architect,14,17-1011,Architects Except Landscape and Naval,Direct
+Civil Engineer,14,17-2051,Civil Engineers,Direct
+Structural Engineer,14,17-2051,Civil Engineers,Same SOC
+Environmental Engineer,14,17-2081,Environmental Engineers,Direct
+Mechanical Engineer,14,17-2141,Mechanical Engineers,Direct
+Drafter,14,17-3011,Architectural and Civil Drafters,Direct
+Account Executive,2,41-3091,Sales Representatives Services All Other,Cross-industry; primary: Technology
+Sales Director,5,11-2022,Sales Managers,Cross-industry; primary: Consulting
+VP of Sales,2,11-2022,Sales Managers,Cross-industry; primary: Technology
+CEO,3,11-1011,Chief Executives,Cross-industry; primary: Healthcare
+COO,3,11-1021,General and Operations Managers,Cross-industry; primary: Healthcare
+CFO,1,11-3031,Financial Managers,Cross-industry; primary: Finance
+CTO,2,11-3021,Computer and Information Systems Managers,Cross-industry; primary: Technology
+CISO,2,15-1212,Information Security Analysts,Cross-industry; primary: Technology
+HR Manager,3,11-3121,Human Resources Managers,Cross-industry; primary: Healthcare
+HR Director,11,11-3121,Human Resources Managers,Cross-industry; primary: Government
+VP of Engineering,2,11-3021,Computer and Information Systems Managers,Cross-industry; primary: Technology
+Project Manager,2,13-1082,Project Management Specialists,Cross-industry; primary: Technology
+Scrum Master,2,13-1082,Project Management Specialists,Cross-industry; primary: Technology
+Business Development Manager,5,11-2022,Sales Managers,Cross-industry; primary: Consulting
+Training Manager,3,13-1151,Training and Development Specialists,Cross-industry; primary: Healthcare
+Compensation Analyst,11,13-1141,Compensation Benefits and Job Analysis Specialists,Cross-industry; primary: Government
+Data Analyst,2,15-2051,Data Scientists,Cross-industry; primary: Technology
+Business Intelligence Analyst,1,15-2051,Data Scientists,Cross-industry; primary: Finance
+Supply Chain Manager,15,11-3071,Transportation Storage and Distribution Managers,Cross-industry; primary: Manufacturing
+Procurement Specialist,15,13-1023,Purchasing Agents Except Wholesale Retail and Farm,Cross-industry; primary: Manufacturing
+Logistics Coordinator,18,13-1081,Logisticians,Cross-industry; primary: Transportation
+Operations Analyst,5,13-1111,Management Analysts,Cross-industry; primary: Consulting
+Corporate Strategist,5,13-1199,Business Operations Specialists All Other,Cross-industry; primary: Consulting
+Plant Manager,15,11-1021,General and Operations Managers,Manufacturing context
+Quality Assurance Manager,15,11-3051,Industrial Production Managers,Direct
+Manufacturing Engineer,15,17-2112,Industrial Engineers,Direct
+Production Supervisor,15,51-1011,First-Line Supervisors of Production Workers,Direct
+Safety Manager,15,19-5011,Occupational Health and Safety Specialists,Direct
+Retail Store Manager,16,11-1021,General and Operations Managers,Retail context
+Retail Buyer,16,13-1020,Buyers and Purchasing Agents,Direct
+Merchandising Manager,16,11-2021,Marketing Managers,Retail context
+Loss Prevention Manager,16,33-9099,Protective Service Workers All Other,Closest
+Construction Manager,17,11-9021,Construction Managers,Direct
+Construction Estimator,17,13-1051,Cost Estimators,Direct
+Site Superintendent,17,47-1011,First-Line Supervisors of Construction Trades Workers,Direct
+Fleet Manager,18,11-3071,Transportation Storage and Distribution Managers,Direct
+Logistics Manager,18,11-3071,Transportation Storage and Distribution Managers,Transport context
+Warehouse Manager,18,11-3071,Transportation Storage and Distribution Managers,Warehouse context
+Dispatch Coordinator,18,43-5032,Dispatchers Except Police Fire and Ambulance,Direct
+Wholesale Account Manager,19,41-4012,Sales Representatives Wholesale and Manufacturing Technical,Direct
+Distribution Manager,19,11-3071,Transportation Storage and Distribution Managers,Wholesale context
+Hotel General Manager,20,11-9081,Lodging Managers,Direct
+Restaurant Manager,20,11-9051,Food Service Managers,Direct
+Event Coordinator,20,13-1121,Meeting Convention and Event Planners,Direct
+Catering Manager,20,11-9051,Food Service Managers,Catering context
+Legislators,11,11-1031,Legislators,Auto-expanded
+Advertising and promotions managers,7,11-2011,Advertising and promotions managers,Auto-expanded
+Public relations managers,7,11-2032,Public relations managers,Auto-expanded
+Fundraising managers,10,11-2033,Fundraising managers,Auto-expanded
+Administrative services managers,3,11-3012,Administrative services managers,Auto-expanded
+Facilities managers,3,11-3013,Facilities managers,Auto-expanded
+Purchasing managers,15,11-3061,Purchasing managers,Auto-expanded
+Compensation and benefits managers,1,11-3111,Compensation and benefits managers,Auto-expanded
+Training and development managers,3,11-3131,Training and development managers,Auto-expanded
+"Farmers, ranchers, and other agricultural managers",19,11-9013,"Farmers, ranchers, and other agricultural managers",Auto-expanded
+"Education and childcare administrators, preschool and daycare",10,11-9031,"Education and childcare administrators, preschool and daycare",Auto-expanded
+"Education administrators, postsecondary",10,11-9033,"Education administrators, postsecondary",Auto-expanded
+"Education administrators, all other",10,11-9039,"Education administrators, all other",Auto-expanded
+Architectural and engineering managers,14,11-9041,Architectural and engineering managers,Auto-expanded
+Gambling managers,20,11-9071,Gambling managers,Auto-expanded
+"Entertainment and recreation managers, except gambling",20,11-9072,"Entertainment and recreation managers, except gambling",Auto-expanded
+Natural sciences managers,3,11-9121,Natural sciences managers,Auto-expanded
+Social and community service managers,11,11-9151,Social and community service managers,Auto-expanded
+Emergency management directors,11,11-9161,Emergency management directors,Auto-expanded
+"Personal service managers, all other",3,11-9179,"Personal service managers, all other",Auto-expanded
+"Agents and business managers of artists, performers, and athletes",12,13-1011,"Agents and business managers of artists, performers, and athletes",Auto-expanded
+"Insurance appraisers, auto damage",1,13-1032,"Insurance appraisers, auto damage",Auto-expanded
+Labor relations specialists,3,13-1075,Labor relations specialists,Auto-expanded
+Fundraisers,10,13-1131,Fundraisers,Auto-expanded
+Financial risk specialists,1,13-2054,Financial risk specialists,Auto-expanded
+Financial examiners,1,13-2061,Financial examiners,Auto-expanded
+Credit counselors,10,13-2071,Credit counselors,Auto-expanded
+"Tax examiners and collectors, and revenue agents",11,13-2081,"Tax examiners and collectors, and revenue agents",Auto-expanded
+"Financial specialists, all other",1,13-2099,"Financial specialists, all other",Auto-expanded
+Computer and information research scientists,11,15-1221,Computer and information research scientists,Auto-expanded
+Computer network support specialists,2,15-1231,Computer network support specialists,Auto-expanded
+Database architects,2,15-1243,Database architects,Auto-expanded
+Computer programmers,2,15-1251,Computer programmers,Auto-expanded
+"Computer occupations, all other",2,15-1299,"Computer occupations, all other",Auto-expanded
+Mathematicians,11,15-2021,Mathematicians,Auto-expanded
+Operations research analysts,1,15-2031,Operations research analysts,Auto-expanded
+"Mathematical science occupations, all other",11,15-2099,"Mathematical science occupations, all other",Auto-expanded
+Landscape architects,14,17-1012,Landscape architects,Auto-expanded
+Cartographers and photogrammetrists,14,17-1021,Cartographers and photogrammetrists,Auto-expanded
+Surveyors,14,17-1022,Surveyors,Auto-expanded
+Aerospace engineers,15,17-2011,Aerospace engineers,Auto-expanded
+Agricultural engineers,11,17-2021,Agricultural engineers,Auto-expanded
+Bioengineers and biomedical engineers,3,17-2031,Bioengineers and biomedical engineers,Auto-expanded
+Chemical engineers,15,17-2041,Chemical engineers,Auto-expanded
+Computer hardware engineers,2,17-2061,Computer hardware engineers,Auto-expanded
+Electrical engineers,14,17-2071,Electrical engineers,Auto-expanded
+"Health and safety engineers, except mining safety engineers and inspectors",14,17-2111,"Health and safety engineers, except mining safety engineers and inspectors",Auto-expanded
+Marine engineers and naval architects,15,17-2121,Marine engineers and naval architects,Auto-expanded
+Materials engineers,15,17-2131,Materials engineers,Auto-expanded
+"Mining and geological engineers, including mining safety engineers",14,17-2151,"Mining and geological engineers, including mining safety engineers",Auto-expanded
+Nuclear engineers,14,17-2161,Nuclear engineers,Auto-expanded
+"Engineers, all other",11,17-2199,"Engineers, all other",Auto-expanded
+Electrical and electronics drafters,14,17-3012,Electrical and electronics drafters,Auto-expanded
+Mechanical drafters,15,17-3013,Mechanical drafters,Auto-expanded
+"Drafters, all other",14,17-3019,"Drafters, all other",Auto-expanded
+Aerospace engineering and operations technologists and technicians,15,17-3021,Aerospace engineering and operations technologists and technicians,Auto-expanded
+Civil engineering technologists and technicians,14,17-3022,Civil engineering technologists and technicians,Auto-expanded
+Electrical and electronic engineering technologists and technicians,14,17-3023,Electrical and electronic engineering technologists and technicians,Auto-expanded
+Electro-mechanical and mechatronics technologists and technicians,15,17-3024,Electro-mechanical and mechatronics technologists and technicians,Auto-expanded
+Environmental engineering technologists and technicians,14,17-3025,Environmental engineering technologists and technicians,Auto-expanded
+Industrial engineering technologists and technicians,15,17-3026,Industrial engineering technologists and technicians,Auto-expanded
+Mechanical engineering technologists and technicians,15,17-3027,Mechanical engineering technologists and technicians,Auto-expanded
+Calibration technologists and technicians,14,17-3028,Calibration technologists and technicians,Auto-expanded
+"Engineering technologists and technicians, except drafters, all other",14,17-3029,"Engineering technologists and technicians, except drafters, all other",Auto-expanded
+Surveying and mapping technicians,14,17-3031,Surveying and mapping technicians,Auto-expanded
+Animal scientists,3,19-1011,Animal scientists,Auto-expanded
+Food scientists and technologists,15,19-1012,Food scientists and technologists,Auto-expanded
+Soil and plant scientists,5,19-1013,Soil and plant scientists,Auto-expanded
+Biochemists and biophysicists,3,19-1021,Biochemists and biophysicists,Auto-expanded
+Microbiologists,3,19-1022,Microbiologists,Auto-expanded
+Zoologists and wildlife biologists,11,19-1023,Zoologists and wildlife biologists,Auto-expanded
+"Biological scientists, all other",11,19-1029,"Biological scientists, all other",Auto-expanded
+Conservation scientists,11,19-1031,Conservation scientists,Auto-expanded
+Foresters,11,19-1032,Foresters,Auto-expanded
+Epidemiologists,11,19-1041,Epidemiologists,Auto-expanded
+"Life scientists, all other",3,19-1099,"Life scientists, all other",Auto-expanded
+Astronomers,3,19-2011,Astronomers,Auto-expanded
+Physicists,3,19-2012,Physicists,Auto-expanded
+Atmospheric and space scientists,11,19-2021,Atmospheric and space scientists,Auto-expanded
+Chemists,3,19-2031,Chemists,Auto-expanded
+Materials scientists,3,19-2032,Materials scientists,Auto-expanded
+"Environmental scientists and specialists, including health",11,19-2041,"Environmental scientists and specialists, including health",Auto-expanded
+"Geoscientists, except hydrologists and geographers",14,19-2042,"Geoscientists, except hydrologists and geographers",Auto-expanded
+Hydrologists,11,19-2043,Hydrologists,Auto-expanded
+"Physical scientists, all other",11,19-2099,"Physical scientists, all other",Auto-expanded
+Economists,11,19-3011,Economists,Auto-expanded
+Survey researchers,7,19-3022,Survey researchers,Auto-expanded
+Industrial-organizational psychologists,5,19-3032,Industrial-organizational psychologists,Auto-expanded
+Clinical and counseling psychologists,3,19-3033,Clinical and counseling psychologists,Auto-expanded
+School psychologists,10,19-3034,School psychologists,Auto-expanded
+"Psychologists, all other",11,19-3039,"Psychologists, all other",Auto-expanded
+Sociologists,11,19-3041,Sociologists,Auto-expanded
+Anthropologists and archeologists,5,19-3091,Anthropologists and archeologists,Auto-expanded
+Geographers,11,19-3092,Geographers,Auto-expanded
+Historians,11,19-3093,Historians,Auto-expanded
+Political scientists,11,19-3094,Political scientists,Auto-expanded
+"Social scientists and related workers, all other",11,19-3099,"Social scientists and related workers, all other",Auto-expanded
+Agricultural technicians,14,19-4012,Agricultural technicians,Auto-expanded
+Food science technicians,15,19-4013,Food science technicians,Auto-expanded
+Biological technicians,3,19-4021,Biological technicians,Auto-expanded
+Chemical technicians,14,19-4031,Chemical technicians,Auto-expanded
+"Environmental science and protection technicians, including health",14,19-4042,"Environmental science and protection technicians, including health",Auto-expanded
+"Geological technicians, except hydrologic technicians",14,19-4043,"Geological technicians, except hydrologic technicians",Auto-expanded
+Hydrologic technicians,11,19-4044,Hydrologic technicians,Auto-expanded
+Nuclear technicians,13,19-4051,Nuclear technicians,Auto-expanded
+Social science research assistants,10,19-4061,Social science research assistants,Auto-expanded
+Forest and conservation technicians,11,19-4071,Forest and conservation technicians,Auto-expanded
+Forensic science technicians,11,19-4092,Forensic science technicians,Auto-expanded
+"Life, physical, and social science technicians, all other",3,19-4099,"Life, physical, and social science technicians, all other",Auto-expanded
+Occupational health and safety technicians,18,19-5012,Occupational health and safety technicians,Auto-expanded
+Marriage and family therapists,3,21-1013,Marriage and family therapists,Auto-expanded
+Rehabilitation counselors,11,21-1015,Rehabilitation counselors,Auto-expanded
+"Substance abuse, behavioral disorder, and mental health counselors",3,21-1018,"Substance abuse, behavioral disorder, and mental health counselors",Auto-expanded
+"Counselors, all other",3,21-1019,"Counselors, all other",Auto-expanded
+"Child, family, and school social workers",11,21-1021,"Child, family, and school social workers",Auto-expanded
+Healthcare social workers,3,21-1022,Healthcare social workers,Auto-expanded
+Mental health and substance abuse social workers,3,21-1023,Mental health and substance abuse social workers,Auto-expanded
+"Social workers, all other",11,21-1029,"Social workers, all other",Auto-expanded
+Health education specialists,3,21-1091,Health education specialists,Auto-expanded
+Probation officers and correctional treatment specialists,11,21-1092,Probation officers and correctional treatment specialists,Auto-expanded
+Social and human service assistants,3,21-1093,Social and human service assistants,Auto-expanded
+Community health workers,3,21-1094,Community health workers,Auto-expanded
+"Community and social service specialists, all other",11,21-1099,"Community and social service specialists, all other",Auto-expanded
+Clergy,3,21-2011,Clergy,Auto-expanded
+"Directors, religious activities and education",10,21-2021,"Directors, religious activities and education",Auto-expanded
+"Religious workers, all other",10,21-2099,"Religious workers, all other",Auto-expanded
+Judicial law clerks,11,23-1012,Judicial law clerks,Auto-expanded
+"Administrative law judges, adjudicators, and hearing officers",11,23-1021,"Administrative law judges, adjudicators, and hearing officers",Auto-expanded
+"Arbitrators, mediators, and conciliators",7,23-1022,"Arbitrators, mediators, and conciliators",Auto-expanded
+"Judges, magistrate judges, and magistrates",11,23-1023,"Judges, magistrate judges, and magistrates",Auto-expanded
+"Title examiners, abstractors, and searchers",1,23-2093,"Title examiners, abstractors, and searchers",Auto-expanded
+"Legal support workers, all other",11,23-2099,"Legal support workers, all other",Auto-expanded
+"Business teachers, postsecondary",10,25-1011,"Business teachers, postsecondary",Auto-expanded
+"Computer science teachers, postsecondary",10,25-1021,"Computer science teachers, postsecondary",Auto-expanded
+"Mathematical science teachers, postsecondary",10,25-1022,"Mathematical science teachers, postsecondary",Auto-expanded
+"Architecture teachers, postsecondary",10,25-1031,"Architecture teachers, postsecondary",Auto-expanded
+"Engineering teachers, postsecondary",10,25-1032,"Engineering teachers, postsecondary",Auto-expanded
+"Agricultural sciences teachers, postsecondary",10,25-1041,"Agricultural sciences teachers, postsecondary",Auto-expanded
+"Biological science teachers, postsecondary",10,25-1042,"Biological science teachers, postsecondary",Auto-expanded
+"Forestry and conservation science teachers, postsecondary",10,25-1043,"Forestry and conservation science teachers, postsecondary",Auto-expanded
+"Atmospheric, earth, marine, and space sciences teachers, postsecondary",10,25-1051,"Atmospheric, earth, marine, and space sciences teachers, postsecondary",Auto-expanded
+"Chemistry teachers, postsecondary",10,25-1052,"Chemistry teachers, postsecondary",Auto-expanded
+"Environmental science teachers, postsecondary",10,25-1053,"Environmental science teachers, postsecondary",Auto-expanded
+"Physics teachers, postsecondary",10,25-1054,"Physics teachers, postsecondary",Auto-expanded
+"Anthropology and archeology teachers, postsecondary",10,25-1061,"Anthropology and archeology teachers, postsecondary",Auto-expanded
+"Area, ethnic, and cultural studies teachers, postsecondary",10,25-1062,"Area, ethnic, and cultural studies teachers, postsecondary",Auto-expanded
+"Economics teachers, postsecondary",10,25-1063,"Economics teachers, postsecondary",Auto-expanded
+"Geography teachers, postsecondary",10,25-1064,"Geography teachers, postsecondary",Auto-expanded
+"Political science teachers, postsecondary",10,25-1065,"Political science teachers, postsecondary",Auto-expanded
+"Psychology teachers, postsecondary",10,25-1066,"Psychology teachers, postsecondary",Auto-expanded
+"Sociology teachers, postsecondary",10,25-1067,"Sociology teachers, postsecondary",Auto-expanded
+"Social sciences teachers, postsecondary, all other",10,25-1069,"Social sciences teachers, postsecondary, all other",Auto-expanded
+"Health specialties teachers, postsecondary",10,25-1071,"Health specialties teachers, postsecondary",Auto-expanded
+"Nursing instructors and teachers, postsecondary",10,25-1072,"Nursing instructors and teachers, postsecondary",Auto-expanded
+"Education teachers, postsecondary",10,25-1081,"Education teachers, postsecondary",Auto-expanded
+"Library science teachers, postsecondary",10,25-1082,"Library science teachers, postsecondary",Auto-expanded
+"Criminal justice and law enforcement teachers, postsecondary",10,25-1111,"Criminal justice and law enforcement teachers, postsecondary",Auto-expanded
+"Law teachers, postsecondary",10,25-1112,"Law teachers, postsecondary",Auto-expanded
+"Social work teachers, postsecondary",10,25-1113,"Social work teachers, postsecondary",Auto-expanded
+"Art, drama, and music teachers, postsecondary",10,25-1121,"Art, drama, and music teachers, postsecondary",Auto-expanded
+"Communications teachers, postsecondary",10,25-1122,"Communications teachers, postsecondary",Auto-expanded
+"English language and literature teachers, postsecondary",10,25-1123,"English language and literature teachers, postsecondary",Auto-expanded
+"Foreign language and literature teachers, postsecondary",10,25-1124,"Foreign language and literature teachers, postsecondary",Auto-expanded
+"History teachers, postsecondary",10,25-1125,"History teachers, postsecondary",Auto-expanded
+"Philosophy and religion teachers, postsecondary",10,25-1126,"Philosophy and religion teachers, postsecondary",Auto-expanded
+"Family and consumer sciences teachers, postsecondary",10,25-1192,"Family and consumer sciences teachers, postsecondary",Auto-expanded
+"Recreation and fitness studies teachers, postsecondary",10,25-1193,"Recreation and fitness studies teachers, postsecondary",Auto-expanded
+"Career/technical education teachers, postsecondary",10,25-1194,"Career/technical education teachers, postsecondary",Auto-expanded
+"Preschool teachers, except special education",10,25-2011,"Preschool teachers, except special education",Auto-expanded
+"Kindergarten teachers, except special education",10,25-2012,"Kindergarten teachers, except special education",Auto-expanded
+"Elementary school teachers, except special education",10,25-2021,"Elementary school teachers, except special education",Auto-expanded
+"Middle school teachers, except special and career/technical education",10,25-2022,"Middle school teachers, except special and career/technical education",Auto-expanded
+"Career/technical education teachers, middle school",10,25-2023,"Career/technical education teachers, middle school",Auto-expanded
+"Career/technical education teachers, secondary school",10,25-2032,"Career/technical education teachers, secondary school",Auto-expanded
+"Special education teachers, preschool",3,25-2051,"Special education teachers, preschool",Auto-expanded
+"Special education teachers, kindergarten and elementary school",10,25-2052,"Special education teachers, kindergarten and elementary school",Auto-expanded
+"Special education teachers, middle school",10,25-2057,"Special education teachers, middle school",Auto-expanded
+"Special education teachers, secondary school",10,25-2058,"Special education teachers, secondary school",Auto-expanded
+"Special education teachers, all other",10,25-2059,"Special education teachers, all other",Auto-expanded
+"Adult basic education, adult secondary education, and english as a second language instructors",10,25-3011,"Adult basic education, adult secondary education, and english as a second language instructors",Auto-expanded
+Self-enrichment teachers,10,25-3021,Self-enrichment teachers,Auto-expanded
+"Substitute teachers, short-term",8,25-3031,"Substitute teachers, short-term",Auto-expanded
+Tutors,10,25-3041,Tutors,Auto-expanded
+"Teachers and instructors, all other",10,25-3099,"Teachers and instructors, all other",Auto-expanded
+Archivists,11,25-4011,Archivists,Auto-expanded
+Curators,11,25-4012,Curators,Auto-expanded
+Museum technicians and conservators,11,25-4013,Museum technicians and conservators,Auto-expanded
+Librarians and media collections specialists,10,25-4022,Librarians and media collections specialists,Auto-expanded
+Library technicians,10,25-4031,Library technicians,Auto-expanded
+Farm and home management educators,11,25-9021,Farm and home management educators,Auto-expanded
+"Teaching assistants, postsecondary",10,25-9044,"Teaching assistants, postsecondary",Auto-expanded
+"Teaching assistants, except postsecondary",10,25-9045,"Teaching assistants, except postsecondary",Auto-expanded
+"Educational instruction and library workers, all other",10,25-9099,"Educational instruction and library workers, all other",Auto-expanded
+Art directors,7,27-1011,Art directors,Auto-expanded
+Craft artists,12,27-1012,Craft artists,Auto-expanded
+"Fine artists, including painters, sculptors, and illustrators",12,27-1013,"Fine artists, including painters, sculptors, and illustrators",Auto-expanded
+Special effects artists and animators,2,27-1014,Special effects artists and animators,Auto-expanded
+"Artists and related workers, all other",11,27-1019,"Artists and related workers, all other",Auto-expanded
+Commercial and industrial designers,15,27-1021,Commercial and industrial designers,Auto-expanded
+Fashion designers,19,27-1022,Fashion designers,Auto-expanded
+Floral designers,16,27-1023,Floral designers,Auto-expanded
+Interior designers,14,27-1025,Interior designers,Auto-expanded
+Merchandise displayers and window trimmers,19,27-1026,Merchandise displayers and window trimmers,Auto-expanded
+Set and exhibit designers,12,27-1027,Set and exhibit designers,Auto-expanded
+"Designers, all other",19,27-1029,"Designers, all other",Auto-expanded
+Actors,12,27-2011,Actors,Auto-expanded
+Coaches and scouts,10,27-2022,Coaches and scouts,Auto-expanded
+"Umpires, referees, and other sports officials",10,27-2023,"Umpires, referees, and other sports officials",Auto-expanded
+Dancers,20,27-2031,Dancers,Auto-expanded
+Music directors and composers,12,27-2041,Music directors and composers,Auto-expanded
+Musicians and singers,10,27-2042,Musicians and singers,Auto-expanded
+"Disc jockeys, except radio",20,27-2091,"Disc jockeys, except radio",Auto-expanded
+"Entertainers and performers, sports and related workers, all other",12,27-2099,"Entertainers and performers, sports and related workers, all other",Auto-expanded
+Broadcast announcers and radio disc jockeys,12,27-3011,Broadcast announcers and radio disc jockeys,Auto-expanded
+Public relations specialists,7,27-3031,Public relations specialists,Auto-expanded
+Technical writers,2,27-3042,Technical writers,Auto-expanded
+Interpreters and translators,7,27-3091,Interpreters and translators,Auto-expanded
+Court reporters and simultaneous captioners,11,27-3092,Court reporters and simultaneous captioners,Auto-expanded
+"Media and communication workers, all other",12,27-3099,"Media and communication workers, all other",Auto-expanded
+Sound engineering technicians,12,27-4014,Sound engineering technicians,Auto-expanded
+Lighting technicians,12,27-4015,Lighting technicians,Auto-expanded
+Photographers,7,27-4021,Photographers,Auto-expanded
+"Camera operators, television, video, and film",12,27-4031,"Camera operators, television, video, and film",Auto-expanded
+"Media and communication equipment workers, all other",11,27-4099,"Media and communication equipment workers, all other",Auto-expanded
+Chiropractors,3,29-1011,Chiropractors,Auto-expanded
+"Dentists, general",3,29-1021,"Dentists, general",Auto-expanded
+Oral and maxillofacial surgeons,3,29-1022,Oral and maxillofacial surgeons,Auto-expanded
+Orthodontists,3,29-1023,Orthodontists,Auto-expanded
+Prosthodontists,3,29-1024,Prosthodontists,Auto-expanded
+"Dentists, all other specialists",3,29-1029,"Dentists, all other specialists",Auto-expanded
+Dietitians and nutritionists,3,29-1031,Dietitians and nutritionists,Auto-expanded
+Optometrists,3,29-1041,Optometrists,Auto-expanded
+Pharmacists,16,29-1051,Pharmacists,Auto-expanded
+Physician assistants,3,29-1071,Physician assistants,Auto-expanded
+Podiatrists,3,29-1081,Podiatrists,Auto-expanded
+Occupational therapists,3,29-1122,Occupational therapists,Auto-expanded
+Physical therapists,3,29-1123,Physical therapists,Auto-expanded
+Radiation therapists,3,29-1124,Radiation therapists,Auto-expanded
+Recreational therapists,3,29-1125,Recreational therapists,Auto-expanded
+Respiratory therapists,3,29-1126,Respiratory therapists,Auto-expanded
+Speech-language pathologists,3,29-1127,Speech-language pathologists,Auto-expanded
+Exercise physiologists,3,29-1128,Exercise physiologists,Auto-expanded
+"Therapists, all other",3,29-1129,"Therapists, all other",Auto-expanded
+Veterinarians,7,29-1131,Veterinarians,Auto-expanded
+Registered nurses,3,29-1141,Registered nurses,Auto-expanded
+Nurse anesthetists,3,29-1151,Nurse anesthetists,Auto-expanded
+Nurse midwives,3,29-1161,Nurse midwives,Auto-expanded
+Nurse practitioners,3,29-1171,Nurse practitioners,Auto-expanded
+Audiologists,3,29-1181,Audiologists,Auto-expanded
+Anesthesiologists,3,29-1211,Anesthesiologists,Auto-expanded
+Cardiologists,3,29-1212,Cardiologists,Auto-expanded
+Dermatologists,3,29-1213,Dermatologists,Auto-expanded
+Emergency medicine physicians,3,29-1214,Emergency medicine physicians,Auto-expanded
+Family medicine physicians,3,29-1215,Family medicine physicians,Auto-expanded
+General internal medicine physicians,3,29-1216,General internal medicine physicians,Auto-expanded
+Neurologists,3,29-1217,Neurologists,Auto-expanded
+Obstetricians and gynecologists,3,29-1218,Obstetricians and gynecologists,Auto-expanded
+"Pediatricians, general",3,29-1221,"Pediatricians, general",Auto-expanded
+"Physicians, pathologists",3,29-1222,"Physicians, pathologists",Auto-expanded
+Psychiatrists,3,29-1223,Psychiatrists,Auto-expanded
+Radiologists,3,29-1224,Radiologists,Auto-expanded
+"Physicians, all other",3,29-1229,"Physicians, all other",Auto-expanded
+"Ophthalmologists, except pediatric",3,29-1241,"Ophthalmologists, except pediatric",Auto-expanded
+"Orthopedic surgeons, except pediatric",3,29-1242,"Orthopedic surgeons, except pediatric",Auto-expanded
+Pediatric surgeons,3,29-1243,Pediatric surgeons,Auto-expanded
+"Surgeons, all other",3,29-1249,"Surgeons, all other",Auto-expanded
+Acupuncturists,3,29-1291,Acupuncturists,Auto-expanded
+Dental hygienists,3,29-1292,Dental hygienists,Auto-expanded
+"Healthcare diagnosing or treating practitioners, all other",11,29-1299,"Healthcare diagnosing or treating practitioners, all other",Auto-expanded
+Clinical laboratory technologists and technicians,3,29-2010,Clinical laboratory technologists and technicians,Auto-expanded
+Cardiovascular technologists and technicians,3,29-2031,Cardiovascular technologists and technicians,Auto-expanded
+Diagnostic medical sonographers,3,29-2032,Diagnostic medical sonographers,Auto-expanded
+Nuclear medicine technologists,3,29-2033,Nuclear medicine technologists,Auto-expanded
+Radiologic technologists and technicians,3,29-2034,Radiologic technologists and technicians,Auto-expanded
+Magnetic resonance imaging technologists,3,29-2035,Magnetic resonance imaging technologists,Auto-expanded
+Medical dosimetrists,3,29-2036,Medical dosimetrists,Auto-expanded
+Emergency medical technicians,3,29-2042,Emergency medical technicians,Auto-expanded
+Paramedics,3,29-2043,Paramedics,Auto-expanded
+Dietetic technicians,3,29-2051,Dietetic technicians,Auto-expanded
+Pharmacy technicians,16,29-2052,Pharmacy technicians,Auto-expanded
+Psychiatric technicians,3,29-2053,Psychiatric technicians,Auto-expanded
+Surgical technologists,3,29-2055,Surgical technologists,Auto-expanded
+Veterinary technologists and technicians,7,29-2056,Veterinary technologists and technicians,Auto-expanded
+Ophthalmic medical technicians,3,29-2057,Ophthalmic medical technicians,Auto-expanded
+Licensed practical and licensed vocational nurses,3,29-2061,Licensed practical and licensed vocational nurses,Auto-expanded
+Medical records specialists,3,29-2072,Medical records specialists,Auto-expanded
+"Opticians, dispensing",3,29-2081,"Opticians, dispensing",Auto-expanded
+Orthotists and prosthetists,3,29-2091,Orthotists and prosthetists,Auto-expanded
+Hearing aid specialists,16,29-2092,Hearing aid specialists,Auto-expanded
+"Health technologists and technicians, all other",3,29-2099,"Health technologists and technicians, all other",Auto-expanded
+Health information technologists and medical registrars,3,29-9021,Health information technologists and medical registrars,Auto-expanded
+Athletic trainers,3,29-9091,Athletic trainers,Auto-expanded
+Genetic counselors,3,29-9092,Genetic counselors,Auto-expanded
+Surgical assistants,3,29-9093,Surgical assistants,Auto-expanded
+"Healthcare practitioners and technical workers, all other",3,29-9099,"Healthcare practitioners and technical workers, all other",Auto-expanded
+First-line supervisors of retail sales workers,16,41-1011,First-line supervisors of retail sales workers,Auto-expanded
+First-line supervisors of non-retail sales workers,19,41-1012,First-line supervisors of non-retail sales workers,Auto-expanded
+Advertising sales agents,7,41-3011,Advertising sales agents,Auto-expanded
+Insurance sales agents,1,41-3021,Insurance sales agents,Auto-expanded
+"Securities, commodities, and financial services sales agents",1,41-3031,"Securities, commodities, and financial services sales agents",Auto-expanded
+Travel agents,1,41-3041,Travel agents,Auto-expanded
+"Sales representatives, wholesale and manufacturing, technical and scientific products",19,41-4011,"Sales representatives, wholesale and manufacturing, technical and scientific products",Auto-expanded
+Demonstrators and product promoters,7,41-9011,Demonstrators and product promoters,Auto-expanded
+Models,10,41-9012,Models,Auto-expanded
+Sales engineers,2,41-9031,Sales engineers,Auto-expanded
+Telemarketers,1,41-9041,Telemarketers,Auto-expanded
+"Door-to-door sales workers, news and street vendors, and related workers",17,41-9091,"Door-to-door sales workers, news and street vendors, and related workers",Auto-expanded
+"Sales and related workers, all other",16,41-9099,"Sales and related workers, all other",Auto-expanded
+First-line supervisors of office and administrative support workers,3,43-1011,First-line supervisors of office and administrative support workers,Auto-expanded
+"Switchboard operators, including answering service",3,43-2011,"Switchboard operators, including answering service",Auto-expanded
+Telephone operators,3,43-2021,Telephone operators,Auto-expanded
+"Communications equipment operators, all other",11,43-2099,"Communications equipment operators, all other",Auto-expanded
+Bill and account collectors,1,43-3011,Bill and account collectors,Auto-expanded
+Billing and posting clerks,3,43-3021,Billing and posting clerks,Auto-expanded
+Gambling cage workers,20,43-3041,Gambling cage workers,Auto-expanded
+Payroll and timekeeping clerks,6,43-3051,Payroll and timekeeping clerks,Auto-expanded
+Procurement clerks,11,43-3061,Procurement clerks,Auto-expanded
+Tellers,1,43-3071,Tellers,Auto-expanded
+"Financial clerks, all other",1,43-3099,"Financial clerks, all other",Auto-expanded
+Brokerage clerks,1,43-4011,Brokerage clerks,Auto-expanded
+Correspondence clerks,1,43-4021,Correspondence clerks,Auto-expanded
+"Court, municipal, and license clerks",11,43-4031,"Court, municipal, and license clerks",Auto-expanded
+"Credit authorizers, checkers, and clerks",1,43-4041,"Credit authorizers, checkers, and clerks",Auto-expanded
+Customer service representatives,1,43-4051,Customer service representatives,Auto-expanded
+"Eligibility interviewers, government programs",11,43-4061,"Eligibility interviewers, government programs",Auto-expanded
+File clerks,4,43-4071,File clerks,Auto-expanded
+"Hotel, motel, and resort desk clerks",20,43-4081,"Hotel, motel, and resort desk clerks",Auto-expanded
+"Interviewers, except eligibility and loan",3,43-4111,"Interviewers, except eligibility and loan",Auto-expanded
+"Library assistants, clerical",2,43-4121,"Library assistants, clerical",Auto-expanded
+Loan interviewers and clerks,1,43-4131,Loan interviewers and clerks,Auto-expanded
+New accounts clerks,1,43-4141,New accounts clerks,Auto-expanded
+Order clerks,19,43-4151,Order clerks,Auto-expanded
+Receptionists and information clerks,3,43-4171,Receptionists and information clerks,Auto-expanded
+Reservation and transportation ticket agents and travel clerks,18,43-4181,Reservation and transportation ticket agents and travel clerks,Auto-expanded
+"Information and record clerks, all other",11,43-4199,"Information and record clerks, all other",Auto-expanded
+Cargo and freight agents,18,43-5011,Cargo and freight agents,Auto-expanded
+Couriers and messengers,3,43-5021,Couriers and messengers,Auto-expanded
+Public safety telecommunicators,3,43-5031,Public safety telecommunicators,Auto-expanded
+"Meter readers, utilities",13,43-5041,"Meter readers, utilities",Auto-expanded
+"Production, planning, and expediting clerks",15,43-5061,"Production, planning, and expediting clerks",Auto-expanded
+"Shipping, receiving, and inventory clerks",15,43-5071,"Shipping, receiving, and inventory clerks",Auto-expanded
+"Weighers, measurers, checkers, and samplers, recordkeeping",18,43-5111,"Weighers, measurers, checkers, and samplers, recordkeeping",Auto-expanded
+Executive secretaries and executive administrative assistants,1,43-6011,Executive secretaries and executive administrative assistants,Auto-expanded
+Medical secretaries and administrative assistants,3,43-6013,Medical secretaries and administrative assistants,Auto-expanded
+"Secretaries and administrative assistants, except legal, medical, and executive",3,43-6014,"Secretaries and administrative assistants, except legal, medical, and executive",Auto-expanded
+Data entry keyers,3,43-9021,Data entry keyers,Auto-expanded
+Word processors and typists,11,43-9022,Word processors and typists,Auto-expanded
+Desktop publishers,12,43-9031,Desktop publishers,Auto-expanded
+Insurance claims and policy processing clerks,1,43-9041,Insurance claims and policy processing clerks,Auto-expanded
+"Mail clerks and mail machine operators, except postal service",1,43-9051,"Mail clerks and mail machine operators, except postal service",Auto-expanded
+"Office clerks, general",17,43-9061,"Office clerks, general",Auto-expanded
+"Office machine operators, except computer",2,43-9071,"Office machine operators, except computer",Auto-expanded
+Proofreaders and copy markers,12,43-9081,Proofreaders and copy markers,Auto-expanded
+Statistical assistants,1,43-9111,Statistical assistants,Auto-expanded
+"Office and administrative support workers, all other",11,43-9199,"Office and administrative support workers, all other",Auto-expanded

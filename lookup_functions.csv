@@ -1,0 +1,393 @@
+Function_ID,Function_Name,SOC_Code,SOC_Title,Shared
+1,Executive & General Management,11-1011,Chief Executives,False
+1,Executive & General Management,11-1021,General and Operations Managers,False
+1,Executive & General Management,11-1031,Legislators,False
+2,Finance Accounting & FP&A,11-3031,Financial Managers,False
+2,Finance Accounting & FP&A,13-2011,Accountants and Auditors,False
+2,Finance Accounting & FP&A,13-2051,Financial and Investment Analysts,False
+2,Finance Accounting & FP&A,13-2061,Financial Examiners,False
+2,Finance Accounting & FP&A,13-2082,Tax Preparers,False
+2,Finance Accounting & FP&A,13-2041,Credit Analysts,False
+3,Legal & Compliance,23-1011,Lawyers,False
+3,Legal & Compliance,23-1012,Judicial Law Clerks,False
+3,Legal & Compliance,23-2011,Paralegals and Legal Assistants,False
+3,Legal & Compliance,13-1041,Compliance Officers,False
+4,Human Resources & People Ops,11-3121,Human Resources Managers,False
+4,Human Resources & People Ops,13-1071,Human Resources Specialists,False
+4,Human Resources & People Ops,13-1075,Labor Relations Specialists,False
+4,Human Resources & People Ops,13-1151,Training and Development Specialists,False
+5,Marketing & Communications,11-2021,Marketing Managers,False
+5,Marketing & Communications,11-2031,Public Relations Managers,False
+5,Marketing & Communications,13-1161,Market Research Analysts and Marketing Specialists,False
+5,Marketing & Communications,27-3031,Public Relations Specialists,False
+6,Sales & Business Development,11-2022,Sales Managers,False
+6,Sales & Business Development,41-3091,Sales Representatives Services All Other,False
+6,Sales & Business Development,41-4012,Sales Representatives Wholesale and Manufacturing Technical,False
+6,Sales & Business Development,41-9031,Sales Engineers,False
+7,Information Technology,15-1211,Computer Systems Analysts,False
+7,Information Technology,15-1212,Information Security Analysts,False
+7,Information Technology,15-1221,Computer and Information Research Scientists,False
+7,Information Technology,15-1232,Computer User Support Specialists,False
+7,Information Technology,15-1241,Computer Network Architects,False
+7,Information Technology,15-1244,Network and Computer Systems Administrators,False
+7,Information Technology,15-1251,Computer Programmers,False
+7,Information Technology,15-1252,Software Developers,False
+7,Information Technology,15-1253,Software Quality Assurance Analysts and Testers,False
+7,Information Technology,15-1254,Web Developers,False
+7,Information Technology,15-1255,Web and Digital Interface Designers,False
+7,Information Technology,15-1299,Computer Occupations All Other,False
+8,Data Analytics & Research,15-2051,Data Scientists,False
+8,Data Analytics & Research,15-2041,Statisticians,False
+8,Data Analytics & Research,13-1111,Management Analysts,True
+8,Data Analytics & Research,19-3011,Economists,False
+8,Data Analytics & Research,15-2031,Operations Research Analysts,False
+9,Supply Chain Procurement & Operations,11-3071,Transportation Storage and Distribution Managers,False
+9,Supply Chain Procurement & Operations,13-1023,Purchasing Agents Except Wholesale Retail and Farm,False
+9,Supply Chain Procurement & Operations,13-1081,Logisticians,False
+9,Supply Chain Procurement & Operations,13-1082,Project Management Specialists,False
+10,Strategy & Corporate Development,13-1111,Management Analysts,True
+10,Strategy & Corporate Development,13-1199,Business Operations Specialists All Other,False
+5,Marketing & Communications,11-2011,Advertising and promotions managers,False
+5,Marketing & Communications,11-2032,Public relations managers,False
+5,Marketing & Communications,11-2033,Fundraising managers,False
+9,Supply Chain Procurement & Operations,11-3012,Administrative services managers,False
+9,Supply Chain Procurement & Operations,11-3013,Facilities managers,False
+1,Executive & General Management,11-3061,Purchasing managers,False
+4,Human Resources & People Ops,11-3111,Compensation and benefits managers,False
+4,Human Resources & People Ops,11-3131,Training and development managers,False
+1,Executive & General Management,11-9013,"Farmers, ranchers, and other agricultural managers",False
+1,Executive & General Management,11-9031,"Education and childcare administrators, preschool and daycare",False
+12,Education & Instruction,11-9033,"Education administrators, postsecondary",False
+12,Education & Instruction,11-9039,"Education administrators, all other",False
+17,Engineering & Architecture,11-9041,Architectural and engineering managers,False
+1,Executive & General Management,11-9071,Gambling managers,False
+1,Executive & General Management,11-9072,"Entertainment and recreation managers, except gambling",False
+1,Executive & General Management,11-9121,Natural sciences managers,False
+1,Executive & General Management,11-9151,Social and community service managers,False
+1,Executive & General Management,11-9161,Emergency management directors,False
+1,Executive & General Management,11-9179,"Personal service managers, all other",False
+10,Strategy & Corporate Development,13-1011,"Agents and business managers of artists, performers, and athletes",False
+9,Supply Chain Procurement & Operations,13-1032,"Insurance appraisers, auto damage",False
+10,Strategy & Corporate Development,13-1131,Fundraisers,False
+2,Finance Accounting & FP&A,13-2054,Financial risk specialists,False
+2,Finance Accounting & FP&A,13-2071,Credit counselors,False
+2,Finance Accounting & FP&A,13-2081,"Tax examiners and collectors, and revenue agents",False
+2,Finance Accounting & FP&A,13-2099,"Financial specialists, all other",False
+7,Information Technology,15-1231,Computer network support specialists,False
+7,Information Technology,15-1243,Database architects,False
+8,Data Analytics & Research,15-2021,Mathematicians,False
+8,Data Analytics & Research,15-2099,"Mathematical science occupations, all other",False
+17,Engineering & Architecture,17-1012,Landscape architects,False
+17,Engineering & Architecture,17-1021,Cartographers and photogrammetrists,False
+17,Engineering & Architecture,17-1022,Surveyors,False
+17,Engineering & Architecture,17-2011,Aerospace engineers,False
+17,Engineering & Architecture,17-2021,Agricultural engineers,False
+17,Engineering & Architecture,17-2031,Bioengineers and biomedical engineers,False
+17,Engineering & Architecture,17-2041,Chemical engineers,False
+17,Engineering & Architecture,17-2061,Computer hardware engineers,False
+17,Engineering & Architecture,17-2071,Electrical engineers,False
+17,Engineering & Architecture,17-2111,"Health and safety engineers, except mining safety engineers and inspectors",False
+17,Engineering & Architecture,17-2121,Marine engineers and naval architects,False
+17,Engineering & Architecture,17-2131,Materials engineers,False
+17,Engineering & Architecture,17-2151,"Mining and geological engineers, including mining safety engineers",False
+17,Engineering & Architecture,17-2161,Nuclear engineers,False
+17,Engineering & Architecture,17-2199,"Engineers, all other",False
+17,Engineering & Architecture,17-3012,Electrical and electronics drafters,False
+17,Engineering & Architecture,17-3013,Mechanical drafters,False
+17,Engineering & Architecture,17-3019,"Drafters, all other",False
+17,Engineering & Architecture,17-3021,Aerospace engineering and operations technologists and technicians,False
+17,Engineering & Architecture,17-3022,Civil engineering technologists and technicians,False
+17,Engineering & Architecture,17-3023,Electrical and electronic engineering technologists and technicians,False
+17,Engineering & Architecture,17-3024,Electro-mechanical and mechatronics technologists and technicians,False
+17,Engineering & Architecture,17-3025,Environmental engineering technologists and technicians,False
+17,Engineering & Architecture,17-3026,Industrial engineering technologists and technicians,False
+17,Engineering & Architecture,17-3027,Mechanical engineering technologists and technicians,False
+17,Engineering & Architecture,17-3028,Calibration technologists and technicians,False
+17,Engineering & Architecture,17-3029,"Engineering technologists and technicians, except drafters, all other",False
+17,Engineering & Architecture,17-3031,Surveying and mapping technicians,False
+13,Science & Research,19-1011,Animal scientists,False
+13,Science & Research,19-1012,Food scientists and technologists,False
+13,Science & Research,19-1013,Soil and plant scientists,False
+13,Science & Research,19-1021,Biochemists and biophysicists,False
+13,Science & Research,19-1022,Microbiologists,False
+13,Science & Research,19-1023,Zoologists and wildlife biologists,False
+13,Science & Research,19-1029,"Biological scientists, all other",False
+13,Science & Research,19-1031,Conservation scientists,False
+13,Science & Research,19-1032,Foresters,False
+13,Science & Research,19-1041,Epidemiologists,False
+13,Science & Research,19-1099,"Life scientists, all other",False
+13,Science & Research,19-2011,Astronomers,False
+13,Science & Research,19-2012,Physicists,False
+13,Science & Research,19-2021,Atmospheric and space scientists,False
+13,Science & Research,19-2031,Chemists,False
+13,Science & Research,19-2032,Materials scientists,False
+13,Science & Research,19-2041,"Environmental scientists and specialists, including health",False
+13,Science & Research,19-2042,"Geoscientists, except hydrologists and geographers",False
+13,Science & Research,19-2043,Hydrologists,False
+13,Science & Research,19-2099,"Physical scientists, all other",False
+13,Science & Research,19-3022,Survey researchers,False
+13,Science & Research,19-3032,Industrial-organizational psychologists,False
+13,Science & Research,19-3033,Clinical and counseling psychologists,False
+13,Science & Research,19-3034,School psychologists,False
+13,Science & Research,19-3039,"Psychologists, all other",False
+13,Science & Research,19-3041,Sociologists,False
+13,Science & Research,19-3091,Anthropologists and archeologists,False
+13,Science & Research,19-3092,Geographers,False
+13,Science & Research,19-3093,Historians,False
+13,Science & Research,19-3094,Political scientists,False
+13,Science & Research,19-3099,"Social scientists and related workers, all other",False
+13,Science & Research,19-4012,Agricultural technicians,False
+13,Science & Research,19-4013,Food science technicians,False
+13,Science & Research,19-4021,Biological technicians,False
+13,Science & Research,19-4031,Chemical technicians,False
+13,Science & Research,19-4042,"Environmental science and protection technicians, including health",False
+13,Science & Research,19-4043,"Geological technicians, except hydrologic technicians",False
+13,Science & Research,19-4044,Hydrologic technicians,False
+13,Science & Research,19-4051,Nuclear technicians,False
+13,Science & Research,19-4061,Social science research assistants,False
+13,Science & Research,19-4071,Forest and conservation technicians,False
+13,Science & Research,19-4092,Forensic science technicians,False
+13,Science & Research,19-4099,"Life, physical, and social science technicians, all other",False
+13,Science & Research,19-5012,Occupational health and safety technicians,False
+14,Community & Social Services,21-1013,Marriage and family therapists,False
+14,Community & Social Services,21-1015,Rehabilitation counselors,False
+14,Community & Social Services,21-1018,"Substance abuse, behavioral disorder, and mental health counselors",False
+14,Community & Social Services,21-1019,"Counselors, all other",False
+14,Community & Social Services,21-1021,"Child, family, and school social workers",False
+14,Community & Social Services,21-1022,Healthcare social workers,False
+14,Community & Social Services,21-1023,Mental health and substance abuse social workers,False
+14,Community & Social Services,21-1029,"Social workers, all other",False
+14,Community & Social Services,21-1091,Health education specialists,False
+14,Community & Social Services,21-1092,Probation officers and correctional treatment specialists,False
+14,Community & Social Services,21-1093,Social and human service assistants,False
+14,Community & Social Services,21-1094,Community health workers,False
+14,Community & Social Services,21-1099,"Community and social service specialists, all other",False
+14,Community & Social Services,21-2011,Clergy,False
+14,Community & Social Services,21-2021,"Directors, religious activities and education",False
+14,Community & Social Services,21-2099,"Religious workers, all other",False
+3,Legal & Compliance,23-1021,"Administrative law judges, adjudicators, and hearing officers",False
+3,Legal & Compliance,23-1022,"Arbitrators, mediators, and conciliators",False
+3,Legal & Compliance,23-1023,"Judges, magistrate judges, and magistrates",False
+3,Legal & Compliance,23-2093,"Title examiners, abstractors, and searchers",False
+3,Legal & Compliance,23-2099,"Legal support workers, all other",False
+12,Education & Instruction,25-1011,"Business teachers, postsecondary",False
+12,Education & Instruction,25-1021,"Computer science teachers, postsecondary",False
+12,Education & Instruction,25-1022,"Mathematical science teachers, postsecondary",False
+12,Education & Instruction,25-1031,"Architecture teachers, postsecondary",False
+12,Education & Instruction,25-1032,"Engineering teachers, postsecondary",False
+12,Education & Instruction,25-1041,"Agricultural sciences teachers, postsecondary",False
+12,Education & Instruction,25-1042,"Biological science teachers, postsecondary",False
+12,Education & Instruction,25-1043,"Forestry and conservation science teachers, postsecondary",False
+12,Education & Instruction,25-1051,"Atmospheric, earth, marine, and space sciences teachers, postsecondary",False
+12,Education & Instruction,25-1052,"Chemistry teachers, postsecondary",False
+12,Education & Instruction,25-1053,"Environmental science teachers, postsecondary",False
+12,Education & Instruction,25-1054,"Physics teachers, postsecondary",False
+12,Education & Instruction,25-1061,"Anthropology and archeology teachers, postsecondary",False
+12,Education & Instruction,25-1062,"Area, ethnic, and cultural studies teachers, postsecondary",False
+12,Education & Instruction,25-1063,"Economics teachers, postsecondary",False
+12,Education & Instruction,25-1064,"Geography teachers, postsecondary",False
+12,Education & Instruction,25-1065,"Political science teachers, postsecondary",False
+12,Education & Instruction,25-1066,"Psychology teachers, postsecondary",False
+12,Education & Instruction,25-1067,"Sociology teachers, postsecondary",False
+12,Education & Instruction,25-1069,"Social sciences teachers, postsecondary, all other",False
+12,Education & Instruction,25-1071,"Health specialties teachers, postsecondary",False
+12,Education & Instruction,25-1072,"Nursing instructors and teachers, postsecondary",False
+12,Education & Instruction,25-1081,"Education teachers, postsecondary",False
+12,Education & Instruction,25-1082,"Library science teachers, postsecondary",False
+12,Education & Instruction,25-1111,"Criminal justice and law enforcement teachers, postsecondary",False
+12,Education & Instruction,25-1112,"Law teachers, postsecondary",False
+12,Education & Instruction,25-1113,"Social work teachers, postsecondary",False
+12,Education & Instruction,25-1121,"Art, drama, and music teachers, postsecondary",False
+12,Education & Instruction,25-1122,"Communications teachers, postsecondary",False
+12,Education & Instruction,25-1123,"English language and literature teachers, postsecondary",False
+12,Education & Instruction,25-1124,"Foreign language and literature teachers, postsecondary",False
+12,Education & Instruction,25-1125,"History teachers, postsecondary",False
+12,Education & Instruction,25-1126,"Philosophy and religion teachers, postsecondary",False
+12,Education & Instruction,25-1192,"Family and consumer sciences teachers, postsecondary",False
+12,Education & Instruction,25-1193,"Recreation and fitness studies teachers, postsecondary",False
+12,Education & Instruction,25-1194,"Career/technical education teachers, postsecondary",False
+12,Education & Instruction,25-2011,"Preschool teachers, except special education",False
+12,Education & Instruction,25-2012,"Kindergarten teachers, except special education",False
+12,Education & Instruction,25-2021,"Elementary school teachers, except special education",False
+12,Education & Instruction,25-2022,"Middle school teachers, except special and career/technical education",False
+12,Education & Instruction,25-2023,"Career/technical education teachers, middle school",False
+12,Education & Instruction,25-2032,"Career/technical education teachers, secondary school",False
+12,Education & Instruction,25-2051,"Special education teachers, preschool",False
+12,Education & Instruction,25-2052,"Special education teachers, kindergarten and elementary school",False
+12,Education & Instruction,25-2057,"Special education teachers, middle school",False
+12,Education & Instruction,25-2058,"Special education teachers, secondary school",False
+12,Education & Instruction,25-2059,"Special education teachers, all other",False
+12,Education & Instruction,25-3011,"Adult basic education, adult secondary education, and english as a second language instructors",False
+12,Education & Instruction,25-3021,Self-enrichment teachers,False
+12,Education & Instruction,25-3031,"Substitute teachers, short-term",False
+12,Education & Instruction,25-3041,Tutors,False
+12,Education & Instruction,25-3099,"Teachers and instructors, all other",False
+12,Education & Instruction,25-4011,Archivists,False
+12,Education & Instruction,25-4012,Curators,False
+12,Education & Instruction,25-4013,Museum technicians and conservators,False
+12,Education & Instruction,25-4022,Librarians and media collections specialists,False
+12,Education & Instruction,25-4031,Library technicians,False
+12,Education & Instruction,25-9021,Farm and home management educators,False
+12,Education & Instruction,25-9044,"Teaching assistants, postsecondary",False
+12,Education & Instruction,25-9045,"Teaching assistants, except postsecondary",False
+12,Education & Instruction,25-9099,"Educational instruction and library workers, all other",False
+15,"Arts, Design & Creative",27-1011,Art directors,False
+15,"Arts, Design & Creative",27-1012,Craft artists,False
+15,"Arts, Design & Creative",27-1013,"Fine artists, including painters, sculptors, and illustrators",False
+15,"Arts, Design & Creative",27-1014,Special effects artists and animators,False
+15,"Arts, Design & Creative",27-1019,"Artists and related workers, all other",False
+15,"Arts, Design & Creative",27-1021,Commercial and industrial designers,False
+15,"Arts, Design & Creative",27-1022,Fashion designers,False
+15,"Arts, Design & Creative",27-1023,Floral designers,False
+15,"Arts, Design & Creative",27-1025,Interior designers,False
+15,"Arts, Design & Creative",27-1026,Merchandise displayers and window trimmers,False
+15,"Arts, Design & Creative",27-1027,Set and exhibit designers,False
+15,"Arts, Design & Creative",27-1029,"Designers, all other",False
+15,"Arts, Design & Creative",27-2011,Actors,False
+15,"Arts, Design & Creative",27-2022,Coaches and scouts,False
+15,"Arts, Design & Creative",27-2023,"Umpires, referees, and other sports officials",False
+15,"Arts, Design & Creative",27-2031,Dancers,False
+15,"Arts, Design & Creative",27-2041,Music directors and composers,False
+15,"Arts, Design & Creative",27-2042,Musicians and singers,False
+15,"Arts, Design & Creative",27-2091,"Disc jockeys, except radio",False
+15,"Arts, Design & Creative",27-2099,"Entertainers and performers, sports and related workers, all other",False
+15,"Arts, Design & Creative",27-3011,Broadcast announcers and radio disc jockeys,False
+15,"Arts, Design & Creative",27-3042,Technical writers,False
+15,"Arts, Design & Creative",27-3091,Interpreters and translators,False
+15,"Arts, Design & Creative",27-3092,Court reporters and simultaneous captioners,False
+15,"Arts, Design & Creative",27-3099,"Media and communication workers, all other",False
+15,"Arts, Design & Creative",27-4014,Sound engineering technicians,False
+15,"Arts, Design & Creative",27-4015,Lighting technicians,False
+15,"Arts, Design & Creative",27-4021,Photographers,False
+15,"Arts, Design & Creative",27-4031,"Camera operators, television, video, and film",False
+15,"Arts, Design & Creative",27-4099,"Media and communication equipment workers, all other",False
+11,Healthcare & Clinical,29-1011,Chiropractors,False
+11,Healthcare & Clinical,29-1021,"Dentists, general",False
+11,Healthcare & Clinical,29-1022,Oral and maxillofacial surgeons,False
+11,Healthcare & Clinical,29-1023,Orthodontists,False
+11,Healthcare & Clinical,29-1024,Prosthodontists,False
+11,Healthcare & Clinical,29-1029,"Dentists, all other specialists",False
+11,Healthcare & Clinical,29-1031,Dietitians and nutritionists,False
+11,Healthcare & Clinical,29-1041,Optometrists,False
+11,Healthcare & Clinical,29-1051,Pharmacists,False
+11,Healthcare & Clinical,29-1071,Physician assistants,False
+11,Healthcare & Clinical,29-1081,Podiatrists,False
+11,Healthcare & Clinical,29-1122,Occupational therapists,False
+11,Healthcare & Clinical,29-1123,Physical therapists,False
+11,Healthcare & Clinical,29-1124,Radiation therapists,False
+11,Healthcare & Clinical,29-1125,Recreational therapists,False
+11,Healthcare & Clinical,29-1126,Respiratory therapists,False
+11,Healthcare & Clinical,29-1127,Speech-language pathologists,False
+11,Healthcare & Clinical,29-1128,Exercise physiologists,False
+11,Healthcare & Clinical,29-1129,"Therapists, all other",False
+11,Healthcare & Clinical,29-1131,Veterinarians,False
+11,Healthcare & Clinical,29-1141,Registered nurses,False
+11,Healthcare & Clinical,29-1151,Nurse anesthetists,False
+11,Healthcare & Clinical,29-1161,Nurse midwives,False
+11,Healthcare & Clinical,29-1171,Nurse practitioners,False
+11,Healthcare & Clinical,29-1181,Audiologists,False
+11,Healthcare & Clinical,29-1211,Anesthesiologists,False
+11,Healthcare & Clinical,29-1212,Cardiologists,False
+11,Healthcare & Clinical,29-1213,Dermatologists,False
+11,Healthcare & Clinical,29-1214,Emergency medicine physicians,False
+11,Healthcare & Clinical,29-1215,Family medicine physicians,False
+11,Healthcare & Clinical,29-1216,General internal medicine physicians,False
+11,Healthcare & Clinical,29-1217,Neurologists,False
+11,Healthcare & Clinical,29-1218,Obstetricians and gynecologists,False
+11,Healthcare & Clinical,29-1221,"Pediatricians, general",False
+11,Healthcare & Clinical,29-1222,"Physicians, pathologists",False
+11,Healthcare & Clinical,29-1223,Psychiatrists,False
+11,Healthcare & Clinical,29-1224,Radiologists,False
+11,Healthcare & Clinical,29-1229,"Physicians, all other",False
+11,Healthcare & Clinical,29-1241,"Ophthalmologists, except pediatric",False
+11,Healthcare & Clinical,29-1242,"Orthopedic surgeons, except pediatric",False
+11,Healthcare & Clinical,29-1243,Pediatric surgeons,False
+11,Healthcare & Clinical,29-1249,"Surgeons, all other",False
+11,Healthcare & Clinical,29-1291,Acupuncturists,False
+11,Healthcare & Clinical,29-1292,Dental hygienists,False
+11,Healthcare & Clinical,29-1299,"Healthcare diagnosing or treating practitioners, all other",False
+11,Healthcare & Clinical,29-2010,Clinical laboratory technologists and technicians,False
+11,Healthcare & Clinical,29-2031,Cardiovascular technologists and technicians,False
+11,Healthcare & Clinical,29-2032,Diagnostic medical sonographers,False
+11,Healthcare & Clinical,29-2033,Nuclear medicine technologists,False
+11,Healthcare & Clinical,29-2034,Radiologic technologists and technicians,False
+11,Healthcare & Clinical,29-2035,Magnetic resonance imaging technologists,False
+11,Healthcare & Clinical,29-2036,Medical dosimetrists,False
+11,Healthcare & Clinical,29-2042,Emergency medical technicians,False
+11,Healthcare & Clinical,29-2043,Paramedics,False
+11,Healthcare & Clinical,29-2051,Dietetic technicians,False
+11,Healthcare & Clinical,29-2052,Pharmacy technicians,False
+11,Healthcare & Clinical,29-2053,Psychiatric technicians,False
+11,Healthcare & Clinical,29-2055,Surgical technologists,False
+11,Healthcare & Clinical,29-2056,Veterinary technologists and technicians,False
+11,Healthcare & Clinical,29-2057,Ophthalmic medical technicians,False
+11,Healthcare & Clinical,29-2061,Licensed practical and licensed vocational nurses,False
+11,Healthcare & Clinical,29-2072,Medical records specialists,False
+11,Healthcare & Clinical,29-2081,"Opticians, dispensing",False
+11,Healthcare & Clinical,29-2091,Orthotists and prosthetists,False
+11,Healthcare & Clinical,29-2092,Hearing aid specialists,False
+11,Healthcare & Clinical,29-2099,"Health technologists and technicians, all other",False
+11,Healthcare & Clinical,29-9021,Health information technologists and medical registrars,False
+11,Healthcare & Clinical,29-9091,Athletic trainers,False
+11,Healthcare & Clinical,29-9092,Genetic counselors,False
+11,Healthcare & Clinical,29-9093,Surgical assistants,False
+11,Healthcare & Clinical,29-9099,"Healthcare practitioners and technical workers, all other",False
+6,Sales & Business Development,41-1011,First-line supervisors of retail sales workers,False
+6,Sales & Business Development,41-1012,First-line supervisors of non-retail sales workers,False
+6,Sales & Business Development,41-3011,Advertising sales agents,False
+6,Sales & Business Development,41-3021,Insurance sales agents,False
+6,Sales & Business Development,41-3031,"Securities, commodities, and financial services sales agents",False
+6,Sales & Business Development,41-3041,Travel agents,False
+6,Sales & Business Development,41-4011,"Sales representatives, wholesale and manufacturing, technical and scientific products",False
+6,Sales & Business Development,41-9011,Demonstrators and product promoters,False
+6,Sales & Business Development,41-9012,Models,False
+6,Sales & Business Development,41-9041,Telemarketers,False
+6,Sales & Business Development,41-9091,"Door-to-door sales workers, news and street vendors, and related workers",False
+6,Sales & Business Development,41-9099,"Sales and related workers, all other",False
+16,Office & Administrative Support,43-1011,First-line supervisors of office and administrative support workers,False
+16,Office & Administrative Support,43-2011,"Switchboard operators, including answering service",False
+16,Office & Administrative Support,43-2021,Telephone operators,False
+16,Office & Administrative Support,43-2099,"Communications equipment operators, all other",False
+16,Office & Administrative Support,43-3011,Bill and account collectors,False
+16,Office & Administrative Support,43-3021,Billing and posting clerks,False
+16,Office & Administrative Support,43-3041,Gambling cage workers,False
+16,Office & Administrative Support,43-3051,Payroll and timekeeping clerks,False
+16,Office & Administrative Support,43-3061,Procurement clerks,False
+16,Office & Administrative Support,43-3071,Tellers,False
+16,Office & Administrative Support,43-3099,"Financial clerks, all other",False
+16,Office & Administrative Support,43-4011,Brokerage clerks,False
+16,Office & Administrative Support,43-4021,Correspondence clerks,False
+16,Office & Administrative Support,43-4031,"Court, municipal, and license clerks",False
+16,Office & Administrative Support,43-4041,"Credit authorizers, checkers, and clerks",False
+16,Office & Administrative Support,43-4051,Customer service representatives,False
+16,Office & Administrative Support,43-4061,"Eligibility interviewers, government programs",False
+16,Office & Administrative Support,43-4071,File clerks,False
+16,Office & Administrative Support,43-4081,"Hotel, motel, and resort desk clerks",False
+16,Office & Administrative Support,43-4111,"Interviewers, except eligibility and loan",False
+16,Office & Administrative Support,43-4121,"Library assistants, clerical",False
+16,Office & Administrative Support,43-4131,Loan interviewers and clerks,False
+16,Office & Administrative Support,43-4141,New accounts clerks,False
+16,Office & Administrative Support,43-4151,Order clerks,False
+16,Office & Administrative Support,43-4171,Receptionists and information clerks,False
+16,Office & Administrative Support,43-4181,Reservation and transportation ticket agents and travel clerks,False
+16,Office & Administrative Support,43-4199,"Information and record clerks, all other",False
+16,Office & Administrative Support,43-5011,Cargo and freight agents,False
+16,Office & Administrative Support,43-5021,Couriers and messengers,False
+16,Office & Administrative Support,43-5031,Public safety telecommunicators,False
+16,Office & Administrative Support,43-5041,"Meter readers, utilities",False
+16,Office & Administrative Support,43-5061,"Production, planning, and expediting clerks",False
+16,Office & Administrative Support,43-5071,"Shipping, receiving, and inventory clerks",False
+16,Office & Administrative Support,43-5111,"Weighers, measurers, checkers, and samplers, recordkeeping",False
+16,Office & Administrative Support,43-6011,Executive secretaries and executive administrative assistants,False
+16,Office & Administrative Support,43-6013,Medical secretaries and administrative assistants,False
+16,Office & Administrative Support,43-6014,"Secretaries and administrative assistants, except legal, medical, and executive",False
+16,Office & Administrative Support,43-9021,Data entry keyers,False
+16,Office & Administrative Support,43-9022,Word processors and typists,False
+16,Office & Administrative Support,43-9031,Desktop publishers,False
+16,Office & Administrative Support,43-9041,Insurance claims and policy processing clerks,False
+16,Office & Administrative Support,43-9051,"Mail clerks and mail machine operators, except postal service",False
+16,Office & Administrative Support,43-9061,"Office clerks, general",False
+16,Office & Administrative Support,43-9071,"Office machine operators, except computer",False
+16,Office & Administrative Support,43-9081,Proofreaders and copy markers,False
+16,Office & Administrative Support,43-9111,Statistical assistants,False
+16,Office & Administrative Support,43-9199,"Office and administrative support workers, all other",False
