@@ -16,7 +16,7 @@
 - **310 SOC codes** in `4 Results` tab with displacement scores, employment, wages, sector assignments.
 - **21 sectors** across the workbook.
 - **Existing patterns:** The project uses openpyxl for all workbook I/O (never pandas for xlsx). Pipeline scripts live under `scoring/`. Analysis/visualization scripts live under `analysis/`. Flask is listed as a dependency but no app exists yet.
-- **O\*NET data:** Already downloaded as `onet_db.zip`. Only 6 task-related files are currently extracted to `onet_data/db_29_1_text/` (Task Statements.txt, Task Ratings.txt, etc.). Skills.txt, Knowledge.txt, and Abilities.txt needed for transition pathways are still inside the ZIP and must be extracted before Task 9.
+- **O\*NET data:** Already downloaded as `onet_db.zip` in the main repo root. Only 6 task-related files are currently extracted to `onet_data/db_29_1_text/`. Both `onet_db.zip` and `onet_data/` are gitignored, so they do NOT exist in worktrees. `config.py` uses `git rev-parse --git-common-dir` to locate the main repo root for O\*NET paths, with `ONET_DIR_OVERRIDE` env var as escape hatch. Skills.txt, Knowledge.txt, and Abilities.txt needed for transition pathways are still inside the ZIP and must be extracted before Task 9.
 - **SOC format in workbook:** 2-digit major group + 4-digit detail, e.g. "11-1011". Some entries are comma-separated merged codes like "13-2051, 13-2052". BLS source data uses "11-1011.00" format (with .00 suffix).
 
 ### Data Source Summary
@@ -67,12 +67,47 @@ touch social_impact/__init__.py tests/__init__.py
 ```python
 """Configuration for Social Impact data pipeline."""
 import os
+import subprocess
+
+
+def _find_main_repo_root():
+    """Find the main git repo root, even when running inside a worktree.
+
+    Git worktrees have a `.git` file (not directory) that points back to
+    the main repo. We use `git rev-parse --git-common-dir` to find the
+    shared .git directory, then derive the main repo root from it.
+
+    Falls back to PROJECT_ROOT if detection fails (e.g. not a worktree).
+    """
+    try:
+        git_common = subprocess.check_output(
+            ["git", "rev-parse", "--git-common-dir"],
+            cwd=os.path.dirname(os.path.abspath(__file__)),
+            stderr=subprocess.DEVNULL,
+        ).decode().strip()
+        # git-common-dir returns path to the .git dir of the main repo
+        # e.g. /path/to/main-repo/.git
+        if git_common.endswith(".git"):
+            return os.path.dirname(os.path.abspath(git_common))
+        # If it's a bare path or nested, resolve it
+        return os.path.dirname(os.path.abspath(git_common))
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return None
+
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WORKBOOK = os.path.join(PROJECT_ROOT, "jobs-data-v3.xlsx")
 DATA_CACHE = os.path.join(PROJECT_ROOT, "social_impact", "data_cache")
 MERGED_OUTPUT = os.path.join(PROJECT_ROOT, "social_impact", "merged_social_data.json")
-ONET_DIR = os.path.join(PROJECT_ROOT, "onet_data", "db_29_1_text")
+
+# O*NET data lives in the main repo root (gitignored, not copied to worktrees).
+# Use ONET_DIR_OVERRIDE env var to specify a custom path if needed.
+_main_root = _find_main_repo_root() or PROJECT_ROOT
+ONET_DIR = os.environ.get(
+    "ONET_DIR_OVERRIDE",
+    os.path.join(_main_root, "onet_data", "db_29_1_text"),
+)
+ONET_ZIP = os.path.join(_main_root, "onet_db.zip")
 
 # BLS source URLs
 SOURCES = {
@@ -224,6 +259,16 @@ def test_foreign_born_data_complete():
     # Should cover at least the white-collar major groups
     for major in ["11", "13", "15", "17", "23", "25", "29"]:
         assert major in FOREIGN_BORN_BY_MAJOR_GROUP, f"Missing major group {major}"
+
+
+def test_onet_dir_resolves_to_main_repo():
+    """ONET_DIR should point to main repo root even in a worktree."""
+    from social_impact.config import ONET_DIR, ONET_ZIP
+    # ONET_DIR should be an absolute path containing onet_data
+    assert os.path.isabs(ONET_DIR), f"ONET_DIR should be absolute: {ONET_DIR}"
+    assert "onet_data" in ONET_DIR
+    # ONET_ZIP should point to the main repo's onet_db.zip
+    assert ONET_ZIP.endswith("onet_db.zip")
 ```
 
 Create `tests/test_download.py`:
@@ -343,6 +388,8 @@ def load_crosswalk(crosswalk_path=None):
     Returns:
         census_to_soc: dict mapping Census code (str) -> list of SOC codes (str)
         soc_to_census: dict mapping SOC code (str) -> list of Census codes (str)
+        census_titles: dict mapping Census code (str) -> Census occupation title (str)
+                       Used to match against CPSAAT occupation text.
     """
     if crosswalk_path is None:
         crosswalk_path = os.path.join(DATA_CACHE,
@@ -354,12 +401,15 @@ def load_crosswalk(crosswalk_path=None):
     # Find header row — look for a row containing 'Census' and 'SOC'
     header_row = None
     census_col = None
+    census_title_col = None
     soc_col = None
     for r in range(1, min(20, ws.max_row + 1)):
         row_vals = [str(ws.cell(r, c).value or "").strip().lower() for c in range(1, ws.max_column + 1)]
         for i, val in enumerate(row_vals):
             if "census" in val and "code" in val:
                 census_col = i + 1
+            if "census" in val and "title" in val:
+                census_title_col = i + 1
             if "soc" in val and "code" in val:
                 soc_col = i + 1
         if census_col and soc_col:
@@ -368,14 +418,16 @@ def load_crosswalk(crosswalk_path=None):
 
     if not header_row:
         # Fallback: try common column positions
-        # Typically: col 1 = Census code, col 3 = SOC code
-        print("  WARNING: Could not find header row, using fallback columns 1 & 3")
+        # Typically: col 1 = Census code, col 2 = Census title, col 3 = SOC code
+        print("  WARNING: Could not find header row, using fallback columns 1, 2, 3")
         census_col = 1
+        census_title_col = 2
         soc_col = 3
         header_row = 1
 
     census_to_soc = defaultdict(list)
     soc_to_census = defaultdict(list)
+    census_titles = {}
 
     for r in range(header_row + 1, ws.max_row + 1):
         census_raw = ws.cell(r, census_col).value
@@ -395,6 +447,12 @@ def load_crosswalk(crosswalk_path=None):
         if not census_code[0].isdigit():
             continue
 
+        # Capture Census title
+        if census_title_col:
+            title_raw = ws.cell(r, census_title_col).value
+            if title_raw:
+                census_titles[census_code] = str(title_raw).strip()
+
         if soc_code not in census_to_soc[census_code]:
             census_to_soc[census_code].append(soc_code)
         if census_code not in soc_to_census[soc_code]:
@@ -402,8 +460,9 @@ def load_crosswalk(crosswalk_path=None):
 
     wb.close()
 
-    print(f"  Crosswalk: {len(census_to_soc)} Census codes -> {len(soc_to_census)} SOC codes")
-    return dict(census_to_soc), dict(soc_to_census)
+    print(f"  Crosswalk: {len(census_to_soc)} Census codes -> {len(soc_to_census)} SOC codes, "
+          f"{len(census_titles)} Census titles")
+    return dict(census_to_soc), dict(soc_to_census), dict(census_titles)
 
 
 def load_project_socs():
@@ -479,20 +538,24 @@ import pytest
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
-def test_load_crosswalk_returns_dicts():
+def test_load_crosswalk_returns_three_dicts():
     from social_impact.crosswalk import load_crosswalk
-    census_to_soc, soc_to_census = load_crosswalk()
+    result = load_crosswalk()
+    assert len(result) == 3, "load_crosswalk should return (census_to_soc, soc_to_census, census_titles)"
+    census_to_soc, soc_to_census, census_titles = result
     assert isinstance(census_to_soc, dict)
     assert isinstance(soc_to_census, dict)
+    assert isinstance(census_titles, dict)
     assert len(census_to_soc) > 400, "Expected >400 Census codes"
     assert len(soc_to_census) > 300, "Expected >300 SOC codes"
+    assert len(census_titles) > 400, "Expected >400 Census titles"
 
 
 def test_crosswalk_soc_format():
     """SOC codes should be in XX-XXXX format (no .00 suffix)."""
     import re
     from social_impact.crosswalk import load_crosswalk
-    _, soc_to_census = load_crosswalk()
+    _, soc_to_census, _ = load_crosswalk()
     for soc in list(soc_to_census.keys())[:50]:
         assert re.match(r'^\d{2}-\d{4}$', soc), f"Bad SOC format: {soc}"
 
@@ -509,7 +572,7 @@ def test_load_project_socs():
 
 def test_build_soc_lookup_coverage():
     from social_impact.crosswalk import load_crosswalk, load_project_socs, build_soc_lookup
-    _, soc_to_census = load_crosswalk()
+    _, soc_to_census, _ = load_crosswalk()
     project_socs = load_project_socs()
     lookup = build_soc_lookup(project_socs, soc_to_census)
     # At least 80% of project SOCs should have Census mappings
@@ -518,7 +581,7 @@ def test_build_soc_lookup_coverage():
 
 def test_build_soc_lookup_handles_merged_socs():
     from social_impact.crosswalk import load_crosswalk, build_soc_lookup
-    _, soc_to_census = load_crosswalk()
+    _, soc_to_census, _ = load_crosswalk()
     # Simulate a merged SOC
     project_socs = {"13-2051, 13-2052": {"title": "Test merged"}}
     lookup = build_soc_lookup(project_socs, soc_to_census)
@@ -541,12 +604,14 @@ Run:
 ```bash
 python3 -c "
 from social_impact.crosswalk import load_crosswalk, load_project_socs, build_soc_lookup
-census_to_soc, soc_to_census = load_crosswalk()
+census_to_soc, soc_to_census, census_titles = load_crosswalk()
 project_socs = load_project_socs()
 lookup = build_soc_lookup(project_socs, soc_to_census)
 # Show a few mappings
 for soc in list(lookup.keys())[:5]:
-    print(f'  {soc} -> Census {lookup[soc]}')
+    codes = lookup[soc]
+    titles = [census_titles.get(c, '?') for c in codes]
+    print(f'  {soc} -> Census {codes} ({titles})')
 "
 ```
 
@@ -1241,6 +1306,7 @@ functions for the Flask app to query at runtime.
 """
 import os
 import csv
+import re
 import pandas as pd
 from collections import defaultdict
 
@@ -1263,12 +1329,23 @@ def _find_oews_csv(subdir, pattern="state"):
 
 
 def _normalize_soc(soc_str):
-    """Normalize OEWS SOC code to project format."""
+    """Normalize OEWS SOC code to project format.
+
+    Validates format (XX-XXXX) and excludes:
+    - Aggregate codes ending in 0000 (e.g. "11-0000", "00-0000")
+    - Non-standard formats
+    """
     if not soc_str:
         return None
     soc = str(soc_str).strip()
     if soc.endswith(".00"):
         soc = soc[:-3]
+    # Must match XX-XXXX format
+    if not re.match(r'^\d{2}-\d{4}$', soc):
+        return None
+    # Exclude aggregate codes (e.g. "11-0000", "00-0000")
+    if soc.endswith("0000"):
+        return None
     return soc
 
 
@@ -1510,6 +1587,22 @@ def test_normalize_soc():
     assert _normalize_soc("11-1011.00") == "11-1011"
     assert _normalize_soc("11-1011") == "11-1011"
     assert _normalize_soc(None) is None
+
+
+def test_normalize_soc_rejects_aggregates():
+    """Aggregate codes like 11-0000 and 00-0000 should be rejected."""
+    from social_impact.parse_oews import _normalize_soc
+    assert _normalize_soc("11-0000") is None
+    assert _normalize_soc("00-0000") is None
+    assert _normalize_soc("11-0000.00") is None
+
+
+def test_normalize_soc_rejects_invalid_format():
+    """Non-standard SOC formats should return None."""
+    from social_impact.parse_oews import _normalize_soc
+    assert _normalize_soc("bad") is None
+    assert _normalize_soc("111011") is None
+    assert _normalize_soc("11-101") is None
 ```
 
 **Step 4: Run tests (TDD red then green)**
@@ -1564,7 +1657,7 @@ git commit -m "Add union rate and OEWS geographic data parsers"
 - Create: `social_impact/merge.py`
 - Test: `tests/test_merge.py`
 
-This is the core logic: take all parsed sources and join them onto the 310 project SOCs. For CPSAAT11/11B data, use the Census-to-SOC crosswalk. For education/OEWS, use direct SOC match. Compute derived columns (Edu_Partisan_Lean, Pct_Foreign_Born).
+This is the core logic: take all parsed sources and join them onto the 310 project SOCs. For CPSAAT11/11B data, the PRIMARY strategy is crosswalk-based: SOC -> Census codes (via `build_soc_lookup`) -> Census titles -> fuzzy match to CPSAAT occupation text. Direct title fuzzy matching and major-group averaging are fallbacks only. For education/OEWS, use direct SOC match. Compute derived columns (Edu_Partisan_Lean, Pct_Foreign_Born).
 
 **Step 1: Write the merge engine**
 
@@ -1572,16 +1665,15 @@ This is the core logic: take all parsed sources and join them onto the 310 proje
 """Merge all social impact data sources onto project SOCs.
 
 Join strategy per source:
-1. CPSAAT11/11B (demographics): Census occ text -> Census code -> SOC via crosswalk
+1. CPSAAT11/11B (demographics): Crosswalk-first matching:
+   SOC -> Census codes (via build_soc_lookup) -> Census titles -> fuzzy match CPSAAT text
+   Fallback 1: direct fuzzy match SOC title to CPSAAT text
+   Fallback 2: major-group averaging
 2. Education attainment/entry: Direct SOC match
 3. Union rates: 2-digit SOC major group
 4. Foreign-born: 2-digit SOC major group (hardcoded from BLS report)
 5. OEWS state/metro: Direct SOC match
 6. Edu_Partisan_Lean: Derived from pct_bachelors_plus
-
-For CPSAAT11/11B, the join is tricky because the files use occupation titles,
-not Census codes directly. We match by building a Census-code -> title -> demo
-mapping using the crosswalk and fuzzy matching.
 """
 import json
 import os
@@ -1638,7 +1730,8 @@ def _fuzzy_match_occupation(target_text, demo_data, threshold=0.7):
     return best_match
 
 
-def _match_demographics_to_socs(demo_data, project_socs, census_to_soc, soc_to_census):
+def _match_demographics_to_socs(demo_data, project_socs, soc_census_lookup,
+                                 census_titles):
     """Match CPSAAT demographic data to project SOCs.
 
     Works for ANY field set — auto-detects numeric fields from the data.
@@ -1646,15 +1739,23 @@ def _match_demographics_to_socs(demo_data, project_socs, census_to_soc, soc_to_c
     pct_female, pct_white, etc.) AND CPSAAT11B (age fields like median_age,
     pct_over_55).
 
-    Strategy:
-    1. For each project SOC, find its Census code(s) via crosswalk
-    2. The Census code maps to a title in the crosswalk
-    3. Match that title to CPSAAT data using fuzzy matching
-    4. If multiple Census codes for one SOC, average the demographics weighted
-       by total_employed_K
+    Matching strategy (crosswalk-first):
+    1. PRIMARY: Use crosswalk. For each project SOC, get its Census codes
+       via soc_census_lookup (from build_soc_lookup). For each Census code,
+       get the Census title from census_titles. Fuzzy-match that title
+       against the CPSAAT occupation text keys. If multiple Census codes
+       map to one SOC, average the demographics weighted by total_employed_K.
+    2. FALLBACK 1: Direct fuzzy match of the SOC's workbook title against
+       CPSAAT occupation text (catches cases where crosswalk has no mapping
+       but the title is recognizable).
+    3. FALLBACK 2: Major-group averaging — average all CPSAAT entries whose
+       Census codes map to SOCs in the same 2-digit major group.
 
-    Fallback: try matching the SOC title from the workbook directly against
-    CPSAAT occupation titles.
+    Args:
+        demo_data: dict occupation_text -> {field: value, ...} from parse_cpsaat*
+        project_socs: dict soc -> {title, sector, ...} from load_project_socs
+        soc_census_lookup: dict project_soc -> [census_code, ...] from build_soc_lookup
+        census_titles: dict census_code -> title_text from load_crosswalk
 
     Returns:
         dict: project_soc -> {field1: val, field2: val, ...} or None
@@ -1662,7 +1763,6 @@ def _match_demographics_to_socs(demo_data, project_socs, census_to_soc, soc_to_c
     matched = {}
     unmatched = []
 
-    # Build a simple lookup from the CPSAAT data
     demo_by_text = demo_data  # already keyed by occ text
 
     # Auto-detect numeric fields from the first entry (excluding total_employed_K)
@@ -1672,48 +1772,76 @@ def _match_demographics_to_socs(demo_data, project_socs, census_to_soc, soc_to_c
         sample = next(iter(demo_by_text.values()))
         numeric_fields = [k for k in sample.keys() if k != "total_employed_K"]
 
+    # Track match sources for reporting
+    match_sources = {"crosswalk": 0, "title_fuzzy": 0, "major_group": 0}
+
     for soc, meta in project_socs.items():
         title = meta["title"]
-        census_codes = soc_to_census.get(soc, [])
+        census_codes = soc_census_lookup.get(soc, [])
 
-        # For merged SOCs, try each individual code
-        if not census_codes and "," in soc:
-            for s in soc.split(","):
-                s = s.strip()
-                if s in soc_to_census:
-                    census_codes.extend(soc_to_census[s])
+        # === Strategy 1 (PRIMARY): Crosswalk-based matching ===
+        # For each Census code, find its title and match to CPSAAT
+        crosswalk_matches = []
+        for census_code in census_codes:
+            census_title = census_titles.get(census_code, "")
+            if not census_title:
+                continue
+            match = _fuzzy_match_occupation(census_title, demo_by_text, threshold=0.65)
+            if match:
+                crosswalk_matches.append(demo_by_text[match])
 
-        # Strategy 1: Try matching SOC title directly to CPSAAT
+        if crosswalk_matches:
+            if len(crosswalk_matches) == 1:
+                matched[soc] = crosswalk_matches[0]
+            else:
+                # Average multiple Census-code matches, weighted by total_employed_K
+                avg = {}
+                total_emp = sum(m.get("total_employed_K", 1) or 1 for m in crosswalk_matches)
+                for field in numeric_fields:
+                    weighted_sum = sum(
+                        (m.get(field) or 0) * (m.get("total_employed_K", 1) or 1)
+                        for m in crosswalk_matches if m.get(field) is not None
+                    )
+                    contributing = [m for m in crosswalk_matches if m.get(field) is not None]
+                    if contributing:
+                        contrib_emp = sum(m.get("total_employed_K", 1) or 1 for m in contributing)
+                        avg[field] = round(weighted_sum / contrib_emp, 1)
+                    else:
+                        avg[field] = None
+                matched[soc] = avg
+            match_sources["crosswalk"] += 1
+            continue
+
+        # === Strategy 2 (FALLBACK 1): Direct title fuzzy match ===
         match = _fuzzy_match_occupation(title, demo_by_text, threshold=0.65)
         if match:
             matched[soc] = demo_by_text[match]
+            match_sources["title_fuzzy"] += 1
             continue
 
-        # Strategy 2: Use major group fallback — average all CPSAAT entries
-        # that map to the same 2-digit SOC group
+        # === Strategy 3 (FALLBACK 2): Major-group averaging ===
         major = soc.split("-")[0]
         group_vals = []
-        for occ_text, data in demo_by_text.items():
-            # Check if any SOC in this Census occ's mapping shares our major group
-            for census_code in census_to_soc:
-                for mapped_soc in census_to_soc[census_code]:
-                    if mapped_soc.startswith(major + "-"):
-                        match2 = _fuzzy_match_occupation(occ_text, {occ_text: data})
-                        if match2:
-                            group_vals.append(data)
-                            break
+        for other_soc, other_codes in soc_census_lookup.items():
+            if not other_soc.startswith(major + "-"):
+                continue
+            if other_soc in matched:
+                group_vals.append(matched[other_soc])
 
         if group_vals:
-            # Average the group values using auto-detected fields
             avg = {}
             for field in numeric_fields:
                 vals = [v[field] for v in group_vals if v.get(field) is not None]
                 avg[field] = round(sum(vals) / len(vals), 1) if vals else None
             matched[soc] = avg
+            match_sources["major_group"] += 1
         else:
             unmatched.append(soc)
 
     print(f"  Demographics matched: {len(matched)}/{len(project_socs)}")
+    print(f"    Crosswalk: {match_sources['crosswalk']}, "
+          f"Title fuzzy: {match_sources['title_fuzzy']}, "
+          f"Major-group avg: {match_sources['major_group']}")
     if unmatched:
         print(f"  Unmatched ({len(unmatched)}): {unmatched[:10]}...")
 
@@ -1745,17 +1873,20 @@ def merge_all():
     # 1. Load project SOCs
     project_socs = load_project_socs()
 
-    # 2. Load crosswalk
-    census_to_soc, soc_to_census = load_crosswalk()
+    # 2. Load crosswalk and build SOC->Census lookup
+    census_to_soc, soc_to_census, census_titles = load_crosswalk()
+    soc_census_lookup = build_soc_lookup(project_socs, soc_to_census)
 
-    # 3. Parse demographics
+    # 3. Parse demographics — use crosswalk as primary matching strategy
     print("\nParsing demographics (CPSAAT11)...")
     demo_data = parse_cpsaat11()
-    demo_matched = _match_demographics_to_socs(demo_data, project_socs, census_to_soc, soc_to_census)
+    demo_matched = _match_demographics_to_socs(demo_data, project_socs,
+                                                soc_census_lookup, census_titles)
 
     print("\nParsing age data (CPSAAT11B)...")
     age_data = parse_cpsaat11b()
-    age_matched = _match_demographics_to_socs(age_data, project_socs, census_to_soc, soc_to_census)
+    age_matched = _match_demographics_to_socs(age_data, project_socs,
+                                               soc_census_lookup, census_titles)
 
     # 4. Parse education
     print("\nParsing education data...")
@@ -1909,16 +2040,45 @@ def test_fuzzy_match_no_match():
     assert result is None
 
 
-def test_match_demographics_auto_detects_fields():
-    """The function should work for ANY field set, not just race/gender."""
+def test_match_demographics_crosswalk_primary():
+    """Crosswalk should be the PRIMARY matching strategy."""
     from social_impact.merge import _match_demographics_to_socs
-    # Simulate age data (CPSAAT11B fields)
+    # Census code "0100" maps to SOC "11-1021" via crosswalk,
+    # and Census title "General and operations managers" matches CPSAAT text
+    demo_data = {"General and operations managers": {"pct_female": 31.0, "total_employed_K": 2500}}
+    project_socs = {"11-1021": {"title": "General and Operations Managers"}}
+    soc_census_lookup = {"11-1021": ["0100"]}
+    census_titles = {"0100": "General and operations managers"}
+    result = _match_demographics_to_socs(demo_data, project_socs,
+                                          soc_census_lookup, census_titles)
+    assert "11-1021" in result
+    assert result["11-1021"]["pct_female"] == 31.0
+
+
+def test_match_demographics_fallback_to_title_fuzzy():
+    """When crosswalk has no mapping, fall back to SOC title fuzzy match."""
+    from social_impact.merge import _match_demographics_to_socs
     demo_data = {"Accountants and auditors": {"median_age": 42.1, "pct_over_55": 18.3, "total_employed_K": 1200}}
     project_socs = {"13-2011": {"title": "Accountants and auditors"}}
+    # Empty crosswalk lookup -> forces fallback to title fuzzy match
     result = _match_demographics_to_socs(demo_data, project_socs, {}, {})
     assert "13-2011" in result
     assert result["13-2011"]["median_age"] == 42.1
     assert result["13-2011"]["pct_over_55"] == 18.3
+
+
+def test_match_demographics_auto_detects_fields():
+    """The function should work for ANY field set, not just race/gender."""
+    from social_impact.merge import _match_demographics_to_socs
+    # Age data (CPSAAT11B fields) via crosswalk
+    demo_data = {"Software developers": {"median_age": 35.0, "pct_over_55": 8.0, "total_employed_K": 800}}
+    project_socs = {"15-1252": {"title": "Software developers"}}
+    soc_census_lookup = {"15-1252": ["1010"]}
+    census_titles = {"1010": "Software developers"}
+    result = _match_demographics_to_socs(demo_data, project_socs,
+                                          soc_census_lookup, census_titles)
+    assert "15-1252" in result
+    assert result["15-1252"]["median_age"] == 35.0
 
 
 def test_match_demographics_race_fields():
@@ -1926,7 +2086,10 @@ def test_match_demographics_race_fields():
     from social_impact.merge import _match_demographics_to_socs
     demo_data = {"Software developers": {"pct_female": 22.0, "pct_white": 55.0, "pct_asian": 35.0, "total_employed_K": 800}}
     project_socs = {"15-1252": {"title": "Software developers"}}
-    result = _match_demographics_to_socs(demo_data, project_socs, {}, {})
+    soc_census_lookup = {"15-1252": ["1010"]}
+    census_titles = {"1010": "Software developers"}
+    result = _match_demographics_to_socs(demo_data, project_socs,
+                                          soc_census_lookup, census_titles)
     assert "15-1252" in result
     assert result["15-1252"]["pct_female"] == 22.0
 
@@ -1964,7 +2127,7 @@ Run:
 python3 social_impact/merge.py
 ```
 
-Expected: 310 records merged. Coverage report shows most columns above 80%. Some CPSAAT matches may be lower (~60-80%) due to the Census-code mismatch — that's acceptable for v1. The intermediate JSON is saved for inspection.
+Expected: 310 records merged. Coverage report shows most columns above 80%. The crosswalk-based matching should achieve 85-95% coverage for demographics. Match source breakdown shows most matches come from "Crosswalk" (primary), with small numbers from "Title fuzzy" and "Major-group avg" fallbacks. The intermediate JSON is saved for inspection.
 
 **Step 5: Inspect a few records**
 
@@ -2388,14 +2551,19 @@ The transition pathways page needs O\*NET skills and knowledge vectors per SOC t
 
 **Step 1: Extract missing O\*NET files from the ZIP**
 
+Note: `onet_db.zip` and `onet_data/` are gitignored and only exist in the main repo root, not in worktrees. `config.py` auto-detects the main repo root via `git rev-parse --git-common-dir`, so `ONET_DIR` and `ONET_ZIP` point to the correct location even when running from a worktree.
+
 Run:
 ```bash
 python3 -c "
 import zipfile, os
-ZIP_PATH = 'onet_db.zip'
-ONET_DIR = 'onet_data/db_29_1_text'
+from social_impact.config import ONET_DIR, ONET_ZIP
+
 needed = ['Skills.txt', 'Knowledge.txt', 'Abilities.txt']
-with zipfile.ZipFile(ZIP_PATH) as zf:
+assert os.path.exists(ONET_ZIP), f'Missing ZIP: {ONET_ZIP} — ensure onet_db.zip is in main repo root'
+os.makedirs(ONET_DIR, exist_ok=True)
+
+with zipfile.ZipFile(ONET_ZIP) as zf:
     for name in zf.namelist():
         basename = os.path.basename(name)
         if basename in needed:
@@ -2414,11 +2582,11 @@ for f in needed:
     assert os.path.exists(path), f'Missing: {path}'
     size = os.path.getsize(path)
     print(f'  OK: {f} ({size:,} bytes)')
-print('All O*NET files extracted.')
+print(f'All O*NET files extracted to {ONET_DIR}')
 "
 ```
 
-Expected: Skills.txt (~5.5MB), Knowledge.txt (~5.5MB), Abilities.txt (~8.4MB) extracted to `onet_data/db_29_1_text/`.
+Expected: Skills.txt (~5.5MB), Knowledge.txt (~5.5MB), Abilities.txt (~8.4MB) extracted to the main repo's `onet_data/db_29_1_text/`.
 
 **Step 2: Write the failing test**
 
@@ -2492,13 +2660,9 @@ def test_find_transition_targets():
         assert 0 < t["similarity"] <= 1.0
 
 
-def test_get_cached_vectors():
-    from social_impact.onet_skills import get_cached_vectors, _cached_vectors
-    # First call builds, second returns cache
-    r1 = get_cached_vectors({"11-1011", "13-2011"})
-    r2 = get_cached_vectors({"11-1011", "13-2011"})
-    assert r1[0] == r2[0], "Cached result should be identical"
 ```
+
+Note: `get_cached_vectors` and `_cached_vectors` are NOT tested here — those are added in Task 15 and tested in `tests/test_onet_cache.py`. Task 9 tests only cover the functions implemented in Task 9.
 
 **Step 3: Run tests to verify they fail (TDD red)**
 
@@ -2703,7 +2867,7 @@ Run:
 pytest tests/test_onet_skills.py -v
 ```
 
-Expected: All 8 tests pass.
+Expected: All 7 tests pass (6 function tests + 1 file existence check).
 
 **Step 6: Smoke test the module directly**
 
@@ -3791,13 +3955,20 @@ def chart_state_displacement_risk(data, state_shares=None, filename="geo_state_r
     print(f"  {filename}")
 ```
 
-Also update `generate_all_charts()` to load and pass state shares:
+Also update `generate_all_charts()` to load cached state shares from the merge step:
 ```python
-    # Load OEWS state shares for proportional geographic allocation
-    from social_impact.parse_oews import parse_oews_state
-    from social_impact.crosswalk import load_project_socs
-    soc_set = set(load_project_socs().keys())
-    _, state_shares = parse_oews_state(soc_set)
+    # Load OEWS state shares from the cached JSON produced by merge_all()
+    # (avoids re-parsing the large OEWS state file)
+    import json
+    from social_impact.config import MERGED_OUTPUT
+    state_shares_path = MERGED_OUTPUT.replace("merged_social_data.json", "state_shares.json")
+    state_shares = {}
+    if os.path.exists(state_shares_path):
+        with open(state_shares_path) as f:
+            state_shares = json.load(f)
+        print(f"  Loaded state shares for {len(state_shares)} SOCs from {state_shares_path}")
+    else:
+        print(f"  WARNING: {state_shares_path} not found — run social_impact/run.py first")
 
     chart_state_displacement_risk(data, state_shares=state_shares)
 ```
