@@ -62,7 +62,93 @@ mkdir -p social_impact/data_cache tests
 touch social_impact/__init__.py tests/__init__.py
 ```
 
-**Step 2: Write config.py with all source URLs, paths, and constants**
+**Step 2: Write config and download tests**
+
+Create `tests/test_config.py`:
+
+```python
+"""Tests for social_impact config."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def test_config_paths_exist():
+    from social_impact.config import PROJECT_ROOT, WORKBOOK
+    assert os.path.isdir(PROJECT_ROOT)
+    assert os.path.exists(WORKBOOK), f"Workbook not found at {WORKBOOK}"
+
+
+def test_sources_all_have_urls():
+    from social_impact.config import SOURCES
+    assert len(SOURCES) >= 7
+    for key, url in SOURCES.items():
+        assert url.startswith("https://"), f"{key} URL does not start with https://"
+
+
+def test_foreign_born_data_complete():
+    from social_impact.config import FOREIGN_BORN_BY_MAJOR_GROUP
+    # Should cover at least the white-collar major groups
+    for major in ["11", "13", "15", "17", "23", "25", "29"]:
+        assert major in FOREIGN_BORN_BY_MAJOR_GROUP, f"Missing major group {major}"
+
+
+def test_onet_dir_resolves_to_main_repo():
+    """ONET_DIR should point to main repo root even in a worktree."""
+    from social_impact.config import ONET_DIR, ONET_ZIP
+    # ONET_DIR should be an absolute path containing onet_data
+    assert os.path.isabs(ONET_DIR), f"ONET_DIR should be absolute: {ONET_DIR}"
+    assert "onet_data" in ONET_DIR
+    # ONET_ZIP should point to the main repo's onet_db.zip
+    assert ONET_ZIP.endswith("onet_db.zip")
+```
+
+Create `tests/test_download.py`:
+
+```python
+"""Tests for BLS file downloader."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def test_download_file_returns_path():
+    from social_impact.download import download_file
+    # Test with a small file (crosswalk)
+    path = download_file("census_soc_crosswalk")
+    assert path is not None
+    assert os.path.exists(path)
+    assert os.path.getsize(path) > 1000, "Downloaded file too small"
+
+
+def test_download_file_caching():
+    from social_impact.download import download_file
+    # Second call should use cache
+    path1 = download_file("census_soc_crosswalk")
+    path2 = download_file("census_soc_crosswalk")
+    assert path1 == path2
+
+
+def test_download_file_invalid_key():
+    from social_impact.download import download_file
+    with pytest.raises(KeyError):
+        download_file("nonexistent_source")
+```
+
+**Step 3: Run tests (TDD red)**
+
+Run:
+```bash
+pytest tests/test_config.py tests/test_download.py -v
+```
+
+Expected: All tests FAIL (red) because `social_impact/config.py` and `social_impact/download.py` do not exist yet. Implement Steps 4-5, then re-run — all tests pass (green).
+
+**Step 4: Write config.py with all source URLs, paths, and constants**
 
 ```python
 """Configuration for Social Impact data pipeline."""
@@ -161,7 +247,7 @@ EDU_PARTISAN_NO_COLLEGE = -0.06  # +6% Rep margin for no bachelor's
 # This is populated at runtime by load_project_socs()
 ```
 
-**Step 3: Write download.py with caching downloader**
+**Step 5: Write download.py with caching downloader**
 
 ```python
 """Download and cache BLS data files."""
@@ -228,92 +314,6 @@ if __name__ == "__main__":
     download_all(force=force)
 ```
 
-**Step 4: Write config tests**
-
-Create `tests/test_config.py`:
-
-```python
-"""Tests for social_impact config."""
-import os
-import sys
-import pytest
-
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-
-def test_config_paths_exist():
-    from social_impact.config import PROJECT_ROOT, WORKBOOK
-    assert os.path.isdir(PROJECT_ROOT)
-    assert os.path.exists(WORKBOOK), f"Workbook not found at {WORKBOOK}"
-
-
-def test_sources_all_have_urls():
-    from social_impact.config import SOURCES
-    assert len(SOURCES) >= 7
-    for key, url in SOURCES.items():
-        assert url.startswith("https://"), f"{key} URL does not start with https://"
-
-
-def test_foreign_born_data_complete():
-    from social_impact.config import FOREIGN_BORN_BY_MAJOR_GROUP
-    # Should cover at least the white-collar major groups
-    for major in ["11", "13", "15", "17", "23", "25", "29"]:
-        assert major in FOREIGN_BORN_BY_MAJOR_GROUP, f"Missing major group {major}"
-
-
-def test_onet_dir_resolves_to_main_repo():
-    """ONET_DIR should point to main repo root even in a worktree."""
-    from social_impact.config import ONET_DIR, ONET_ZIP
-    # ONET_DIR should be an absolute path containing onet_data
-    assert os.path.isabs(ONET_DIR), f"ONET_DIR should be absolute: {ONET_DIR}"
-    assert "onet_data" in ONET_DIR
-    # ONET_ZIP should point to the main repo's onet_db.zip
-    assert ONET_ZIP.endswith("onet_db.zip")
-```
-
-Create `tests/test_download.py`:
-
-```python
-"""Tests for BLS file downloader."""
-import os
-import sys
-import pytest
-
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-
-def test_download_file_returns_path():
-    from social_impact.download import download_file
-    # Test with a small file (crosswalk)
-    path = download_file("census_soc_crosswalk")
-    assert path is not None
-    assert os.path.exists(path)
-    assert os.path.getsize(path) > 1000, "Downloaded file too small"
-
-
-def test_download_file_caching():
-    from social_impact.download import download_file
-    # Second call should use cache
-    path1 = download_file("census_soc_crosswalk")
-    path2 = download_file("census_soc_crosswalk")
-    assert path1 == path2
-
-
-def test_download_file_invalid_key():
-    from social_impact.download import download_file
-    with pytest.raises(KeyError):
-        download_file("nonexistent_source")
-```
-
-**Step 5: Run tests (TDD red then green)**
-
-Run:
-```bash
-pytest tests/test_config.py tests/test_download.py -v
-```
-
-Expected: Config tests pass immediately. Download tests pass after first download.
-
 **Step 6: Add data_cache to .gitignore**
 
 Append to `.gitignore`:
@@ -338,7 +338,7 @@ print(f'Size: {os.path.getsize(path)} bytes')
 
 Expected: File downloads successfully, size > 10 KB.
 
-**Step 6: Download all source files**
+**Step 8: Download all source files**
 
 Run:
 ```bash
@@ -634,7 +634,76 @@ git commit -m "Add Census-to-SOC crosswalk parser for demographic data join"
 
 CPSAAT11 is an XLSX file with Census occupation codes and demographic breakdowns. The file has a non-standard layout: merged cells, multi-level headers, footnotes. We need to extract: Pct_Female, Pct_White, Pct_Black, Pct_Asian, Pct_Hispanic per Census occupation code.
 
-**Step 1: Write the CPSAAT11 parser**
+**Step 1: Write the failing tests**
+
+Create `tests/test_parse_demographics.py`:
+
+```python
+"""Tests for CPSAAT11/11B demographic parsers."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def test_parse_cpsaat11_returns_entries():
+    from social_impact.parse_demographics import parse_cpsaat11
+    demo = parse_cpsaat11()
+    assert len(demo) > 400, f"Expected >400 occupation entries, got {len(demo)}"
+
+
+def test_parse_cpsaat11_has_expected_fields():
+    from social_impact.parse_demographics import parse_cpsaat11
+    demo = parse_cpsaat11()
+    sample = next(iter(demo.values()))
+    for field in ["pct_female", "pct_white", "pct_black", "pct_asian", "pct_hispanic"]:
+        assert field in sample, f"Missing field: {field}"
+
+
+def test_parse_cpsaat11_values_are_percentages():
+    from social_impact.parse_demographics import parse_cpsaat11
+    demo = parse_cpsaat11()
+    for occ, data in list(demo.items())[:20]:
+        for field in ["pct_female", "pct_white"]:
+            val = data.get(field)
+            if val is not None:
+                assert 0 <= val <= 100, f"{occ} {field}={val} out of range"
+
+
+def test_parse_cpsaat11b_returns_entries():
+    from social_impact.parse_demographics import parse_cpsaat11b
+    age = parse_cpsaat11b()
+    assert len(age) > 400, f"Expected >400 entries, got {len(age)}"
+
+
+def test_parse_cpsaat11b_has_age_fields():
+    from social_impact.parse_demographics import parse_cpsaat11b
+    age = parse_cpsaat11b()
+    sample = next(iter(age.values()))
+    assert "median_age" in sample, "Missing median_age"
+    assert "pct_over_55" in sample, "Missing pct_over_55"
+
+
+def test_parse_cpsaat11b_median_age_reasonable():
+    from social_impact.parse_demographics import parse_cpsaat11b
+    age = parse_cpsaat11b()
+    for occ, data in list(age.items())[:20]:
+        ma = data.get("median_age")
+        if ma is not None:
+            assert 18 <= ma <= 70, f"{occ} median_age={ma} out of range"
+```
+
+**Step 2: Run tests (TDD red)**
+
+Run:
+```bash
+pytest tests/test_parse_demographics.py -v
+```
+
+Expected: All tests FAIL (red) because `social_impact/parse_demographics.py` does not exist yet. Implement Step 3, then re-run — all tests pass (green).
+
+**Step 3: Write the CPSAAT11 parser**
 
 ```python
 """Parse BLS CPSAAT11 (race/gender) and CPSAAT11B (age) tables.
@@ -846,75 +915,6 @@ def parse_cpsaat11b(filepath=None):
     return results
 ```
 
-**Step 2: Write the failing tests**
-
-Create `tests/test_parse_demographics.py`:
-
-```python
-"""Tests for CPSAAT11/11B demographic parsers."""
-import os
-import sys
-import pytest
-
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-
-def test_parse_cpsaat11_returns_entries():
-    from social_impact.parse_demographics import parse_cpsaat11
-    demo = parse_cpsaat11()
-    assert len(demo) > 400, f"Expected >400 occupation entries, got {len(demo)}"
-
-
-def test_parse_cpsaat11_has_expected_fields():
-    from social_impact.parse_demographics import parse_cpsaat11
-    demo = parse_cpsaat11()
-    sample = next(iter(demo.values()))
-    for field in ["pct_female", "pct_white", "pct_black", "pct_asian", "pct_hispanic"]:
-        assert field in sample, f"Missing field: {field}"
-
-
-def test_parse_cpsaat11_values_are_percentages():
-    from social_impact.parse_demographics import parse_cpsaat11
-    demo = parse_cpsaat11()
-    for occ, data in list(demo.items())[:20]:
-        for field in ["pct_female", "pct_white"]:
-            val = data.get(field)
-            if val is not None:
-                assert 0 <= val <= 100, f"{occ} {field}={val} out of range"
-
-
-def test_parse_cpsaat11b_returns_entries():
-    from social_impact.parse_demographics import parse_cpsaat11b
-    age = parse_cpsaat11b()
-    assert len(age) > 400, f"Expected >400 entries, got {len(age)}"
-
-
-def test_parse_cpsaat11b_has_age_fields():
-    from social_impact.parse_demographics import parse_cpsaat11b
-    age = parse_cpsaat11b()
-    sample = next(iter(age.values()))
-    assert "median_age" in sample, "Missing median_age"
-    assert "pct_over_55" in sample, "Missing pct_over_55"
-
-
-def test_parse_cpsaat11b_median_age_reasonable():
-    from social_impact.parse_demographics import parse_cpsaat11b
-    age = parse_cpsaat11b()
-    for occ, data in list(age.items())[:20]:
-        ma = data.get("median_age")
-        if ma is not None:
-            assert 18 <= ma <= 70, f"{occ} median_age={ma} out of range"
-```
-
-**Step 3: Run tests (TDD red then green)**
-
-Run:
-```bash
-pytest tests/test_parse_demographics.py -v
-```
-
-Expected: All tests pass after Step 1 implementation.
-
 **Step 4: Smoke test the parsers interactively**
 
 Run:
@@ -950,7 +950,72 @@ git commit -m "Add CPSAAT11/11B parsers for race, gender, and age demographics"
 
 Tables 5.3 (education attainment distribution) and 5.4 (typical entry education) use direct SOC codes, so no crosswalk needed. However, the XLSX files have multi-row headers and merged cells.
 
-**Step 1: Write the education parsers**
+**Step 1: Write the failing tests**
+
+Create `tests/test_parse_education.py`:
+
+```python
+"""Tests for BLS education parsers."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def test_parse_education_attainment_returns_socs():
+    from social_impact.parse_education import parse_education_attainment
+    edu = parse_education_attainment()
+    assert len(edu) > 200, f"Expected >200 SOCs, got {len(edu)}"
+
+
+def test_education_attainment_fields():
+    from social_impact.parse_education import parse_education_attainment
+    edu = parse_education_attainment()
+    sample = next(iter(edu.values()))
+    assert "pct_bachelors_plus" in sample
+    assert "pct_graduate_deg" in sample
+
+
+def test_education_attainment_values_valid():
+    from social_impact.parse_education import parse_education_attainment
+    edu = parse_education_attainment()
+    for soc, data in edu.items():
+        bp = data.get("pct_bachelors_plus", 0)
+        gd = data.get("pct_graduate_deg", 0)
+        if bp is not None:
+            assert 0 <= bp <= 100, f"{soc}: bach+={bp}"
+        if gd is not None:
+            assert gd <= bp, f"{soc}: grad={gd} > bach+={bp}"
+
+
+def test_parse_entry_education():
+    from social_impact.parse_education import parse_entry_education
+    entry = parse_entry_education()
+    assert len(entry) > 200
+    sample = next(iter(entry.values()))
+    assert isinstance(sample, str)
+    assert len(sample) > 3, "Entry education should be descriptive text"
+
+
+def test_normalize_soc_removes_suffix():
+    from social_impact.parse_education import _normalize_soc
+    assert _normalize_soc("11-1011.00") == "11-1011"
+    assert _normalize_soc("11-1011") == "11-1011"
+    assert _normalize_soc("bad") is None
+    assert _normalize_soc(None) is None
+```
+
+**Step 2: Run tests (TDD red)**
+
+Run:
+```bash
+pytest tests/test_parse_education.py -v
+```
+
+Expected: All tests FAIL (red) because `social_impact/parse_education.py` does not exist yet. Implement Step 3, then re-run — all tests pass (green).
+
+**Step 3: Write the education parsers**
 
 ```python
 """Parse BLS employment projections education tables.
@@ -1117,71 +1182,6 @@ def parse_entry_education(filepath=None):
     return results
 ```
 
-**Step 2: Write the failing tests**
-
-Create `tests/test_parse_education.py`:
-
-```python
-"""Tests for BLS education parsers."""
-import os
-import sys
-import pytest
-
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-
-def test_parse_education_attainment_returns_socs():
-    from social_impact.parse_education import parse_education_attainment
-    edu = parse_education_attainment()
-    assert len(edu) > 200, f"Expected >200 SOCs, got {len(edu)}"
-
-
-def test_education_attainment_fields():
-    from social_impact.parse_education import parse_education_attainment
-    edu = parse_education_attainment()
-    sample = next(iter(edu.values()))
-    assert "pct_bachelors_plus" in sample
-    assert "pct_graduate_deg" in sample
-
-
-def test_education_attainment_values_valid():
-    from social_impact.parse_education import parse_education_attainment
-    edu = parse_education_attainment()
-    for soc, data in edu.items():
-        bp = data.get("pct_bachelors_plus", 0)
-        gd = data.get("pct_graduate_deg", 0)
-        if bp is not None:
-            assert 0 <= bp <= 100, f"{soc}: bach+={bp}"
-        if gd is not None:
-            assert gd <= bp, f"{soc}: grad={gd} > bach+={bp}"
-
-
-def test_parse_entry_education():
-    from social_impact.parse_education import parse_entry_education
-    entry = parse_entry_education()
-    assert len(entry) > 200
-    sample = next(iter(entry.values()))
-    assert isinstance(sample, str)
-    assert len(sample) > 3, "Entry education should be descriptive text"
-
-
-def test_normalize_soc_removes_suffix():
-    from social_impact.parse_education import _normalize_soc
-    assert _normalize_soc("11-1011.00") == "11-1011"
-    assert _normalize_soc("11-1011") == "11-1011"
-    assert _normalize_soc("bad") is None
-    assert _normalize_soc(None) is None
-```
-
-**Step 3: Run tests (TDD red then green)**
-
-Run:
-```bash
-pytest tests/test_parse_education.py -v
-```
-
-Expected: All tests pass.
-
 **Step 4: Smoke test interactively**
 
 Run:
@@ -1216,7 +1216,124 @@ git commit -m "Add BLS education attainment and entry education parsers"
 - Test: `tests/test_parse_union.py`
 - Test: `tests/test_parse_oews.py`
 
-**Step 1: Write union rate parser (HTML table)**
+**Step 1: Write the failing tests**
+
+Create `tests/test_parse_union.py`:
+
+```python
+"""Tests for union rate parser."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def test_union_rates_complete():
+    from social_impact.parse_union import UNION_RATES_2024
+    assert len(UNION_RATES_2024) >= 22, "Should cover all major groups"
+
+
+def test_get_union_rate():
+    from social_impact.parse_union import get_union_rate
+    rate = get_union_rate("25-1011")
+    assert rate is not None
+    assert rate > 0
+    assert rate < 100
+
+
+def test_get_union_rate_unknown_group():
+    from social_impact.parse_union import get_union_rate
+    rate = get_union_rate("99-9999")
+    assert rate is None
+
+
+def test_fetch_union_rates_returns_dict():
+    from social_impact.parse_union import fetch_union_rates
+    rates = fetch_union_rates()
+    assert isinstance(rates, dict)
+    assert len(rates) >= 22
+```
+
+Create `tests/test_parse_oews.py`:
+
+```python
+"""Tests for OEWS geographic data parsers."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def test_parse_oews_state_returns_tuple():
+    from social_impact.parse_oews import parse_oews_state
+    result = parse_oews_state({"11-1011", "15-1252"})
+    assert isinstance(result, tuple) and len(result) == 2
+    top3, shares = result
+    assert isinstance(top3, dict)
+    assert isinstance(shares, dict)
+
+
+def test_oews_state_top3_format():
+    from social_impact.parse_oews import parse_oews_state
+    top3, _ = parse_oews_state({"11-1011"})
+    if "11-1011" in top3:
+        states = top3["11-1011"]
+        assert isinstance(states, list)
+        assert len(states) <= 3
+        for s in states:
+            assert isinstance(s, str)
+
+
+def test_oews_state_shares_sum_to_one():
+    from social_impact.parse_oews import parse_oews_state
+    _, shares = parse_oews_state({"11-1011"})
+    if "11-1011" in shares:
+        total = sum(shares["11-1011"].values())
+        assert abs(total - 1.0) < 0.01, f"Shares sum to {total}, expected ~1.0"
+
+
+def test_parse_oews_metro_lq():
+    from social_impact.parse_oews import parse_oews_metro_lq
+    result = parse_oews_metro_lq({"11-1011"})
+    assert isinstance(result, dict)
+    # May or may not have data for this SOC depending on OEWS availability
+
+
+def test_normalize_soc():
+    from social_impact.parse_oews import _normalize_soc
+    assert _normalize_soc("11-1011.00") == "11-1011"
+    assert _normalize_soc("11-1011") == "11-1011"
+    assert _normalize_soc(None) is None
+
+
+def test_normalize_soc_rejects_aggregates():
+    """Aggregate codes like 11-0000 and 00-0000 should be rejected."""
+    from social_impact.parse_oews import _normalize_soc
+    assert _normalize_soc("11-0000") is None
+    assert _normalize_soc("00-0000") is None
+    assert _normalize_soc("11-0000.00") is None
+
+
+def test_normalize_soc_rejects_invalid_format():
+    """Non-standard SOC formats should return None."""
+    from social_impact.parse_oews import _normalize_soc
+    assert _normalize_soc("bad") is None
+    assert _normalize_soc("111011") is None
+    assert _normalize_soc("11-101") is None
+```
+
+**Step 2: Run tests (TDD red)**
+
+Run:
+```bash
+pytest tests/test_parse_union.py tests/test_parse_oews.py -v
+```
+
+Expected: All tests FAIL (red) because `social_impact/parse_union.py` and `social_impact/parse_oews.py` do not exist yet. Implement Steps 3-4, then re-run — all tests pass (green).
+
+**Step 3: Write union rate parser (HTML table)**
 
 ```python
 """Parse BLS union membership table by major occupation group.
@@ -1292,7 +1409,7 @@ def get_union_rate(soc_code):
     return UNION_RATES_2024.get(major)
 ```
 
-**Step 2: Write OEWS geographic data parser**
+**Step 4: Write OEWS geographic data parser**
 
 ```python
 """Parse OEWS (Occupational Employment and Wage Statistics) state and metro data.
@@ -1496,123 +1613,6 @@ def parse_oews_metro_lq(project_socs=None):
     print(f"  OEWS metro: top metro LQ for {len(results)} SOCs")
     return results
 ```
-
-**Step 3: Write the failing tests**
-
-Create `tests/test_parse_union.py`:
-
-```python
-"""Tests for union rate parser."""
-import os
-import sys
-import pytest
-
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-
-def test_union_rates_complete():
-    from social_impact.parse_union import UNION_RATES_2024
-    assert len(UNION_RATES_2024) >= 22, "Should cover all major groups"
-
-
-def test_get_union_rate():
-    from social_impact.parse_union import get_union_rate
-    rate = get_union_rate("25-1011")
-    assert rate is not None
-    assert rate > 0
-    assert rate < 100
-
-
-def test_get_union_rate_unknown_group():
-    from social_impact.parse_union import get_union_rate
-    rate = get_union_rate("99-9999")
-    assert rate is None
-
-
-def test_fetch_union_rates_returns_dict():
-    from social_impact.parse_union import fetch_union_rates
-    rates = fetch_union_rates()
-    assert isinstance(rates, dict)
-    assert len(rates) >= 22
-```
-
-Create `tests/test_parse_oews.py`:
-
-```python
-"""Tests for OEWS geographic data parsers."""
-import os
-import sys
-import pytest
-
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-
-def test_parse_oews_state_returns_tuple():
-    from social_impact.parse_oews import parse_oews_state
-    result = parse_oews_state({"11-1011", "15-1252"})
-    assert isinstance(result, tuple) and len(result) == 2
-    top3, shares = result
-    assert isinstance(top3, dict)
-    assert isinstance(shares, dict)
-
-
-def test_oews_state_top3_format():
-    from social_impact.parse_oews import parse_oews_state
-    top3, _ = parse_oews_state({"11-1011"})
-    if "11-1011" in top3:
-        states = top3["11-1011"]
-        assert isinstance(states, list)
-        assert len(states) <= 3
-        for s in states:
-            assert isinstance(s, str)
-
-
-def test_oews_state_shares_sum_to_one():
-    from social_impact.parse_oews import parse_oews_state
-    _, shares = parse_oews_state({"11-1011"})
-    if "11-1011" in shares:
-        total = sum(shares["11-1011"].values())
-        assert abs(total - 1.0) < 0.01, f"Shares sum to {total}, expected ~1.0"
-
-
-def test_parse_oews_metro_lq():
-    from social_impact.parse_oews import parse_oews_metro_lq
-    result = parse_oews_metro_lq({"11-1011"})
-    assert isinstance(result, dict)
-    # May or may not have data for this SOC depending on OEWS availability
-
-
-def test_normalize_soc():
-    from social_impact.parse_oews import _normalize_soc
-    assert _normalize_soc("11-1011.00") == "11-1011"
-    assert _normalize_soc("11-1011") == "11-1011"
-    assert _normalize_soc(None) is None
-
-
-def test_normalize_soc_rejects_aggregates():
-    """Aggregate codes like 11-0000 and 00-0000 should be rejected."""
-    from social_impact.parse_oews import _normalize_soc
-    assert _normalize_soc("11-0000") is None
-    assert _normalize_soc("00-0000") is None
-    assert _normalize_soc("11-0000.00") is None
-
-
-def test_normalize_soc_rejects_invalid_format():
-    """Non-standard SOC formats should return None."""
-    from social_impact.parse_oews import _normalize_soc
-    assert _normalize_soc("bad") is None
-    assert _normalize_soc("111011") is None
-    assert _normalize_soc("11-101") is None
-```
-
-**Step 4: Run tests (TDD red then green)**
-
-Run:
-```bash
-pytest tests/test_parse_union.py tests/test_parse_oews.py -v
-```
-
-Expected: All tests pass.
 
 **Step 5: Smoke test interactively**
 
@@ -3055,28 +3055,36 @@ def index():
 @app.route("/equity")
 def equity():
     """Equity Impact page."""
-    data = store.get_all()
+    data = sorted(store.get_all(),
+                  key=lambda r: r.get("displaced_K_mod_low") or 0,
+                  reverse=True)
     return render_template("equity.html", data=data, sectors=store.get_sectors())
 
 
 @app.route("/geographic")
 def geographic():
     """Geographic Risk page."""
-    data = store.get_all()
+    data = sorted(store.get_all(),
+                  key=lambda r: r.get("displaced_K_mod_low") or 0,
+                  reverse=True)
     return render_template("geographic.html", data=data)
 
 
 @app.route("/political")
 def political():
     """Political Landscape page."""
-    data = store.get_all()
+    data = sorted(store.get_all(),
+                  key=lambda r: r.get("displaced_K_mod_low") or 0,
+                  reverse=True)
     return render_template("political.html", data=data)
 
 
 @app.route("/transitions")
 def transitions():
     """Transition Pathways page."""
-    data = store.get_all()
+    data = sorted(store.get_all(),
+                  key=lambda r: r.get("displaced_K_mod_low") or 0,
+                  reverse=True)
     return render_template("transitions.html", data=data)
 
 
@@ -3745,7 +3753,7 @@ Create `dashboard/templates/equity.html`:
             </tr>
         </thead>
         <tbody>
-        {% for r in data|sort(attribute='displaced_K_mod_low', reverse=True) %}
+        {% for r in data %}
         {% if loop.index <= 20 %}
             <tr>
                 <td>{{ r.SOC_Code }}</td>
@@ -4018,7 +4026,7 @@ Create `dashboard/templates/geographic.html`:
             </tr>
         </thead>
         <tbody>
-        {% for r in data|sort(attribute='displaced_K_mod_low', reverse=True) %}
+        {% for r in data %}
             <tr data-state="{{ r.Top_State_1 or '' }}">
                 <td>{{ r.SOC_Code }}</td>
                 <td>{{ r.Job_Title }}</td>
@@ -4297,7 +4305,7 @@ Create `dashboard/templates/political.html`:
         </thead>
         <tbody>
         {% set swing_states = ['Arizona', 'Georgia', 'Michigan', 'Nevada', 'North Carolina', 'Pennsylvania', 'Wisconsin'] %}
-        {% for r in data|sort(attribute='displaced_K_mod_low', reverse=True) %}
+        {% for r in data %}
         {% if r.Top_State_1 in swing_states %}
             <tr>
                 <td>{{ r.SOC_Code }}</td>
@@ -4429,7 +4437,7 @@ Create `dashboard/templates/transitions.html`:
 <div class="filter-bar">
     <select id="soc-select" style="width:400px;">
         <option value="">Select a high-displacement occupation...</option>
-        {% for r in data|sort(attribute='displaced_K_mod_low', reverse=True) %}
+        {% for r in data %}
         {% if (r.d_mod_low or 0) > 0.08 %}
         <option value="{{ r.SOC_Code }}">
             {{ r.SOC_Code }} - {{ r.Job_Title }} (d={{ "%.1f%%"|format((r.d_mod_low or 0) * 100) }}, {{ "%.0f"|format(r.Employment_2024_K or 0) }}K workers)
@@ -5020,6 +5028,12 @@ def test_gitignore_contains_merged_json():
     gitignore = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".gitignore")
     content = open(gitignore).read()
     assert "merged_social_data.json" in content
+
+
+def test_gitignore_contains_state_shares_json():
+    gitignore = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".gitignore")
+    content = open(gitignore).read()
+    assert "state_shares.json" in content
 ```
 
 **Step 2: Run tests (TDD red then green)**
@@ -5043,6 +5057,9 @@ dashboard/static/img/*.png
 
 # Intermediate merge output
 social_impact/merged_social_data.json
+
+# Cached OEWS state employment shares
+social_impact/state_shares.json
 ```
 
 **Step 4: Verify no large files are staged**
@@ -5118,7 +5135,7 @@ git commit -m "Update .gitignore for social impact data and dashboard assets"
 
 | File | Change |
 |------|--------|
-| `.gitignore` | Add social_impact/data_cache/, dashboard/static/img/*.png, social_impact/merged_social_data.json |
+| `.gitignore` | Add social_impact/data_cache/, dashboard/static/img/*.png, social_impact/merged_social_data.json, social_impact/state_shares.json |
 | `jobs-data-v3.xlsx` | New "6 Social Impact" tab (310 rows, 19 columns) |
 
 ### Directories created
