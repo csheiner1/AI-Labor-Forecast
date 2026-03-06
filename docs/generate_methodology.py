@@ -7,7 +7,7 @@ from fpdf import FPDF
 import os
 
 OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_PATH = os.path.join(OUTPUT_DIR, "AI_Labor_Forecast_Methodology_v3.pdf")
+OUTPUT_PATH = os.path.join(OUTPUT_DIR, "AI_Labor_Forecast_Methodology.pdf")
 
 # -- Color palette --
 NAVY = (15, 30, 62)
@@ -245,7 +245,7 @@ def build_pdf():
         (2, "4.3", "x_depth Operationalization"),
         (2, "4.4", "Job-Level Scoring Pipeline"),
         (1, "5", "Industry-Level Variables"),
-        (2, "5.1", "Displacement Ceiling (d_max)"),
+        (2, "5.1", "Displacement Ceiling (d_max = 0.18)"),
         (2, "5.2", "Elasticity Dampener (E)"),
         (2, "5.3", "Adoption Velocity (T)"),
         (2, "5.4", "Structural Resistance (R)"),
@@ -297,13 +297,13 @@ def build_pdf():
         "The methodology operates in three layers, each building on the one below:"
     )
     pdf.bullet(
-        "Score each of 3,855 tasks for automatability under two tech capability scenarios "
-        "(Moderate and Significant), producing 7,710 task-level scores.",
+        "Score each of 3,552 tasks for automatability under two tech capability scenarios "
+        "(Moderate and Significant), producing 7,104 task-level scores.",
         bold_prefix="Layer 1 -- Task-Level Scoring:"
     )
     pdf.bullet(
         "Aggregate task-level scores upward to approximate a job-level automatability score "
-        "for each of 502 occupations, using time-share weighting, workflow complexity, "
+        "for each of 462 occupations, using time-share weighting, workflow complexity, "
         "throughput scaling, and substitutability.",
         bold_prefix="Layer 2 -- Job-Level Approximation:"
     )
@@ -326,7 +326,7 @@ def build_pdf():
     # =========================================================================
     pdf.section_header("2", "The Master Equation")
 
-    pdf.equation_block("d(t; i, s) = d_max(i) * phi(a(i,s)) * E(i) * T(t; i, s) * R(i)")
+    pdf.equation_block("d(t; i, s) = d_max * phi(a(i,s)) * E(i) * T(t; i, s) * R(i)")
 
     pdf.body_text(
         "Read the equation left to right as a chain of multiplicative filters. Each variable "
@@ -335,7 +335,7 @@ def build_pdf():
     )
 
     pdf.bullet("d(t; i, s) = displacement rate for industry i in scenario s at time t")
-    pdf.bullet("d_max(i) = absolute ceiling on displacement rate (historical precedent)")
+    pdf.bullet("d_max = 0.18, absolute ceiling on displacement rate (historical precedent, constant across industries and scenarios)")
     pdf.bullet("phi(a(i,s)) = sigmoid-transformed automatability (derived from task-level scores)")
     pdf.bullet("E(i) = elasticity dampener (Jevons paradox / demand absorption)")
     pdf.bullet("T(t; i, s) = adoption velocity (logistic S-curve, industry-level)")
@@ -355,9 +355,9 @@ def build_pdf():
     pdf.section_header("3", "Task-Level Automatability Scoring")
 
     pdf.body_text(
-        "The foundation of the model is task-level scoring. Each of 3,855 tasks is scored for "
-        "its autonomy fraction under two tech capability scenarios, producing 7,710 scores "
-        "(3,855 x 2). This scoring is purely about what AI can do technically and economically "
+        "The foundation of the model is task-level scoring. Each of 3,552 tasks is scored for "
+        "its autonomy fraction under two tech capability scenarios, producing 7,104 scores "
+        "(3,552 x 2). This scoring is purely about what AI can do technically and economically "
         "-- it is independent of adoption frictions, regulation, or institutional readiness."
     )
 
@@ -389,20 +389,115 @@ def build_pdf():
 
     pdf.sub_subsection_header("Moderate Capability Gains")
     pdf.body_text(
-        "Steady compounding of current approaches: 5x context window, structured tool use, "
-        "1-day persistent state, 20-35x token efficiency gains, RLVR in verifiable domains only."
+        "Steady compounding of current approaches (baseline: March 2026). No architectural "
+        "breakthroughs, but incremental improvement across all dimensions:"
+    )
+    pdf.bullet(
+        "~1.5M token window, reliable retrieval to ~400K tokens, degrades beyond.",
+        bold_prefix="Context:"
+    )
+    pdf.bullet(
+        "Improved multi-tool chaining for familiar APIs/protocols.",
+        bold_prefix="Tool use:"
+    )
+    pdf.bullet(
+        "4-6 hour autonomous work blocks. 2-3 day project span with daily human "
+        "check-ins. Reliable on ~5-8 step workflows, fragile beyond 10 steps.",
+        bold_prefix="Agents:"
+    )
+    pdf.bullet(
+        "3x token cost reduction.",
+        bold_prefix="Efficiency:"
+    )
+    pdf.bullet(
+        "Improved RLHF. RLVR advances in verifiable domains (code, math, science, "
+        "structured data) via self-distillation -- more sample-efficient, more concise, "
+        "better credit assignment. Professional judgment tasks still rely on RLHF "
+        "without outcome verification.",
+        bold_prefix="Alignment:"
+    )
+    pdf.bullet(
+        "Reliable on ~3 levels of derived-premise dependency. Deep analysis still "
+        "needs human verification.",
+        bold_prefix="Reasoning:"
+    )
+    pdf.bullet(
+        "<400ms voice, ~1s text, 8-60s complex reasoning.",
+        bold_prefix="Speed:"
+    )
+    pdf.bullet(
+        "Improved but still unreliable on complex web workflows.",
+        bold_prefix="Browser/computer use:"
+    )
+    pdf.bullet(
+        "Executes well-defined task sequences. Pivoting between disparate tasks requires "
+        "explicit re-prompting and context setup. Limited error detection -- often doesn't "
+        "know when it's wrong.",
+        bold_prefix="Reliability & coordination:"
     )
 
     pdf.sub_subsection_header("Significant Capability Gains")
     pdf.body_text(
-        "Step-change improvement: 10x context window, dynamic tool discovery, 7-day persistent "
-        "state, 35-60x token efficiency gains, rich-context RLVR across white-collar domains, "
-        "reliable browser navigation, parallel agent orchestration."
+        "Step-change improvement requiring one or more architectural or training breakthroughs "
+        "beyond current trajectory:"
+    )
+    pdf.bullet(
+        "~2-3M token window, reliable retrieval to ~1M tokens, some degradation beyond.",
+        bold_prefix="Context:"
+    )
+    pdf.bullet(
+        "Reliable multi-tool chaining across unfamiliar APIs.",
+        bold_prefix="Tool use:"
+    )
+    pdf.bullet(
+        "6-10 hour autonomous work blocks. 7-10 day project span with daily check-ins. "
+        "Reliable on ~12-15 step workflows, 20-step viable with light oversight.",
+        bold_prefix="Agents:"
+    )
+    pdf.bullet(
+        "10x token cost reduction.",
+        bold_prefix="Efficiency:"
+    )
+    pdf.bullet(
+        "RLVR expands to semi-verifiable professional domains -- tasks with partial "
+        "correctness signals (financial models with backtestable outputs, legal research "
+        "with citation verification, medical diagnosis against confirmed outcomes). "
+        "Substantially more reliable in structured professional reasoning. Truly subjective "
+        "judgment remains RLHF-dependent.",
+        bold_prefix="Alignment:"
+    )
+    pdf.bullet(
+        "Reliable on ~4 levels of derived-premise dependency. Novel/unprecedented "
+        "reasoning still limited.",
+        bold_prefix="Reasoning:"
+    )
+    pdf.bullet(
+        "<250ms voice, ~0.5s text, 5-30s complex reasoning.",
+        bold_prefix="Speed:"
+    )
+    pdf.bullet(
+        "Reliable navigation across arbitrary web interfaces.",
+        bold_prefix="Browser/computer use:"
+    )
+    pdf.bullet(
+        "Strong vision, document, and diagram understanding.",
+        bold_prefix="Multimodal:"
+    )
+    pdf.bullet(
+        "Parallel agent coordination.",
+        bold_prefix="Orchestration:"
+    )
+    pdf.bullet(
+        "Executes longer task sequences with less rigid structure. Can pivot between "
+        "related tasks within a domain without full context reset. Improved error "
+        "detection -- flags low-confidence outputs more reliably, though still misses "
+        "subtle errors. More consistent outputs across runs.",
+        bold_prefix="Reliability & coordination:"
     )
 
     pdf.body_text(
         "Constraint: significant >= moderate always. More capability cannot reduce automation "
-        "potential. This produces 7,710 scores total (3,855 tasks x 2 scenarios)."
+        "potential. This produces 7,104 scores total (3,552 tasks x 2 scenarios)."
     )
 
     # 3.3
@@ -449,7 +544,7 @@ def build_pdf():
 
     pdf.body_text(
         "Task-level scores are aggregated upward to produce a job-level automatability score "
-        "for each of 502 occupations. This approximation accounts for the fact that a job is "
+        "for each of 462 occupations. This approximation accounts for the fact that a job is "
         "more than the sum of its tasks -- workflow complexity, throughput dynamics, and human "
         "substitutability all mediate how task automation translates to job-level impact."
     )
@@ -633,9 +728,9 @@ def build_pdf():
     pdf.add_page()
     pdf.subsection_header("4.4  Job-Level Scoring Pipeline")
     pdf.body_text(
-        "x_scale, x_sub, and workflow_simplicity are scored for all 502 occupations using "
+        "x_scale, x_sub, and workflow_simplicity are scored for all 462 occupations using "
         "a dedicated AI pipeline. These variables are scenario-independent (they describe "
-        "structural properties of the job, not AI capability), producing 502 x 3 = 1,506 "
+        "structural properties of the job, not AI capability), producing 462 x 3 = 1,386 "
         "scores total."
     )
 
@@ -660,7 +755,7 @@ def build_pdf():
 
     pdf.sub_subsection_header("Phase 2: Batch Scorer (Claude Opus 4.6)")
     pdf.body_text(
-        "Processes all 502 occupations in batches of 25. All three variables are scored jointly "
+        "Processes all 462 occupations in batches of 25. All three variables are scored jointly "
         "per occupation for coherence, but the prompt enforces structured independent reasoning "
         "blocks to mitigate halo effects:"
     )
@@ -702,7 +797,7 @@ def build_pdf():
 
     pdf.sub_subsection_header("Phase 4: Reliability Verification")
     pdf.body_text(
-        "A stratified random sample of 50 occupations (10%) is re-scored through Phase 2 "
+        "A stratified random sample of 46 occupations (10%) is re-scored through Phase 2 "
         "with an independent run. Weighted quadratic kappa is computed for each variable. "
         "Acceptable thresholds: kappa >= 0.75, within-one-step agreement >= 90%, exact "
         "agreement >= 65%. If any variable fails, the pipeline enters a diagnostic loop: "
@@ -726,21 +821,19 @@ def build_pdf():
     )
 
     # 5.1 d_max
-    pdf.subsection_header("5.1  d_max(i) -- Displacement Ceiling")
+    pdf.subsection_header("5.1  d_max -- Displacement Ceiling")
     pdf.body_text(
-        "The absolute maximum rate at which jobs can disappear in an industry, based on "
+        "The absolute maximum rate at which jobs can disappear, based on "
         "historical precedent. No industry has ever shed more than approximately 12% of "
         "employment per year, even during massive disruptions (typesetters, switchboard "
         "operators, etc.). Over the 18-month forecast window, that translates to 18%."
     )
     pdf.body_text(
-        "Everything else in the equation multiplies against this ceiling to pull the number down."
-    )
-    pdf.body_text(
-        "An industry velocity tier mu(i) adjusts this ceiling with 3 levels: "
-        "{0.70, 1.00, 1.25}, so that effective d_max ranges from 0.126 to 0.225. "
-        "BPO experiences faster reorganization than healthcare, for example. This requires "
-        "only 20 scores (one per industry)."
+        "d_max = 0.18 is a universal constant, applied identically across all industries "
+        "and scenarios. Industry-specific adoption differences are already captured by T "
+        "(adoption velocity) and R (structural resistance), so varying the ceiling would "
+        "double-count those effects. Everything else in the equation multiplies against "
+        "this ceiling to pull the number down."
     )
 
     # 5.2 E
@@ -918,8 +1011,8 @@ def build_pdf():
         "Statutory human mandate / regulatory floor: hard licensure requirements, legal mandates for human involvement."
     ], ["C", "L", "L"])
     pdf.table_row(cw, [
-        "f3", "Structural",
-        "Structural non-substitutability: unions, professional associations, irreversible error consequences requiring human oversight."
+        "f3", "Labor & Gatekeeping",
+        "Organized labor and professional gatekeeping: unions, professional associations, collective bargaining agreements, credentialing bodies that restrict who can perform the work."
     ], ["C", "L", "L"])
 
     pdf.sub_subsection_header("Formula")
@@ -927,7 +1020,7 @@ def build_pdf():
     pdf.equation_block("R = 1 - 0.7 * (F - 3) / 9")
     pdf.body_text(
         "Range: F=3 -> R=1.00 (no barrier), F=12 -> R=0.30 (strong barrier). "
-        "Most occupations cluster near R=1.0; R bites hard on approximately 50-80 of 501 jobs "
+        "Most occupations cluster near R=1.0; R bites hard on approximately 50-80 of 462 jobs "
         "(healthcare providers, licensed professionals, safety-critical operators)."
     )
 
@@ -951,8 +1044,8 @@ def build_pdf():
         "Varies (mod/sig)", "Not applicable"
     ], ["L", "L", "C", "C"])
     pdf.table_row(cw, [
-        "d_max(i)", "Displacement ceiling",
-        "Fixed", "Fixed"
+        "d_max", "Displacement ceiling (0.18)",
+        "Constant", "Constant"
     ], ["L", "L", "C", "C"])
     pdf.table_row(cw, [
         "E(i)", "Elasticity dampener",
@@ -1006,13 +1099,13 @@ def build_pdf():
     cw = [30, 82, 54]
     pdf.table_header(cw, ["Level", "Data", "Rows"])
     pdf.table_row(cw, [
-        "Industries", "76 NAICS codes rolled to 20 sectors", "20 summary rows"
+        "Industries", "70 NAICS codes rolled to 17 sectors", "17 summary rows"
     ], ["L", "L", "L"])
     pdf.table_row(cw, [
-        "Jobs", "502 job titles with BLS employment, wages, projections", "502 rows"
+        "Jobs", "462 job titles with BLS employment, wages, projections", "462 rows"
     ], ["L", "L", "L"])
     pdf.table_row(cw, [
-        "Tasks", "Tasks with Time_Share_Pct, Importance, Frequency, GWA", "3,855 rows"
+        "Tasks", "Tasks with Time_Share_Pct, Importance, Frequency, GWA", "3,552 rows"
     ], ["L", "L", "L"])
     pdf.table_row(cw, [
         "Staffing", "Top occupations by share within each sector", "Variable"
@@ -1025,7 +1118,7 @@ def build_pdf():
         "foundation; higher levels are derived by aggregation."
     )
     pdf.body_text(
-        "19 GWA (Generalized Work Activity) categories classify all 3,855 tasks, providing a "
+        "19 GWA (Generalized Work Activity) categories classify all 3,552 tasks, providing a "
         "structured taxonomy for understanding the distribution of task types across occupations."
     )
 
@@ -1039,14 +1132,14 @@ def build_pdf():
         "separate from task-level automatability scoring:"
     )
 
-    pdf.subsection_header("Industry Frictions Tab (20 industries)")
+    pdf.subsection_header("Industry Frictions Tab (17 industries)")
     pdf.bullet("Reference columns: Sector ID, Industry Name, Employment (K), Avg Median Wage")
     pdf.bullet(
         "T sub-component columns: T1 (Institutional Inertia), T2 (Systems Integration), "
         "T3 (Customer Acceptance), T4 (Competitive Pressure) -- scored per scenario, "
         "with derived D_base, D_spread, D, t0, alpha, and T(18mo)"
     )
-    pdf.bullet("R sub-component columns: f1 Liability, f2 Statutory Human Mandate, f3 Structural, F sum, R Value")
+    pdf.bullet("R sub-component columns: f1 Liability, f2 Statutory Human Mandate, f3 Labor & Gatekeeping, F sum, R Value")
     pdf.bullet("E column: Elasticity dampener (dropdown from {0.25, 0.50, 1.00})")
     pdf.bullet("Notes column")
 
