@@ -17,6 +17,7 @@ import argparse
 import json
 import os
 import sys
+import threading
 import time
 import anthropic
 from collections import defaultdict
@@ -168,12 +169,16 @@ def load_checkpoint():
     return {}
 
 
+_checkpoint_lock = threading.Lock()
+
+
 def save_checkpoint(completed):
-    """Save results as sorted list."""
-    sorted_list = sorted(completed.values(), key=lambda x: x["soc_code"])
-    os.makedirs(os.path.dirname(RESULTS_FILE), exist_ok=True)
-    with open(RESULTS_FILE, "w") as f:
-        json.dump(sorted_list, f, indent=2)
+    """Save results as sorted list (thread-safe)."""
+    with _checkpoint_lock:
+        sorted_list = sorted(completed.values(), key=lambda x: x["soc_code"])
+        os.makedirs(os.path.dirname(RESULTS_FILE), exist_ok=True)
+        with open(RESULTS_FILE, "w") as f:
+            json.dump(sorted_list, f, indent=2)
 
 
 # ── API scoring ──────────────────────────────────────────────────────────────
@@ -336,6 +341,9 @@ def run_agent(agent_id, soc_codes, soc_entries, completed):
 
         if result:
             results.append(result)
+            # Incremental checkpoint: save immediately so progress survives crashes
+            completed[soc] = result
+            save_checkpoint(completed)
             status = f"{result['task_count']} tasks"
         else:
             status = "FAILED"
