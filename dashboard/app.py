@@ -7,12 +7,15 @@
 4. /transitions  - Transition Pathways (O*NET skill similarity)
 """
 import os
+import re
 import sys
 
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from flask import Flask, render_template, request, jsonify, g
+
+_SOC_RE = re.compile(r'^\d{2}-\d{4}$')
 from dashboard.data_loader import store
 
 app = Flask(__name__)
@@ -76,6 +79,10 @@ def transitions():
 @app.route("/api/transition/<soc_code>")
 def api_transition(soc_code):
     """API endpoint: find transition targets for a SOC code."""
+    # Validate SOC format
+    if not _SOC_RE.match(soc_code):
+        return jsonify({"error": "Invalid SOC format. Expected XX-XXXX."}), 400
+
     from social_impact.onet_skills import get_cached_vectors, find_transition_targets
 
     soc_list, elements, matrix = get_cached_vectors(set(store.soc_lookup.keys()))
@@ -85,10 +92,13 @@ def api_transition(soc_code):
         max_d = float(request.args.get("max_displacement", 0.15))
     except (ValueError, TypeError):
         max_d = 0.15
+    max_d = max(0.0, min(1.0, max_d))
+
     try:
         n = int(request.args.get("n", 10))
     except (ValueError, TypeError):
         n = 10
+    n = max(1, min(50, n))
     targets = find_transition_targets(soc_code, soc_list, matrix,
                                        displacement_data, n_candidates=n,
                                        max_displacement=max_d)
@@ -104,4 +114,5 @@ def api_transition(soc_code):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    debug = os.environ.get("FLASK_DEBUG", "0").lower() in ("1", "true", "yes")
+    app.run(debug=debug, port=5001)

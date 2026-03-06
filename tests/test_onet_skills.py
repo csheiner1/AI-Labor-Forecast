@@ -1,6 +1,7 @@
 """Tests for social_impact.onet_skills module."""
 import pytest
 import numpy as np
+from social_impact.onet_skills import get_cached_vectors
 
 
 def test_build_skill_vectors():
@@ -52,9 +53,20 @@ def test_find_transition_targets_missing_soc():
 
 def test_get_cached_vectors():
     """get_cached_vectors should cache and return same object."""
-    from social_impact.onet_skills import get_cached_vectors, _cached_vectors
     import social_impact.onet_skills as mod
     mod._cached_vectors = None  # reset cache
+    mod._cached_socs = None
     v1 = get_cached_vectors()
     v2 = get_cached_vectors()
     assert v1[0] is v2[0]  # same list object
+
+
+def test_get_cached_vectors_invalidates_on_new_socs():
+    """get_cached_vectors should rebuild when project_socs change."""
+    import social_impact.onet_skills as mod
+    mod._cached_vectors = None
+    mod._cached_socs = None
+    v1 = get_cached_vectors({"11-1011", "15-1252"})
+    v2 = get_cached_vectors({"11-1011", "29-1141"})
+    # Different soc sets should produce different results
+    assert v1[0] is not v2[0]

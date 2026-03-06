@@ -5,6 +5,7 @@ Caches in memory for fast page rendering.
 """
 import openpyxl
 import os
+import threading
 
 from social_impact.config import WORKBOOK
 
@@ -18,20 +19,31 @@ class DataStore:
         self.soc_lookup = {}    # SOC -> merged dict of results + social
         self._displacement_data = None  # cached for transition API
         self._loaded = False
+        self._lock = threading.Lock()
 
     def load(self):
-        """Load data from workbook into memory."""
+        """Load data from workbook into memory (thread-safe)."""
         if self._loaded:
             return
+        with self._lock:
+            # Double-check after acquiring lock
+            if self._loaded:
+                return
+            self._load_impl()
+
+    def _load_impl(self):
+        """Internal load, called under lock."""
 
         wb = openpyxl.load_workbook(WORKBOOK, read_only=True, data_only=True)
 
-        # Load 4 Results -- use iter_rows for read_only compatibility
+        # Load 4 Results -- derive column count from header row
         ws = wb["4 Results"]
         headers = None
-        for row_vals in ws.iter_rows(max_col=27, values_only=True):
+        for row_vals in ws.iter_rows(values_only=True):
             if headers is None:
                 headers = list(row_vals)
+                continue
+            if len(row_vals) < len(headers):
                 continue
             soc = row_vals[0]
             if not soc:
@@ -42,13 +54,15 @@ class DataStore:
                     row[h] = row_vals[c]
             self.results.append(row)
 
-        # Load 6 Social Impact
+        # Load 6 Social Impact -- derive column count from header row
         try:
             ws2 = wb["6 Social Impact"]
             headers2 = None
-            for row_vals in ws2.iter_rows(max_col=19, values_only=True):
+            for row_vals in ws2.iter_rows(values_only=True):
                 if headers2 is None:
                     headers2 = list(row_vals)
+                    continue
+                if len(row_vals) < len(headers2):
                     continue
                 soc = row_vals[0]
                 if not soc:
@@ -65,7 +79,11 @@ class DataStore:
 
         # Build merged lookup -- for SOCs with multiple rows in Results,
         # keep the first row (which has the primary sector assignment)
-        social_by_soc = {r["SOC_Code"]: r for r in self.social}
+        social_by_soc = {}
+        for r in self.social:
+            soc_val = r.get("SOC_Code")
+            if soc_val:
+                social_by_soc[soc_val] = r
         for r in self.results:
             soc = r.get("SOC_Code")
             if not soc or soc in self.soc_lookup:

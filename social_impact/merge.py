@@ -17,7 +17,7 @@ import re
 from collections import defaultdict
 
 from social_impact.config import (
-    WORKBOOK, MERGED_OUTPUT, DATA_CACHE,
+    WORKBOOK, MERGED_OUTPUT, STATE_SHARES_OUTPUT, DATA_CACHE,
     FOREIGN_BORN_BY_MAJOR_GROUP, EDU_PARTISAN_COLLEGE, EDU_PARTISAN_NO_COLLEGE,
 )
 from social_impact.crosswalk import (
@@ -25,11 +25,11 @@ from social_impact.crosswalk import (
 )
 from social_impact.parse_demographics import parse_cpsaat11, parse_cpsaat11b
 from social_impact.parse_education import parse_education_attainment, parse_entry_education
-from social_impact.parse_union import get_union_rate, UNION_RATES_2024
+from social_impact.parse_union import get_union_rate
 from social_impact.parse_oews import parse_oews_state, parse_oews_metro_lq
 
 
-def _fuzzy_match_occupation(target_text, demo_data, threshold=0.7):
+def _fuzzy_match_occupation(target_text, demo_data, threshold=0.65):
     """Try to match an occupation title text to CPSAAT11 entries.
 
     Uses progressively looser matching:
@@ -45,11 +45,20 @@ def _fuzzy_match_occupation(target_text, demo_data, threshold=0.7):
         if key.lower().strip() == target_lower:
             return key
 
-    # Containment match
+    # Containment match -- require both strings >= 15 chars to avoid
+    # false positives on short generic strings (e.g. "Managers")
+    best_contain = None
+    best_contain_len = float("inf")
     for key in demo_data:
         key_lower = key.lower().strip()
-        if target_lower in key_lower or key_lower in target_lower:
-            return key
+        if len(target_lower) >= 15 and len(key_lower) >= 15:
+            if target_lower in key_lower or key_lower in target_lower:
+                # Prefer shortest containing match to reduce false positives
+                if len(key_lower) < best_contain_len:
+                    best_contain = key
+                    best_contain_len = len(key_lower)
+    if best_contain is not None:
+        return best_contain
 
     # Word overlap
     best_match = None
@@ -318,10 +327,9 @@ def merge_all():
     print(f"\nSaved {len(results)} records to {MERGED_OUTPUT}")
 
     # Save state employment shares for geographic chart generation
-    state_shares_path = MERGED_OUTPUT.replace("merged_social_data.json", "state_shares.json")
-    with open(state_shares_path, "w") as f:
+    with open(STATE_SHARES_OUTPUT, "w") as f:
         json.dump(state_shares, f, indent=2)
-    print(f"Saved state shares for {len(state_shares)} SOCs to {state_shares_path}")
+    print(f"Saved state shares for {len(state_shares)} SOCs to {STATE_SHARES_OUTPUT}")
 
     return results
 

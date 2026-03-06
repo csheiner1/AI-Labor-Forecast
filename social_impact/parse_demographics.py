@@ -21,8 +21,8 @@ def _clean_occupation_text(text):
     if not text or pd.isna(text):
         return ""
     text = str(text).strip()
-    # Remove footnote markers
-    text = re.sub(r'\d+$', '', text).strip()
+    # Remove footnote markers (1-2 trailing digits preceded by whitespace)
+    text = re.sub(r'\s+\d{1,2}$', '', text).strip()
     return text
 
 

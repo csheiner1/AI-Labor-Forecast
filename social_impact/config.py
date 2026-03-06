@@ -46,12 +46,16 @@ ONET_ZIP = os.path.join(_main_root, "onet_db.zip")
 SOURCES = {
     "cpsaat11": "https://www.bls.gov/cps/cpsaat11.xlsx",
     "cpsaat11b": "https://www.bls.gov/cps/cpsaat11b.xlsx",
-    "edu_attainment": "https://www.bls.gov/emp/ind-occ-matrix/education.xlsx",
-    "entry_education": "https://www.bls.gov/emp/ind-occ-matrix/occupation-entry-ed.xlsx",
+    # education.xlsx contains both Table 5.3 (attainment) and Table 5.4 (entry education).
+    # The separate occupation-entry-ed.xlsx URL returns 404; Table 5.4 is authoritative.
+    "education": "https://www.bls.gov/emp/ind-occ-matrix/education.xlsx",
     "census_soc_crosswalk": "https://www.bls.gov/cps/2018-census-occupation-classification-titles-and-code-list.xlsx",
     "oews_state": "https://www.bls.gov/oes/special-requests/oesm24st.zip",
     "oews_metro": "https://www.bls.gov/oes/special-requests/oesm24ma.zip",
 }
+
+# State employment shares output path
+STATE_SHARES_OUTPUT = os.path.join(PROJECT_ROOT, "social_impact", "state_shares.json")
 
 # Union data is an HTML table, not a downloadable file
 UNION_TABLE_URL = "https://www.bls.gov/news.release/union2.t03.htm"

@@ -10,7 +10,6 @@ functions for the Flask app to query at runtime.
 import os
 import re
 import pandas as pd
-from collections import defaultdict
 
 from social_impact.config import DATA_CACHE
 
@@ -113,30 +112,26 @@ def parse_oews_state(project_socs=None):
 
     # Filter to detailed SOCs (not groups) and convert employment to numeric
     df[emp_col] = pd.to_numeric(df[emp_col], errors="coerce")
-    df = df[df[emp_col].notna() & (df[emp_col] > 0)]
+    df = df[df[emp_col].notna() & (df[emp_col] > 0)].copy()
 
-    # Build per-SOC state rankings
-    soc_states = defaultdict(list)
-    for _, row in df.iterrows():
-        soc = _normalize_soc(row[soc_col])
-        if not soc:
-            continue
-        if project_socs and soc not in project_socs:
-            continue
-        state = row[state_col]
-        emp = row[emp_col]
-        if state and emp > 0:
-            soc_states[soc].append((state, emp))
+    # Normalize SOC codes and filter
+    df["_soc"] = df[soc_col].apply(_normalize_soc)
+    df = df[df["_soc"].notna()]
+    if project_socs:
+        df = df[df["_soc"].isin(project_socs)]
+    df = df[df[state_col].notna()]
 
-    # Sort and take top 3; also compute employment shares
+    # Vectorized groupby approach for top-3 states and employment shares
     top3_results = {}
     shares_results = {}
-    for soc, states in soc_states.items():
-        sorted_states = sorted(states, key=lambda x: x[1], reverse=True)
-        top3_results[soc] = [s[0] for s in sorted_states[:3]]
-        total_emp = sum(s[1] for s in sorted_states)
+    for soc, group in df.groupby("_soc"):
+        sorted_group = group.nlargest(len(group), emp_col)
+        states = sorted_group[state_col].tolist()
+        emps = sorted_group[emp_col].tolist()
+        top3_results[soc] = states[:3]
+        total_emp = sum(emps)
         if total_emp > 0:
-            shares_results[soc] = {s[0]: s[1] / total_emp for s in sorted_states}
+            shares_results[soc] = {s: e / total_emp for s, e in zip(states, emps)}
         else:
             shares_results[soc] = {}
 

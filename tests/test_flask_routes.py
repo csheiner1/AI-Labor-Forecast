@@ -63,6 +63,20 @@ def test_api_transition_missing_soc(client):
     assert data["targets"] == []
 
 
+def test_api_transition_invalid_soc_format(client):
+    """API should return 400 on invalid SOC format."""
+    resp = client.get("/api/transition/invalid")
+    assert resp.status_code == 400
+    data = json.loads(resp.data)
+    assert "error" in data
+
+
+def test_api_transition_bounds_clamped(client):
+    """API should clamp n to 50 max and max_displacement to 0-1."""
+    resp = client.get("/api/transition/11-1011?n=200&max_displacement=5.0")
+    assert resp.status_code == 200
+
+
 def test_404_on_unknown_route(client):
     resp = client.get("/nonexistent")
     assert resp.status_code == 404

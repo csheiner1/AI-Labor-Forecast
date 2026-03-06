@@ -188,12 +188,19 @@ def find_transition_targets(soc_code, soc_list, matrix, displacement_data,
 
 # Module-level cache
 _cached_vectors = None
+_cached_socs = None
 
 def get_cached_vectors(project_socs=None):
-    """Return cached skill vectors, building on first call."""
-    global _cached_vectors
-    if _cached_vectors is None:
+    """Return cached skill vectors, building on first call.
+
+    If called with a different project_socs set than the cached one,
+    invalidates and rebuilds the cache.
+    """
+    global _cached_vectors, _cached_socs
+    soc_key = frozenset(project_socs) if project_socs else None
+    if _cached_vectors is None or soc_key != _cached_socs:
         _cached_vectors = build_skill_vectors(project_socs)
+        _cached_socs = soc_key
     return _cached_vectors
 
 

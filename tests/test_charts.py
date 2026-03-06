@@ -3,12 +3,29 @@ import pytest
 import os
 
 
+# Charts require a prior pipeline run; skip in CI or fresh envs
+_CHART_DIR_EXISTS = False
+try:
+    from dashboard.charts import CHART_DIR
+    _CHART_DIR_EXISTS = os.path.isdir(CHART_DIR) and any(
+        f.endswith(".png") for f in os.listdir(CHART_DIR)
+    )
+except Exception:
+    pass
+
+needs_charts = pytest.mark.skipif(
+    not _CHART_DIR_EXISTS,
+    reason="Generated chart PNGs not present (run pipeline first)",
+)
+
+
 def test_chart_dir_exists():
     """Static image directory should exist."""
     from dashboard.charts import CHART_DIR
     assert os.path.isdir(CHART_DIR)
 
 
+@needs_charts
 def test_equity_charts_exist():
     """Equity charts should have been generated."""
     from dashboard.charts import CHART_DIR
@@ -26,6 +43,7 @@ def test_equity_charts_exist():
         assert os.path.getsize(path) > 1000, f"Chart {fn} too small"
 
 
+@needs_charts
 def test_geo_chart_exists():
     """Geographic state risk chart should exist."""
     from dashboard.charts import CHART_DIR
@@ -34,6 +52,7 @@ def test_geo_chart_exists():
     assert os.path.getsize(path) > 1000
 
 
+@needs_charts
 def test_political_charts_exist():
     """Political charts should exist."""
     from dashboard.charts import CHART_DIR

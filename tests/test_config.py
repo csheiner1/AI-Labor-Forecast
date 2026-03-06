@@ -14,7 +14,7 @@ def test_config_paths_exist():
 
 def test_sources_all_have_urls():
     from social_impact.config import SOURCES
-    assert len(SOURCES) >= 7
+    assert len(SOURCES) >= 6
     for key, url in SOURCES.items():
         assert url.startswith("https://"), f"{key} URL does not start with https://"
 

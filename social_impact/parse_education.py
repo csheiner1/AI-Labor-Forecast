@@ -1,9 +1,11 @@
 """Parse BLS employment projections education tables.
 
-Table 5.3: Educational attainment distribution (pct with each level)
-Table 5.4: Typical entry-level education requirement
+Both tables are sheets within the same downloaded file (education.xlsx):
+  - Table 5.3: Educational attainment distribution (pct with each level)
+  - Table 5.4: Typical entry-level education requirement
 
-Both tables are sheets within education.xlsx.
+The BLS entry-education URL (occupation-entry-ed.xlsx) returns 404; Table 5.4
+in education.xlsx contains the same data and is the authoritative source.
 """
 import os
 import re

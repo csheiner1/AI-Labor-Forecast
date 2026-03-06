@@ -313,8 +313,8 @@ def generate_all_charts():
     chart_displacement_by_demographic(data, "Pct_Over_55", "Workers Over 55", "equity_age55_bins.png")
 
     # Geographic chart -- load cached state shares
-    from social_impact.config import MERGED_OUTPUT
-    state_shares_path = MERGED_OUTPUT.replace("merged_social_data.json", "state_shares.json")
+    from social_impact.config import STATE_SHARES_OUTPUT
+    state_shares_path = STATE_SHARES_OUTPUT
     state_shares = {}
     if os.path.exists(state_shares_path):
         with open(state_shares_path) as f:
