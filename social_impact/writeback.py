@@ -4,7 +4,7 @@ Creates the tab if it doesn't exist. Overwrites all data if it does.
 """
 import json
 import openpyxl
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+from openpyxl.styles import Font, PatternFill, Alignment
 
 from social_impact.config import WORKBOOK, MERGED_OUTPUT
 

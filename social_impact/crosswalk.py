@@ -127,7 +127,11 @@ def load_project_socs():
     first = True
     for row in ws.iter_rows(max_col=5, values_only=True):
         if first:
-            first = False  # skip header row
+            first = False
+            # Validate that first column is the SOC code header
+            hdr = str(row[0] or "").strip().lower()
+            if "soc" not in hdr and "code" not in hdr:
+                print(f"  WARNING: Unexpected first header '{row[0]}', expected SOC_Code column")
             continue
         soc = row[0]
         if not soc:

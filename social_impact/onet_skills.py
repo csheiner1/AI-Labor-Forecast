@@ -6,6 +6,7 @@ for cosine similarity-based occupation matching.
 """
 import os
 import csv
+import threading
 import numpy as np
 from collections import defaultdict
 
@@ -117,12 +118,17 @@ def build_skill_vectors(project_socs=None):
             elif element in knowledge_profile:
                 matrix[i, j] = knowledge_profile[element]
 
+    # Precompute lookup and row norms for efficient similarity queries
+    soc_to_idx = {soc: i for i, soc in enumerate(soc_list)}
+    norms = np.linalg.norm(matrix, axis=1)
+
     print(f"  Skill vectors: {matrix.shape[0]} SOCs x {matrix.shape[1]} dimensions")
-    return soc_list, all_elements, matrix
+    return soc_list, all_elements, matrix, soc_to_idx, norms
 
 
 def find_transition_targets(soc_code, soc_list, matrix, displacement_data,
-                            n_candidates=10, max_displacement=0.15):
+                            n_candidates=10, max_displacement=0.15,
+                            soc_to_idx=None, norms=None):
     """Find transition targets for a high-displacement SOC.
 
     Uses cosine similarity between skill/knowledge vectors to find
@@ -135,19 +141,28 @@ def find_transition_targets(soc_code, soc_list, matrix, displacement_data,
         displacement_data: dict soc -> {d_mod_low, d_sig_low, employment_K, ...}
         n_candidates: Number of candidates to return
         max_displacement: Maximum displacement rate for a viable target
+        soc_to_idx: Optional precomputed {soc: row_index} dict (O(1) lookup)
+        norms: Optional precomputed row norms array
 
     Returns:
         list of dicts: [{soc, title, similarity, displacement, shared_skills}, ...]
     """
-    if soc_code not in soc_list:
-        return []
+    # Use precomputed index if available, else fall back to list search
+    if soc_to_idx is not None:
+        idx = soc_to_idx.get(soc_code)
+        if idx is None:
+            return []
+    else:
+        if soc_code not in soc_list:
+            return []
+        idx = soc_list.index(soc_code)
 
-    idx = soc_list.index(soc_code)
     source_vec = matrix[idx]
 
-    # Compute cosine similarity
-    norms = np.linalg.norm(matrix, axis=1)
-    source_norm = np.linalg.norm(source_vec)
+    # Use precomputed norms if available
+    if norms is None:
+        norms = np.linalg.norm(matrix, axis=1)
+    source_norm = norms[idx]
     if source_norm == 0:
         return []
 
@@ -186,27 +201,31 @@ def find_transition_targets(soc_code, soc_list, matrix, displacement_data,
     return candidates
 
 
-# Module-level cache
+# Module-level cache (thread-safe)
 _cached_vectors = None
 _cached_socs = None
+_cache_lock = threading.Lock()
 
 def get_cached_vectors(project_socs=None):
     """Return cached skill vectors, building on first call.
 
     If called with a different project_socs set than the cached one,
-    invalidates and rebuilds the cache.
+    invalidates and rebuilds the cache.  Thread-safe via double-check
+    locking.
     """
     global _cached_vectors, _cached_socs
     soc_key = frozenset(project_socs) if project_socs else None
     if _cached_vectors is None or soc_key != _cached_socs:
-        _cached_vectors = build_skill_vectors(project_socs)
-        _cached_socs = soc_key
+        with _cache_lock:
+            if _cached_vectors is None or soc_key != _cached_socs:
+                _cached_vectors = build_skill_vectors(project_socs)
+                _cached_socs = soc_key
     return _cached_vectors
 
 
 if __name__ == "__main__":
-    soc_list, elements, matrix = build_skill_vectors()
+    soc_list, elements, matrix, soc_to_idx, norms = build_skill_vectors()
     print(f"\nElements: {elements[:10]}...")
     print(f"Matrix shape: {matrix.shape}")
-    if "11-1011" in soc_list:
-        print(f"Sample vector for 11-1011: {matrix[soc_list.index('11-1011')][:5]}")
+    if "11-1011" in soc_to_idx:
+        print(f"Sample vector for 11-1011: {matrix[soc_to_idx['11-1011']][:5]}")

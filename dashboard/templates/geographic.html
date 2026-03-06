@@ -16,19 +16,7 @@
     <div class="filter-bar">
         <select id="state-filter" onchange="filterByState()">
             <option value="">All States</option>
-            {% set all_states = [] %}
-            {% for r in data %}
-                {% if r.Top_State_1 and r.Top_State_1 is string and r.Top_State_1 not in all_states %}
-                    {% if all_states.append(r.Top_State_1) %}{% endif %}
-                {% endif %}
-                {% if r.Top_State_2 and r.Top_State_2 is string and r.Top_State_2 not in all_states %}
-                    {% if all_states.append(r.Top_State_2) %}{% endif %}
-                {% endif %}
-                {% if r.Top_State_3 and r.Top_State_3 is string and r.Top_State_3 not in all_states %}
-                    {% if all_states.append(r.Top_State_3) %}{% endif %}
-                {% endif %}
-            {% endfor %}
-            {% for state in all_states|sort %}
+            {% for state in all_states %}
             <option value="{{ state }}">{{ state }}</option>
             {% endfor %}
         </select>

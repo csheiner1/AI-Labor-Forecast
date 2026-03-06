@@ -55,7 +55,14 @@ def geographic():
     data = sorted(store.get_all(),
                   key=lambda r: r.get("displaced_K_mod_low") or 0,
                   reverse=True)
-    return render_template("geographic.html", data=data)
+    # Precompute unique states for the filter dropdown (avoids O(n^2) in template)
+    all_states = set()
+    for r in data:
+        for key in ("Top_State_1", "Top_State_2", "Top_State_3"):
+            val = r.get(key)
+            if val and isinstance(val, str):
+                all_states.add(val)
+    return render_template("geographic.html", data=data, all_states=sorted(all_states))
 
 
 @app.route("/political")
@@ -85,7 +92,8 @@ def api_transition(soc_code):
 
     from social_impact.onet_skills import get_cached_vectors, find_transition_targets
 
-    soc_list, elements, matrix = get_cached_vectors(set(store.soc_lookup.keys()))
+    soc_list, elements, matrix, soc_to_idx, norms = get_cached_vectors(
+        set(store.soc_lookup.keys()))
     displacement_data = store.get_displacement_data()
 
     try:
@@ -101,7 +109,8 @@ def api_transition(soc_code):
     n = max(1, min(50, n))
     targets = find_transition_targets(soc_code, soc_list, matrix,
                                        displacement_data, n_candidates=n,
-                                       max_displacement=max_d)
+                                       max_displacement=max_d,
+                                       soc_to_idx=soc_to_idx, norms=norms)
     source = store.get_soc(soc_code)
     return jsonify({
         "source": {

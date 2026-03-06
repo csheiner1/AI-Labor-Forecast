@@ -31,11 +31,14 @@ def download_file(key, force=False):
                        "AppleWebKit/537.36 (KHTML, like Gecko) "
                        "Chrome/120.0.0.0 Safari/537.36",
     }
-    resp = requests.get(url, timeout=120, headers=headers)
+    resp = requests.get(url, timeout=120, headers=headers, stream=True)
     resp.raise_for_status()
+    size = 0
     with open(local_path, "wb") as f:
-        f.write(resp.content)
-    print(f"  [{key}] Saved: {filename} ({len(resp.content) / 1024:.0f} KB)")
+        for chunk in resp.iter_content(chunk_size=65536):
+            f.write(chunk)
+            size += len(chunk)
+    print(f"  [{key}] Saved: {filename} ({size / 1024:.0f} KB)")
 
     # Auto-extract ZIP files with path traversal protection
     if filename.endswith(".zip"):

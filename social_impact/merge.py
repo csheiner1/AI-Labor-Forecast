@@ -129,16 +129,20 @@ def _match_demographics_to_socs(demo_data, project_socs, soc_census_lookup,
             if len(crosswalk_matches) == 1:
                 matched[soc] = crosswalk_matches[0]
             else:
-                # Average multiple Census-code matches, weighted by total_employed_K
+                # Average multiple Census-code matches, weighted by total_employed_K.
+                # Skip entries with missing or zero employment to avoid distortion.
                 avg = {}
                 for field in numeric_fields:
-                    weighted_sum = sum(
-                        (m.get(field) or 0) * (m.get("total_employed_K", 1) or 1)
-                        for m in crosswalk_matches if m.get(field) is not None
-                    )
-                    contributing = [m for m in crosswalk_matches if m.get(field) is not None]
+                    contributing = [
+                        m for m in crosswalk_matches
+                        if m.get(field) is not None and m.get("total_employed_K")
+                    ]
                     if contributing:
-                        contrib_emp = sum(m.get("total_employed_K", 1) or 1 for m in contributing)
+                        weighted_sum = sum(
+                            (m[field] or 0) * m["total_employed_K"]
+                            for m in contributing
+                        )
+                        contrib_emp = sum(m["total_employed_K"] for m in contributing)
                         avg[field] = round(weighted_sum / contrib_emp, 1)
                     else:
                         avg[field] = None

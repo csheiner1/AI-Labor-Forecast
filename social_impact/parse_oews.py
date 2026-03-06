@@ -125,7 +125,7 @@ def parse_oews_state(project_socs=None):
     top3_results = {}
     shares_results = {}
     for soc, group in df.groupby("_soc"):
-        sorted_group = group.nlargest(len(group), emp_col)
+        sorted_group = group.sort_values(emp_col, ascending=False)
         states = sorted_group[state_col].tolist()
         emps = sorted_group[emp_col].tolist()
         top3_results[soc] = states[:3]

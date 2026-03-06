@@ -3,9 +3,12 @@
 Reads from 4 Results and 6 Social Impact tabs on startup.
 Caches in memory for fast page rendering.
 """
+import logging
 import openpyxl
 import os
 import threading
+
+logger = logging.getLogger(__name__)
 
 from social_impact.config import WORKBOOK
 
@@ -84,14 +87,25 @@ class DataStore:
             soc_val = r.get("SOC_Code")
             if soc_val:
                 social_by_soc[soc_val] = r
+        results_socs = set()
         for r in self.results:
             soc = r.get("SOC_Code")
             if not soc or soc in self.soc_lookup:
                 continue
+            results_socs.add(soc)
             merged = dict(r)
             if soc in social_by_soc:
                 merged.update(social_by_soc[soc])
             self.soc_lookup[soc] = merged
+
+        # Warn about SOCs in Results that are missing from Social tab
+        if social_by_soc:
+            missing = results_socs - set(social_by_soc.keys())
+            if missing:
+                logger.warning(
+                    "%d SOC(s) in Results tab missing from Social Impact tab: %s",
+                    len(missing), sorted(missing)[:10]
+                )
 
         self._loaded = True
         print(f"DataStore loaded: {len(self.results)} results, {len(self.social)} social impact rows, "
@@ -110,19 +124,23 @@ class DataStore:
     def get_sectors(self):
         """Return list of unique sectors."""
         self.load()
-        return sorted(set(r.get("Sector", "") for r in self.results if r.get("Sector")))
+        return sorted(set(r.get("Sector", "") for r in self.soc_lookup.values() if r.get("Sector")))
 
     def get_displacement_data(self):
         """Return displacement_data dict for transition API, cached after first call."""
         self.load()
         if self._displacement_data is None:
-            self._displacement_data = {}
-            for soc, rec in self.soc_lookup.items():
-                self._displacement_data[soc] = {
-                    "title": rec.get("Job_Title") or rec.get("Custom_Title", ""),
-                    "d_mod_low": rec.get("d_mod_low", 0),
-                    "employment_K": rec.get("Employment_2024_K", 0),
-                }
+            with self._lock:
+                # Double-check after acquiring lock
+                if self._displacement_data is None:
+                    data = {}
+                    for soc, rec in self.soc_lookup.items():
+                        data[soc] = {
+                            "title": rec.get("Job_Title") or rec.get("Custom_Title", ""),
+                            "d_mod_low": rec.get("d_mod_low", 0),
+                            "employment_K": rec.get("Employment_2024_K", 0),
+                        }
+                    self._displacement_data = data
         return self._displacement_data
 
     def get_wage_quintiles(self):

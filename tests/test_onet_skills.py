@@ -5,37 +5,42 @@ from social_impact.onet_skills import get_cached_vectors
 
 
 def test_build_skill_vectors():
-    """build_skill_vectors should return soc_list, elements, matrix."""
+    """build_skill_vectors should return soc_list, elements, matrix, soc_to_idx, norms."""
     from social_impact.onet_skills import build_skill_vectors
-    soc_list, elements, matrix = build_skill_vectors()
+    soc_list, elements, matrix, soc_to_idx, norms = build_skill_vectors()
     assert isinstance(soc_list, list)
     assert isinstance(elements, list)
     assert isinstance(matrix, np.ndarray)
     assert len(soc_list) > 100
     assert len(elements) > 50
     assert matrix.shape == (len(soc_list), len(elements))
+    assert isinstance(soc_to_idx, dict)
+    assert len(soc_to_idx) == len(soc_list)
+    assert norms.shape == (len(soc_list),)
 
 
 def test_skill_vectors_with_project_filter():
     """Filtering by project SOCs should reduce the count."""
     from social_impact.onet_skills import build_skill_vectors
     small_set = {"11-1011", "15-1252", "29-1141"}
-    soc_list, elements, matrix = build_skill_vectors(project_socs=small_set)
+    soc_list, elements, matrix, soc_to_idx, norms = build_skill_vectors(project_socs=small_set)
     assert len(soc_list) <= len(small_set)
     assert matrix.shape[0] == len(soc_list)
+    assert len(soc_to_idx) == len(soc_list)
 
 
 def test_find_transition_targets():
     """find_transition_targets should return similar occupations."""
     from social_impact.onet_skills import build_skill_vectors, find_transition_targets
-    soc_list, elements, matrix = build_skill_vectors()
+    soc_list, elements, matrix, soc_to_idx, norms = build_skill_vectors()
     displacement_data = {soc: {"d_mod_low": 0.05, "title": soc, "employment_K": 100}
                          for soc in soc_list}
     # Make source have high displacement
     if "11-1011" in soc_list:
         displacement_data["11-1011"]["d_mod_low"] = 0.20
         targets = find_transition_targets("11-1011", soc_list, matrix,
-                                          displacement_data, n_candidates=5)
+                                          displacement_data, n_candidates=5,
+                                          soc_to_idx=soc_to_idx, norms=norms)
         assert isinstance(targets, list)
         assert len(targets) > 0
         # Targets should have lower displacement
@@ -46,8 +51,9 @@ def test_find_transition_targets():
 def test_find_transition_targets_missing_soc():
     """Missing SOC should return empty list."""
     from social_impact.onet_skills import build_skill_vectors, find_transition_targets
-    soc_list, elements, matrix = build_skill_vectors()
-    targets = find_transition_targets("99-9999", soc_list, matrix, {})
+    soc_list, elements, matrix, soc_to_idx, norms = build_skill_vectors()
+    targets = find_transition_targets("99-9999", soc_list, matrix, {},
+                                      soc_to_idx=soc_to_idx, norms=norms)
     assert targets == []
 
 

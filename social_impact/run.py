@@ -14,13 +14,21 @@ from social_impact.merge import merge_all
 from social_impact.writeback import writeback
 
 
+KNOWN_FLAGS = {"--download", "--merge", "--writeback", "--force"}
+
+
 def main():
     args = set(sys.argv[1:])
     start = time.time()
 
+    unknown = args - KNOWN_FLAGS
+    if unknown:
+        print(f"WARNING: Unknown flag(s) ignored: {', '.join(sorted(unknown))}")
+        print(f"  Known flags: {', '.join(sorted(KNOWN_FLAGS))}")
+
     force = "--force" in args
     # --force is a modifier, not a phase selector; strip it for phase logic
-    phase_args = args - {"--force"}
+    phase_args = args - {"--force"} - unknown
 
     if not phase_args or "--download" in phase_args:
         print("=" * 60)
