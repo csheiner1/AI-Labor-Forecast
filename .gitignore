@@ -18,5 +18,8 @@ scoring/batch_results/
 scoring/classified_sectors_*.json
 scoring/calibration_batch_*.json
 
+# Git worktrees
+.worktrees/
+
 # Claude Code session data
 .claude/
