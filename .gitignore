@@ -23,3 +23,15 @@ scoring/calibration_batch_*.json
 
 # Claude Code session data
 .claude/
+
+# Social impact data cache (downloaded BLS files)
+social_impact/data_cache/
+
+# Dashboard generated charts
+dashboard/static/img/*.png
+
+# Intermediate merge output
+social_impact/merged_social_data.json
+
+# Cached OEWS state employment shares
+social_impact/state_shares.json

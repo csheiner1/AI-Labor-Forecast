@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Overview{% endblock %}
+{% block content %}
+<h1>AI Labor Displacement: Social Impact</h1>
+<p class="page-subtitle">Analyzing the distributional consequences of AI-driven workforce displacement across 394 white-collar occupations.</p>
+
+<div class="card-grid">
+    <div class="card">
+        <h3>Occupations Analyzed</h3>
+        <div class="value">{{ n_socs }}</div>
+        <div class="detail">6-digit SOC codes with full displacement scores</div>
+    </div>
+    <div class="card">
+        <h3>Total Employment</h3>
+        <div class="value">{{ "%.1f"|format(total_emp / 1000) }}M</div>
+        <div class="detail">Workers across {{ sectors|length }} industry sectors</div>
+    </div>
+    <div class="card">
+        <h3>Data Layers</h3>
+        <div class="value">4</div>
+        <div class="detail">Equity, Geographic, Political, Transitions</div>
+    </div>
+</div>
+
+<div class="chart-container">
+    <h2>Dashboard Pages</h2>
+    <div class="card-grid">
+        <a href="/equity" class="card" style="text-decoration:none;color:inherit;">
+            <h3>Equity Impact</h3>
+            <p>How displacement falls across race, gender, age, and income groups</p>
+        </a>
+        <a href="/geographic" class="card" style="text-decoration:none;color:inherit;">
+            <h3>Geographic Risk</h3>
+            <p>State and metro area vulnerability to occupational displacement</p>
+        </a>
+        <a href="/political" class="card" style="text-decoration:none;color:inherit;">
+            <h3>Political Landscape</h3>
+            <p>Education-partisan proxy and swing state exposure analysis</p>
+        </a>
+        <a href="/transitions" class="card" style="text-decoration:none;color:inherit;">
+            <h3>Transition Pathways</h3>
+            <p>O*NET skill-based retraining targets for high-displacement SOCs</p>
+        </a>
+    </div>
+</div>
+{% endblock %}

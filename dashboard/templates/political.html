@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Political Landscape{% endblock %}
+{% block content %}
+<h1>Political Landscape Analysis</h1>
+<p class="page-subtitle">How AI displacement intersects with education levels and the education-partisan gradient.</p>
+
+<div class="card-grid">
+    <div class="card">
+        <h3>Methodology Note</h3>
+        <p style="font-size:13px;color:#64748b;margin-top:8px;">
+            "Education-Partisan Lean" is a proxy derived from Pew Research data:
+            college graduates lean D+13, non-college workers lean R+6.
+            Each occupation's lean is computed from its bachelor's-degree attainment rate.
+            This is a statistical proxy, not a measurement of individual political views.
+        </p>
+    </div>
+</div>
+
+<div class="chart-container">
+    <h2>Education-Partisan Lean vs. Displacement Risk</h2>
+    <img src="{{ url_for('static', filename='img/pol_lean_scatter.png') }}" alt="Partisan lean scatter">
+</div>
+
+<div class="chart-container">
+    <h2>Displacement by Entry Education Level</h2>
+    <img src="{{ url_for('static', filename='img/pol_education.png') }}" alt="Education displacement">
+</div>
+
+<div class="chart-container">
+    <h2>Swing State Exposure</h2>
+    <p class="page-subtitle">Occupations where the primary employment state is a swing state (AZ, GA, MI, NV, NC, PA, WI).</p>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>SOC</th>
+                <th>Occupation</th>
+                <th>Emp (K)</th>
+                <th>d (Mod)</th>
+                <th>Displaced (K)</th>
+                <th>Primary State</th>
+                <th>Edu Lean</th>
+                <th>Union Rate</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% set swing_states = ['Arizona', 'Georgia', 'Michigan', 'Nevada', 'North Carolina', 'Pennsylvania', 'Wisconsin'] %}
+        {% for r in data %}
+        {% if r.Top_State_1 in swing_states %}
+            <tr>
+                <td>{{ r.SOC_Code }}</td>
+                <td>{{ r.Job_Title or r.Custom_Title }}</td>
+                <td>{{ "%.1f"|format(r.Employment_2024_K or 0) }}</td>
+                <td>{{ "%.1f%%"|format((r.d_mod_low or 0) * 100) }}</td>
+                <td>{{ "%.1f"|format(r.displaced_K_mod_low or 0) }}</td>
+                <td>{{ r.Top_State_1 }}</td>
+                <td>{{ "%.3f"|format(r.Edu_Partisan_Lean or 0) }}</td>
+                <td>{{ "%.1f%%"|format(r.Union_Rate_Pct or 0) }}</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

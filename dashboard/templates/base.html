@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AI Labor Displacement{% endblock %} | Social Impact Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>AI Labor<br>Displacement</h2>
+            <p class="subtitle">Social Impact Dashboard</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/" class="{% if request.path == '/' %}active{% endif %}">Overview</a></li>
+            <li><a href="/equity" class="{% if request.path == '/equity' %}active{% endif %}">Equity Impact</a></li>
+            <li><a href="/geographic" class="{% if request.path == '/geographic' %}active{% endif %}">Geographic Risk</a></li>
+            <li><a href="/political" class="{% if request.path == '/political' %}active{% endif %}">Political Landscape</a></li>
+            <li><a href="/transitions" class="{% if request.path == '/transitions' %}active{% endif %}">Transition Pathways</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <p>394 SOCs | 21 Sectors</p>
+        </div>
+    </nav>
+    <main class="content">
+        {% block content %}{% endblock %}
+    </main>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

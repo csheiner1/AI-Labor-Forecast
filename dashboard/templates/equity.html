@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Equity Impact{% endblock %}
+{% block content %}
+<h1>Equity Impact Analysis</h1>
+<p class="page-subtitle">How AI displacement risk distributes across demographic groups and income levels.</p>
+
+<div class="chart-container">
+    <h2>Displacement by Wage Quintile</h2>
+    <img src="{{ url_for('static', filename='img/equity_wage_quintile.png') }}" alt="Wage quintile chart">
+</div>
+
+<div class="chart-container">
+    <h2>Gender Composition vs. Displacement Risk</h2>
+    <img src="{{ url_for('static', filename='img/equity_gender.png') }}" alt="Gender scatter plot">
+</div>
+
+<div class="card-grid">
+    <div class="chart-container">
+        <h2>Displacement by Female Share</h2>
+        <img src="{{ url_for('static', filename='img/equity_female_bins.png') }}" alt="Female bins">
+    </div>
+    <div class="chart-container">
+        <h2>Displacement by Black/AA Share</h2>
+        <img src="{{ url_for('static', filename='img/equity_black_bins.png') }}" alt="Black bins">
+    </div>
+</div>
+
+<div class="card-grid">
+    <div class="chart-container">
+        <h2>Displacement by Hispanic/Latino Share</h2>
+        <img src="{{ url_for('static', filename='img/equity_hispanic_bins.png') }}" alt="Hispanic bins">
+    </div>
+    <div class="chart-container">
+        <h2>Displacement by Over-55 Share</h2>
+        <img src="{{ url_for('static', filename='img/equity_age55_bins.png') }}" alt="Age 55+ bins">
+    </div>
+</div>
+
+<div class="chart-container">
+    <h2>Most Impacted Occupations by Demographic</h2>
+    <p class="page-subtitle">Top 20 occupations by displaced workers, with demographic composition.</p>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>SOC</th>
+                <th>Occupation</th>
+                <th>Emp (K)</th>
+                <th>d (Mod)</th>
+                <th>Displaced (K)</th>
+                <th>% Female</th>
+                <th>% Black</th>
+                <th>% Hispanic</th>
+                <th>% Over 55</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for r in data %}
+        {% if loop.index <= 20 %}
+            <tr>
+                <td>{{ r.SOC_Code }}</td>
+                <td>{{ r.Job_Title or r.Custom_Title }}</td>
+                <td>{{ "%.1f"|format(r.Employment_2024_K or 0) }}</td>
+                <td>{{ "%.1f%%"|format((r.d_mod_low or 0) * 100) }}</td>
+                <td>{{ "%.1f"|format(r.displaced_K_mod_low or 0) }}</td>
+                <td>{{ "%.1f"|format(r.Pct_Female or 0) }}%</td>
+                <td>{{ "%.1f"|format(r.Pct_Black or 0) }}%</td>
+                <td>{{ "%.1f"|format(r.Pct_Hispanic or 0) }}%</td>
+                <td>{{ "%.1f"|format(r.Pct_Over_55 or 0) }}%</td>
+            </tr>
+        {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

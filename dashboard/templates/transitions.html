@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block title %}Transition Pathways{% endblock %}
+{% block content %}
+<h1>Transition Pathways</h1>
+<p class="page-subtitle">
+    For high-displacement occupations, find skill-similar jobs with lower AI displacement risk.
+    Based on O*NET skill and knowledge vector cosine similarity.
+</p>
+
+<div class="filter-bar">
+    <select id="soc-select" style="width:400px;">
+        <option value="">Select a high-displacement occupation...</option>
+        {% for r in data %}
+        {% if (r.d_mod_low or 0) > 0.08 %}
+        <option value="{{ r.SOC_Code }}">
+            {{ r.SOC_Code }} - {{ r.Job_Title or r.Custom_Title }} (d={{ "%.1f%%"|format((r.d_mod_low or 0) * 100) }}, {{ "%.0f"|format(r.Employment_2024_K or 0) }}K workers)
+        </option>
+        {% endif %}
+        {% endfor %}
+    </select>
+    <button onclick="findTransitions()" style="padding:8px 16px;background:#2563eb;color:#fff;border:none;border-radius:6px;cursor:pointer;">
+        Find Transition Targets
+    </button>
+</div>
+
+<div id="source-info" style="display:none;" class="card">
+    <h3>Source Occupation</h3>
+    <p id="source-detail"></p>
+</div>
+
+<div id="results" style="display:none;" class="chart-container">
+    <h2>Recommended Transition Targets</h2>
+    <p class="page-subtitle">Occupations with similar skills/knowledge and lower displacement risk.</p>
+    <table class="data-table" id="results-table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>SOC</th>
+                <th>Target Occupation</th>
+                <th>Skill Similarity</th>
+                <th>Displacement Rate</th>
+                <th>Employment (K)</th>
+            </tr>
+        </thead>
+        <tbody id="results-body">
+        </tbody>
+    </table>
+</div>
+
+<div id="loading" style="display:none;text-align:center;padding:40px;">
+    <p>Computing skill similarities... (first load may take 10-15 seconds)</p>
+</div>
+
+<div id="no-results" style="display:none;" class="card">
+    <p>No viable transition targets found. This may mean the occupation's skill profile is highly specialized.</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+async function findTransitions() {
+    const soc = document.getElementById('soc-select').value;
+    if (!soc) return;
+
+    document.getElementById('loading').style.display = 'block';
+    document.getElementById('results').style.display = 'none';
+    document.getElementById('no-results').style.display = 'none';
+    document.getElementById('source-info').style.display = 'none';
+
+    try {
+        const resp = await fetch(`/api/transition/${soc}?n=10&max_displacement=0.15`);
+        const data = await resp.json();
+
+        document.getElementById('loading').style.display = 'none';
+
+        // Show source info
+        const src = data.source;
+        const dRate = src.d_mod_low != null ? (src.d_mod_low * 100).toFixed(1) + '%' : 'N/A';
+        document.getElementById('source-detail').textContent =
+            `${src.soc} - ${src.title} | Displacement: ${dRate}`;
+        document.getElementById('source-info').style.display = 'block';
+
+        if (data.targets.length === 0) {
+            document.getElementById('no-results').style.display = 'block';
+            return;
+        }
+
+        // Populate table
+        const tbody = document.getElementById('results-body');
+        tbody.innerHTML = '';
+        data.targets.forEach((t, i) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${i + 1}</td>
+                <td>${t.soc}</td>
+                <td>${t.title}</td>
+                <td>${(t.similarity * 100).toFixed(1)}%</td>
+                <td>${(t.d_mod_low * 100).toFixed(1)}%</td>
+                <td>${(t.employment_K || 0).toFixed(0)}</td>
+            `;
+            tbody.appendChild(row);
+        });
+        document.getElementById('results').style.display = 'block';
+    } catch (err) {
+        document.getElementById('loading').style.display = 'none';
+        alert('Error: ' + err.message);
+    }
+}
+</script>
+{% endblock %}
