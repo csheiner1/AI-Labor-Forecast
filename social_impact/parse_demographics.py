@@ -172,17 +172,21 @@ def parse_cpsaat11b(filepath=None):
         else:
             record["median_age"] = None
 
-        # Pct over 55: sum of 55-64 and 65+ columns if available
+        # Over 55: CPSAAT11B columns are employment counts (thousands), not percentages.
+        # Sum 55-64 and 65+ counts, then divide by total to get percentage.
         has_age_cols = "pct_55_64" in col_map or "pct_65_plus" in col_map
-        pct_55_64 = 0.0
-        pct_65_plus = 0.0
+        count_55_64 = 0.0
+        count_65_plus = 0.0
         if "pct_55_64" in col_map:
             val = df.iloc[i, col_map["pct_55_64"]]
-            pct_55_64 = float(val) if pd.notna(val) and isinstance(val, (int, float)) else 0.0
+            count_55_64 = float(val) if pd.notna(val) and isinstance(val, (int, float)) else 0.0
         if "pct_65_plus" in col_map:
             val = df.iloc[i, col_map["pct_65_plus"]]
-            pct_65_plus = float(val) if pd.notna(val) and isinstance(val, (int, float)) else 0.0
-        record["pct_over_55"] = round(pct_55_64 + pct_65_plus, 1) if has_age_cols else None
+            count_65_plus = float(val) if pd.notna(val) and isinstance(val, (int, float)) else 0.0
+        if has_age_cols and total_val and total_val > 0:
+            record["pct_over_55"] = round((count_55_64 + count_65_plus) / total_val * 100, 1)
+        else:
+            record["pct_over_55"] = None
 
         results[occ_text] = record
 
