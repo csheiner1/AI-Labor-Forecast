@@ -16,7 +16,7 @@
 - **310 SOC codes** in `4 Results` tab with displacement scores, employment, wages, sector assignments.
 - **21 sectors** across the workbook.
 - **Existing patterns:** The project uses openpyxl for all workbook I/O (never pandas for xlsx). Pipeline scripts live under `scoring/`. Analysis/visualization scripts live under `analysis/`. Flask is listed as a dependency but no app exists yet.
-- **O\*NET data:** Already downloaded as `onet_db.zip` with extracted files in `onet_data/db_29_1_text/`. Contains Skills.txt, Knowledge.txt, Abilities.txt needed for transition pathways.
+- **O\*NET data:** Already downloaded as `onet_db.zip`. Only 6 task-related files are currently extracted to `onet_data/db_29_1_text/` (Task Statements.txt, Task Ratings.txt, etc.). Skills.txt, Knowledge.txt, and Abilities.txt needed for transition pathways are still inside the ZIP and must be extracted before Task 9.
 - **SOC format in workbook:** 2-digit major group + 4-digit detail, e.g. "11-1011". Some entries are comma-separated merged codes like "13-2051, 13-2052". BLS source data uses "11-1011.00" format (with .00 suffix).
 
 ### Data Source Summary
@@ -51,13 +51,15 @@
 - Create: `social_impact/__init__.py`
 - Create: `social_impact/config.py`
 - Create: `social_impact/download.py`
+- Test: `tests/test_config.py`
+- Test: `tests/test_download.py`
 
 **Step 1: Create directory structure**
 
 Run:
 ```bash
-mkdir -p social_impact/data_cache
-touch social_impact/__init__.py
+mkdir -p social_impact/data_cache tests
+touch social_impact/__init__.py tests/__init__.py
 ```
 
 **Step 2: Write config.py with all source URLs, paths, and constants**
@@ -191,7 +193,83 @@ if __name__ == "__main__":
     download_all(force=force)
 ```
 
-**Step 4: Add data_cache to .gitignore**
+**Step 4: Write config tests**
+
+Create `tests/test_config.py`:
+
+```python
+"""Tests for social_impact config."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def test_config_paths_exist():
+    from social_impact.config import PROJECT_ROOT, WORKBOOK
+    assert os.path.isdir(PROJECT_ROOT)
+    assert os.path.exists(WORKBOOK), f"Workbook not found at {WORKBOOK}"
+
+
+def test_sources_all_have_urls():
+    from social_impact.config import SOURCES
+    assert len(SOURCES) >= 7
+    for key, url in SOURCES.items():
+        assert url.startswith("https://"), f"{key} URL does not start with https://"
+
+
+def test_foreign_born_data_complete():
+    from social_impact.config import FOREIGN_BORN_BY_MAJOR_GROUP
+    # Should cover at least the white-collar major groups
+    for major in ["11", "13", "15", "17", "23", "25", "29"]:
+        assert major in FOREIGN_BORN_BY_MAJOR_GROUP, f"Missing major group {major}"
+```
+
+Create `tests/test_download.py`:
+
+```python
+"""Tests for BLS file downloader."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def test_download_file_returns_path():
+    from social_impact.download import download_file
+    # Test with a small file (crosswalk)
+    path = download_file("census_soc_crosswalk")
+    assert path is not None
+    assert os.path.exists(path)
+    assert os.path.getsize(path) > 1000, "Downloaded file too small"
+
+
+def test_download_file_caching():
+    from social_impact.download import download_file
+    # Second call should use cache
+    path1 = download_file("census_soc_crosswalk")
+    path2 = download_file("census_soc_crosswalk")
+    assert path1 == path2
+
+
+def test_download_file_invalid_key():
+    from social_impact.download import download_file
+    with pytest.raises(KeyError):
+        download_file("nonexistent_source")
+```
+
+**Step 5: Run tests (TDD red then green)**
+
+Run:
+```bash
+pytest tests/test_config.py tests/test_download.py -v
+```
+
+Expected: Config tests pass immediately. Download tests pass after first download.
+
+**Step 6: Add data_cache to .gitignore**
 
 Append to `.gitignore`:
 ```
@@ -199,7 +277,7 @@ Append to `.gitignore`:
 social_impact/data_cache/
 ```
 
-**Step 5: Test downloads**
+**Step 7: Test downloads**
 
 Run:
 ```bash
@@ -224,10 +302,11 @@ python3 social_impact/download.py
 
 Expected: All files download. OEWS ZIPs auto-extract. Some files may fail if BLS URLs have changed — that's OK, we'll handle fallbacks per-parser.
 
-**Step 7: Commit**
+**Step 9: Commit**
 
 ```bash
-git add social_impact/__init__.py social_impact/config.py social_impact/download.py .gitignore
+git add social_impact/__init__.py social_impact/config.py social_impact/download.py \
+    tests/__init__.py tests/test_config.py tests/test_download.py .gitignore
 git commit -m "Add social impact pipeline: config and BLS data download"
 ```
 
@@ -237,6 +316,7 @@ git commit -m "Add social impact pipeline: config and BLS data download"
 
 **Files:**
 - Create: `social_impact/crosswalk.py`
+- Test: `tests/test_crosswalk.py`
 
 The CPSAAT11/11B tables use Census occupation codes (~570 codes), not SOC. The BLS provides a crosswalk file mapping Census codes to 2018 SOC. We need this crosswalk to join demographic data to our 310 project SOCs.
 
@@ -386,7 +466,76 @@ def build_soc_lookup(project_socs, soc_to_census):
     return lookup
 ```
 
-**Step 2: Test the crosswalk**
+**Step 2: Write the failing tests**
+
+Create `tests/test_crosswalk.py`:
+
+```python
+"""Tests for Census-to-SOC crosswalk parser."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def test_load_crosswalk_returns_dicts():
+    from social_impact.crosswalk import load_crosswalk
+    census_to_soc, soc_to_census = load_crosswalk()
+    assert isinstance(census_to_soc, dict)
+    assert isinstance(soc_to_census, dict)
+    assert len(census_to_soc) > 400, "Expected >400 Census codes"
+    assert len(soc_to_census) > 300, "Expected >300 SOC codes"
+
+
+def test_crosswalk_soc_format():
+    """SOC codes should be in XX-XXXX format (no .00 suffix)."""
+    import re
+    from social_impact.crosswalk import load_crosswalk
+    _, soc_to_census = load_crosswalk()
+    for soc in list(soc_to_census.keys())[:50]:
+        assert re.match(r'^\d{2}-\d{4}$', soc), f"Bad SOC format: {soc}"
+
+
+def test_load_project_socs():
+    from social_impact.crosswalk import load_project_socs
+    socs = load_project_socs()
+    assert len(socs) == 310, f"Expected 310 SOCs, got {len(socs)}"
+    sample = socs.get("11-1011")
+    assert sample is not None, "11-1011 should exist"
+    assert "title" in sample
+    assert "sector" in sample
+
+
+def test_build_soc_lookup_coverage():
+    from social_impact.crosswalk import load_crosswalk, load_project_socs, build_soc_lookup
+    _, soc_to_census = load_crosswalk()
+    project_socs = load_project_socs()
+    lookup = build_soc_lookup(project_socs, soc_to_census)
+    # At least 80% of project SOCs should have Census mappings
+    assert len(lookup) >= 250, f"Only {len(lookup)} SOCs matched (expected >=250)"
+
+
+def test_build_soc_lookup_handles_merged_socs():
+    from social_impact.crosswalk import load_crosswalk, build_soc_lookup
+    _, soc_to_census = load_crosswalk()
+    # Simulate a merged SOC
+    project_socs = {"13-2051, 13-2052": {"title": "Test merged"}}
+    lookup = build_soc_lookup(project_socs, soc_to_census)
+    # Should attempt to match individual codes
+    assert isinstance(lookup, dict)
+```
+
+**Step 3: Run tests (TDD red then green)**
+
+Run:
+```bash
+pytest tests/test_crosswalk.py -v
+```
+
+Expected: All tests pass after Step 1 implementation.
+
+**Step 4: Smoke test the crosswalk interactively**
 
 Run:
 ```bash
@@ -403,10 +552,10 @@ for soc in list(lookup.keys())[:5]:
 
 Expected: ~280-310 SOCs matched (some may not have Census equivalents if they are combined/niche). Unmatched SOCs will fall back to major-group averages later.
 
-**Step 3: Commit**
+**Step 5: Commit**
 
 ```bash
-git add social_impact/crosswalk.py
+git add social_impact/crosswalk.py tests/test_crosswalk.py
 git commit -m "Add Census-to-SOC crosswalk parser for demographic data join"
 ```
 
@@ -416,6 +565,7 @@ git commit -m "Add Census-to-SOC crosswalk parser for demographic data join"
 
 **Files:**
 - Create: `social_impact/parse_demographics.py`
+- Test: `tests/test_parse_demographics.py`
 
 CPSAAT11 is an XLSX file with Census occupation codes and demographic breakdowns. The file has a non-standard layout: merged cells, multi-level headers, footnotes. We need to extract: Pct_Female, Pct_White, Pct_Black, Pct_Asian, Pct_Hispanic per Census occupation code.
 
@@ -631,7 +781,76 @@ def parse_cpsaat11b(filepath=None):
     return results
 ```
 
-**Step 2: Test the parsers**
+**Step 2: Write the failing tests**
+
+Create `tests/test_parse_demographics.py`:
+
+```python
+"""Tests for CPSAAT11/11B demographic parsers."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def test_parse_cpsaat11_returns_entries():
+    from social_impact.parse_demographics import parse_cpsaat11
+    demo = parse_cpsaat11()
+    assert len(demo) > 400, f"Expected >400 occupation entries, got {len(demo)}"
+
+
+def test_parse_cpsaat11_has_expected_fields():
+    from social_impact.parse_demographics import parse_cpsaat11
+    demo = parse_cpsaat11()
+    sample = next(iter(demo.values()))
+    for field in ["pct_female", "pct_white", "pct_black", "pct_asian", "pct_hispanic"]:
+        assert field in sample, f"Missing field: {field}"
+
+
+def test_parse_cpsaat11_values_are_percentages():
+    from social_impact.parse_demographics import parse_cpsaat11
+    demo = parse_cpsaat11()
+    for occ, data in list(demo.items())[:20]:
+        for field in ["pct_female", "pct_white"]:
+            val = data.get(field)
+            if val is not None:
+                assert 0 <= val <= 100, f"{occ} {field}={val} out of range"
+
+
+def test_parse_cpsaat11b_returns_entries():
+    from social_impact.parse_demographics import parse_cpsaat11b
+    age = parse_cpsaat11b()
+    assert len(age) > 400, f"Expected >400 entries, got {len(age)}"
+
+
+def test_parse_cpsaat11b_has_age_fields():
+    from social_impact.parse_demographics import parse_cpsaat11b
+    age = parse_cpsaat11b()
+    sample = next(iter(age.values()))
+    assert "median_age" in sample, "Missing median_age"
+    assert "pct_over_55" in sample, "Missing pct_over_55"
+
+
+def test_parse_cpsaat11b_median_age_reasonable():
+    from social_impact.parse_demographics import parse_cpsaat11b
+    age = parse_cpsaat11b()
+    for occ, data in list(age.items())[:20]:
+        ma = data.get("median_age")
+        if ma is not None:
+            assert 18 <= ma <= 70, f"{occ} median_age={ma} out of range"
+```
+
+**Step 3: Run tests (TDD red then green)**
+
+Run:
+```bash
+pytest tests/test_parse_demographics.py -v
+```
+
+Expected: All tests pass after Step 1 implementation.
+
+**Step 4: Smoke test the parsers interactively**
 
 Run:
 ```bash
@@ -639,7 +858,6 @@ python3 -c "
 from social_impact.parse_demographics import parse_cpsaat11, parse_cpsaat11b
 demo = parse_cpsaat11()
 age = parse_cpsaat11b()
-# Show a few entries
 for occ in list(demo.keys())[:5]:
     print(f'  {occ}: {demo[occ]}')
 print()
@@ -650,10 +868,10 @@ for occ in list(age.keys())[:5]:
 
 Expected: ~500-570 occupation entries parsed from each file. Verify that `pct_female`, `pct_white`, etc. are reasonable percentages.
 
-**Step 3: Commit**
+**Step 5: Commit**
 
 ```bash
-git add social_impact/parse_demographics.py
+git add social_impact/parse_demographics.py tests/test_parse_demographics.py
 git commit -m "Add CPSAAT11/11B parsers for race, gender, and age demographics"
 ```
 
@@ -663,6 +881,7 @@ git commit -m "Add CPSAAT11/11B parsers for race, gender, and age demographics"
 
 **Files:**
 - Create: `social_impact/parse_education.py`
+- Test: `tests/test_parse_education.py`
 
 Tables 5.3 (education attainment distribution) and 5.4 (typical entry education) use direct SOC codes, so no crosswalk needed. However, the XLSX files have multi-row headers and merged cells.
 
@@ -833,7 +1052,72 @@ def parse_entry_education(filepath=None):
     return results
 ```
 
-**Step 2: Test the education parsers**
+**Step 2: Write the failing tests**
+
+Create `tests/test_parse_education.py`:
+
+```python
+"""Tests for BLS education parsers."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def test_parse_education_attainment_returns_socs():
+    from social_impact.parse_education import parse_education_attainment
+    edu = parse_education_attainment()
+    assert len(edu) > 200, f"Expected >200 SOCs, got {len(edu)}"
+
+
+def test_education_attainment_fields():
+    from social_impact.parse_education import parse_education_attainment
+    edu = parse_education_attainment()
+    sample = next(iter(edu.values()))
+    assert "pct_bachelors_plus" in sample
+    assert "pct_graduate_deg" in sample
+
+
+def test_education_attainment_values_valid():
+    from social_impact.parse_education import parse_education_attainment
+    edu = parse_education_attainment()
+    for soc, data in edu.items():
+        bp = data.get("pct_bachelors_plus", 0)
+        gd = data.get("pct_graduate_deg", 0)
+        if bp is not None:
+            assert 0 <= bp <= 100, f"{soc}: bach+={bp}"
+        if gd is not None:
+            assert gd <= bp, f"{soc}: grad={gd} > bach+={bp}"
+
+
+def test_parse_entry_education():
+    from social_impact.parse_education import parse_entry_education
+    entry = parse_entry_education()
+    assert len(entry) > 200
+    sample = next(iter(entry.values()))
+    assert isinstance(sample, str)
+    assert len(sample) > 3, "Entry education should be descriptive text"
+
+
+def test_normalize_soc_removes_suffix():
+    from social_impact.parse_education import _normalize_soc
+    assert _normalize_soc("11-1011.00") == "11-1011"
+    assert _normalize_soc("11-1011") == "11-1011"
+    assert _normalize_soc("bad") is None
+    assert _normalize_soc(None) is None
+```
+
+**Step 3: Run tests (TDD red then green)**
+
+Run:
+```bash
+pytest tests/test_parse_education.py -v
+```
+
+Expected: All tests pass.
+
+**Step 4: Smoke test interactively**
 
 Run:
 ```bash
@@ -841,7 +1125,6 @@ python3 -c "
 from social_impact.parse_education import parse_education_attainment, parse_entry_education
 edu = parse_education_attainment()
 entry = parse_entry_education()
-# Show sample
 for soc in ['11-1011', '13-2011', '15-1252', '25-1011', '29-1141']:
     e = edu.get(soc, {})
     en = entry.get(soc, 'N/A')
@@ -851,10 +1134,10 @@ for soc in ['11-1011', '13-2011', '15-1252', '25-1011', '29-1141']:
 
 Expected: Most of our 310 SOC codes should have education data. Bachelor's+ percentages should range from ~10% to ~99%.
 
-**Step 3: Commit**
+**Step 5: Commit**
 
 ```bash
-git add social_impact/parse_education.py
+git add social_impact/parse_education.py tests/test_parse_education.py
 git commit -m "Add BLS education attainment and entry education parsers"
 ```
 
@@ -865,6 +1148,8 @@ git commit -m "Add BLS education attainment and entry education parsers"
 **Files:**
 - Create: `social_impact/parse_union.py`
 - Create: `social_impact/parse_oews.py`
+- Test: `tests/test_parse_union.py`
+- Test: `tests/test_parse_oews.py`
 
 **Step 1: Write union rate parser (HTML table)**
 
@@ -990,16 +1275,22 @@ def _normalize_soc(soc_str):
 def parse_oews_state(project_socs=None):
     """Parse OEWS state data to find top-3 states per SOC by employment.
 
+    Also returns full state-level employment shares per SOC for proportional
+    geographic displacement allocation (not just the top-3 names).
+
     Args:
         project_socs: set of SOC codes to filter for (optional)
 
     Returns:
-        dict: soc_code -> [state1, state2, state3] ordered by employment
+        tuple: (top3_dict, shares_dict)
+            top3_dict: soc_code -> [state1, state2, state3] ordered by employment
+            shares_dict: soc_code -> {state_name: employment_share_fraction, ...}
+                         (all states, shares sum to 1.0 per SOC)
     """
     filepath = _find_oews_csv("oews_state")
     if filepath is None:
         print("  WARNING: OEWS state file not found")
-        return {}
+        return {}, {}
 
     print(f"  Reading OEWS state data from {os.path.basename(filepath)}...")
 
@@ -1025,7 +1316,7 @@ def parse_oews_state(project_socs=None):
 
     if not all([soc_col, state_col, emp_col]):
         print(f"  WARNING: Could not find required columns. Available: {list(df.columns)}")
-        return {}
+        return {}, {}
 
     print(f"  Columns: SOC={soc_col}, State={state_col}, Emp={emp_col}")
 
@@ -1046,14 +1337,21 @@ def parse_oews_state(project_socs=None):
         if state and emp > 0:
             soc_states[soc].append((state, emp))
 
-    # Sort and take top 3
-    results = {}
+    # Sort and take top 3; also compute employment shares
+    top3_results = {}
+    shares_results = {}
     for soc, states in soc_states.items():
-        top3 = sorted(states, key=lambda x: x[1], reverse=True)[:3]
-        results[soc] = [s[0] for s in top3]
+        sorted_states = sorted(states, key=lambda x: x[1], reverse=True)
+        top3_results[soc] = [s[0] for s in sorted_states[:3]]
+        total_emp = sum(s[1] for s in sorted_states)
+        if total_emp > 0:
+            shares_results[soc] = {s[0]: s[1] / total_emp for s in sorted_states}
+        else:
+            shares_results[soc] = {}
 
-    print(f"  OEWS state: top-3 states for {len(results)} SOCs")
-    return results
+    print(f"  OEWS state: top-3 states for {len(top3_results)} SOCs, "
+          f"shares for {len(shares_results)} SOCs")
+    return top3_results, shares_results
 
 
 def parse_oews_metro_lq(project_socs=None):
@@ -1122,7 +1420,108 @@ def parse_oews_metro_lq(project_socs=None):
     return results
 ```
 
-**Step 3: Test the parsers**
+**Step 3: Write the failing tests**
+
+Create `tests/test_parse_union.py`:
+
+```python
+"""Tests for union rate parser."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def test_union_rates_complete():
+    from social_impact.parse_union import UNION_RATES_2024
+    assert len(UNION_RATES_2024) >= 22, "Should cover all major groups"
+
+
+def test_get_union_rate():
+    from social_impact.parse_union import get_union_rate
+    rate = get_union_rate("25-1011")
+    assert rate is not None
+    assert rate > 0
+    assert rate < 100
+
+
+def test_get_union_rate_unknown_group():
+    from social_impact.parse_union import get_union_rate
+    rate = get_union_rate("99-9999")
+    assert rate is None
+
+
+def test_fetch_union_rates_returns_dict():
+    from social_impact.parse_union import fetch_union_rates
+    rates = fetch_union_rates()
+    assert isinstance(rates, dict)
+    assert len(rates) >= 22
+```
+
+Create `tests/test_parse_oews.py`:
+
+```python
+"""Tests for OEWS geographic data parsers."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def test_parse_oews_state_returns_tuple():
+    from social_impact.parse_oews import parse_oews_state
+    result = parse_oews_state({"11-1011", "15-1252"})
+    assert isinstance(result, tuple) and len(result) == 2
+    top3, shares = result
+    assert isinstance(top3, dict)
+    assert isinstance(shares, dict)
+
+
+def test_oews_state_top3_format():
+    from social_impact.parse_oews import parse_oews_state
+    top3, _ = parse_oews_state({"11-1011"})
+    if "11-1011" in top3:
+        states = top3["11-1011"]
+        assert isinstance(states, list)
+        assert len(states) <= 3
+        for s in states:
+            assert isinstance(s, str)
+
+
+def test_oews_state_shares_sum_to_one():
+    from social_impact.parse_oews import parse_oews_state
+    _, shares = parse_oews_state({"11-1011"})
+    if "11-1011" in shares:
+        total = sum(shares["11-1011"].values())
+        assert abs(total - 1.0) < 0.01, f"Shares sum to {total}, expected ~1.0"
+
+
+def test_parse_oews_metro_lq():
+    from social_impact.parse_oews import parse_oews_metro_lq
+    result = parse_oews_metro_lq({"11-1011"})
+    assert isinstance(result, dict)
+    # May or may not have data for this SOC depending on OEWS availability
+
+
+def test_normalize_soc():
+    from social_impact.parse_oews import _normalize_soc
+    assert _normalize_soc("11-1011.00") == "11-1011"
+    assert _normalize_soc("11-1011") == "11-1011"
+    assert _normalize_soc(None) is None
+```
+
+**Step 4: Run tests (TDD red then green)**
+
+Run:
+```bash
+pytest tests/test_parse_union.py tests/test_parse_oews.py -v
+```
+
+Expected: All tests pass.
+
+**Step 5: Smoke test interactively**
 
 Run:
 ```bash
@@ -1141,18 +1540,19 @@ python3 -c "
 from social_impact.parse_oews import parse_oews_state
 from social_impact.crosswalk import load_project_socs
 socs = set(load_project_socs().keys())
-states = parse_oews_state(socs)
+top3, shares = parse_oews_state(socs)
 for soc in ['11-1011', '15-1252', '29-1141']:
-    print(f'  {soc}: {states.get(soc, \"N/A\")}')
+    print(f'  {soc}: top3={top3.get(soc, \"N/A\")}, #states={len(shares.get(soc, {}))}')
 "
 ```
 
-Expected: Union rates loaded (hardcoded fallback is fine). OEWS state data gives top-3 states per SOC.
+Expected: Union rates loaded (hardcoded fallback is fine). OEWS state data gives top-3 states and employment shares per SOC.
 
-**Step 4: Commit**
+**Step 6: Commit**
 
 ```bash
-git add social_impact/parse_union.py social_impact/parse_oews.py
+git add social_impact/parse_union.py social_impact/parse_oews.py \
+    tests/test_parse_union.py tests/test_parse_oews.py
 git commit -m "Add union rate and OEWS geographic data parsers"
 ```
 
@@ -1162,6 +1562,7 @@ git commit -m "Add union rate and OEWS geographic data parsers"
 
 **Files:**
 - Create: `social_impact/merge.py`
+- Test: `tests/test_merge.py`
 
 This is the core logic: take all parsed sources and join them onto the 310 project SOCs. For CPSAAT11/11B data, use the Census-to-SOC crosswalk. For education/OEWS, use direct SOC match. Compute derived columns (Edu_Partisan_Lean, Pct_Foreign_Born).
 
@@ -1240,6 +1641,11 @@ def _fuzzy_match_occupation(target_text, demo_data, threshold=0.7):
 def _match_demographics_to_socs(demo_data, project_socs, census_to_soc, soc_to_census):
     """Match CPSAAT demographic data to project SOCs.
 
+    Works for ANY field set — auto-detects numeric fields from the data.
+    This means the same function works for CPSAAT11 (race/gender fields like
+    pct_female, pct_white, etc.) AND CPSAAT11B (age fields like median_age,
+    pct_over_55).
+
     Strategy:
     1. For each project SOC, find its Census code(s) via crosswalk
     2. The Census code maps to a title in the crosswalk
@@ -1251,13 +1657,20 @@ def _match_demographics_to_socs(demo_data, project_socs, census_to_soc, soc_to_c
     CPSAAT occupation titles.
 
     Returns:
-        dict: project_soc -> {pct_female, pct_white, ...} or None
+        dict: project_soc -> {field1: val, field2: val, ...} or None
     """
     matched = {}
     unmatched = []
 
     # Build a simple lookup from the CPSAAT data
     demo_by_text = demo_data  # already keyed by occ text
+
+    # Auto-detect numeric fields from the first entry (excluding total_employed_K)
+    # This makes the function work for both CPSAAT11 and CPSAAT11B field sets
+    numeric_fields = []
+    if demo_by_text:
+        sample = next(iter(demo_by_text.values()))
+        numeric_fields = [k for k in sample.keys() if k != "total_employed_K"]
 
     for soc, meta in project_socs.items():
         title = meta["title"]
@@ -1291,9 +1704,9 @@ def _match_demographics_to_socs(demo_data, project_socs, census_to_soc, soc_to_c
                             break
 
         if group_vals:
-            # Average the group values
+            # Average the group values using auto-detected fields
             avg = {}
-            for field in ["pct_female", "pct_white", "pct_black", "pct_asian", "pct_hispanic"]:
+            for field in numeric_fields:
                 vals = [v[field] for v in group_vals if v.get(field) is not None]
                 avg[field] = round(sum(vals) / len(vals), 1) if vals else None
             matched[soc] = avg
@@ -1352,7 +1765,7 @@ def merge_all():
     # 5. Parse geographic data
     print("\nParsing OEWS state data...")
     soc_set = set(project_socs.keys())
-    state_data = parse_oews_state(soc_set)
+    state_data, state_shares = parse_oews_state(soc_set)
 
     print("\nParsing OEWS metro data...")
     metro_data = parse_oews_metro_lq(soc_set)
@@ -1444,6 +1857,12 @@ def merge_all():
         json.dump(results, f, indent=2)
     print(f"\nSaved {len(results)} records to {MERGED_OUTPUT}")
 
+    # Save state employment shares for geographic chart generation
+    state_shares_path = MERGED_OUTPUT.replace("merged_social_data.json", "state_shares.json")
+    with open(state_shares_path, "w") as f:
+        json.dump(state_shares, f, indent=2)
+    print(f"Saved state shares for {len(state_shares)} SOCs to {state_shares_path}")
+
     return results
 
 
@@ -1451,7 +1870,94 @@ if __name__ == "__main__":
     merge_all()
 ```
 
-**Step 2: Test the merge**
+**Step 2: Write failing tests**
+
+Create `tests/test_merge.py`:
+
+```python
+"""Tests for the social impact merge engine."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def test_fuzzy_match_exact():
+    from social_impact.merge import _fuzzy_match_occupation
+    data = {"Registered nurses": {"pct_female": 85.0}}
+    assert _fuzzy_match_occupation("Registered nurses", data) == "Registered nurses"
+
+
+def test_fuzzy_match_case_insensitive():
+    from social_impact.merge import _fuzzy_match_occupation
+    data = {"Registered nurses": {"pct_female": 85.0}}
+    assert _fuzzy_match_occupation("REGISTERED NURSES", data) == "Registered nurses"
+
+
+def test_fuzzy_match_containment():
+    from social_impact.merge import _fuzzy_match_occupation
+    data = {"Management analysts and consultants": {"pct_female": 40.0}}
+    result = _fuzzy_match_occupation("Management analysts", data)
+    assert result == "Management analysts and consultants"
+
+
+def test_fuzzy_match_no_match():
+    from social_impact.merge import _fuzzy_match_occupation
+    data = {"Registered nurses": {"pct_female": 85.0}}
+    result = _fuzzy_match_occupation("Quantum physicists", data, threshold=0.9)
+    assert result is None
+
+
+def test_match_demographics_auto_detects_fields():
+    """The function should work for ANY field set, not just race/gender."""
+    from social_impact.merge import _match_demographics_to_socs
+    # Simulate age data (CPSAAT11B fields)
+    demo_data = {"Accountants and auditors": {"median_age": 42.1, "pct_over_55": 18.3, "total_employed_K": 1200}}
+    project_socs = {"13-2011": {"title": "Accountants and auditors"}}
+    result = _match_demographics_to_socs(demo_data, project_socs, {}, {})
+    assert "13-2011" in result
+    assert result["13-2011"]["median_age"] == 42.1
+    assert result["13-2011"]["pct_over_55"] == 18.3
+
+
+def test_match_demographics_race_fields():
+    """Should also work with the CPSAAT11 race/gender fields."""
+    from social_impact.merge import _match_demographics_to_socs
+    demo_data = {"Software developers": {"pct_female": 22.0, "pct_white": 55.0, "pct_asian": 35.0, "total_employed_K": 800}}
+    project_socs = {"15-1252": {"title": "Software developers"}}
+    result = _match_demographics_to_socs(demo_data, project_socs, {}, {})
+    assert "15-1252" in result
+    assert result["15-1252"]["pct_female"] == 22.0
+
+
+def test_compute_edu_partisan_lean():
+    from social_impact.merge import compute_edu_partisan_lean
+    # 100% bachelors+ -> full D lean (+0.13)
+    assert compute_edu_partisan_lean(100) == 0.13
+    # 0% bachelors+ -> full R lean (-0.06)
+    assert compute_edu_partisan_lean(0) == -0.06
+    # None -> None
+    assert compute_edu_partisan_lean(None) is None
+
+
+def test_compute_edu_partisan_lean_midpoint():
+    from social_impact.merge import compute_edu_partisan_lean
+    # 50% bachelors+ -> midpoint of 0.13 and -0.06 = 0.035
+    lean = compute_edu_partisan_lean(50)
+    assert abs(lean - 0.035) < 0.001
+```
+
+**Step 3: Run tests (TDD red then green)**
+
+Run:
+```bash
+pytest tests/test_merge.py -v
+```
+
+Expected: Tests fail (red) because `social_impact/merge.py` doesn't exist yet. Implement Step 1's code, then re-run — all tests pass (green).
+
+**Step 4: Test the merge interactively**
 
 Run:
 ```bash
@@ -1460,7 +1966,7 @@ python3 social_impact/merge.py
 
 Expected: 310 records merged. Coverage report shows most columns above 80%. Some CPSAAT matches may be lower (~60-80%) due to the Census-code mismatch — that's acceptable for v1. The intermediate JSON is saved for inspection.
 
-**Step 3: Inspect a few records**
+**Step 5: Inspect a few records**
 
 Run:
 ```bash
@@ -1477,10 +1983,10 @@ for r in data[:3]:
 
 Expected: Records have reasonable values. Pct_Female for nurses should be >80%, Pct_Bachelors_Plus for physicians should be >90%, etc.
 
-**Step 4: Commit**
+**Step 6: Commit**
 
 ```bash
-git add social_impact/merge.py
+git add social_impact/merge.py tests/test_merge.py
 git commit -m "Add social impact merge engine: joins demographics, education, geographic data to 310 SOCs"
 ```
 
@@ -1490,6 +1996,7 @@ git commit -m "Add social impact merge engine: joins demographics, education, ge
 
 **Files:**
 - Create: `social_impact/writeback.py`
+- Test: `tests/test_writeback.py`
 
 **Step 1: Write the workbook writeback script**
 
@@ -1594,14 +2101,104 @@ if __name__ == "__main__":
     writeback()
 ```
 
-**Step 2: Run the writeback**
+**Step 2: Write failing tests**
+
+Create `tests/test_writeback.py`:
+
+```python
+"""Tests for workbook writeback to 6 Social Impact tab."""
+import os
+import sys
+import tempfile
+import shutil
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+@pytest.fixture
+def tmp_workbook(tmp_path):
+    """Create a minimal workbook copy for writeback testing."""
+    import openpyxl
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.title = "4 Results"
+    ws.cell(1, 1, "SOC_Code")
+    ws.cell(2, 1, "11-1011")
+    path = str(tmp_path / "test_workbook.xlsx")
+    wb.save(path)
+    return path
+
+
+def test_writeback_columns_match_spec():
+    from social_impact.writeback import COLUMNS
+    assert COLUMNS[0] == "SOC_Code"
+    assert COLUMNS[1] == "Job_Title"
+    assert "Pct_Female" in COLUMNS
+    assert "Edu_Partisan_Lean" in COLUMNS
+    assert "Top_Metro_LQ" in COLUMNS
+    assert len(COLUMNS) == 19
+
+
+def test_writeback_creates_tab(tmp_workbook, monkeypatch):
+    import openpyxl
+    from social_impact import writeback
+    monkeypatch.setattr(writeback, "WORKBOOK", tmp_workbook)
+
+    data = [{"SOC_Code": "11-1011", "Job_Title": "Chief Executives",
+             "Pct_Female": 30.0, "Pct_White": 80.0, "Pct_Black": 5.0,
+             "Pct_Asian": 8.0, "Pct_Hispanic": 7.0, "Median_Age": 52.0,
+             "Pct_Over_55": 35.0, "Pct_Bachelors_Plus": 75.0,
+             "Pct_Graduate_Deg": 40.0, "Typical_Entry_Ed": "Bachelor's degree",
+             "Pct_Foreign_Born": 12.2, "Union_Rate_Pct": 5.1,
+             "Edu_Partisan_Lean": 0.085, "Top_State_1": "California",
+             "Top_State_2": "New York", "Top_State_3": "Texas",
+             "Top_Metro_LQ": "San Francisco (LQ=1.45)"}]
+    writeback.writeback(data)
+
+    wb = openpyxl.load_workbook(tmp_workbook, read_only=True)
+    assert "6 Social Impact" in wb.sheetnames
+    ws = wb["6 Social Impact"]
+    assert ws.cell(1, 1).value == "SOC_Code"
+    assert ws.cell(2, 1).value == "11-1011"
+    assert ws.cell(2, 3).value == 30.0  # Pct_Female
+    wb.close()
+
+
+def test_writeback_overwrites_existing_tab(tmp_workbook, monkeypatch):
+    import openpyxl
+    from social_impact import writeback
+    monkeypatch.setattr(writeback, "WORKBOOK", tmp_workbook)
+
+    data1 = [{"SOC_Code": "11-1011", "Job_Title": "Old Title"}]
+    writeback.writeback(data1)
+    data2 = [{"SOC_Code": "11-1011", "Job_Title": "New Title"}]
+    writeback.writeback(data2)
+
+    wb = openpyxl.load_workbook(tmp_workbook, read_only=True)
+    ws = wb["6 Social Impact"]
+    assert ws.cell(2, 2).value == "New Title"
+    assert ws.max_row == 2  # header + 1 data row (not 3)
+    wb.close()
+```
+
+**Step 3: Run tests (TDD red then green)**
+
+Run:
+```bash
+pytest tests/test_writeback.py -v
+```
+
+Expected: Tests fail (red) because `social_impact/writeback.py` doesn't exist yet. Implement Step 1's code, then re-run — all tests pass (green).
+
+**Step 4: Run the writeback**
 
 Run:
 ```bash
 python3 social_impact/writeback.py
 ```
 
-**Step 3: Verify the workbook**
+**Step 5: Verify the workbook**
 
 Run:
 ```bash
@@ -1628,10 +2225,10 @@ wb.close()
 
 Expected: 310 data rows, 19 columns, tab appears in the workbook. Most columns have 80%+ fill rate. `Pct_Foreign_Born` and `Union_Rate_Pct` should be 100% (major-group fallback).
 
-**Step 4: Commit**
+**Step 6: Commit**
 
 ```bash
-git add social_impact/writeback.py
+git add social_impact/writeback.py tests/test_writeback.py
 git commit -m "Add workbook writeback for 6 Social Impact tab"
 ```
 
@@ -1641,6 +2238,7 @@ git commit -m "Add workbook writeback for 6 Social Impact tab"
 
 **Files:**
 - Create: `social_impact/run.py`
+- Test: `tests/test_run_pipeline.py`
 
 **Step 1: Write the orchestrator**
 
@@ -1692,7 +2290,75 @@ if __name__ == "__main__":
     main()
 ```
 
-**Step 2: Test full pipeline**
+**Step 2: Write failing tests**
+
+Create `tests/test_run_pipeline.py`:
+
+```python
+"""Tests for the social impact pipeline orchestrator."""
+import os
+import sys
+import pytest
+from unittest.mock import patch, MagicMock
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def test_main_imports():
+    """The orchestrator module should import without errors."""
+    from social_impact.run import main
+    assert callable(main)
+
+
+def test_main_download_only():
+    """--download flag should call download_all but not merge or writeback."""
+    with patch("social_impact.run.download_all") as mock_dl, \
+         patch("social_impact.run.merge_all") as mock_merge, \
+         patch("social_impact.run.writeback") as mock_wb, \
+         patch("sys.argv", ["run.py", "--download"]):
+        from social_impact.run import main
+        main()
+        mock_dl.assert_called_once()
+        mock_merge.assert_not_called()
+        mock_wb.assert_not_called()
+
+
+def test_main_merge_only():
+    """--merge flag should call merge_all but not download or writeback."""
+    with patch("social_impact.run.download_all") as mock_dl, \
+         patch("social_impact.run.merge_all") as mock_merge, \
+         patch("social_impact.run.writeback") as mock_wb, \
+         patch("sys.argv", ["run.py", "--merge"]):
+        from social_impact.run import main
+        main()
+        mock_dl.assert_not_called()
+        mock_merge.assert_called_once()
+        mock_wb.assert_not_called()
+
+
+def test_main_no_args_runs_all():
+    """No args should run all three phases."""
+    with patch("social_impact.run.download_all") as mock_dl, \
+         patch("social_impact.run.merge_all") as mock_merge, \
+         patch("social_impact.run.writeback") as mock_wb, \
+         patch("sys.argv", ["run.py"]):
+        from social_impact.run import main
+        main()
+        mock_dl.assert_called_once()
+        mock_merge.assert_called_once()
+        mock_wb.assert_called_once()
+```
+
+**Step 3: Run tests (TDD red then green)**
+
+Run:
+```bash
+pytest tests/test_run_pipeline.py -v
+```
+
+Expected: Tests fail (red) because `social_impact/run.py` doesn't exist yet. Implement Step 1's code, then re-run — all tests pass (green).
+
+**Step 4: Test full pipeline**
 
 Run:
 ```bash
@@ -1701,10 +2367,10 @@ python3 social_impact/run.py
 
 Expected: All 3 phases complete. Workbook has "6 Social Impact" tab with 310 rows.
 
-**Step 3: Commit**
+**Step 5: Commit**
 
 ```bash
-git add social_impact/run.py
+git add social_impact/run.py tests/test_run_pipeline.py
 git commit -m "Add social impact pipeline orchestrator (download, merge, writeback)"
 ```
 
@@ -1714,10 +2380,136 @@ git commit -m "Add social impact pipeline orchestrator (download, merge, writeba
 
 **Files:**
 - Create: `social_impact/onet_skills.py`
+- Test: `tests/test_onet_skills.py`
 
-The transition pathways page needs O\*NET skills and knowledge vectors per SOC to compute pairwise similarity. This module extracts and normalizes the skill/knowledge profiles from the already-downloaded O\*NET database.
+The transition pathways page needs O\*NET skills and knowledge vectors per SOC to compute pairwise similarity. This module extracts and normalizes the skill/knowledge profiles from the O\*NET database.
 
-**Step 1: Write the O\*NET skills extractor**
+**IMPORTANT:** Only 6 task-related files were previously extracted from `onet_db.zip`. Skills.txt, Knowledge.txt, and Abilities.txt are still inside the ZIP. We must extract them first.
+
+**Step 1: Extract missing O\*NET files from the ZIP**
+
+Run:
+```bash
+python3 -c "
+import zipfile, os
+ZIP_PATH = 'onet_db.zip'
+ONET_DIR = 'onet_data/db_29_1_text'
+needed = ['Skills.txt', 'Knowledge.txt', 'Abilities.txt']
+with zipfile.ZipFile(ZIP_PATH) as zf:
+    for name in zf.namelist():
+        basename = os.path.basename(name)
+        if basename in needed:
+            target = os.path.join(ONET_DIR, basename)
+            if not os.path.exists(target):
+                data = zf.read(name)
+                with open(target, 'wb') as f:
+                    f.write(data)
+                print(f'  Extracted: {basename} ({len(data)} bytes)')
+            else:
+                print(f'  Already exists: {basename}')
+
+# Verify all files present
+for f in needed:
+    path = os.path.join(ONET_DIR, f)
+    assert os.path.exists(path), f'Missing: {path}'
+    size = os.path.getsize(path)
+    print(f'  OK: {f} ({size:,} bytes)')
+print('All O*NET files extracted.')
+"
+```
+
+Expected: Skills.txt (~5.5MB), Knowledge.txt (~5.5MB), Abilities.txt (~8.4MB) extracted to `onet_data/db_29_1_text/`.
+
+**Step 2: Write the failing test**
+
+Create `tests/test_onet_skills.py`:
+
+```python
+"""Tests for O*NET skill vector extraction."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def test_onet_files_exist():
+    """Skills.txt and Knowledge.txt must be extracted before use."""
+    from social_impact.config import ONET_DIR
+    for f in ["Skills.txt", "Knowledge.txt"]:
+        assert os.path.exists(os.path.join(ONET_DIR, f)), f"Missing {f} — run extraction step"
+
+
+def test_load_onet_dimension_skills():
+    from social_impact.onet_skills import load_onet_dimension
+    skills = load_onet_dimension("Skills.txt", "LV")
+    assert len(skills) > 100, f"Expected >100 SOCs, got {len(skills)}"
+    # Check a known SOC has elements
+    sample = skills.get("11-1011", {})
+    assert len(sample) > 10, "11-1011 should have >10 skill elements"
+
+
+def test_load_onet_dimension_knowledge():
+    from social_impact.onet_skills import load_onet_dimension
+    knowledge = load_onet_dimension("Knowledge.txt", "LV")
+    assert len(knowledge) > 100
+
+
+def test_build_skill_vectors_shape():
+    from social_impact.onet_skills import build_skill_vectors
+    soc_list, elements, matrix = build_skill_vectors({"11-1011", "13-2011", "15-1252"})
+    assert len(soc_list) == 3
+    assert matrix.shape[0] == 3
+    assert matrix.shape[1] > 50, "Expected >50 elements (skills + knowledge)"
+
+
+def test_build_skill_vectors_nonzero():
+    import numpy as np
+    from social_impact.onet_skills import build_skill_vectors
+    soc_list, elements, matrix = build_skill_vectors({"11-1011"})
+    assert np.sum(matrix) > 0, "Matrix should not be all zeros"
+
+
+def test_find_transition_targets():
+    import numpy as np
+    from social_impact.onet_skills import build_skill_vectors, find_transition_targets
+    test_socs = {"11-1011", "13-2011", "15-1252", "25-1011", "29-1141", "43-3071"}
+    soc_list, elements, matrix = build_skill_vectors(test_socs)
+    disp_data = {
+        "11-1011": {"title": "Chief executives", "d_mod_low": 0.02, "employment_K": 132},
+        "13-2011": {"title": "Accountants", "d_mod_low": 0.12, "employment_K": 1400},
+        "15-1252": {"title": "Software developers", "d_mod_low": 0.05, "employment_K": 1800},
+        "25-1011": {"title": "Business teachers", "d_mod_low": 0.03, "employment_K": 90},
+        "29-1141": {"title": "Registered nurses", "d_mod_low": 0.04, "employment_K": 3100},
+        "43-3071": {"title": "Tellers", "d_mod_low": 0.25, "employment_K": 400},
+    }
+    targets = find_transition_targets("43-3071", soc_list, matrix, disp_data,
+                                       n_candidates=5, max_displacement=0.15)
+    assert isinstance(targets, list)
+    for t in targets:
+        assert t["d_mod_low"] <= 0.15, "Target should have d <= max_displacement"
+        assert t["soc"] != "43-3071", "Should not return self"
+        assert 0 < t["similarity"] <= 1.0
+
+
+def test_get_cached_vectors():
+    from social_impact.onet_skills import get_cached_vectors, _cached_vectors
+    # First call builds, second returns cache
+    r1 = get_cached_vectors({"11-1011", "13-2011"})
+    r2 = get_cached_vectors({"11-1011", "13-2011"})
+    assert r1[0] == r2[0], "Cached result should be identical"
+```
+
+**Step 3: Run tests to verify they fail (TDD red)**
+
+Run:
+```bash
+pytest tests/test_onet_skills.py -v
+```
+
+Expected: `test_onet_files_exist` passes (Step 1 extracted them). Others FAIL because `social_impact/onet_skills.py` does not exist yet.
+
+**Step 4: Write the O\*NET skills extractor**
 
 ```python
 """Extract O*NET skills and knowledge vectors for transition pathway computation.
@@ -1904,7 +2696,16 @@ if __name__ == "__main__":
     print(f"Sample vector for 11-1011: {matrix[soc_list.index('11-1011')][:5]}")
 ```
 
-**Step 2: Test the skill vector builder**
+**Step 5: Run tests to verify they pass (TDD green)**
+
+Run:
+```bash
+pytest tests/test_onet_skills.py -v
+```
+
+Expected: All 8 tests pass.
+
+**Step 6: Smoke test the module directly**
 
 Run:
 ```bash
@@ -1913,10 +2714,10 @@ python3 social_impact/onet_skills.py
 
 Expected: ~800+ O\*NET SOCs loaded, ~68 elements (35 skills + 33 knowledge), matrix built. Our 310 project SOCs should all be present.
 
-**Step 3: Commit**
+**Step 7: Commit**
 
 ```bash
-git add social_impact/onet_skills.py
+git add social_impact/onet_skills.py tests/test_onet_skills.py
 git commit -m "Add O*NET skill/knowledge vector extraction for transition pathways"
 ```
 
@@ -1929,6 +2730,7 @@ git commit -m "Add O*NET skill/knowledge vector extraction for transition pathwa
 - Create: `dashboard/app.py`
 - Create: `dashboard/data_loader.py`
 - Create: `dashboard/templates/base.html`
+- Test: `tests/test_data_loader.py`
 
 **Step 1: Create directory structure**
 
@@ -2356,7 +3158,90 @@ h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
 }
 ```
 
-**Step 6: Test app starts**
+**Step 6: Write failing tests**
+
+Create `tests/test_data_loader.py`:
+
+```python
+"""Tests for the dashboard data loader."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def test_datastore_init():
+    from dashboard.data_loader import DataStore
+    ds = DataStore()
+    assert ds._loaded is False
+    assert ds.results == []
+    assert ds.social == []
+
+
+def test_datastore_load_populates_data():
+    from dashboard.data_loader import DataStore
+    ds = DataStore()
+    ds.load()
+    assert ds._loaded is True
+    assert len(ds.results) > 0, "Should load results from workbook"
+
+
+def test_datastore_load_idempotent():
+    from dashboard.data_loader import DataStore
+    ds = DataStore()
+    ds.load()
+    count1 = len(ds.results)
+    ds.load()  # second call should be no-op
+    assert len(ds.results) == count1
+
+
+def test_get_all_returns_list():
+    from dashboard.data_loader import DataStore
+    ds = DataStore()
+    data = ds.get_all()
+    assert isinstance(data, list)
+    assert len(data) > 0
+
+
+def test_get_soc_returns_dict_or_none():
+    from dashboard.data_loader import DataStore
+    ds = DataStore()
+    result = ds.get_soc("11-1011")
+    if result is not None:
+        assert isinstance(result, dict)
+        assert "SOC_Code" in result
+    # Non-existent SOC should return None
+    assert ds.get_soc("99-9999") is None
+
+
+def test_get_sectors_returns_sorted_list():
+    from dashboard.data_loader import DataStore
+    ds = DataStore()
+    sectors = ds.get_sectors()
+    assert isinstance(sectors, list)
+    assert sectors == sorted(sectors)
+
+
+def test_get_wage_quintiles():
+    from dashboard.data_loader import DataStore
+    ds = DataStore()
+    quintiles = ds.get_wage_quintiles()
+    assert len(quintiles) == 5
+    assert "Q1 (lowest)" in quintiles
+    assert "Q5 (highest)" in quintiles
+```
+
+**Step 7: Run tests (TDD red then green)**
+
+Run:
+```bash
+pytest tests/test_data_loader.py -v
+```
+
+Expected: Tests fail (red) because `dashboard/data_loader.py` doesn't exist yet. Implement Steps 2-5 code, then re-run — all tests pass (green).
+
+**Step 8: Test app starts**
 
 Run:
 ```bash
@@ -2373,11 +3258,12 @@ with app.test_client() as c:
 
 Expected: May get a 500 if templates are incomplete, but the import should succeed.
 
-**Step 7: Commit**
+**Step 9: Commit**
 
 ```bash
 git add dashboard/__init__.py dashboard/app.py dashboard/data_loader.py \
-    dashboard/templates/base.html dashboard/static/css/style.css
+    dashboard/templates/base.html dashboard/static/css/style.css \
+    tests/test_data_loader.py
 git commit -m "Add Flask dashboard scaffold: app, data loader, base template, CSS"
 ```
 
@@ -2389,6 +3275,7 @@ git commit -m "Add Flask dashboard scaffold: app, data loader, base template, CS
 - Create: `dashboard/templates/index.html`
 - Create: `dashboard/templates/equity.html`
 - Create: `dashboard/charts.py`
+- Test: `tests/test_charts.py`
 
 This page shows displacement disparities by race/gender/age and wage quintile. Charts are pre-rendered as static PNGs by `charts.py` (same pattern as `analysis/displacement_analysis.py`).
 
@@ -2715,7 +3602,83 @@ Create `dashboard/templates/equity.html`:
 {% endblock %}
 ```
 
-**Step 4: Generate charts and test**
+**Step 4: Write failing tests**
+
+Create `tests/test_charts.py`:
+
+```python
+"""Tests for dashboard chart generation."""
+import os
+import sys
+import tempfile
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+@pytest.fixture
+def sample_data():
+    """Minimal data records for chart testing."""
+    return [
+        {"SOC_Code": "11-1011", "Job_Title": "Chief Executives",
+         "d_mod_low": 0.12, "d_sig_low": 0.18, "Employment_2024_K": 200,
+         "Pct_Female": 30.0, "Pct_Black": 5.0, "Pct_Hispanic": 7.0,
+         "Pct_Over_55": 35.0, "Median_Wage": 120000,
+         "displaced_K_mod_low": 24.0, "Edu_Partisan_Lean": 0.085},
+        {"SOC_Code": "43-3071", "Job_Title": "Tellers",
+         "d_mod_low": 0.25, "d_sig_low": 0.40, "Employment_2024_K": 350,
+         "Pct_Female": 82.0, "Pct_Black": 18.0, "Pct_Hispanic": 20.0,
+         "Pct_Over_55": 12.0, "Median_Wage": 36000,
+         "displaced_K_mod_low": 87.5, "Edu_Partisan_Lean": -0.03},
+    ]
+
+
+def test_chart_demographic_creates_file(sample_data, tmp_path, monkeypatch):
+    import dashboard.charts as charts
+    monkeypatch.setattr(charts, "CHART_DIR", str(tmp_path))
+    charts.chart_displacement_by_demographic(
+        sample_data, "Pct_Female", "Female", "test_female.png")
+    assert os.path.exists(tmp_path / "test_female.png")
+
+
+def test_chart_wage_quintile_creates_file(sample_data, tmp_path, monkeypatch):
+    import dashboard.charts as charts
+    monkeypatch.setattr(charts, "CHART_DIR", str(tmp_path))
+    charts.chart_wage_quintile_displacement(sample_data, filename="test_wage.png")
+    assert os.path.exists(tmp_path / "test_wage.png")
+
+
+def test_chart_gender_creates_file(sample_data, tmp_path, monkeypatch):
+    import dashboard.charts as charts
+    monkeypatch.setattr(charts, "CHART_DIR", str(tmp_path))
+    charts.chart_gender_displacement(sample_data, filename="test_gender.png")
+    assert os.path.exists(tmp_path / "test_gender.png")
+
+
+def test_chart_skips_empty_data(tmp_path, monkeypatch):
+    import dashboard.charts as charts
+    monkeypatch.setattr(charts, "CHART_DIR", str(tmp_path))
+    charts.chart_displacement_by_demographic([], "Pct_Female", "Female", "empty.png")
+    assert not os.path.exists(tmp_path / "empty.png")
+
+
+def test_chart_gender_skips_no_data(tmp_path, monkeypatch):
+    import dashboard.charts as charts
+    monkeypatch.setattr(charts, "CHART_DIR", str(tmp_path))
+    charts.chart_gender_displacement([], filename="empty_gender.png")
+    assert not os.path.exists(tmp_path / "empty_gender.png")
+```
+
+**Step 5: Run tests (TDD red then green)**
+
+Run:
+```bash
+pytest tests/test_charts.py -v
+```
+
+Expected: Tests fail (red) because `dashboard/charts.py` doesn't exist yet. Implement Step 1's code, then re-run — all tests pass (green).
+
+**Step 6: Generate charts and test pages**
 
 Run:
 ```bash
@@ -2738,10 +3701,11 @@ with app.test_client() as c:
 
 Expected: Both return 200.
 
-**Step 5: Commit**
+**Step 7: Commit**
 
 ```bash
-git add dashboard/charts.py dashboard/templates/index.html dashboard/templates/equity.html
+git add dashboard/charts.py dashboard/templates/index.html dashboard/templates/equity.html \
+    tests/test_charts.py
 git commit -m "Add Equity Impact page with demographic displacement charts"
 ```
 
@@ -2752,16 +3716,26 @@ git commit -m "Add Equity Impact page with demographic displacement charts"
 **Files:**
 - Create: `dashboard/templates/geographic.html`
 - Modify: `dashboard/charts.py` (add geographic charts)
+- Test: `tests/test_geo_charts.py`
 
 **Step 1: Add geographic chart functions to charts.py**
 
 Append to `dashboard/charts.py`:
 
 ```python
-def chart_state_displacement_risk(data, filename="geo_state_risk.png"):
+def chart_state_displacement_risk(data, state_shares=None, filename="geo_state_risk.png"):
     """Horizontal bar chart: top 20 states by total displaced workers.
 
-    Aggregates displaced_K_mod_low across SOCs, using Top_State_1 assignment.
+    Distributes each SOC's displaced workers proportionally across states
+    using OEWS state employment shares, rather than attributing 100% to
+    the primary state. This avoids misleading results for geographically
+    distributed occupations like 'General and operations managers' which
+    have employment in all 50 states.
+
+    Args:
+        data: list of merged SOC records
+        state_shares: dict soc_code -> {state: share_fraction} from OEWS.
+                      If None, falls back to equal split across Top_State_1/2/3.
     """
     _ensure_dir()
 
@@ -2769,14 +3743,29 @@ def chart_state_displacement_risk(data, filename="geo_state_risk.png"):
     state_totals = defaultdict(lambda: {"displaced": 0, "emp": 0, "socs": 0})
 
     for r in data:
-        state = r.get("Top_State_1")
-        if not state:
-            continue
-        emp = r.get("Employment_2024_K", 0) or 0
         dk = r.get("displaced_K_mod_low", 0) or 0
-        state_totals[state]["displaced"] += dk
-        state_totals[state]["emp"] += emp
-        state_totals[state]["socs"] += 1
+        emp = r.get("Employment_2024_K", 0) or 0
+        soc = r.get("SOC_Code", "")
+        if dk <= 0:
+            continue
+
+        # Use OEWS employment shares if available
+        shares = (state_shares or {}).get(soc, {})
+        if shares:
+            for state_name, frac in shares.items():
+                state_totals[state_name]["displaced"] += dk * frac
+                state_totals[state_name]["emp"] += emp * frac
+                state_totals[state_name]["socs"] += frac  # fractional SOC count
+        else:
+            # Fallback: split equally across available top states
+            top_states = [r.get(f"Top_State_{i}") for i in [1, 2, 3]
+                          if r.get(f"Top_State_{i}")]
+            if top_states:
+                share = 1.0 / len(top_states)
+                for state_name in top_states:
+                    state_totals[state_name]["displaced"] += dk * share
+                    state_totals[state_name]["emp"] += emp * share
+                    state_totals[state_name]["socs"] += share
 
     if not state_totals:
         return
@@ -2794,7 +3783,7 @@ def chart_state_displacement_risk(data, filename="geo_state_risk.png"):
     ax.set_yticks(y)
     ax.set_yticklabels(states, fontsize=9)
     ax.set_xlabel("Displaced Workers (thousands, Moderate Low Friction)")
-    ax.set_title("Top 20 States by Estimated Displaced Workers\n(Based on primary state of SOC employment)")
+    ax.set_title("Top 20 States by Estimated Displaced Workers\n(Proportional allocation via OEWS state employment shares)")
 
     fig.tight_layout()
     fig.savefig(os.path.join(CHART_DIR, filename), bbox_inches="tight")
@@ -2802,9 +3791,15 @@ def chart_state_displacement_risk(data, filename="geo_state_risk.png"):
     print(f"  {filename}")
 ```
 
-Also add to `generate_all_charts()`:
+Also update `generate_all_charts()` to load and pass state shares:
 ```python
-    chart_state_displacement_risk(data)
+    # Load OEWS state shares for proportional geographic allocation
+    from social_impact.parse_oews import parse_oews_state
+    from social_impact.crosswalk import load_project_socs
+    soc_set = set(load_project_socs().keys())
+    _, state_shares = parse_oews_state(soc_set)
+
+    chart_state_displacement_risk(data, state_shares=state_shares)
 ```
 
 **Step 2: Write the geographic template**
@@ -2887,7 +3882,79 @@ function filterByState() {
 {% endblock %}
 ```
 
-**Step 3: Regenerate charts and test**
+**Step 3: Write failing tests**
+
+Create `tests/test_geo_charts.py`:
+
+```python
+"""Tests for geographic chart generation (proportional state allocation)."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+@pytest.fixture
+def geo_data():
+    """Sample data with geographic fields for chart testing."""
+    return [
+        {"SOC_Code": "11-1011", "displaced_K_mod_low": 24.0,
+         "Employment_2024_K": 200, "Top_State_1": "California",
+         "Top_State_2": "New York", "Top_State_3": "Texas"},
+        {"SOC_Code": "43-3071", "displaced_K_mod_low": 87.5,
+         "Employment_2024_K": 350, "Top_State_1": "Texas",
+         "Top_State_2": "California", "Top_State_3": "Florida"},
+    ]
+
+
+@pytest.fixture
+def state_shares():
+    """Sample OEWS employment shares per SOC."""
+    return {
+        "11-1011": {"California": 0.15, "New York": 0.12, "Texas": 0.10,
+                     "Florida": 0.08, "Illinois": 0.06},
+        "43-3071": {"Texas": 0.18, "California": 0.14, "Florida": 0.11,
+                     "New York": 0.09, "Ohio": 0.05},
+    }
+
+
+def test_state_chart_uses_shares(geo_data, state_shares, tmp_path, monkeypatch):
+    """When state_shares are provided, displaced workers should be distributed
+    proportionally rather than assigned 100% to Top_State_1."""
+    import dashboard.charts as charts
+    monkeypatch.setattr(charts, "CHART_DIR", str(tmp_path))
+    charts.chart_state_displacement_risk(
+        geo_data, state_shares=state_shares, filename="test_state.png")
+    assert os.path.exists(tmp_path / "test_state.png")
+
+
+def test_state_chart_fallback_without_shares(geo_data, tmp_path, monkeypatch):
+    """Without shares, should fall back to equal split across top states."""
+    import dashboard.charts as charts
+    monkeypatch.setattr(charts, "CHART_DIR", str(tmp_path))
+    charts.chart_state_displacement_risk(
+        geo_data, state_shares=None, filename="test_state_fallback.png")
+    assert os.path.exists(tmp_path / "test_state_fallback.png")
+
+
+def test_state_chart_empty_data(tmp_path, monkeypatch):
+    import dashboard.charts as charts
+    monkeypatch.setattr(charts, "CHART_DIR", str(tmp_path))
+    charts.chart_state_displacement_risk([], state_shares={})
+    # Should not crash, just skip
+```
+
+**Step 4: Run tests (TDD red then green)**
+
+Run:
+```bash
+pytest tests/test_geo_charts.py -v
+```
+
+Expected: Tests fail (red) because the geographic chart function doesn't exist yet. Implement Step 1's code, then re-run — all tests pass (green).
+
+**Step 5: Regenerate charts and test**
 
 Run:
 ```bash
@@ -2907,10 +3974,10 @@ with app.test_client() as c:
 
 Expected: 200, page renders with state data table.
 
-**Step 4: Commit**
+**Step 6: Commit**
 
 ```bash
-git add dashboard/templates/geographic.html dashboard/charts.py
+git add dashboard/templates/geographic.html dashboard/charts.py tests/test_geo_charts.py
 git commit -m "Add Geographic Risk page with state displacement analysis"
 ```
 
@@ -2921,6 +3988,7 @@ git commit -m "Add Geographic Risk page with state displacement analysis"
 **Files:**
 - Create: `dashboard/templates/political.html`
 - Modify: `dashboard/charts.py` (add political charts)
+- Test: `tests/test_political_charts.py`
 
 **Step 1: Add political charts to charts.py**
 
@@ -3078,7 +4146,69 @@ Create `dashboard/templates/political.html`:
 {% endblock %}
 ```
 
-**Step 3: Regenerate charts and test**
+**Step 3: Write failing tests**
+
+Create `tests/test_political_charts.py`:
+
+```python
+"""Tests for political landscape chart generation."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+@pytest.fixture
+def political_data():
+    return [
+        {"SOC_Code": "11-1011", "d_mod_low": 0.12, "Employment_2024_K": 200,
+         "Edu_Partisan_Lean": 0.085, "Typical_Entry_Ed": "Bachelor's degree"},
+        {"SOC_Code": "43-3071", "d_mod_low": 0.25, "Employment_2024_K": 350,
+         "Edu_Partisan_Lean": -0.03, "Typical_Entry_Ed": "High school diploma"},
+        {"SOC_Code": "29-1141", "d_mod_low": 0.05, "Employment_2024_K": 400,
+         "Edu_Partisan_Lean": 0.11, "Typical_Entry_Ed": "Doctoral or professional degree"},
+    ]
+
+
+def test_partisan_scatter_creates_file(political_data, tmp_path, monkeypatch):
+    import dashboard.charts as charts
+    monkeypatch.setattr(charts, "CHART_DIR", str(tmp_path))
+    charts.chart_partisan_lean_vs_displacement(political_data, filename="test_pol.png")
+    assert os.path.exists(tmp_path / "test_pol.png")
+
+
+def test_education_displacement_creates_file(political_data, tmp_path, monkeypatch):
+    import dashboard.charts as charts
+    monkeypatch.setattr(charts, "CHART_DIR", str(tmp_path))
+    charts.chart_education_displacement(political_data, filename="test_edu.png")
+    assert os.path.exists(tmp_path / "test_edu.png")
+
+
+def test_partisan_scatter_skips_empty(tmp_path, monkeypatch):
+    import dashboard.charts as charts
+    monkeypatch.setattr(charts, "CHART_DIR", str(tmp_path))
+    charts.chart_partisan_lean_vs_displacement([], filename="empty_pol.png")
+    assert not os.path.exists(tmp_path / "empty_pol.png")
+
+
+def test_education_chart_skips_empty(tmp_path, monkeypatch):
+    import dashboard.charts as charts
+    monkeypatch.setattr(charts, "CHART_DIR", str(tmp_path))
+    charts.chart_education_displacement([], filename="empty_edu.png")
+    assert not os.path.exists(tmp_path / "empty_edu.png")
+```
+
+**Step 4: Run tests (TDD red then green)**
+
+Run:
+```bash
+pytest tests/test_political_charts.py -v
+```
+
+Expected: Tests fail (red) because the political chart functions don't exist yet. Implement Step 1's code, then re-run — all tests pass (green).
+
+**Step 5: Regenerate charts and test**
 
 Run:
 ```bash
@@ -3094,10 +4224,10 @@ with app.test_client() as c:
 
 Expected: 200.
 
-**Step 4: Commit**
+**Step 6: Commit**
 
 ```bash
-git add dashboard/templates/political.html dashboard/charts.py
+git add dashboard/templates/political.html dashboard/charts.py tests/test_political_charts.py
 git commit -m "Add Political Landscape page with education-partisan analysis"
 ```
 
@@ -3107,6 +4237,7 @@ git commit -m "Add Political Landscape page with education-partisan analysis"
 
 **Files:**
 - Create: `dashboard/templates/transitions.html`
+- Test: `tests/test_flask_routes.py`
 
 This page is interactive: the user selects a high-displacement SOC, and the `/api/transition/<soc>` endpoint returns skill-similar occupations with lower displacement.
 
@@ -3226,7 +4357,87 @@ async function findTransitions() {
 {% endblock %}
 ```
 
-**Step 2: Test the transition API**
+**Step 2: Write failing tests**
+
+Create `tests/test_flask_routes.py`:
+
+```python
+"""Tests for all Flask dashboard routes."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+@pytest.fixture
+def client():
+    from dashboard.app import app
+    app.config["TESTING"] = True
+    with app.test_client() as c:
+        yield c
+
+
+def test_index_returns_200(client):
+    resp = client.get("/")
+    assert resp.status_code == 200
+
+
+def test_equity_returns_200(client):
+    resp = client.get("/equity")
+    assert resp.status_code == 200
+
+
+def test_geographic_returns_200(client):
+    resp = client.get("/geographic")
+    assert resp.status_code == 200
+
+
+def test_political_returns_200(client):
+    resp = client.get("/political")
+    assert resp.status_code == 200
+
+
+def test_transitions_returns_200(client):
+    resp = client.get("/transitions")
+    assert resp.status_code == 200
+
+
+def test_transition_api_returns_json(client):
+    resp = client.get("/api/transition/43-3071")
+    assert resp.status_code == 200
+    import json
+    data = json.loads(resp.data)
+    assert "source" in data
+    assert "targets" in data
+    assert isinstance(data["targets"], list)
+
+
+def test_transition_api_targets_below_threshold(client):
+    resp = client.get("/api/transition/43-3071?max_displacement=0.15")
+    if resp.status_code == 200:
+        import json
+        data = json.loads(resp.data)
+        for target in data["targets"]:
+            assert target["d_mod_low"] <= 0.15, \
+                f"Target {target['soc']} has d={target['d_mod_low']} > 0.15"
+
+
+def test_nonexistent_route_returns_404(client):
+    resp = client.get("/nonexistent")
+    assert resp.status_code == 404
+```
+
+**Step 3: Run tests (TDD red then green)**
+
+Run:
+```bash
+pytest tests/test_flask_routes.py -v
+```
+
+Expected: Tests fail (red) because templates don't exist yet. Implement Step 1's code and prior task templates, then re-run — all tests pass (green).
+
+**Step 4: Test the transition API interactively**
 
 Run:
 ```bash
@@ -3252,10 +4463,10 @@ with app.test_client() as c:
 
 Expected: Page loads (200). API returns transition targets sorted by similarity, all with d < 0.15.
 
-**Step 3: Commit**
+**Step 5: Commit**
 
 ```bash
-git add dashboard/templates/transitions.html
+git add dashboard/templates/transitions.html tests/test_flask_routes.py
 git commit -m "Add Transition Pathways page with O*NET skill-similarity API"
 ```
 
@@ -3266,6 +4477,7 @@ git commit -m "Add Transition Pathways page with O*NET skill-similarity API"
 **Files:**
 - Modify: `dashboard/app.py`
 - Modify: `social_impact/onet_skills.py`
+- Test: `tests/test_onet_cache.py`
 
 The `/api/transition/<soc>` endpoint currently rebuilds skill vectors on every call. Add caching.
 
@@ -3320,7 +4532,54 @@ def api_transition(soc_code):
     })
 ```
 
-**Step 3: Test cached API is fast on second call**
+**Step 3: Write failing tests**
+
+Create `tests/test_onet_cache.py`:
+
+```python
+"""Tests for O*NET skill vector caching."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def test_get_cached_vectors_returns_tuple():
+    from social_impact.onet_skills import get_cached_vectors
+    result = get_cached_vectors({"11-1011", "43-3071"})
+    assert isinstance(result, tuple) and len(result) == 3
+    soc_list, elements, matrix = result
+    assert isinstance(soc_list, list)
+
+
+def test_get_cached_vectors_idempotent():
+    """Second call should return same object (cached, not rebuilt)."""
+    from social_impact.onet_skills import get_cached_vectors
+    result1 = get_cached_vectors({"11-1011"})
+    result2 = get_cached_vectors({"11-1011"})
+    assert result1 is result2, "Cache should return same object"
+
+
+def test_cached_vectors_reset():
+    """After clearing cache, next call rebuilds."""
+    import social_impact.onet_skills as mod
+    mod._cached_vectors = None
+    result = mod.get_cached_vectors({"11-1011"})
+    assert result is not None
+    assert mod._cached_vectors is result
+```
+
+**Step 4: Run tests (TDD red then green)**
+
+Run:
+```bash
+pytest tests/test_onet_cache.py -v
+```
+
+Expected: Tests fail (red) because `get_cached_vectors` doesn't exist yet. Implement Steps 1-2 code, then re-run — all tests pass (green).
+
+**Step 5: Test cached API is fast on second call**
 
 Run:
 ```bash
@@ -3342,10 +4601,10 @@ with app.test_client() as c:
 
 Expected: First call ~2-5s, second call <0.5s.
 
-**Step 4: Commit**
+**Step 6: Commit**
 
 ```bash
-git add social_impact/onet_skills.py dashboard/app.py
+git add social_impact/onet_skills.py dashboard/app.py tests/test_onet_cache.py
 git commit -m "Cache O*NET skill vectors for fast transition API responses"
 ```
 
@@ -3353,7 +4612,109 @@ git commit -m "Cache O*NET skill vectors for fast transition API responses"
 
 ### Task 16: End-to-end integration test
 
-**Step 1: Run full pipeline from scratch**
+**Files:**
+- Test: `tests/test_integration.py`
+
+**Step 1: Write the integration test**
+
+Create `tests/test_integration.py`:
+
+```python
+"""End-to-end integration test for the social impact pipeline and dashboard."""
+import os
+import sys
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+class TestWorkbookIntegration:
+    """Verify the 6 Social Impact tab has been written correctly."""
+
+    def test_tab_exists(self):
+        import openpyxl
+        from social_impact.config import WORKBOOK
+        wb = openpyxl.load_workbook(WORKBOOK, read_only=True)
+        assert "6 Social Impact" in wb.sheetnames
+        wb.close()
+
+    def test_column_count(self):
+        import openpyxl
+        from social_impact.config import WORKBOOK
+        wb = openpyxl.load_workbook(WORKBOOK, read_only=True)
+        ws = wb["6 Social Impact"]
+        assert ws.max_column == 19
+        wb.close()
+
+    def test_row_count(self):
+        import openpyxl
+        from social_impact.config import WORKBOOK
+        wb = openpyxl.load_workbook(WORKBOOK, read_only=True)
+        ws = wb["6 Social Impact"]
+        assert ws.max_row >= 300, f"Expected 300+ rows, got {ws.max_row}"
+        wb.close()
+
+    def test_header_order(self):
+        import openpyxl
+        from social_impact.config import WORKBOOK
+        wb = openpyxl.load_workbook(WORKBOOK, read_only=True)
+        ws = wb["6 Social Impact"]
+        headers = [ws.cell(1, c).value for c in range(1, 20)]
+        assert headers[0] == "SOC_Code"
+        assert headers[2] == "Pct_Female"
+        assert headers[14] == "Edu_Partisan_Lean"
+        assert headers[18] == "Top_Metro_LQ"
+        wb.close()
+
+    def test_coverage_above_50_percent(self):
+        import openpyxl
+        from social_impact.config import WORKBOOK
+        wb = openpyxl.load_workbook(WORKBOOK, read_only=True)
+        ws = wb["6 Social Impact"]
+        n_data = ws.max_row - 1
+        for c in range(1, 20):
+            header = ws.cell(1, c).value
+            filled = sum(1 for r in range(2, ws.max_row + 1)
+                         if ws.cell(r, c).value is not None)
+            pct = 100 * filled / n_data if n_data > 0 else 0
+            assert pct > 50, f"{header} coverage is {pct:.0f}% (below 50%)"
+        wb.close()
+
+
+class TestDashboardIntegration:
+    """Verify all Flask pages render without errors."""
+
+    @pytest.fixture(autouse=True)
+    def setup_client(self):
+        from dashboard.app import app
+        app.config["TESTING"] = True
+        with app.test_client() as c:
+            self.client = c
+            yield
+
+    def test_all_pages_200(self):
+        for path in ["/", "/equity", "/geographic", "/political", "/transitions"]:
+            resp = self.client.get(path)
+            assert resp.status_code == 200, f"{path} returned {resp.status_code}"
+
+    def test_transition_api_returns_targets(self):
+        import json
+        resp = self.client.get("/api/transition/43-3071")
+        assert resp.status_code == 200
+        data = json.loads(resp.data)
+        assert len(data["targets"]) > 0, "No transition targets returned"
+```
+
+**Step 2: Run the integration test suite**
+
+Run:
+```bash
+pytest tests/test_integration.py -v
+```
+
+Expected: All tests pass. If any fail, fix the upstream issue before proceeding.
+
+**Step 3: Run full pipeline from scratch**
 
 Run:
 ```bash
@@ -3441,15 +4802,65 @@ Then visit `http://localhost:5001` in a browser. Check:
 **Step 5: Commit**
 
 ```bash
-git add -A
-git commit -m "Integration test: full pipeline and 4-page dashboard verified"
+git add tests/test_integration.py
+git commit -m "Add end-to-end integration tests for pipeline and dashboard"
 ```
 
 ---
 
 ### Task 17: Add .gitignore entries and final cleanup
 
-**Step 1: Update .gitignore**
+**Files:**
+- Modify: `.gitignore`
+- Test: `tests/test_gitignore.py`
+
+**Step 1: Write failing test**
+
+Create `tests/test_gitignore.py`:
+
+```python
+"""Tests for .gitignore coverage of generated/cached files."""
+import os
+import sys
+import subprocess
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def test_gitignore_exists():
+    gitignore = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".gitignore")
+    assert os.path.exists(gitignore)
+
+
+def test_gitignore_contains_data_cache():
+    gitignore = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".gitignore")
+    content = open(gitignore).read()
+    assert "social_impact/data_cache" in content
+
+
+def test_gitignore_contains_chart_pngs():
+    gitignore = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".gitignore")
+    content = open(gitignore).read()
+    assert "dashboard/static/img" in content
+
+
+def test_gitignore_contains_merged_json():
+    gitignore = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".gitignore")
+    content = open(gitignore).read()
+    assert "merged_social_data.json" in content
+```
+
+**Step 2: Run tests (TDD red then green)**
+
+Run:
+```bash
+pytest tests/test_gitignore.py -v
+```
+
+Expected: Tests fail (red) because the .gitignore entries don't exist yet. Implement Step 3, then re-run — all tests pass (green).
+
+**Step 3: Update .gitignore**
 
 Ensure these are present:
 ```
@@ -3463,7 +4874,7 @@ dashboard/static/img/*.png
 social_impact/merged_social_data.json
 ```
 
-**Step 2: Verify no large files are staged**
+**Step 4: Verify no large files are staged**
 
 Run:
 ```bash
@@ -3473,10 +4884,10 @@ git diff --stat HEAD
 
 Ensure no data_cache files, no PNGs, no merged_social_data.json are tracked.
 
-**Step 3: Final commit**
+**Step 5: Final commit**
 
 ```bash
-git add .gitignore
+git add .gitignore tests/test_gitignore.py
 git commit -m "Update .gitignore for social impact data and dashboard assets"
 ```
 
@@ -3511,6 +4922,26 @@ git commit -m "Update .gitignore for social impact data and dashboard assets"
 | `dashboard/templates/political.html` | Political Landscape page |
 | `dashboard/templates/transitions.html` | Transition Pathways page |
 | `dashboard/static/css/style.css` | Dashboard CSS |
+| `tests/__init__.py` | Test package marker |
+| `tests/test_config.py` | Config validation tests |
+| `tests/test_download.py` | BLS downloader tests |
+| `tests/test_crosswalk.py` | Census-to-SOC crosswalk tests |
+| `tests/test_parse_demographics.py` | CPSAAT11/11B parser tests |
+| `tests/test_parse_education.py` | Education parser tests |
+| `tests/test_parse_union.py` | Union rate parser tests |
+| `tests/test_parse_oews.py` | OEWS geographic parser tests |
+| `tests/test_merge.py` | Merge engine tests (auto-detect fields, fuzzy match, partisan lean) |
+| `tests/test_writeback.py` | Workbook writeback tests (tab creation, overwrite) |
+| `tests/test_run_pipeline.py` | Pipeline orchestrator tests (flag routing) |
+| `tests/test_onet_skills.py` | O\*NET skill vector extraction tests |
+| `tests/test_data_loader.py` | Dashboard DataStore tests |
+| `tests/test_charts.py` | Equity chart generation tests |
+| `tests/test_geo_charts.py` | Geographic chart tests (proportional allocation) |
+| `tests/test_political_charts.py` | Political chart generation tests |
+| `tests/test_flask_routes.py` | Flask route tests (all pages + API) |
+| `tests/test_onet_cache.py` | O\*NET vector caching tests |
+| `tests/test_integration.py` | End-to-end workbook + dashboard integration tests |
+| `tests/test_gitignore.py` | .gitignore coverage validation tests |
 
 ### Modified files
 
@@ -3529,6 +4960,7 @@ dashboard/templates/
 dashboard/static/
 dashboard/static/css/
 dashboard/static/img/        (gitignored PNGs)
+tests/
 ```
 
 ---
