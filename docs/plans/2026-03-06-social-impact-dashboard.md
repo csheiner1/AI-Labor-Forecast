@@ -4004,7 +4004,10 @@ Create `dashboard/templates/geographic.html`:
     <div class="filter-bar">
         <select id="state-filter" onchange="filterByState()">
             <option value="">All States</option>
-            {% set states = data|map(attribute='Top_State_1')|select('string')|unique|sort %}
+            {% set s1 = data|map(attribute='Top_State_1')|select('string')|list %}
+            {% set s2 = data|map(attribute='Top_State_2')|select('string')|list %}
+            {% set s3 = data|map(attribute='Top_State_3')|select('string')|list %}
+            {% set states = (s1 + s2 + s3)|unique|sort %}
             {% for state in states %}
             <option value="{{ state }}">{{ state }}</option>
             {% endfor %}
@@ -4027,7 +4030,7 @@ Create `dashboard/templates/geographic.html`:
         </thead>
         <tbody>
         {% for r in data %}
-            <tr data-state="{{ r.Top_State_1 or '' }}">
+            <tr data-state="{{ r.Top_State_1 or '' }}" data-state-2="{{ r.Top_State_2 or '' }}" data-state-3="{{ r.Top_State_3 or '' }}">
                 <td>{{ r.SOC_Code }}</td>
                 <td>{{ r.Job_Title }}</td>
                 <td>{{ r.Sector }}</td>
@@ -4050,7 +4053,9 @@ function filterByState() {
     const state = document.getElementById('state-filter').value;
     const rows = document.querySelectorAll('#state-table tbody tr');
     rows.forEach(row => {
-        if (!state || row.dataset.state === state) {
+        if (!state || row.dataset.state === state
+            || row.dataset.state2 === state
+            || row.dataset.state3 === state) {
             row.style.display = '';
         } else {
             row.style.display = 'none';
