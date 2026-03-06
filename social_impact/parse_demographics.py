@@ -13,26 +13,7 @@ Match to Census codes using the occupation title text.
 import os
 import re
 import pandas as pd
-from collections import defaultdict
-
 from social_impact.config import DATA_CACHE
-
-
-def _find_data_start(df):
-    """Find the row where actual data begins (after header rows)."""
-    for i in range(len(df)):
-        row = df.iloc[i]
-        # Look for a row where the first column has "Total" or a recognizable
-        # occupation text, and subsequent columns have numbers
-        first_val = str(row.iloc[0]).strip() if pd.notna(row.iloc[0]) else ""
-        if "total" in first_val.lower() and "16 years" in first_val.lower():
-            return i
-    # Fallback: look for first row with numeric data in column 2+
-    for i in range(len(df)):
-        row = df.iloc[i]
-        if pd.notna(row.iloc[1]) and isinstance(row.iloc[1], (int, float)):
-            return i
-    return 0
 
 
 def _clean_occupation_text(text):
@@ -192,15 +173,16 @@ def parse_cpsaat11b(filepath=None):
             record["median_age"] = None
 
         # Pct over 55: sum of 55-64 and 65+ columns if available
-        pct_55_64 = 0
-        pct_65_plus = 0
+        has_age_cols = "pct_55_64" in col_map or "pct_65_plus" in col_map
+        pct_55_64 = 0.0
+        pct_65_plus = 0.0
         if "pct_55_64" in col_map:
             val = df.iloc[i, col_map["pct_55_64"]]
-            pct_55_64 = float(val) if pd.notna(val) and isinstance(val, (int, float)) else 0
+            pct_55_64 = float(val) if pd.notna(val) and isinstance(val, (int, float)) else 0.0
         if "pct_65_plus" in col_map:
             val = df.iloc[i, col_map["pct_65_plus"]]
-            pct_65_plus = float(val) if pd.notna(val) and isinstance(val, (int, float)) else 0
-        record["pct_over_55"] = round(pct_55_64 + pct_65_plus, 1) if (pct_55_64 or pct_65_plus) else None
+            pct_65_plus = float(val) if pd.notna(val) and isinstance(val, (int, float)) else 0.0
+        record["pct_over_55"] = round(pct_55_64 + pct_65_plus, 1) if has_age_cols else None
 
         results[occ_text] = record
 

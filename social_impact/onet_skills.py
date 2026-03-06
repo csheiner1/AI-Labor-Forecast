@@ -38,7 +38,9 @@ def load_onet_dimension(filename, scale_id="LV"):
         print(f"  WARNING: {filepath} not found")
         return {}
 
-    soc_profiles = defaultdict(dict)
+    # Accumulate (sum, count) per (soc, element) so we can compute a correct
+    # mean when multiple O*NET specializations map to the same 6-digit SOC.
+    accum = defaultdict(lambda: defaultdict(lambda: [0.0, 0]))
     with open(filepath, "r", encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter="\t")
         for row in reader:
@@ -56,15 +58,20 @@ def load_onet_dimension(filename, scale_id="LV"):
                 continue
 
             if element and score > 0:
-                # If multiple specializations map to same SOC, average them
-                if element in soc_profiles[soc]:
-                    soc_profiles[soc][element] = (soc_profiles[soc][element] + score) / 2
-                else:
-                    soc_profiles[soc][element] = score
+                accum[soc][element][0] += score
+                accum[soc][element][1] += 1
+
+    # Convert accumulated (sum, count) to mean scores
+    soc_profiles = {}
+    for soc, elements_dict in accum.items():
+        soc_profiles[soc] = {
+            elem: total / count
+            for elem, (total, count) in elements_dict.items()
+        }
 
     print(f"  {filename}: {len(soc_profiles)} SOCs, "
           f"{len(set(e for p in soc_profiles.values() for e in p))} elements")
-    return dict(soc_profiles)
+    return soc_profiles
 
 
 def build_skill_vectors(project_socs=None):

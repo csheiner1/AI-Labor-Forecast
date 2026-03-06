@@ -88,7 +88,7 @@ def _match_demographics_to_socs(demo_data, project_socs, soc_census_lookup,
        Census codes map to SOCs in the same 2-digit major group.
     """
     matched = {}
-    unmatched = []
+    needs_group_fallback = []
 
     demo_by_text = demo_data  # already keyed by occ text
 
@@ -101,6 +101,7 @@ def _match_demographics_to_socs(demo_data, project_socs, soc_census_lookup,
     # Track match sources for reporting
     match_sources = {"crosswalk": 0, "title_fuzzy": 0, "major_group": 0}
 
+    # --- Pass 1: Match via crosswalk and title fuzzy ---
     for soc, meta in project_socs.items():
         title = meta["title"]
         census_codes = soc_census_lookup.get(soc, [])
@@ -121,7 +122,6 @@ def _match_demographics_to_socs(demo_data, project_socs, soc_census_lookup,
             else:
                 # Average multiple Census-code matches, weighted by total_employed_K
                 avg = {}
-                total_emp = sum(m.get("total_employed_K", 1) or 1 for m in crosswalk_matches)
                 for field in numeric_fields:
                     weighted_sum = sum(
                         (m.get(field) or 0) * (m.get("total_employed_K", 1) or 1)
@@ -144,14 +144,18 @@ def _match_demographics_to_socs(demo_data, project_socs, soc_census_lookup,
             match_sources["title_fuzzy"] += 1
             continue
 
-        # === Strategy 3 (FALLBACK 2): Major-group averaging ===
+        # Defer to pass 2 for major-group averaging
+        needs_group_fallback.append(soc)
+
+    # --- Pass 2: Major-group averaging using all pass-1 matches ---
+    unmatched = []
+    for soc in needs_group_fallback:
         major = soc.split("-")[0]
-        group_vals = []
-        for other_soc, other_codes in soc_census_lookup.items():
-            if not other_soc.startswith(major + "-"):
-                continue
-            if other_soc in matched:
-                group_vals.append(matched[other_soc])
+        group_vals = [
+            matched[other_soc]
+            for other_soc in matched
+            if other_soc.startswith(major + "-")
+        ]
 
         if group_vals:
             avg = {}

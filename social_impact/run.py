@@ -18,20 +18,23 @@ def main():
     args = set(sys.argv[1:])
     start = time.time()
 
-    if not args or "--download" in args:
+    force = "--force" in args
+    # --force is a modifier, not a phase selector; strip it for phase logic
+    phase_args = args - {"--force"}
+
+    if not phase_args or "--download" in phase_args:
         print("=" * 60)
         print("PHASE 1: Download BLS source data")
         print("=" * 60)
-        force = "--force" in args
         download_all(force=force)
 
-    if not args or "--merge" in args:
+    if not phase_args or "--merge" in phase_args:
         print("\n" + "=" * 60)
         print("PHASE 2: Parse and merge")
         print("=" * 60)
         data = merge_all()
 
-    if not args or "--writeback" in args:
+    if not phase_args or "--writeback" in phase_args:
         print("\n" + "=" * 60)
         print("PHASE 3: Write to workbook")
         print("=" * 60)

@@ -1,18 +1,11 @@
-"""Parse BLS union membership table by major occupation group.
+"""Union membership rates by major occupation group.
 
-Source: https://www.bls.gov/news.release/union2.t03.htm
-This is an HTML table, not a downloadable file.
+Source: BLS 2024 union membership report
+https://www.bls.gov/news.release/union2.t03.htm
 Data is at 2-digit SOC major group level only.
 """
-import os
-import re
-import requests
-import pandas as pd
 
-from social_impact.config import UNION_TABLE_URL, DATA_CACHE
-
-
-# Fallback hardcoded values from BLS 2024 union membership report
+# Hardcoded values from BLS 2024 union membership report
 # Major occupation group -> union membership rate (%)
 UNION_RATES_2024 = {
     "11": 5.1,   # Management
@@ -38,34 +31,6 @@ UNION_RATES_2024 = {
     "51": 8.7,   # Production
     "53": 14.6,  # Transportation and material moving
 }
-
-
-def fetch_union_rates():
-    """Try to fetch union rates from BLS website, fall back to hardcoded.
-
-    Returns:
-        dict: 2-digit SOC major group -> union rate (%)
-    """
-    try:
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-                           "AppleWebKit/537.36 (KHTML, like Gecko) "
-                           "Chrome/120.0.0.0 Safari/537.36",
-        }
-        resp = requests.get(UNION_TABLE_URL, timeout=30, headers=headers)
-        resp.raise_for_status()
-        tables = pd.read_html(resp.text)
-        # Find the table with occupation groups
-        for table in tables:
-            cols = [str(c).lower() for c in table.columns]
-            if any("union" in c or "member" in c for c in cols):
-                print(f"  Found union table with {len(table)} rows")
-                break
-        print("  Using hardcoded 2024 union rates (BLS parse succeeded but format uncertain)")
-        return UNION_RATES_2024
-    except Exception as e:
-        print(f"  Union table fetch failed ({e}), using hardcoded 2024 values")
-        return UNION_RATES_2024
 
 
 def get_union_rate(soc_code):

@@ -12,7 +12,7 @@ import sys
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, g
 from dashboard.data_loader import store
 
 app = Flask(__name__)
@@ -20,8 +20,10 @@ app = Flask(__name__)
 
 @app.before_request
 def ensure_data_loaded():
-    """Load workbook data on first request."""
+    """Load workbook data on first request and set template globals."""
     store.load()
+    g.n_socs = len(store.soc_lookup)
+    g.n_sectors = len(store.get_sectors())
 
 
 @app.route("/")
@@ -77,16 +79,16 @@ def api_transition(soc_code):
     from social_impact.onet_skills import get_cached_vectors, find_transition_targets
 
     soc_list, elements, matrix = get_cached_vectors(set(store.soc_lookup.keys()))
-    displacement_data = {}
-    for soc, rec in store.soc_lookup.items():
-        displacement_data[soc] = {
-            "title": rec.get("Job_Title") or rec.get("Custom_Title", ""),
-            "d_mod_low": rec.get("d_mod_low", 0),
-            "employment_K": rec.get("Employment_2024_K", 0),
-        }
+    displacement_data = store.get_displacement_data()
 
-    max_d = float(request.args.get("max_displacement", 0.15))
-    n = int(request.args.get("n", 10))
+    try:
+        max_d = float(request.args.get("max_displacement", 0.15))
+    except (ValueError, TypeError):
+        max_d = 0.15
+    try:
+        n = int(request.args.get("n", 10))
+    except (ValueError, TypeError):
+        n = 10
     targets = find_transition_targets(soc_code, soc_list, matrix,
                                        displacement_data, n_candidates=n,
                                        max_displacement=max_d)

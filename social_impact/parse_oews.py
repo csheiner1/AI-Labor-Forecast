@@ -8,7 +8,6 @@ lookups for the workbook tab (top-3 states, top metro LQ), and provide
 functions for the Flask app to query at runtime.
 """
 import os
-import csv
 import re
 import pandas as pd
 from collections import defaultdict

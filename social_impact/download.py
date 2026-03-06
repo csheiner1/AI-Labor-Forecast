@@ -37,11 +37,16 @@ def download_file(key, force=False):
         f.write(resp.content)
     print(f"  [{key}] Saved: {filename} ({len(resp.content) / 1024:.0f} KB)")
 
-    # Auto-extract ZIP files
+    # Auto-extract ZIP files with path traversal protection
     if filename.endswith(".zip"):
         extract_dir = os.path.join(DATA_CACHE, key)
         os.makedirs(extract_dir, exist_ok=True)
         with zipfile.ZipFile(local_path) as zf:
+            for member in zf.namelist():
+                member_path = os.path.realpath(os.path.join(extract_dir, member))
+                if not member_path.startswith(os.path.realpath(extract_dir) + os.sep) \
+                   and member_path != os.path.realpath(extract_dir):
+                    raise ValueError(f"ZIP member {member!r} would extract outside target dir")
             zf.extractall(extract_dir)
         print(f"  [{key}] Extracted to {extract_dir}/")
 

@@ -102,9 +102,9 @@ def load_crosswalk(crosswalk_path=None):
 def load_project_socs():
     """Load SOC codes from the workbook's 4 Results tab.
 
-    Returns unique SOCs with aggregated info. The workbook may have multiple
-    rows per SOC (different sector assignments); we take the first row's
-    metadata and sum employment.
+    Returns unique SOCs. The workbook may have multiple rows per SOC
+    (different sector assignments); we keep the first row's metadata
+    (title, sector, employment, wage) and skip subsequent duplicates.
 
     Returns:
         dict: soc_code -> {title, sector, employment_K, median_wage}

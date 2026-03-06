@@ -85,19 +85,24 @@ async function findTransitions() {
             return;
         }
 
-        // Populate table
+        // Populate table (using textContent to avoid XSS)
         const tbody = document.getElementById('results-body');
-        tbody.innerHTML = '';
+        while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
         data.targets.forEach((t, i) => {
             const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${i + 1}</td>
-                <td>${t.soc}</td>
-                <td>${t.title}</td>
-                <td>${(t.similarity * 100).toFixed(1)}%</td>
-                <td>${(t.d_mod_low * 100).toFixed(1)}%</td>
-                <td>${(t.employment_K || 0).toFixed(0)}</td>
-            `;
+            const cells = [
+                String(i + 1),
+                t.soc,
+                t.title,
+                (t.similarity * 100).toFixed(1) + '%',
+                (t.d_mod_low * 100).toFixed(1) + '%',
+                (t.employment_K || 0).toFixed(0),
+            ];
+            cells.forEach(text => {
+                const td = document.createElement('td');
+                td.textContent = text;
+                row.appendChild(td);
+            });
             tbody.appendChild(row);
         });
         document.getElementById('results').style.display = 'block';

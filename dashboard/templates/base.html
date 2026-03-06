@@ -21,7 +21,7 @@
             <li><a href="/transitions" class="{% if request.path == '/transitions' %}active{% endif %}">Transition Pathways</a></li>
         </ul>
         <div class="sidebar-footer">
-            <p>394 SOCs | 21 Sectors</p>
+            <p>{{ g.n_socs|default('--') }} SOCs | {{ g.n_sectors|default('--') }} Sectors</p>
         </div>
     </nav>
     <main class="content">

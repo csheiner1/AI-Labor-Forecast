@@ -16,6 +16,7 @@ class DataStore:
         self.results = []       # 4 Results tab rows
         self.social = []        # 6 Social Impact tab rows
         self.soc_lookup = {}    # SOC -> merged dict of results + social
+        self._displacement_data = None  # cached for transition API
         self._loaded = False
 
     def load(self):
@@ -92,6 +93,19 @@ class DataStore:
         """Return list of unique sectors."""
         self.load()
         return sorted(set(r.get("Sector", "") for r in self.results if r.get("Sector")))
+
+    def get_displacement_data(self):
+        """Return displacement_data dict for transition API, cached after first call."""
+        self.load()
+        if self._displacement_data is None:
+            self._displacement_data = {}
+            for soc, rec in self.soc_lookup.items():
+                self._displacement_data[soc] = {
+                    "title": rec.get("Job_Title") or rec.get("Custom_Title", ""),
+                    "d_mod_low": rec.get("d_mod_low", 0),
+                    "employment_K": rec.get("Employment_2024_K", 0),
+                }
+        return self._displacement_data
 
     def get_wage_quintiles(self):
         """Return SOC codes grouped by wage quintile."""
