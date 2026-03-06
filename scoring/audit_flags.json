@@ -1,0 +1,99 @@
+[
+  {
+    "type": "distribution_skew",
+    "variable": "workflow_simplicity",
+    "value": 0.5,
+    "pct": 0.474,
+    "count": 228,
+    "message": "workflow_simplicity=0.5 has 47.4% of all scores (>35% threshold)"
+  },
+  {
+    "type": "high_correlation",
+    "variables": "x_scale vs x_sub",
+    "correlation": 0.836,
+    "message": "x_scale/x_sub correlation = 0.836 (>0.80 threshold)"
+  },
+  {
+    "type": "soc_group_incoherence",
+    "soc_group": "23",
+    "variable": "x_sub",
+    "std": 0.452,
+    "titles": [
+      "Arbitrators, mediators, and conciliators",
+      "Title examiners, abstractors, and searchers",
+      "Administrative law judges, adjudicators, and hearing officers",
+      "Judges, magistrate judges, and magistrates",
+      "Judicial law clerks",
+      "Legal support workers, all other",
+      "Attorney (Law Firms & Legal Services)",
+      "Paralegal"
+    ],
+    "values": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.75,
+      1.0,
+      0.25,
+      0.75
+    ],
+    "message": "SOC 23 has high within-group std=0.452 on x_sub"
+  },
+  {
+    "type": "rare_combination",
+    "title": "Self-enrichment teachers (Education & Academia)",
+    "rule": "low_xsub_high_workflow",
+    "x_sub": 0.25,
+    "workflow_simplicity": 0.75,
+    "message": "Self-enrichment teachers (Education & Academia): x_sub=0.25 + workflow_simplicity=0.75 is rare (human IS product + simple workflow)"
+  },
+  {
+    "type": "rare_combination",
+    "title": "Financial Planner",
+    "rule": "low_xsub_high_workflow",
+    "x_sub": 0.25,
+    "workflow_simplicity": 0.75,
+    "message": "Financial Planner: x_sub=0.25 + workflow_simplicity=0.75 is rare (human IS product + simple workflow)"
+  },
+  {
+    "type": "rare_combination",
+    "title": "Mail clerks and mail machine operators, except postal service",
+    "rule": "high_digital_low_scale",
+    "digital_share": 0.714,
+    "x_scale": 0.0,
+    "message": "Mail clerks and mail machine operators, except postal service: digital_share=0.714 + x_scale=0.0 \u2014 digital tasks usually scale"
+  },
+  {
+    "type": "rare_combination",
+    "title": "Nuclear medicine technologists",
+    "rule": "high_digital_low_scale",
+    "digital_share": 0.571,
+    "x_scale": 0.0,
+    "message": "Nuclear medicine technologists: digital_share=0.571 + x_scale=0.0 \u2014 digital tasks usually scale"
+  },
+  {
+    "type": "rare_combination",
+    "title": "Aerospace engineering and operations technologists and technicians",
+    "rule": "high_digital_low_scale",
+    "digital_share": 0.625,
+    "x_scale": 0.25,
+    "message": "Aerospace engineering and operations technologists and technicians: digital_share=0.625 + x_scale=0.25 \u2014 digital tasks usually scale"
+  },
+  {
+    "type": "rare_combination",
+    "title": "Electro-mechanical and mechatronics technologists and technicians",
+    "rule": "high_digital_low_scale",
+    "digital_share": 0.571,
+    "x_scale": 0.25,
+    "message": "Electro-mechanical and mechatronics technologists and technicians: digital_share=0.571 + x_scale=0.25 \u2014 digital tasks usually scale"
+  },
+  {
+    "type": "rare_combination",
+    "title": "Account Executive",
+    "rule": "low_xsub_high_workflow",
+    "x_sub": 0.25,
+    "workflow_simplicity": 0.75,
+    "message": "Account Executive: x_sub=0.25 + workflow_simplicity=0.75 is rare (human IS product + simple workflow)"
+  }
+]

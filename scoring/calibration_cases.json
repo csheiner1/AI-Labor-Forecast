@@ -1,0 +1,3058 @@
+[
+  {
+    "soc_code": "19-3034",
+    "custom_title": "School psychologists",
+    "sector": "Education & Academia",
+    "employment_K": 7.5,
+    "median_wage": 86930,
+    "primary_industry": "Education & Academia (83%)",
+    "industry_2": "Healthcare & Life Sciences (17%)",
+    "industry_3": null,
+    "projected_change_pct": 0.7,
+    "task_coverage_mod": 0.1075,
+    "task_coverage_sig": 0.1725,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.1562,
+      "std": 0.229,
+      "min": 0,
+      "max": 0.5,
+      "iqr": 0.5
+    },
+    "sig_stats": {
+      "mean": 0.25,
+      "std": 0.3273,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.75
+    },
+    "heterogeneity_mod": 1.4661,
+    "heterogeneity_sig": 1.3092,
+    "interpersonal_task_share": 0.5,
+    "digital_task_share": 0.25,
+    "judgment_task_share": 0.25,
+    "top3_tasks": [
+      {
+        "desc": "Prepare comprehensive psychological reports documenting assessment findings, recommendations, and treatment plans for st",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 10
+      },
+      {
+        "desc": "Coordinate referrals to external mental health agencies and community resources for students requiring specialized servi",
+        "gwa": "Communicating with People Outside the Organization",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 4
+      },
+      {
+        "desc": "Develop and implement individualized education plans (IEPs) and behavioral intervention plans in collaboration with teac",
+        "gwa": "Developing Objectives and Strategies",
+        "score_mod": 0.25,
+        "score_sig": 0.25,
+        "time_share": 15
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Provide individual and group counseling services to students experiencing academic, social, or emotional difficulties.",
+        "gwa": "Establishing and Maintaining Interpersonal Relationships",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 20
+      },
+      {
+        "desc": "Participate in multidisciplinary team meetings and IEP conferences to discuss student progress and modify intervention s",
+        "gwa": "Coordinating the Work and Activities of Others",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 8
+      },
+      {
+        "desc": "Design and deliver crisis intervention services to students experiencing acute mental health emergencies or traumatic ev",
+        "gwa": "Making Decisions and Solving Problems",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 6
+      }
+    ],
+    "gwa_distribution": {
+      "Analyzing Data/Information": 1,
+      "Establishing and Maintaining Interpersonal Relationships": 1,
+      "Developing Objectives and Strategies": 1,
+      "Communicating with Supervisors, Peers, or Subordinates": 1,
+      "Documenting/Recording Information": 1,
+      "Coordinating the Work and Activities of Others": 1,
+      "Making Decisions and Solving Problems": 1,
+      "Communicating with People Outside the Organization": 1
+    },
+    "idx": 119,
+    "calibration_reason": "Human IS the product but teletherapy/AI therapy emerging"
+  },
+  {
+    "soc_code": "13-2052",
+    "custom_title": "Financial Planner",
+    "sector": "Finance & Financial Services",
+    "employment_K": 132.8,
+    "median_wage": 102140,
+    "primary_industry": "Finance & Financial Services (96%)",
+    "industry_2": "Accounting & Tax Firms (2%)",
+    "industry_3": "Management Consulting Firms (1%)",
+    "projected_change_pct": 9.6,
+    "task_coverage_mod": 0.3175,
+    "task_coverage_sig": 0.5525,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.3438,
+      "std": 0.2652,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.25
+    },
+    "sig_stats": {
+      "mean": 0.5625,
+      "std": 0.3204,
+      "min": 0,
+      "max": 1,
+      "iqr": 0.25
+    },
+    "heterogeneity_mod": 0.7714,
+    "heterogeneity_sig": 0.5696,
+    "interpersonal_task_share": 0.375,
+    "digital_task_share": 0.25,
+    "judgment_task_share": 0.125,
+    "top3_tasks": [
+      {
+        "desc": "Prepare detailed financial reports, investment proposals, and portfolio performance summaries for client presentations.",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 12
+      },
+      {
+        "desc": "Research and evaluate investment products, insurance options, and financial instruments to recommend suitable solutions ",
+        "gwa": "Getting Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 15
+      },
+      {
+        "desc": "Monitor market trends and economic conditions to identify opportunities and risks that may impact client portfolios.",
+        "gwa": "Monitoring Processes, Materials, or Surroundings",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 10
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Coordinate with attorneys, accountants, and insurance agents to implement comprehensive financial strategies for clients",
+        "gwa": "Coordinating the Work and Activities of Others",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 8
+      },
+      {
+        "desc": "Meet with clients to review existing financial plans, discuss life changes, and adjust investment strategies accordingly",
+        "gwa": "Communicating with People Outside the Organization",
+        "score_mod": 0,
+        "score_sig": 0.25,
+        "time_share": 20
+      },
+      {
+        "desc": "Develop new client relationships through networking, referrals, and marketing activities to grow the practice.",
+        "gwa": "Selling or Influencing Others",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 6
+      }
+    ],
+    "gwa_distribution": {
+      "Analyzing Data/Information": 1,
+      "Communicating with People Outside the Organization": 1,
+      "Getting Information": 1,
+      "Documenting/Recording Information": 1,
+      "Monitoring Processes, Materials, or Surroundings": 1,
+      "Coordinating the Work and Activities of Others": 1,
+      "Selling or Influencing Others": 1,
+      "Evaluating Information to Determine Compliance": 1
+    },
+    "idx": 152,
+    "calibration_reason": "Robo-advisors exist but many clients want human relationship"
+  },
+  {
+    "soc_code": "41-9022",
+    "custom_title": "Real Estate Agent",
+    "sector": "Real Estate & Property",
+    "employment_K": 171.6,
+    "median_wage": 56320,
+    "primary_industry": "Real Estate & Property (86%)",
+    "industry_2": "Construction (6%)",
+    "industry_3": "Government & Public Administration (3%)",
+    "projected_change_pct": 3.1,
+    "task_coverage_mod": 0.32,
+    "task_coverage_sig": 0.405,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.4062,
+      "std": 0.2652,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.5
+    },
+    "sig_stats": {
+      "mean": 0.5312,
+      "std": 0.3882,
+      "min": 0,
+      "max": 1,
+      "iqr": 0.75
+    },
+    "heterogeneity_mod": 0.6529,
+    "heterogeneity_sig": 0.7308,
+    "interpersonal_task_share": 0.5,
+    "digital_task_share": 0.25,
+    "judgment_task_share": 0.125,
+    "top3_tasks": [
+      {
+        "desc": "Conduct comparative market analyses and property valuations to advise clients on appropriate pricing strategies for buyi",
+        "gwa": "Analyzing Data/Information",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 10
+      },
+      {
+        "desc": "Research market trends, property histories, and neighborhood demographics to provide informed guidance to clients on inv",
+        "gwa": "Getting Information",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 4
+      },
+      {
+        "desc": "Prepare and review legal documents, contracts, and disclosure forms to ensure compliance with real estate regulations an",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 12
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Negotiate purchase agreements, counteroffers, and contract terms between buyers and sellers to facilitate successful tra",
+        "gwa": "Making Decisions and Solving Problems",
+        "score_mod": 0.25,
+        "score_sig": 0.25,
+        "time_share": 15
+      },
+      {
+        "desc": "Maintain client relationships through regular communication, follow-up services, and post-transaction support to generat",
+        "gwa": "Establishing and Maintaining Interpersonal Relationships",
+        "score_mod": 0.25,
+        "score_sig": 0.25,
+        "time_share": 6
+      },
+      {
+        "desc": "Show properties to prospective buyers by conducting tours, highlighting features, and answering questions about neighbor",
+        "gwa": "Selling or Influencing Others",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 20
+      }
+    ],
+    "gwa_distribution": {
+      "Selling or Influencing Others": 2,
+      "Making Decisions and Solving Problems": 1,
+      "Documenting/Recording Information": 1,
+      "Analyzing Data/Information": 1,
+      "Coordinating the Work and Activities of Others": 1,
+      "Establishing and Maintaining Interpersonal Relationships": 1,
+      "Getting Information": 1
+    },
+    "idx": 419,
+    "calibration_reason": "Mixed: some buyers want human, Zillow/Redfin eroding"
+  },
+  {
+    "soc_code": "13-1111",
+    "custom_title": "Management Consultant",
+    "sector": "Management Consulting Firms",
+    "employment_K": 133.1,
+    "median_wage": 101190,
+    "primary_industry": "Management Consulting Firms (28%)",
+    "industry_2": "Government & Public Administration (19%)",
+    "industry_3": "Finance & Financial Services (16%)",
+    "projected_change_pct": 8.8,
+    "task_coverage_mod": 0.3375,
+    "task_coverage_sig": 0.575,
+    "num_tasks": 7,
+    "mod_stats": {
+      "mean": 0.3214,
+      "std": 0.189,
+      "min": 0,
+      "max": 0.5,
+      "iqr": 0.25
+    },
+    "sig_stats": {
+      "mean": 0.5357,
+      "std": 0.2249,
+      "min": 0.25,
+      "max": 0.75,
+      "iqr": 0.5
+    },
+    "heterogeneity_mod": 0.5881,
+    "heterogeneity_sig": 0.4198,
+    "interpersonal_task_share": 0.286,
+    "digital_task_share": 0.286,
+    "judgment_task_share": 0.143,
+    "top3_tasks": [
+      {
+        "desc": "Analyze client business operations and performance data to identify strategic opportunities and operational inefficienci",
+        "gwa": "Analyzing Data/Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 25
+      },
+      {
+        "desc": "Prepare detailed presentations and written reports to communicate findings and recommendations to client executives.",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 18
+      },
+      {
+        "desc": "Research industry trends and competitive landscapes to inform strategic analysis and benchmark client performance.",
+        "gwa": "Getting Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 7
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Coordinate project activities and manage client relationships to ensure deliverable quality and timeline adherence.",
+        "gwa": "Coordinating the Work and Activities of Others",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 10
+      },
+      {
+        "desc": "Conduct interviews and workshops with client stakeholders to gather requirements and validate proposed solutions.",
+        "gwa": "Getting Information",
+        "score_mod": 0,
+        "score_sig": 0.25,
+        "time_share": 15
+      },
+      {
+        "desc": "Support implementation of recommended solutions by working with client teams to execute change management initiatives.",
+        "gwa": "Coordinating the Work and Activities of Others",
+        "score_mod": 0.25,
+        "score_sig": 0.25,
+        "time_share": 5
+      }
+    ],
+    "gwa_distribution": {
+      "Getting Information": 2,
+      "Coordinating the Work and Activities of Others": 2,
+      "Analyzing Data/Information": 1,
+      "Developing Objectives and Strategies": 1,
+      "Documenting/Recording Information": 1
+    },
+    "idx": 372,
+    "calibration_reason": "Judgment-heavy but AI strategy tools emerging"
+  },
+  {
+    "soc_code": "27-3023",
+    "custom_title": "Journalist",
+    "sector": "Media Publishing & Entertainment",
+    "employment_K": 37.8,
+    "median_wage": 60280,
+    "primary_industry": "Media Publishing & Entertainment (97%)",
+    "industry_2": "Technology & Software (1%)",
+    "industry_3": "Advertising & PR Agencies (1%)",
+    "projected_change_pct": -3.9,
+    "task_coverage_mod": 0.2875,
+    "task_coverage_sig": 0.4125,
+    "num_tasks": 7,
+    "mod_stats": {
+      "mean": 0.3214,
+      "std": 0.345,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.75
+    },
+    "sig_stats": {
+      "mean": 0.4643,
+      "std": 0.4661,
+      "min": 0,
+      "max": 1,
+      "iqr": 1
+    },
+    "heterogeneity_mod": 1.0734,
+    "heterogeneity_sig": 1.0039,
+    "interpersonal_task_share": 0.286,
+    "digital_task_share": 0.286,
+    "judgment_task_share": 0.0,
+    "top3_tasks": [
+      {
+        "desc": "Edit and revise articles for accuracy, clarity, and adherence to publication standards before submission to editors.",
+        "gwa": "Processing Information",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 10
+      },
+      {
+        "desc": "Monitor news sources, press releases, and social media platforms to identify emerging stories and breaking news developm",
+        "gwa": "Monitoring Processes, Materials, or Surroundings",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 10
+      },
+      {
+        "desc": "Write news articles, features, and breaking news stories using journalistic standards and style guidelines for print or ",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 25
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Research and investigate news stories through interviews, document review, and field reporting to gather accurate inform",
+        "gwa": "Getting Information",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 30
+      },
+      {
+        "desc": "Conduct interviews with sources, officials, and subjects to obtain quotes, information, and perspectives for news covera",
+        "gwa": "Communicating with People Outside the Organization",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 15
+      },
+      {
+        "desc": "Attend press conferences, public meetings, and events to gather news information and maintain community connections.",
+        "gwa": "Getting Information",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 5
+      }
+    ],
+    "gwa_distribution": {
+      "Getting Information": 2,
+      "Documenting/Recording Information": 1,
+      "Communicating with People Outside the Organization": 1,
+      "Processing Information": 1,
+      "Monitoring Processes, Materials, or Surroundings": 1,
+      "Communicating with Supervisors, Peers, or Subordinates": 1
+    },
+    "idx": 409,
+    "calibration_reason": "AI writing exists but investigative journalism is human"
+  },
+  {
+    "soc_code": "25-2031",
+    "custom_title": "K-12 Teacher",
+    "sector": "Education & Academia",
+    "employment_K": 1094.5,
+    "median_wage": 64580,
+    "primary_industry": "Education & Academia (99%)",
+    "industry_2": "Government & Public Administration (1%)",
+    "industry_3": null,
+    "projected_change_pct": -1.6,
+    "task_coverage_mod": 0.2125,
+    "task_coverage_sig": 0.3,
+    "num_tasks": 7,
+    "mod_stats": {
+      "mean": 0.2143,
+      "std": 0.2249,
+      "min": 0,
+      "max": 0.5,
+      "iqr": 0.5
+    },
+    "sig_stats": {
+      "mean": 0.2857,
+      "std": 0.3363,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.75
+    },
+    "heterogeneity_mod": 1.0495,
+    "heterogeneity_sig": 1.1771,
+    "interpersonal_task_share": 0.571,
+    "digital_task_share": 0.0,
+    "judgment_task_share": 0.143,
+    "top3_tasks": [
+      {
+        "desc": "Plan and prepare lesson plans, instructional materials, and learning activities that accommodate diverse student learnin",
+        "gwa": "Organizing, Planning, and Prioritizing Work",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 20
+      },
+      {
+        "desc": "Evaluate student progress through grading assignments, tests, and projects while providing constructive feedback on acad",
+        "gwa": "Evaluating Information to Determine Compliance",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 15
+      },
+      {
+        "desc": "Communicate with parents, guardians, and administrators regarding student progress, behavioral concerns, and educational",
+        "gwa": "Communicating with People Outside the Organization",
+        "score_mod": 0.25,
+        "score_sig": 0.25,
+        "time_share": 8
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Deliver instructional content to students through lectures, demonstrations, discussions, and hands-on activities aligned",
+        "gwa": "Training and Teaching Others",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 35
+      },
+      {
+        "desc": "Manage classroom behavior and maintain a positive learning environment through established rules, procedures, and discip",
+        "gwa": "Establishing and Maintaining Interpersonal Relationships",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 10
+      },
+      {
+        "desc": "Participate in professional development activities, faculty meetings, and training sessions to enhance teaching effectiv",
+        "gwa": "Updating and Using Relevant Knowledge",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 5
+      }
+    ],
+    "gwa_distribution": {
+      "Training and Teaching Others": 1,
+      "Organizing, Planning, and Prioritizing Work": 1,
+      "Evaluating Information to Determine Compliance": 1,
+      "Establishing and Maintaining Interpersonal Relationships": 1,
+      "Communicating with People Outside the Organization": 1,
+      "Communicating with Supervisors, Peers, or Subordinates": 1,
+      "Updating and Using Relevant Knowledge": 1
+    },
+    "idx": 99,
+    "calibration_reason": "AI tutoring emerging but classroom presence valued"
+  },
+  {
+    "soc_code": "29-1122",
+    "custom_title": "Occupational therapists",
+    "sector": "Healthcare & Life Sciences",
+    "employment_K": 116.1,
+    "median_wage": 98340,
+    "primary_industry": "Healthcare & Life Sciences (96%)",
+    "industry_2": "Education & Academia (2%)",
+    "industry_3": "Government & Public Administration (2%)",
+    "projected_change_pct": 13.8,
+    "task_coverage_mod": 0.1575,
+    "task_coverage_sig": 0.24,
+    "num_tasks": 7,
+    "mod_stats": {
+      "mean": 0.1786,
+      "std": 0.2782,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.25
+    },
+    "sig_stats": {
+      "mean": 0.2857,
+      "std": 0.3934,
+      "min": 0,
+      "max": 1,
+      "iqr": 0.5
+    },
+    "heterogeneity_mod": 1.5577,
+    "heterogeneity_sig": 1.377,
+    "interpersonal_task_share": 0.286,
+    "digital_task_share": 0.286,
+    "judgment_task_share": 0.143,
+    "top3_tasks": [
+      {
+        "desc": "Document patient progress, treatment plans, and therapeutic outcomes in medical records to ensure continuity of care and",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 15
+      },
+      {
+        "desc": "Develop individualized treatment plans and modify therapeutic approaches based on patient progress and changing function",
+        "gwa": "Developing Objectives and Strategies",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 10
+      },
+      {
+        "desc": "Collaborate with physicians, nurses, and other healthcare professionals to coordinate patient care and discharge plannin",
+        "gwa": "Communicating with Supervisors, Peers, or Subordinates",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 8
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Evaluate patients' physical, cognitive, and psychosocial abilities through comprehensive assessments to determine therap",
+        "gwa": "Analyzing Data/Information",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 20
+      },
+      {
+        "desc": "Train patients and family members in adaptive techniques, equipment use, and home safety modifications to support indepe",
+        "gwa": "Training and Teaching Others",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 7
+      },
+      {
+        "desc": "Maintain and sanitize therapeutic equipment and prepare treatment areas to ensure safe and effective patient care enviro",
+        "gwa": "Performing Administrative Activities",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 5
+      }
+    ],
+    "gwa_distribution": {
+      "Getting Information": 1,
+      "Analyzing Data/Information": 1,
+      "Documenting/Recording Information": 1,
+      "Developing Objectives and Strategies": 1,
+      "Communicating with Supervisors, Peers, or Subordinates": 1,
+      "Training and Teaching Others": 1,
+      "Performing Administrative Activities": 1
+    },
+    "idx": 305,
+    "calibration_reason": "Human relationship matters but assessment tools scaling"
+  },
+  {
+    "soc_code": "29-9091",
+    "custom_title": "Athletic trainers",
+    "sector": "Healthcare & Life Sciences",
+    "employment_K": 20.6,
+    "median_wage": 60250,
+    "primary_industry": "Healthcare & Life Sciences (69%)",
+    "industry_2": "Education & Academia (31%)",
+    "industry_3": "Staffing & Recruitment Agencies (0%)",
+    "projected_change_pct": 11.1,
+    "task_coverage_mod": 0.2125,
+    "task_coverage_sig": 0.3375,
+    "num_tasks": 7,
+    "mod_stats": {
+      "mean": 0.25,
+      "std": 0.2887,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.5
+    },
+    "sig_stats": {
+      "mean": 0.3929,
+      "std": 0.4046,
+      "min": 0,
+      "max": 1,
+      "iqr": 0.75
+    },
+    "heterogeneity_mod": 1.1548,
+    "heterogeneity_sig": 1.0298,
+    "interpersonal_task_share": 0.286,
+    "digital_task_share": 0.286,
+    "judgment_task_share": 0.143,
+    "top3_tasks": [
+      {
+        "desc": "Document patient care activities including injury reports, treatment plans, progress notes, and insurance documentation ",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 15
+      },
+      {
+        "desc": "Analyze biomechanical factors and training loads to identify risk factors and recommend modifications to training progra",
+        "gwa": "Analyzing Data/Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 5
+      },
+      {
+        "desc": "Develop and implement injury prevention programs including conditioning protocols, proper technique instruction, and equ",
+        "gwa": "Developing Objectives and Strategies",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 20
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Evaluate and treat athletic injuries through direct patient care including assessment, rehabilitation exercises, and the",
+        "gwa": "Getting Information",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 35
+      },
+      {
+        "desc": "Prepare and maintain medical equipment, supplies, and treatment facilities to ensure readiness for emergency situations ",
+        "gwa": "Organizing, Planning, and Prioritizing Work",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 8
+      },
+      {
+        "desc": "Educate athletes, coaches, and parents about injury prevention, nutrition, hydration, and safe training practices throug",
+        "gwa": "Training and Teaching Others",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 7
+      }
+    ],
+    "gwa_distribution": {
+      "Getting Information": 1,
+      "Developing Objectives and Strategies": 1,
+      "Documenting/Recording Information": 1,
+      "Communicating with People Outside the Organization": 1,
+      "Organizing, Planning, and Prioritizing Work": 1,
+      "Training and Teaching Others": 1,
+      "Analyzing Data/Information": 1
+    },
+    "idx": 239,
+    "calibration_reason": "Human motivation/physical assessment but AI coaching growing"
+  },
+  {
+    "soc_code": "29-1141",
+    "custom_title": "Registered nurses",
+    "sector": "Healthcare & Life Sciences",
+    "employment_K": 2923.8,
+    "median_wage": 93600,
+    "primary_industry": "Healthcare & Life Sciences (88%)",
+    "industry_2": "Government & Public Administration (5%)",
+    "industry_3": "Staffing & Recruitment Agencies (4%)",
+    "projected_change_pct": 4.9,
+    "task_coverage_mod": 0.1625,
+    "task_coverage_sig": 0.275,
+    "num_tasks": 7,
+    "mod_stats": {
+      "mean": 0.1786,
+      "std": 0.189,
+      "min": 0,
+      "max": 0.5,
+      "iqr": 0.25
+    },
+    "sig_stats": {
+      "mean": 0.3214,
+      "std": 0.3134,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.5
+    },
+    "heterogeneity_mod": 1.0582,
+    "heterogeneity_sig": 0.9751,
+    "interpersonal_task_share": 0.429,
+    "digital_task_share": 0.143,
+    "judgment_task_share": 0.0,
+    "top3_tasks": [
+      {
+        "desc": "Document patient information, treatment progress, and care plans in electronic health records and medical charts.",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 20
+      },
+      {
+        "desc": "Communicate with physicians, healthcare team members, and families regarding patient status, care plans, and treatment r",
+        "gwa": "Communicating with Supervisors, Peers, or Subordinates",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 10
+      },
+      {
+        "desc": "Educate patients and families about medical conditions, treatment procedures, medication management, and discharge instr",
+        "gwa": "Training and Teaching Others",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 8
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Provide direct patient care by administering medications, monitoring vital signs, and performing clinical procedures acc",
+        "gwa": "Monitoring Processes, Materials, or Surroundings",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 35
+      },
+      {
+        "desc": "Assess patient conditions by conducting physical examinations, reviewing symptoms, and evaluating responses to treatment",
+        "gwa": "Getting Information",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 15
+      },
+      {
+        "desc": "Prepare and maintain medical equipment, supplies, and patient care environments according to safety and infection contro",
+        "gwa": "Performing Administrative Activities",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 5
+      }
+    ],
+    "gwa_distribution": {
+      "Monitoring Processes, Materials, or Surroundings": 1,
+      "Documenting/Recording Information": 1,
+      "Getting Information": 1,
+      "Communicating with Supervisors, Peers, or Subordinates": 1,
+      "Training and Teaching Others": 1,
+      "Coordinating the Work and Activities of Others": 1,
+      "Performing Administrative Activities": 1
+    },
+    "idx": 334,
+    "calibration_reason": "Mix of independent tasks and tightly coupled patient care"
+  },
+  {
+    "soc_code": "15-1252",
+    "custom_title": "Software Engineer",
+    "sector": "Technology & Software",
+    "employment_K": 288.6,
+    "median_wage": 133080,
+    "primary_industry": "Technology & Software (56%)",
+    "industry_2": "Finance & Financial Services (12%)",
+    "industry_3": "Healthcare & Life Sciences (6%)",
+    "projected_change_pct": 15.8,
+    "task_coverage_mod": 0.5125,
+    "task_coverage_sig": 0.7425,
+    "num_tasks": 7,
+    "mod_stats": {
+      "mean": 0.5357,
+      "std": 0.1725,
+      "min": 0.25,
+      "max": 0.75,
+      "iqr": 0.25
+    },
+    "sig_stats": {
+      "mean": 0.75,
+      "std": 0.1443,
+      "min": 0.5,
+      "max": 1,
+      "iqr": 0.0
+    },
+    "heterogeneity_mod": 0.322,
+    "heterogeneity_sig": 0.1924,
+    "interpersonal_task_share": 0.143,
+    "digital_task_share": 0.429,
+    "judgment_task_share": 0.286,
+    "top3_tasks": [
+      {
+        "desc": "Document technical designs, code architecture, and development processes to support team knowledge sharing and future ma",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 7
+      },
+      {
+        "desc": "Design and develop software applications using programming languages and frameworks to meet specified functional and tec",
+        "gwa": "Interacting With Computers",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 35
+      },
+      {
+        "desc": "Debug and troubleshoot software defects by analyzing code, reproducing issues, and implementing corrective solutions.",
+        "gwa": "Making Decisions and Solving Problems",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 20
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Maintain and update existing software systems by implementing enhancements, security patches, and performance optimizati",
+        "gwa": "Updating and Using Relevant Knowledge",
+        "score_mod": 0.75,
+        "score_sig": 0.75,
+        "time_share": 8
+      },
+      {
+        "desc": "Analyze system performance metrics and user feedback to identify areas for improvement and optimization opportunities.",
+        "gwa": "Analyzing Data/Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 5
+      },
+      {
+        "desc": "Collaborate with cross-functional teams including product managers, designers, and other engineers to define project req",
+        "gwa": "Communicating with Supervisors, Peers, or Subordinates",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 10
+      }
+    ],
+    "gwa_distribution": {
+      "Interacting With Computers": 1,
+      "Making Decisions and Solving Problems": 1,
+      "Evaluating Information to Determine Compliance": 1,
+      "Communicating with Supervisors, Peers, or Subordinates": 1,
+      "Updating and Using Relevant Knowledge": 1,
+      "Documenting/Recording Information": 1,
+      "Analyzing Data/Information": 1
+    },
+    "idx": 453,
+    "calibration_reason": "Iterative cycles but some tasks quite independent"
+  },
+  {
+    "soc_code": "17-1011",
+    "custom_title": "Architect",
+    "sector": "Architecture & Engineering Firms",
+    "employment_K": 108.9,
+    "median_wage": 96690,
+    "primary_industry": "Architecture & Engineering Firms (91%)",
+    "industry_2": "Construction (5%)",
+    "industry_3": "Government & Public Administration (2%)",
+    "projected_change_pct": 3.9,
+    "task_coverage_mod": 0.365,
+    "task_coverage_sig": 0.5575,
+    "num_tasks": 7,
+    "mod_stats": {
+      "mean": 0.3571,
+      "std": 0.244,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.25
+    },
+    "sig_stats": {
+      "mean": 0.5357,
+      "std": 0.2673,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.25
+    },
+    "heterogeneity_mod": 0.6833,
+    "heterogeneity_sig": 0.499,
+    "interpersonal_task_share": 0.429,
+    "digital_task_share": 0.143,
+    "judgment_task_share": 0.143,
+    "top3_tasks": [
+      {
+        "desc": "Develop architectural designs and construction documents using computer-aided design software and traditional drafting m",
+        "gwa": "Interacting With Computers",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 35
+      },
+      {
+        "desc": "Prepare project proposals, cost estimates, and presentation materials to secure new clients and communicate design conce",
+        "gwa": "Selling or Influencing Others",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 10
+      },
+      {
+        "desc": "Research and analyze building codes, zoning regulations, and accessibility requirements to ensure architectural designs ",
+        "gwa": "Getting Information",
+        "score_mod": 0.75,
+        "score_sig": 0.75,
+        "time_share": 8
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Review and approve construction shop drawings, material submittals, and change orders to maintain design integrity and p",
+        "gwa": "Evaluating Information to Determine Compliance",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 7
+      },
+      {
+        "desc": "Manage project schedules, budgets, and deliverables while supervising junior architects and drafting staff to ensure tim",
+        "gwa": "Coordinating the Work and Activities of Others",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 5
+      },
+      {
+        "desc": "Conduct site visits and construction administration activities to monitor project progress, verify compliance with desig",
+        "gwa": "Monitoring Processes, Materials, or Surroundings",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 15
+      }
+    ],
+    "gwa_distribution": {
+      "Interacting With Computers": 1,
+      "Communicating with People Outside the Organization": 1,
+      "Monitoring Processes, Materials, or Surroundings": 1,
+      "Selling or Influencing Others": 1,
+      "Getting Information": 1,
+      "Evaluating Information to Determine Compliance": 1,
+      "Coordinating the Work and Activities of Others": 1
+    },
+    "idx": 31,
+    "calibration_reason": "Design iteration loops but drafting is independent"
+  },
+  {
+    "soc_code": "29-2042",
+    "custom_title": "Emergency medical technicians",
+    "sector": "Healthcare & Life Sciences",
+    "employment_K": 125.2,
+    "median_wage": 41340,
+    "primary_industry": "Healthcare & Life Sciences (99%)",
+    "industry_2": "Transportation & Warehousing (0%)",
+    "industry_3": "Media Publishing & Entertainment (0%)",
+    "projected_change_pct": 5.1,
+    "task_coverage_mod": 0.07,
+    "task_coverage_sig": 0.115,
+    "num_tasks": 7,
+    "mod_stats": {
+      "mean": 0.1071,
+      "std": 0.1967,
+      "min": 0,
+      "max": 0.5,
+      "iqr": 0.25
+    },
+    "sig_stats": {
+      "mean": 0.1786,
+      "std": 0.3134,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.5
+    },
+    "heterogeneity_mod": 1.8366,
+    "heterogeneity_sig": 1.7548,
+    "interpersonal_task_share": 0.143,
+    "digital_task_share": 0.286,
+    "judgment_task_share": 0.143,
+    "top3_tasks": [
+      {
+        "desc": "Document patient information, treatment provided, and incident details in medical reports and electronic health records ",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 10
+      },
+      {
+        "desc": "Communicate with healthcare professionals, dispatch centers, and hospital personnel to coordinate patient care and trans",
+        "gwa": "Communicating with People Outside the Organization",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 8
+      },
+      {
+        "desc": "Respond to emergency calls to provide immediate medical care and transport patients to healthcare facilities using ambul",
+        "gwa": "Getting Information",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 35
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Administer emergency medical treatments including CPR, oxygen therapy, wound care, and medication administration accordi",
+        "gwa": "Making Decisions and Solving Problems",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 15
+      },
+      {
+        "desc": "Maintain and inspect medical equipment, ambulance supplies, and vehicle readiness to ensure proper functioning during em",
+        "gwa": "Monitoring Processes, Materials, or Surroundings",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 7
+      },
+      {
+        "desc": "Prepare patients for transport by securing them on stretchers, stabilizing injuries, and monitoring vital signs during a",
+        "gwa": "Monitoring Processes, Materials, or Surroundings",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 5
+      }
+    ],
+    "gwa_distribution": {
+      "Monitoring Processes, Materials, or Surroundings": 2,
+      "Getting Information": 1,
+      "Analyzing Data/Information": 1,
+      "Making Decisions and Solving Problems": 1,
+      "Documenting/Recording Information": 1,
+      "Communicating with People Outside the Organization": 1
+    },
+    "idx": 268,
+    "calibration_reason": "Triage is dynamic, transport is procedural"
+  },
+  {
+    "soc_code": "29-1022",
+    "custom_title": "Oral and maxillofacial surgeons",
+    "sector": "Healthcare & Life Sciences",
+    "employment_K": 5,
+    "median_wage": null,
+    "primary_industry": "Healthcare & Life Sciences (100%)",
+    "industry_2": null,
+    "industry_3": null,
+    "projected_change_pct": 4.1,
+    "task_coverage_mod": 0.095,
+    "task_coverage_sig": 0.155,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.1562,
+      "std": 0.2652,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.25
+    },
+    "sig_stats": {
+      "mean": 0.25,
+      "std": 0.378,
+      "min": 0,
+      "max": 1,
+      "iqr": 0.5
+    },
+    "heterogeneity_mod": 1.6978,
+    "heterogeneity_sig": 1.512,
+    "interpersonal_task_share": 0.25,
+    "digital_task_share": 0.25,
+    "judgment_task_share": 0.375,
+    "top3_tasks": [
+      {
+        "desc": "Document patient information by maintaining detailed medical records, surgical reports, and treatment documentation for ",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 7
+      },
+      {
+        "desc": "Develop comprehensive treatment plans by analyzing patient conditions, discussing surgical options, and coordinating car",
+        "gwa": "Developing Objectives and Strategies",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 12
+      },
+      {
+        "desc": "Consult with referring physicians, dentists, and other specialists to coordinate patient care and provide expert recomme",
+        "gwa": "Communicating with People Outside the Organization",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 5
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Provide post-operative care by monitoring patient recovery, managing complications, and conducting follow-up appointment",
+        "gwa": "Monitoring Processes, Materials, or Surroundings",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 10
+      },
+      {
+        "desc": "Administer anesthesia and manage patient sedation to ensure comfort and safety during oral and maxillofacial surgical pr",
+        "gwa": "Making Decisions and Solving Problems",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 8
+      },
+      {
+        "desc": "Educate patients and families about surgical procedures, recovery expectations, and post-operative care instructions to ",
+        "gwa": "Training and Teaching Others",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 3
+      }
+    ],
+    "gwa_distribution": {
+      "Making Decisions and Solving Problems": 2,
+      "Analyzing Data/Information": 1,
+      "Developing Objectives and Strategies": 1,
+      "Monitoring Processes, Materials, or Surroundings": 1,
+      "Documenting/Recording Information": 1,
+      "Communicating with People Outside the Organization": 1,
+      "Training and Teaching Others": 1
+    },
+    "idx": 310,
+    "calibration_reason": "Tightly coupled intra-op but pre-op is structured"
+  },
+  {
+    "soc_code": "21-1092",
+    "custom_title": "Probation officers and correctional treatment specialists",
+    "sector": "Government & Public Administration",
+    "employment_K": 48.5,
+    "median_wage": 64520,
+    "primary_industry": "Government & Public Administration (100%)",
+    "industry_2": null,
+    "industry_3": null,
+    "projected_change_pct": 2.6,
+    "task_coverage_mod": 0.2475,
+    "task_coverage_sig": 0.3675,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.25,
+      "std": 0.2315,
+      "min": 0,
+      "max": 0.5,
+      "iqr": 0.5
+    },
+    "sig_stats": {
+      "mean": 0.375,
+      "std": 0.3536,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.75
+    },
+    "heterogeneity_mod": 0.926,
+    "heterogeneity_sig": 0.9429,
+    "interpersonal_task_share": 0.25,
+    "digital_task_share": 0.375,
+    "judgment_task_share": 0.0,
+    "top3_tasks": [
+      {
+        "desc": "Document case activities, progress reports, and compliance violations through detailed written records and electronic ca",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 20
+      },
+      {
+        "desc": "Prepare comprehensive reports and recommendations for courts regarding offenders' compliance, progress, and suitability ",
+        "gwa": "Processing Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 10
+      },
+      {
+        "desc": "Conduct pre-sentence investigations and prepare detailed background reports for judges to assist in sentencing decisions",
+        "gwa": "Getting Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 6
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Monitor and supervise offenders in the community through regular meetings, home visits, and communication to ensure comp",
+        "gwa": "Monitoring Processes, Materials, or Surroundings",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 25
+      },
+      {
+        "desc": "Investigate alleged violations of probation or parole conditions through interviews, evidence collection, and collaborat",
+        "gwa": "Getting Information",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 8
+      },
+      {
+        "desc": "Participate in court proceedings, hearings, and case conferences to provide testimony, updates, and professional recomme",
+        "gwa": "Communicating with People Outside the Organization",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 4
+      }
+    ],
+    "gwa_distribution": {
+      "Getting Information": 2,
+      "Monitoring Processes, Materials, or Surroundings": 1,
+      "Documenting/Recording Information": 1,
+      "Analyzing Data/Information": 1,
+      "Coordinating the Work and Activities of Others": 1,
+      "Processing Information": 1,
+      "Communicating with People Outside the Organization": 1
+    },
+    "idx": 222,
+    "calibration_reason": "Dynamic caseloads but structured reporting"
+  },
+  {
+    "soc_code": "29-1123",
+    "custom_title": "Physical therapists",
+    "sector": "Healthcare & Life Sciences",
+    "employment_K": 224.3,
+    "median_wage": 101020,
+    "primary_industry": "Healthcare & Life Sciences (96%)",
+    "industry_2": "Staffing & Recruitment Agencies (2%)",
+    "industry_3": "Government & Public Administration (1%)",
+    "projected_change_pct": 10.9,
+    "task_coverage_mod": 0.1575,
+    "task_coverage_sig": 0.24,
+    "num_tasks": 7,
+    "mod_stats": {
+      "mean": 0.1786,
+      "std": 0.2782,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.25
+    },
+    "sig_stats": {
+      "mean": 0.2857,
+      "std": 0.3934,
+      "min": 0,
+      "max": 1,
+      "iqr": 0.5
+    },
+    "heterogeneity_mod": 1.5577,
+    "heterogeneity_sig": 1.377,
+    "interpersonal_task_share": 0.286,
+    "digital_task_share": 0.286,
+    "judgment_task_share": 0.0,
+    "top3_tasks": [
+      {
+        "desc": "Document patient progress, treatment outcomes, and care plans in medical records and electronic health systems for conti",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 15
+      },
+      {
+        "desc": "Coordinate care with physicians, nurses, and other healthcare professionals to ensure comprehensive patient treatment an",
+        "gwa": "Coordinating the Work and Activities of Others",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 10
+      },
+      {
+        "desc": "Monitor and adjust treatment plans based on patient response, progress assessments, and changing medical conditions.",
+        "gwa": "Monitoring Processes, Materials, or Surroundings",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 8
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Implement therapeutic exercises, manual therapy techniques, and physical interventions to improve patients' mobility, st",
+        "gwa": "Getting Information",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 23
+      },
+      {
+        "desc": "Educate patients and families on therapeutic exercises, home care techniques, and injury prevention strategies to promot",
+        "gwa": "Training and Teaching Others",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 12
+      },
+      {
+        "desc": "Prepare and maintain treatment equipment, therapeutic devices, and clinical workspace to ensure safe and effective patie",
+        "gwa": "Performing Administrative Activities",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 7
+      }
+    ],
+    "gwa_distribution": {
+      "Analyzing Data/Information": 1,
+      "Getting Information": 1,
+      "Documenting/Recording Information": 1,
+      "Training and Teaching Others": 1,
+      "Coordinating the Work and Activities of Others": 1,
+      "Monitoring Processes, Materials, or Surroundings": 1,
+      "Performing Administrative Activities": 1
+    },
+    "idx": 319,
+    "calibration_reason": "Physical tasks + judgment, workflow between structured and dynamic"
+  },
+  {
+    "soc_code": "27-4032",
+    "custom_title": "Film Editor",
+    "sector": "Media Publishing & Entertainment",
+    "employment_K": 25.2,
+    "median_wage": 70980,
+    "primary_industry": "Media Publishing & Entertainment (75%)",
+    "industry_2": "Advertising & PR Agencies (10%)",
+    "industry_3": "Technology & Software (5%)",
+    "projected_change_pct": 4,
+    "task_coverage_mod": 0.38,
+    "task_coverage_sig": 0.625,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.4062,
+      "std": 0.2652,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.5
+    },
+    "sig_stats": {
+      "mean": 0.625,
+      "std": 0.3273,
+      "min": 0,
+      "max": 1,
+      "iqr": 0.5
+    },
+    "heterogeneity_mod": 0.6529,
+    "heterogeneity_sig": 0.5237,
+    "interpersonal_task_share": 0.125,
+    "digital_task_share": 0.375,
+    "judgment_task_share": 0.25,
+    "top3_tasks": [
+      {
+        "desc": "Organize and manage digital media files, project assets, and backup systems to maintain efficient workflow and data secu",
+        "gwa": "Organizing, Planning, and Prioritizing Work",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 8
+      },
+      {
+        "desc": "Prepare final deliverables in various formats and resolutions according to distribution requirements and technical speci",
+        "gwa": "Processing Information",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 3
+      },
+      {
+        "desc": "Review and synchronize audio tracks with video footage to ensure proper timing and quality of dialogue, music, and sound",
+        "gwa": "Processing Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 20
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Collaborate with directors and producers to understand creative vision and incorporate feedback into editing decisions t",
+        "gwa": "Communicating with Supervisors, Peers, or Subordinates",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 15
+      },
+      {
+        "desc": "Create rough cuts and preliminary versions of edited content for director and client review sessions.",
+        "gwa": "Thinking Creatively",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 5
+      },
+      {
+        "desc": "Maintain and troubleshoot editing equipment and software systems to ensure optimal performance and minimize production d",
+        "gwa": "Updating and Using Relevant Knowledge",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 2
+      }
+    ],
+    "gwa_distribution": {
+      "Thinking Creatively": 2,
+      "Processing Information": 2,
+      "Communicating with Supervisors, Peers, or Subordinates": 1,
+      "Interacting With Computers": 1,
+      "Organizing, Planning, and Prioritizing Work": 1,
+      "Updating and Using Relevant Knowledge": 1
+    },
+    "idx": 407,
+    "calibration_reason": "Creative iteration but technical pipeline is linear"
+  },
+  {
+    "soc_code": "29-2034",
+    "custom_title": "Radiologic technologists and technicians",
+    "sector": "Healthcare & Life Sciences",
+    "employment_K": 217.4,
+    "median_wage": 77660,
+    "primary_industry": "Healthcare & Life Sciences (94%)",
+    "industry_2": "Government & Public Administration (3%)",
+    "industry_3": "Staffing & Recruitment Agencies (3%)",
+    "projected_change_pct": 4.3,
+    "task_coverage_mod": 0.0725,
+    "task_coverage_sig": 0.105,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.125,
+      "std": 0.2673,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.25
+    },
+    "sig_stats": {
+      "mean": 0.1875,
+      "std": 0.372,
+      "min": 0,
+      "max": 1,
+      "iqr": 0.5
+    },
+    "heterogeneity_mod": 2.1384,
+    "heterogeneity_sig": 1.984,
+    "interpersonal_task_share": 0.25,
+    "digital_task_share": 0.5,
+    "judgment_task_share": 0.0,
+    "top3_tasks": [
+      {
+        "desc": "Document patient information and imaging procedures in electronic health records and radiology information systems.",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 8
+      },
+      {
+        "desc": "Collaborate with radiologists and healthcare team members to review image quality and coordinate patient care activities",
+        "gwa": "Communicating with Supervisors, Peers, or Subordinates",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 5
+      },
+      {
+        "desc": "Perform diagnostic imaging procedures using X-ray, CT, MRI, or other radiologic equipment to capture medical images of p",
+        "gwa": "Interacting With Computers",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 35
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Maintain and operate radiologic equipment by performing routine checks, calibrations, and basic troubleshooting to ensur",
+        "gwa": "Monitoring Processes, Materials, or Surroundings",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 10
+      },
+      {
+        "desc": "Administer contrast media and medications as prescribed by physicians to enhance image visibility during specific proced",
+        "gwa": "Processing Information",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 7
+      },
+      {
+        "desc": "Implement radiation safety measures and monitor exposure levels to protect patients, staff, and self from harmful radiat",
+        "gwa": "Monitoring Processes, Materials, or Surroundings",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 3
+      }
+    ],
+    "gwa_distribution": {
+      "Interacting With Computers": 2,
+      "Monitoring Processes, Materials, or Surroundings": 2,
+      "Communicating with People Outside the Organization": 1,
+      "Documenting/Recording Information": 1,
+      "Processing Information": 1,
+      "Communicating with Supervisors, Peers, or Subordinates": 1
+    },
+    "idx": 330,
+    "calibration_reason": "AI screening scales but physical positioning doesn't"
+  },
+  {
+    "soc_code": "23-2011",
+    "custom_title": "Paralegal",
+    "sector": "Law Firms & Legal Services",
+    "employment_K": 334.2,
+    "median_wage": 61010,
+    "primary_industry": "Law Firms & Legal Services (83%)",
+    "industry_2": "Government & Public Administration (9%)",
+    "industry_3": "Finance & Financial Services (4%)",
+    "projected_change_pct": 0.2,
+    "task_coverage_mod": 0.4875,
+    "task_coverage_sig": 0.6975,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.4375,
+      "std": 0.2216,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.0
+    },
+    "sig_stats": {
+      "mean": 0.625,
+      "std": 0.3273,
+      "min": 0,
+      "max": 1,
+      "iqr": 0.0
+    },
+    "heterogeneity_mod": 0.5065,
+    "heterogeneity_sig": 0.5237,
+    "interpersonal_task_share": 0.25,
+    "digital_task_share": 0.25,
+    "judgment_task_share": 0.0,
+    "top3_tasks": [
+      {
+        "desc": "Organize and maintain case files by cataloging evidence, documents, and correspondence to ensure easy retrieval and comp",
+        "gwa": "Organizing, Planning, and Prioritizing Work",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 15
+      },
+      {
+        "desc": "Research legal precedents and statutes using online databases and law libraries to support case preparation and legal ar",
+        "gwa": "Getting Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 25
+      },
+      {
+        "desc": "Draft legal documents including pleadings, motions, briefs, and correspondence under attorney supervision for court fili",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 20
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Prepare exhibits and trial notebooks by organizing evidence and creating visual aids to support attorney presentation in",
+        "gwa": "Organizing, Planning, and Prioritizing Work",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 6
+      },
+      {
+        "desc": "Interview clients and witnesses to gather factual information and document testimony for case development and trial prep",
+        "gwa": "Getting Information",
+        "score_mod": 0.25,
+        "score_sig": 0.25,
+        "time_share": 12
+      },
+      {
+        "desc": "Assist attorneys during trials and depositions by managing documents, taking notes, and coordinating with court personne",
+        "gwa": "Communicating with Supervisors, Peers, or Subordinates",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 4
+      }
+    ],
+    "gwa_distribution": {
+      "Getting Information": 2,
+      "Organizing, Planning, and Prioritizing Work": 2,
+      "Documenting/Recording Information": 1,
+      "Communicating with People Outside the Organization": 1,
+      "Processing Information": 1,
+      "Communicating with Supervisors, Peers, or Subordinates": 1
+    },
+    "idx": 360,
+    "calibration_reason": "Document review scales enormously, client work doesn't"
+  },
+  {
+    "soc_code": "13-2053",
+    "custom_title": "Insurance Underwriter",
+    "sector": "Insurance",
+    "employment_K": 127.6,
+    "median_wage": 79880,
+    "primary_industry": "Finance & Financial Services (94%)",
+    "industry_2": "Healthcare & Life Sciences (4%)",
+    "industry_3": "Government & Public Administration (0%)",
+    "projected_change_pct": -2.6,
+    "task_coverage_mod": 0.46,
+    "task_coverage_sig": 0.71,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.4688,
+      "std": 0.1602,
+      "min": 0.25,
+      "max": 0.75,
+      "iqr": 0.0
+    },
+    "sig_stats": {
+      "mean": 0.7188,
+      "std": 0.1602,
+      "min": 0.5,
+      "max": 1,
+      "iqr": 0.0
+    },
+    "heterogeneity_mod": 0.3417,
+    "heterogeneity_sig": 0.2229,
+    "interpersonal_task_share": 0.25,
+    "digital_task_share": 0.5,
+    "judgment_task_share": 0.0,
+    "top3_tasks": [
+      {
+        "desc": "Maintain accurate records in underwriting systems and generate reports on portfolio performance, approval rates, and ris",
+        "gwa": "Interacting With Computers",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 4
+      },
+      {
+        "desc": "Analyze insurance applications and supporting documentation to assess risk levels and determine coverage eligibility for",
+        "gwa": "Analyzing Data/Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 25
+      },
+      {
+        "desc": "Review and evaluate financial statements, credit reports, and historical claims data to calculate appropriate premium ra",
+        "gwa": "Analyzing Data/Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 20
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Research industry regulations, market conditions, and competitive practices to ensure compliance and maintain competitiv",
+        "gwa": "Getting Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 6
+      },
+      {
+        "desc": "Communicate with insurance agents, brokers, and clients to gather additional information, clarify policy details, and ex",
+        "gwa": "Communicating with People Outside the Organization",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 12
+      },
+      {
+        "desc": "Collaborate with claims adjusters and actuaries to analyze loss patterns and update underwriting guidelines based on eme",
+        "gwa": "Communicating with Supervisors, Peers, or Subordinates",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 8
+      }
+    ],
+    "gwa_distribution": {
+      "Analyzing Data/Information": 2,
+      "Documenting/Recording Information": 1,
+      "Communicating with People Outside the Organization": 1,
+      "Monitoring Processes, Materials, or Surroundings": 1,
+      "Communicating with Supervisors, Peers, or Subordinates": 1,
+      "Getting Information": 1,
+      "Interacting With Computers": 1
+    },
+    "idx": 352,
+    "calibration_reason": "Risk assessment scales, complex cases don't"
+  },
+  {
+    "soc_code": "11-2021",
+    "custom_title": "Marketing Manager",
+    "sector": "Advertising & PR Agencies",
+    "employment_K": 68.1,
+    "median_wage": 161030,
+    "primary_industry": "Technology & Software (19%)",
+    "industry_2": "Finance & Financial Services (14%)",
+    "industry_3": "Wholesale Trade (12%)",
+    "projected_change_pct": 6.6,
+    "task_coverage_mod": 0.4825,
+    "task_coverage_sig": 0.7325,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.4688,
+      "std": 0.1602,
+      "min": 0.25,
+      "max": 0.75,
+      "iqr": 0.0
+    },
+    "sig_stats": {
+      "mean": 0.7188,
+      "std": 0.1602,
+      "min": 0.5,
+      "max": 1,
+      "iqr": 0.0
+    },
+    "heterogeneity_mod": 0.3417,
+    "heterogeneity_sig": 0.2229,
+    "interpersonal_task_share": 0.375,
+    "digital_task_share": 0.125,
+    "judgment_task_share": 0.25,
+    "top3_tasks": [
+      {
+        "desc": "Prepare detailed campaign performance reports and present findings to clients and senior management",
+        "gwa": "Communicating with People Outside the Organization",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 12
+      },
+      {
+        "desc": "Develop and implement comprehensive marketing campaigns across multiple channels to promote products and services",
+        "gwa": "Developing Objectives and Strategies",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 25
+      },
+      {
+        "desc": "Analyze market research data and consumer insights to identify target audiences and optimize marketing strategies",
+        "gwa": "Analyzing Data/Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 20
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Evaluate and select appropriate marketing channels and platforms based on campaign objectives and target demographics",
+        "gwa": "Making Decisions and Solving Problems",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 6
+      },
+      {
+        "desc": "Coordinate with creative teams, account managers, and external vendors to execute marketing projects within budget and t",
+        "gwa": "Coordinating the Work and Activities of Others",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 15
+      },
+      {
+        "desc": "Collaborate with sales teams to align marketing efforts with business development goals and lead generation objectives",
+        "gwa": "Establishing and Maintaining Interpersonal Relationships",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 4
+      }
+    ],
+    "gwa_distribution": {
+      "Developing Objectives and Strategies": 1,
+      "Analyzing Data/Information": 1,
+      "Coordinating the Work and Activities of Others": 1,
+      "Communicating with People Outside the Organization": 1,
+      "Organizing, Planning, and Prioritizing Work": 1,
+      "Getting Information": 1,
+      "Making Decisions and Solving Problems": 1,
+      "Establishing and Maintaining Interpersonal Relationships": 1
+    },
+    "idx": 19,
+    "calibration_reason": "Content creation scales, strategy doesn't"
+  },
+  {
+    "soc_code": "13-2082",
+    "custom_title": "Tax Advisor",
+    "sector": "Accounting & Tax Firms",
+    "employment_K": 75.9,
+    "median_wage": 50560,
+    "primary_industry": "Accounting & Tax Firms (96%)",
+    "industry_2": "Technology & Software (1%)",
+    "industry_3": "Management Consulting Firms (1%)",
+    "projected_change_pct": 4.5,
+    "task_coverage_mod": 0.4575,
+    "task_coverage_sig": 0.69,
+    "num_tasks": 7,
+    "mod_stats": {
+      "mean": 0.4643,
+      "std": 0.1725,
+      "min": 0.25,
+      "max": 0.75,
+      "iqr": 0.25
+    },
+    "sig_stats": {
+      "mean": 0.6786,
+      "std": 0.2378,
+      "min": 0.25,
+      "max": 1,
+      "iqr": 0.25
+    },
+    "heterogeneity_mod": 0.3715,
+    "heterogeneity_sig": 0.3504,
+    "interpersonal_task_share": 0.286,
+    "digital_task_share": 0.429,
+    "judgment_task_share": 0.143,
+    "top3_tasks": [
+      {
+        "desc": "Maintain organized client files and documentation systems to ensure proper record retention and efficient workflow manag",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 5
+      },
+      {
+        "desc": "Prepare individual and business tax returns using tax preparation software and current tax codes to ensure accurate fili",
+        "gwa": "Interacting With Computers",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 35
+      },
+      {
+        "desc": "Analyze client financial records and documentation to identify deductions, credits, and tax-saving opportunities while e",
+        "gwa": "Analyzing Data/Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 20
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Review and verify completed tax returns for accuracy, compliance, and optimization before client submission to tax autho",
+        "gwa": "Evaluating Information to Determine Compliance",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 8
+      },
+      {
+        "desc": "Consult with clients regarding tax planning strategies and implications of financial decisions to minimize tax liabiliti",
+        "gwa": "Communicating with People Outside the Organization",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 15
+      },
+      {
+        "desc": "Communicate with tax authorities and represent clients during audits, examinations, and dispute resolution processes.",
+        "gwa": "Communicating with People Outside the Organization",
+        "score_mod": 0.25,
+        "score_sig": 0.25,
+        "time_share": 7
+      }
+    ],
+    "gwa_distribution": {
+      "Communicating with People Outside the Organization": 2,
+      "Interacting With Computers": 1,
+      "Analyzing Data/Information": 1,
+      "Updating and Using Relevant Knowledge": 1,
+      "Evaluating Information to Determine Compliance": 1,
+      "Documenting/Recording Information": 1
+    },
+    "idx": 6,
+    "calibration_reason": "Simple returns scale, complex advisory doesn't"
+  },
+  {
+    "soc_code": "27-3042",
+    "custom_title": "Technical writers",
+    "sector": "Technology & Software",
+    "employment_K": 39.1,
+    "median_wage": 91670,
+    "primary_industry": "Technology & Software (30%)",
+    "industry_2": "Architecture & Engineering Firms (14%)",
+    "industry_3": "Healthcare & Life Sciences (10%)",
+    "projected_change_pct": 0.9,
+    "task_coverage_mod": 0.575,
+    "task_coverage_sig": 0.7375,
+    "num_tasks": 7,
+    "mod_stats": {
+      "mean": 0.5,
+      "std": 0.2041,
+      "min": 0.25,
+      "max": 0.75,
+      "iqr": 0.5
+    },
+    "sig_stats": {
+      "mean": 0.7143,
+      "std": 0.1725,
+      "min": 0.5,
+      "max": 1,
+      "iqr": 0.25
+    },
+    "heterogeneity_mod": 0.4082,
+    "heterogeneity_sig": 0.2415,
+    "interpersonal_task_share": 0.143,
+    "digital_task_share": 0.429,
+    "judgment_task_share": 0.143,
+    "top3_tasks": [
+      {
+        "desc": "Edit and revise technical documents to improve clarity, consistency, and usability while ensuring adherence to style gui",
+        "gwa": "Processing Information",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 15
+      },
+      {
+        "desc": "Write technical documentation including user manuals, installation guides, and API documentation to help users understan",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.75,
+        "score_sig": 0.75,
+        "time_share": 35
+      },
+      {
+        "desc": "Research technical concepts and gather information from subject matter experts, developers, and existing documentation t",
+        "gwa": "Getting Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 20
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Analyze user feedback and support tickets to identify common pain points and improve existing documentation based on rea",
+        "gwa": "Analyzing Data/Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 5
+      },
+      {
+        "desc": "Collaborate with product managers, engineers, and designers to understand product features and translate complex technic",
+        "gwa": "Communicating with Supervisors, Peers, or Subordinates",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 12
+      },
+      {
+        "desc": "Test software applications and processes to verify accuracy of documentation and identify gaps or areas requiring additi",
+        "gwa": "Evaluating Information to Determine Compliance",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 8
+      }
+    ],
+    "gwa_distribution": {
+      "Documenting/Recording Information": 1,
+      "Getting Information": 1,
+      "Processing Information": 1,
+      "Communicating with Supervisors, Peers, or Subordinates": 1,
+      "Evaluating Information to Determine Compliance": 1,
+      "Organizing, Planning, and Prioritizing Work": 1,
+      "Analyzing Data/Information": 1
+    },
+    "idx": 457,
+    "calibration_reason": "Documentation scales well with AI"
+  },
+  {
+    "soc_code": "21-1021",
+    "custom_title": "Child, family, and school social workers",
+    "sector": "Government & Public Administration",
+    "employment_K": 108.5,
+    "median_wage": 58570,
+    "primary_industry": "Government & Public Administration (69%)",
+    "industry_2": "Healthcare & Life Sciences (17%)",
+    "industry_3": "Education & Academia (10%)",
+    "projected_change_pct": 3.4,
+    "task_coverage_mod": 0.175,
+    "task_coverage_sig": 0.2875,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.1562,
+      "std": 0.229,
+      "min": 0,
+      "max": 0.5,
+      "iqr": 0.5
+    },
+    "sig_stats": {
+      "mean": 0.25,
+      "std": 0.3536,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.75
+    },
+    "heterogeneity_mod": 1.4661,
+    "heterogeneity_sig": 1.4144,
+    "interpersonal_task_share": 0.5,
+    "digital_task_share": 0.125,
+    "judgment_task_share": 0.125,
+    "top3_tasks": [
+      {
+        "desc": "Document case activities, progress notes, and assessment findings in client records to maintain accurate case histories ",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 15
+      },
+      {
+        "desc": "Coordinate referrals and connect clients with community resources, educational services, and support programs to facilit",
+        "gwa": "Coordinating the Work and Activities of Others",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 10
+      },
+      {
+        "desc": "Develop comprehensive case plans and treatment goals in collaboration with clients, families, and interdisciplinary team",
+        "gwa": "Developing Objectives and Strategies",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 20
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Participate in court proceedings and legal hearings to provide testimony, submit reports, and advocate for client welfar",
+        "gwa": "Communicating with People Outside the Organization",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 8
+      },
+      {
+        "desc": "Collaborate with teachers, school administrators, and healthcare professionals through meetings and consultations to sup",
+        "gwa": "Communicating with Supervisors, Peers, or Subordinates",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 6
+      },
+      {
+        "desc": "Monitor ongoing cases and evaluate treatment effectiveness through regular follow-up visits and progress assessments to ",
+        "gwa": "Monitoring Processes, Materials, or Surroundings",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 4
+      }
+    ],
+    "gwa_distribution": {
+      "Getting Information": 1,
+      "Developing Objectives and Strategies": 1,
+      "Documenting/Recording Information": 1,
+      "Establishing and Maintaining Interpersonal Relationships": 1,
+      "Coordinating the Work and Activities of Others": 1,
+      "Communicating with People Outside the Organization": 1,
+      "Communicating with Supervisors, Peers, or Subordinates": 1,
+      "Monitoring Processes, Materials, or Surroundings": 1
+    },
+    "idx": 182,
+    "calibration_reason": "Human element strong but case management could scale"
+  },
+  {
+    "soc_code": "29-1131",
+    "custom_title": "Veterinarians",
+    "sector": "Advertising & PR Agencies",
+    "employment_K": 75.2,
+    "median_wage": 125510,
+    "primary_industry": "Advertising & PR Agencies (97%)",
+    "industry_2": "Government & Public Administration (2%)",
+    "industry_3": "Healthcare & Life Sciences (1%)",
+    "projected_change_pct": 9.6,
+    "task_coverage_mod": 0.155,
+    "task_coverage_sig": 0.2725,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.25,
+      "std": 0.2315,
+      "min": 0,
+      "max": 0.5,
+      "iqr": 0.5
+    },
+    "sig_stats": {
+      "mean": 0.4062,
+      "std": 0.3256,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.5
+    },
+    "heterogeneity_mod": 0.926,
+    "heterogeneity_sig": 0.8016,
+    "interpersonal_task_share": 0.375,
+    "digital_task_share": 0.375,
+    "judgment_task_share": 0.25,
+    "top3_tasks": [
+      {
+        "desc": "Document patient medical histories, treatment plans, and progress notes in veterinary records systems.",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 12
+      },
+      {
+        "desc": "Analyze laboratory test results and diagnostic imaging to support accurate medical diagnoses.",
+        "gwa": "Analyzing Data/Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 6
+      },
+      {
+        "desc": "Educate clients on preventive care measures, vaccination schedules, and animal wellness programs.",
+        "gwa": "Training and Teaching Others",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 4
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Coordinate with veterinary technicians and support staff to ensure proper patient care and clinic operations.",
+        "gwa": "Coordinating the Work and Activities of Others",
+        "score_mod": 0.25,
+        "score_sig": 0.25,
+        "time_share": 8
+      },
+      {
+        "desc": "Examine animals to diagnose illnesses, injuries, and health conditions through physical assessments and diagnostic proce",
+        "gwa": "Analyzing Data/Information",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 25
+      },
+      {
+        "desc": "Perform surgical procedures and medical treatments to address animal health issues and injuries.",
+        "gwa": "Making Decisions and Solving Problems",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 20
+      }
+    ],
+    "gwa_distribution": {
+      "Analyzing Data/Information": 2,
+      "Making Decisions and Solving Problems": 2,
+      "Communicating with People Outside the Organization": 1,
+      "Documenting/Recording Information": 1,
+      "Coordinating the Work and Activities of Others": 1,
+      "Training and Teaching Others": 1
+    },
+    "idx": 28,
+    "calibration_reason": "Physical + judgment, moderate workflow complexity"
+  },
+  {
+    "soc_code": "27-3092",
+    "custom_title": "Court reporters and simultaneous captioners",
+    "sector": "Government & Public Administration",
+    "employment_K": 4.3,
+    "median_wage": 67310,
+    "primary_industry": "Government & Public Administration (98%)",
+    "industry_2": "Media Publishing & Entertainment (2%)",
+    "industry_3": null,
+    "projected_change_pct": -0.3,
+    "task_coverage_mod": 0.3325,
+    "task_coverage_sig": 0.45,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.5,
+      "std": 0.3273,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.25
+    },
+    "sig_stats": {
+      "mean": 0.6875,
+      "std": 0.4381,
+      "min": 0,
+      "max": 1,
+      "iqr": 0.25
+    },
+    "heterogeneity_mod": 0.6546,
+    "heterogeneity_sig": 0.6372,
+    "interpersonal_task_share": 0.125,
+    "digital_task_share": 0.375,
+    "judgment_task_share": 0.125,
+    "top3_tasks": [
+      {
+        "desc": "Review and edit transcribed materials for accuracy, grammar, and legal terminology compliance before finalizing official",
+        "gwa": "Evaluating Information to Determine Compliance",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 20
+      },
+      {
+        "desc": "Prepare and format official transcripts according to court specifications and legal standards for distribution to attorn",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 12
+      },
+      {
+        "desc": "Research legal terminology and case-specific vocabulary to ensure accurate transcription of complex proceedings.",
+        "gwa": "Updating and Using Relevant Knowledge",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 4
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Provide real-time captioning services for live broadcasts, meetings, or accessibility accommodations using specialized s",
+        "gwa": "Interacting With Computers",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 2
+      },
+      {
+        "desc": "Transcribe spoken proceedings in real-time using stenographic machines or voice writing equipment during court hearings,",
+        "gwa": "Interacting With Computers",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 45
+      },
+      {
+        "desc": "Maintain and calibrate stenographic equipment and computer systems to ensure optimal performance during proceedings.",
+        "gwa": "Monitoring Processes, Materials, or Surroundings",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 8
+      }
+    ],
+    "gwa_distribution": {
+      "Interacting With Computers": 2,
+      "Evaluating Information to Determine Compliance": 1,
+      "Documenting/Recording Information": 1,
+      "Monitoring Processes, Materials, or Surroundings": 1,
+      "Communicating with People Outside the Organization": 1,
+      "Updating and Using Relevant Knowledge": 1,
+      "Performing Administrative Activities": 1
+    },
+    "idx": 188,
+    "calibration_reason": "Transcription scales but legal accuracy needs human"
+  },
+  {
+    "soc_code": "15-2011",
+    "custom_title": "Actuary",
+    "sector": "Insurance",
+    "employment_K": 36.1,
+    "median_wage": 125770,
+    "primary_industry": "Finance & Financial Services (72%)",
+    "industry_2": "Healthcare & Life Sciences (13%)",
+    "industry_3": "Management Consulting Firms (9%)",
+    "projected_change_pct": 21.8,
+    "task_coverage_mod": 0.37,
+    "task_coverage_sig": 0.605,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.3438,
+      "std": 0.1294,
+      "min": 0.25,
+      "max": 0.5,
+      "iqr": 0.25
+    },
+    "sig_stats": {
+      "mean": 0.5625,
+      "std": 0.1768,
+      "min": 0.25,
+      "max": 0.75,
+      "iqr": 0.25
+    },
+    "heterogeneity_mod": 0.3764,
+    "heterogeneity_sig": 0.3143,
+    "interpersonal_task_share": 0.25,
+    "digital_task_share": 0.375,
+    "judgment_task_share": 0.25,
+    "top3_tasks": [
+      {
+        "desc": "Analyze statistical data and calculate probability distributions to assess financial risks and determine insurance premi",
+        "gwa": "Analyzing Data/Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 25
+      },
+      {
+        "desc": "Prepare detailed actuarial reports and valuation studies for management, regulatory bodies, and external stakeholders.",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 15
+      },
+      {
+        "desc": "Monitor regulatory compliance requirements and ensure actuarial practices meet industry standards and legal obligations.",
+        "gwa": "Evaluating Information to Determine Compliance",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 8
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Collaborate with underwriters, investment managers, and other departments to evaluate product profitability and pricing ",
+        "gwa": "Communicating with Supervisors, Peers, or Subordinates",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 10
+      },
+      {
+        "desc": "Research emerging trends in mortality, morbidity, and economic factors to update actuarial assumptions and methodologies",
+        "gwa": "Getting Information",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 4
+      },
+      {
+        "desc": "Present actuarial findings and recommendations to senior management and board committees during strategic planning sessi",
+        "gwa": "Communicating with Supervisors, Peers, or Subordinates",
+        "score_mod": 0.25,
+        "score_sig": 0.25,
+        "time_share": 6
+      }
+    ],
+    "gwa_distribution": {
+      "Evaluating Information to Determine Compliance": 2,
+      "Communicating with Supervisors, Peers, or Subordinates": 2,
+      "Analyzing Data/Information": 1,
+      "Interacting With Computers": 1,
+      "Documenting/Recording Information": 1,
+      "Getting Information": 1
+    },
+    "idx": 350,
+    "calibration_reason": "Analysis scales but judgment on novel risks doesn't"
+  },
+  {
+    "soc_code": "19-3051",
+    "custom_title": "Urban Planner",
+    "sector": "Government & Public Administration",
+    "employment_K": 12.6,
+    "median_wage": 83720,
+    "primary_industry": "Architecture & Engineering Firms (50%)",
+    "industry_2": "Government & Public Administration (42%)",
+    "industry_3": "Management Consulting Firms (7%)",
+    "projected_change_pct": 3.4,
+    "task_coverage_mod": 0.345,
+    "task_coverage_sig": 0.5275,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.3438,
+      "std": 0.229,
+      "min": 0,
+      "max": 0.5,
+      "iqr": 0.25
+    },
+    "sig_stats": {
+      "mean": 0.5312,
+      "std": 0.3391,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.25
+    },
+    "heterogeneity_mod": 0.6661,
+    "heterogeneity_sig": 0.6384,
+    "interpersonal_task_share": 0.375,
+    "digital_task_share": 0.25,
+    "judgment_task_share": 0.25,
+    "top3_tasks": [
+      {
+        "desc": "Review and analyze development proposals, zoning applications, and land use permits to ensure compliance with municipal ",
+        "gwa": "Evaluating Information to Determine Compliance",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 25
+      },
+      {
+        "desc": "Develop comprehensive land use plans and zoning ordinances by conducting spatial analysis, demographic studies, and comm",
+        "gwa": "Developing Objectives and Strategies",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 20
+      },
+      {
+        "desc": "Prepare detailed reports, policy recommendations, and presentation materials for planning commission meetings and city c",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 10
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Coordinate with municipal departments, utility companies, and external agencies to ensure integrated infrastructure plan",
+        "gwa": "Coordinating the Work and Activities of Others",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 8
+      },
+      {
+        "desc": "Conduct field inspections and site visits to evaluate existing conditions, monitor development progress, and assess comp",
+        "gwa": "Monitoring Processes, Materials, or Surroundings",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 15
+      },
+      {
+        "desc": "Facilitate public meetings, community workshops, and stakeholder consultations to gather input on planning initiatives a",
+        "gwa": "Communicating with People Outside the Organization",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 12
+      }
+    ],
+    "gwa_distribution": {
+      "Communicating with People Outside the Organization": 2,
+      "Evaluating Information to Determine Compliance": 1,
+      "Developing Objectives and Strategies": 1,
+      "Monitoring Processes, Materials, or Surroundings": 1,
+      "Documenting/Recording Information": 1,
+      "Coordinating the Work and Activities of Others": 1,
+      "Analyzing Data/Information": 1
+    },
+    "idx": 231,
+    "calibration_reason": "Mix of data analysis and stakeholder judgment"
+  },
+  {
+    "soc_code": "13-1041",
+    "custom_title": "Compliance Officer",
+    "sector": "Finance & Financial Services",
+    "employment_K": 309.1,
+    "median_wage": 78420,
+    "primary_industry": "Government & Public Administration (37%)",
+    "industry_2": "Finance & Financial Services (16%)",
+    "industry_3": "Healthcare & Life Sciences (14%)",
+    "projected_change_pct": 3,
+    "task_coverage_mod": 0.395,
+    "task_coverage_sig": 0.645,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.375,
+      "std": 0.1336,
+      "min": 0.25,
+      "max": 0.5,
+      "iqr": 0.25
+    },
+    "sig_stats": {
+      "mean": 0.625,
+      "std": 0.1336,
+      "min": 0.5,
+      "max": 0.75,
+      "iqr": 0.25
+    },
+    "heterogeneity_mod": 0.3563,
+    "heterogeneity_sig": 0.2138,
+    "interpersonal_task_share": 0.375,
+    "digital_task_share": 0.375,
+    "judgment_task_share": 0.25,
+    "top3_tasks": [
+      {
+        "desc": "Monitor regulatory compliance by reviewing policies, procedures, and business activities to ensure adherence to applicab",
+        "gwa": "Evaluating Information to Determine Compliance",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 25
+      },
+      {
+        "desc": "Prepare compliance reports and documentation for regulatory agencies, senior management, and board committees.",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 15
+      },
+      {
+        "desc": "Develop and update compliance policies, procedures, and training materials to reflect current regulatory requirements.",
+        "gwa": "Developing Objectives and Strategies",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 12
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Conduct compliance training sessions and educational programs for employees across various departments and levels.",
+        "gwa": "Training and Teaching Others",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 10
+      },
+      {
+        "desc": "Coordinate with external regulators and auditors during examinations, inspections, and regulatory inquiries.",
+        "gwa": "Communicating with People Outside the Organization",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 8
+      },
+      {
+        "desc": "Collaborate with legal counsel and business units to resolve compliance issues and implement corrective actions.",
+        "gwa": "Communicating with Supervisors, Peers, or Subordinates",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 4
+      }
+    ],
+    "gwa_distribution": {
+      "Analyzing Data/Information": 2,
+      "Evaluating Information to Determine Compliance": 1,
+      "Documenting/Recording Information": 1,
+      "Developing Objectives and Strategies": 1,
+      "Training and Teaching Others": 1,
+      "Communicating with People Outside the Organization": 1,
+      "Communicating with Supervisors, Peers, or Subordinates": 1
+    },
+    "idx": 145,
+    "calibration_reason": "Routine checks scale, novel situations need judgment"
+  },
+  {
+    "soc_code": "29-1292",
+    "custom_title": "Dental hygienists",
+    "sector": "Healthcare & Life Sciences",
+    "employment_K": 216.3,
+    "median_wage": 94260,
+    "primary_industry": "Healthcare & Life Sciences (98%)",
+    "industry_2": "Staffing & Recruitment Agencies (1%)",
+    "industry_3": "Government & Public Administration (1%)",
+    "projected_change_pct": 7,
+    "task_coverage_mod": 0.085,
+    "task_coverage_sig": 0.115,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.0938,
+      "std": 0.186,
+      "min": 0,
+      "max": 0.5,
+      "iqr": 0.25
+    },
+    "sig_stats": {
+      "mean": 0.125,
+      "std": 0.2673,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.25
+    },
+    "heterogeneity_mod": 1.9829,
+    "heterogeneity_sig": 2.1384,
+    "interpersonal_task_share": 0.25,
+    "digital_task_share": 0.375,
+    "judgment_task_share": 0.125,
+    "top3_tasks": [
+      {
+        "desc": "Document patient treatment records, update medical histories, and maintain accurate clinical notes in electronic health ",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 12
+      },
+      {
+        "desc": "Educate patients on proper oral hygiene techniques, preventive care practices, and post-treatment instructions.",
+        "gwa": "Training and Teaching Others",
+        "score_mod": 0.25,
+        "score_sig": 0.25,
+        "time_share": 10
+      },
+      {
+        "desc": "Clean teeth and remove plaque, tartar, and stains from patients' teeth using dental instruments and ultrasonic devices d",
+        "gwa": "Interacting With Computers",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 35
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Take and develop dental radiographs to assist dentists in diagnosing oral health conditions.",
+        "gwa": "Getting Information",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 7
+      },
+      {
+        "desc": "Sterilize and maintain dental instruments, equipment, and treatment rooms according to infection control protocols.",
+        "gwa": "Monitoring Processes, Materials, or Surroundings",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 5
+      },
+      {
+        "desc": "Prepare patients for dental procedures by reviewing medical histories, explaining treatments, and positioning patients a",
+        "gwa": "Communicating with Supervisors, Peers, or Subordinates",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 3
+      }
+    ],
+    "gwa_distribution": {
+      "Interacting With Computers": 2,
+      "Evaluating Information to Determine Compliance": 1,
+      "Documenting/Recording Information": 1,
+      "Training and Teaching Others": 1,
+      "Getting Information": 1,
+      "Monitoring Processes, Materials, or Surroundings": 1,
+      "Communicating with Supervisors, Peers, or Subordinates": 1
+    },
+    "idx": 261,
+    "calibration_reason": "Physical task = 0.00 autonomy but some tasks digital"
+  },
+  {
+    "soc_code": "25-9031",
+    "custom_title": "Instructional Designer",
+    "sector": "Education & Academia",
+    "employment_K": 232.6,
+    "median_wage": 74720,
+    "primary_industry": "Education & Academia (73%)",
+    "industry_2": "Government & Public Administration (17%)",
+    "industry_3": "Healthcare & Life Sciences (3%)",
+    "projected_change_pct": 1.3,
+    "task_coverage_mod": 0.4275,
+    "task_coverage_sig": 0.645,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.4062,
+      "std": 0.229,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.25
+    },
+    "sig_stats": {
+      "mean": 0.5938,
+      "std": 0.2652,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.25
+    },
+    "heterogeneity_mod": 0.5638,
+    "heterogeneity_sig": 0.4466,
+    "interpersonal_task_share": 0.25,
+    "digital_task_share": 0.25,
+    "judgment_task_share": 0.25,
+    "top3_tasks": [
+      {
+        "desc": "Design and develop instructional materials including curricula, lesson plans, assessments, and multimedia content to mee",
+        "gwa": "Thinking Creatively",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 25
+      },
+      {
+        "desc": "Analyze learning requirements and conduct needs assessments to identify gaps between current and desired performance lev",
+        "gwa": "Analyzing Data/Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 18
+      },
+      {
+        "desc": "Create and integrate technology-enhanced learning solutions including e-learning modules, interactive simulations, and d",
+        "gwa": "Interacting With Computers",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 10
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Collaborate with subject matter experts, educators, and stakeholders to gather content knowledge and ensure instructiona",
+        "gwa": "Communicating with People Outside the Organization",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 15
+      },
+      {
+        "desc": "Evaluate and test instructional programs through pilot implementations, learner feedback, and assessment data to measure",
+        "gwa": "Evaluating Information to Determine Compliance",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 12
+      },
+      {
+        "desc": "Provide training and support to instructors and facilitators on implementation of newly developed curricula and instruct",
+        "gwa": "Training and Teaching Others",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 5
+      }
+    ],
+    "gwa_distribution": {
+      "Thinking Creatively": 1,
+      "Analyzing Data/Information": 1,
+      "Communicating with People Outside the Organization": 1,
+      "Evaluating Information to Determine Compliance": 1,
+      "Interacting With Computers": 1,
+      "Updating and Using Relevant Knowledge": 1,
+      "Organizing, Planning, and Prioritizing Work": 1,
+      "Training and Teaching Others": 1
+    },
+    "idx": 98,
+    "calibration_reason": "Content creation scales but pedagogy is judgment-heavy"
+  },
+  {
+    "soc_code": "11-3071",
+    "custom_title": "Logistics Manager",
+    "sector": "Logistics & Distribution",
+    "employment_K": 50.8,
+    "median_wage": 102010,
+    "primary_industry": "Transportation & Warehousing (41%)",
+    "industry_2": "Wholesale Trade (22%)",
+    "industry_3": "Manufacturing (12%)",
+    "projected_change_pct": 6.1,
+    "task_coverage_mod": 0.4775,
+    "task_coverage_sig": 0.7075,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.4375,
+      "std": 0.1768,
+      "min": 0.25,
+      "max": 0.75,
+      "iqr": 0.25
+    },
+    "sig_stats": {
+      "mean": 0.6562,
+      "std": 0.229,
+      "min": 0.25,
+      "max": 1,
+      "iqr": 0.25
+    },
+    "heterogeneity_mod": 0.4041,
+    "heterogeneity_sig": 0.349,
+    "interpersonal_task_share": 0.375,
+    "digital_task_share": 0.125,
+    "judgment_task_share": 0.375,
+    "top3_tasks": [
+      {
+        "desc": "Analyze supply chain performance metrics and prepare reports to identify bottlenecks, cost reduction opportunities, and ",
+        "gwa": "Analyzing Data/Information",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 15
+      },
+      {
+        "desc": "Coordinate transportation and distribution activities to ensure timely delivery of goods to customers and optimal utiliz",
+        "gwa": "Coordinating the Work and Activities of Others",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 25
+      },
+      {
+        "desc": "Monitor inventory levels and warehouse operations to maintain optimal stock levels and ensure efficient storage and retr",
+        "gwa": "Monitoring Processes, Materials, or Surroundings",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 20
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Negotiate contracts and manage relationships with suppliers, carriers, and third-party logistics providers to secure fav",
+        "gwa": "Communicating with People Outside the Organization",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 12
+      },
+      {
+        "desc": "Evaluate and implement logistics technology solutions such as warehouse management systems and transportation management",
+        "gwa": "Evaluating Information to Determine Compliance",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 4
+      },
+      {
+        "desc": "Supervise logistics staff and coordinate cross-functional teams to ensure proper execution of shipping, receiving, and i",
+        "gwa": "Coordinating the Work and Activities of Others",
+        "score_mod": 0.25,
+        "score_sig": 0.25,
+        "time_share": 8
+      }
+    ],
+    "gwa_distribution": {
+      "Coordinating the Work and Activities of Others": 2,
+      "Monitoring Processes, Materials, or Surroundings": 1,
+      "Analyzing Data/Information": 1,
+      "Communicating with People Outside the Organization": 1,
+      "Developing Objectives and Strategies": 1,
+      "Making Decisions and Solving Problems": 1,
+      "Evaluating Information to Determine Compliance": 1
+    },
+    "idx": 363,
+    "calibration_reason": "Logistics & Distribution: mix of optimization (scales) and physical ops"
+  },
+  {
+    "soc_code": "51-8013",
+    "custom_title": "Power Plant Operator",
+    "sector": "Energy & Utilities",
+    "employment_K": 25.2,
+    "median_wage": 99670,
+    "primary_industry": "Energy & Utilities (86%)",
+    "industry_2": "Government & Public Administration (6%)",
+    "industry_3": "Architecture & Engineering Firms (5%)",
+    "projected_change_pct": -11.2,
+    "task_coverage_mod": 0.07,
+    "task_coverage_sig": 0.14,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.0938,
+      "std": 0.1294,
+      "min": 0,
+      "max": 0.25,
+      "iqr": 0.25
+    },
+    "sig_stats": {
+      "mean": 0.1875,
+      "std": 0.2588,
+      "min": 0,
+      "max": 0.5,
+      "iqr": 0.5
+    },
+    "heterogeneity_mod": 1.3795,
+    "heterogeneity_sig": 1.3803,
+    "interpersonal_task_share": 0.25,
+    "digital_task_share": 0.25,
+    "judgment_task_share": 0.125,
+    "top3_tasks": [
+      {
+        "desc": "Record operational data, equipment readings, and maintenance activities in logbooks and computerized systems for regulat",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 12
+      },
+      {
+        "desc": "Coordinate with maintenance personnel and engineers to schedule equipment repairs, outages, and preventive maintenance a",
+        "gwa": "Coordinating the Work and Activities of Others",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 10
+      },
+      {
+        "desc": "Communicate with grid dispatchers and transmission system operators to coordinate power output levels and system changes",
+        "gwa": "Communicating with People Outside the Organization",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 6
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Conduct routine inspections of turbines, generators, boilers, and auxiliary equipment to identify potential problems and",
+        "gwa": "Monitoring Processes, Materials, or Surroundings",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 15
+      },
+      {
+        "desc": "Respond to emergency situations and equipment malfunctions by implementing safety procedures and taking corrective actio",
+        "gwa": "Making Decisions and Solving Problems",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 8
+      },
+      {
+        "desc": "Perform routine maintenance tasks including cleaning, lubricating, and minor repairs on plant equipment during scheduled",
+        "gwa": "Getting Information",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 4
+      }
+    ],
+    "gwa_distribution": {
+      "Monitoring Processes, Materials, or Surroundings": 2,
+      "Interacting With Computers": 1,
+      "Documenting/Recording Information": 1,
+      "Coordinating the Work and Activities of Others": 1,
+      "Making Decisions and Solving Problems": 1,
+      "Communicating with People Outside the Organization": 1,
+      "Getting Information": 1
+    },
+    "idx": 138,
+    "calibration_reason": "Energy & Utilities: procedural but safety-critical, dynamic emergencies"
+  },
+  {
+    "soc_code": "11-1021",
+    "custom_title": "Retail Store Manager",
+    "sector": "Retail Trade",
+    "employment_K": 917.6,
+    "median_wage": 102950,
+    "primary_industry": "Construction (12%)",
+    "industry_2": "Wholesale Trade (10%)",
+    "industry_3": "Finance & Financial Services (10%)",
+    "projected_change_pct": 4.4,
+    "task_coverage_mod": 0.18,
+    "task_coverage_sig": 0.2525,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.25,
+      "std": 0.2315,
+      "min": 0,
+      "max": 0.5,
+      "iqr": 0.5
+    },
+    "sig_stats": {
+      "mean": 0.3438,
+      "std": 0.352,
+      "min": 0,
+      "max": 0.75,
+      "iqr": 0.75
+    },
+    "heterogeneity_mod": 0.926,
+    "heterogeneity_sig": 1.0239,
+    "interpersonal_task_share": 0.5,
+    "digital_task_share": 0.25,
+    "judgment_task_share": 0.0,
+    "top3_tasks": [
+      {
+        "desc": "Analyze sales data and inventory levels to develop merchandising strategies, optimize product placement, and maintain ap",
+        "gwa": "Analyzing Data/Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 15
+      },
+      {
+        "desc": "Prepare financial reports and budgets by tracking sales performance, labor costs, and operational expenses to meet corpo",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 10
+      },
+      {
+        "desc": "Develop training programs for new employees to ensure product knowledge, sales techniques, and company standards are mai",
+        "gwa": "Training and Teaching Others",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 4
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Monitor daily store operations to ensure proper staffing levels, customer service standards, and adherence to company po",
+        "gwa": "Monitoring Processes, Materials, or Surroundings",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 25
+      },
+      {
+        "desc": "Manage and supervise retail staff by conducting performance evaluations, providing coaching, scheduling work shifts, and",
+        "gwa": "Coordinating the Work and Activities of Others",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 20
+      },
+      {
+        "desc": "Coordinate with customers to resolve complaints, handle returns and exchanges, and ensure satisfaction with products and",
+        "gwa": "Communicating with People Outside the Organization",
+        "score_mod": 0,
+        "score_sig": 0,
+        "time_share": 12
+      }
+    ],
+    "gwa_distribution": {
+      "Communicating with People Outside the Organization": 2,
+      "Monitoring Processes, Materials, or Surroundings": 1,
+      "Coordinating the Work and Activities of Others": 1,
+      "Analyzing Data/Information": 1,
+      "Documenting/Recording Information": 1,
+      "Organizing, Planning, and Prioritizing Work": 1,
+      "Training and Teaching Others": 1
+    },
+    "idx": 424,
+    "calibration_reason": "Retail Trade: mix of people management and inventory optimization"
+  },
+  {
+    "soc_code": "17-2112",
+    "custom_title": "Manufacturing Engineer",
+    "sector": "Manufacturing",
+    "employment_K": 312,
+    "median_wage": 101140,
+    "primary_industry": "Manufacturing (52%)",
+    "industry_2": "Architecture & Engineering Firms (16%)",
+    "industry_3": "Healthcare & Life Sciences (12%)",
+    "projected_change_pct": 11,
+    "task_coverage_mod": 0.4225,
+    "task_coverage_sig": 0.6725,
+    "num_tasks": 8,
+    "mod_stats": {
+      "mean": 0.4375,
+      "std": 0.2216,
+      "min": 0.25,
+      "max": 0.75,
+      "iqr": 0.5
+    },
+    "sig_stats": {
+      "mean": 0.6875,
+      "std": 0.2216,
+      "min": 0.5,
+      "max": 1,
+      "iqr": 0.5
+    },
+    "heterogeneity_mod": 0.5065,
+    "heterogeneity_sig": 0.3223,
+    "interpersonal_task_share": 0.125,
+    "digital_task_share": 0.375,
+    "judgment_task_share": 0.375,
+    "top3_tasks": [
+      {
+        "desc": "Develop and maintain manufacturing documentation including work instructions, process specifications, and standard opera",
+        "gwa": "Documenting/Recording Information",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 15
+      },
+      {
+        "desc": "Prepare technical reports and presentations for management regarding process improvements, cost savings, and production ",
+        "gwa": "Processing Information",
+        "score_mod": 0.75,
+        "score_sig": 1,
+        "time_share": 3
+      },
+      {
+        "desc": "Analyze manufacturing processes and workflows to identify inefficiencies, bottlenecks, and opportunities for improvement",
+        "gwa": "Analyzing Data/Information",
+        "score_mod": 0.5,
+        "score_sig": 0.75,
+        "time_share": 25
+      }
+    ],
+    "bottom3_tasks": [
+      {
+        "desc": "Collaborate with cross-functional teams including quality assurance, production, and maintenance to resolve manufacturin",
+        "gwa": "Communicating with Supervisors, Peers, or Subordinates",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 12
+      },
+      {
+        "desc": "Evaluate and select manufacturing equipment, tools, and technologies to support production requirements and cost objecti",
+        "gwa": "Evaluating Information to Determine Compliance",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 10
+      },
+      {
+        "desc": "Support new product introductions by developing manufacturing processes, conducting feasibility studies, and establishin",
+        "gwa": "Developing Objectives and Strategies",
+        "score_mod": 0.25,
+        "score_sig": 0.5,
+        "time_share": 7
+      }
+    ],
+    "gwa_distribution": {
+      "Analyzing Data/Information": 1,
+      "Making Decisions and Solving Problems": 1,
+      "Documenting/Recording Information": 1,
+      "Communicating with Supervisors, Peers, or Subordinates": 1,
+      "Evaluating Information to Determine Compliance": 1,
+      "Monitoring Processes, Materials, or Surroundings": 1,
+      "Developing Objectives and Strategies": 1,
+      "Processing Information": 1
+    },
+    "idx": 386,
+    "calibration_reason": "Manufacturing: process optimization scales but physical plant doesn't"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "workflow_simplicity": {
+    "kappa": 0.865,
+    "within_one_step": 1.0,
+    "exact_agreement": 0.8,
+    "pass_kappa": true,
+    "pass_within_one": true,
+    "pass_exact": true,
+    "n": 40
+  },
+  "x_scale": {
+    "kappa": 0.905,
+    "within_one_step": 1.0,
+    "exact_agreement": 0.825,
+    "pass_kappa": true,
+    "pass_within_one": true,
+    "pass_exact": true,
+    "n": 40
+  },
+  "x_sub": {
+    "kappa": 0.919,
+    "within_one_step": 1.0,
+    "exact_agreement": 0.775,
+    "pass_kappa": true,
+    "pass_within_one": true,
+    "pass_exact": true,
+    "n": 40
+  }
+}
