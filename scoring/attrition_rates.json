@@ -1,0 +1,27 @@
+{
+  "source": "BLS JOLTS December 2025 — annualized quit rates by supersector",
+  "methodology": "A(i) = sector annual quit rate / max quit rate (Accommodation & Food at ~45%), normalized to [0, 1]",
+  "sectors": {
+    "1":  {"name": "Finance & Banking",           "jolts_supersector": "Financial activities",               "annual_quit_rate": 0.17, "A": 0.38},
+    "2":  {"name": "Insurance",                   "jolts_supersector": "Financial activities",               "annual_quit_rate": 0.17, "A": 0.38},
+    "3":  {"name": "Technology & Software",        "jolts_supersector": "Information",                       "annual_quit_rate": 0.13, "A": 0.29},
+    "4":  {"name": "Healthcare & Life Sciences",   "jolts_supersector": "Health care and social assistance", "annual_quit_rate": 0.24, "A": 0.53},
+    "5":  {"name": "Law Firms & Legal Services",   "jolts_supersector": "Professional and business services","annual_quit_rate": 0.28, "A": 0.62},
+    "6":  {"name": "Management Consulting",        "jolts_supersector": "Professional and business services","annual_quit_rate": 0.28, "A": 0.62},
+    "7":  {"name": "Accounting & Tax Firms",       "jolts_supersector": "Professional and business services","annual_quit_rate": 0.28, "A": 0.62},
+    "8":  {"name": "Advertising & PR",             "jolts_supersector": "Professional and business services","annual_quit_rate": 0.28, "A": 0.62},
+    "9":  {"name": "Staffing & Recruitment",       "jolts_supersector": "Professional and business services","annual_quit_rate": 0.28, "A": 0.62},
+    "10": {"name": "Real Estate & Property Mgmt",  "jolts_supersector": "Financial activities",              "annual_quit_rate": 0.17, "A": 0.38},
+    "11": {"name": "Education & Academia",         "jolts_supersector": "Educational services",              "annual_quit_rate": 0.20, "A": 0.44},
+    "12": {"name": "Government & Public Admin",    "jolts_supersector": "Government",                       "annual_quit_rate": 0.10, "A": 0.22},
+    "13": {"name": "Media, Publishing & Entertainment", "jolts_supersector": "Information",                  "annual_quit_rate": 0.13, "A": 0.29},
+    "14": {"name": "Energy & Utilities",           "jolts_supersector": "Mining and logging",                "annual_quit_rate": 0.10, "A": 0.22},
+    "15": {"name": "Architecture & Engineering",   "jolts_supersector": "Professional and business services","annual_quit_rate": 0.28, "A": 0.62},
+    "16": {"name": "Manufacturing",                "jolts_supersector": "Manufacturing",                     "annual_quit_rate": 0.18, "A": 0.40},
+    "17": {"name": "Retail Trade",                 "jolts_supersector": "Retail trade",                      "annual_quit_rate": 0.30, "A": 0.67},
+    "18": {"name": "Construction",                 "jolts_supersector": "Construction",                      "annual_quit_rate": 0.22, "A": 0.49},
+    "19": {"name": "Transportation & Logistics",   "jolts_supersector": "Transportation, warehousing, and utilities", "annual_quit_rate": 0.22, "A": 0.49},
+    "20": {"name": "Wholesale Trade",              "jolts_supersector": "Wholesale trade",                   "annual_quit_rate": 0.20, "A": 0.44},
+    "21": {"name": "Accommodation & Food Services","jolts_supersector": "Accommodation and food services",   "annual_quit_rate": 0.45, "A": 1.00}
+  }
+}
