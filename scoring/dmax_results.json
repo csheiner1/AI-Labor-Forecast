@@ -1,0 +1,233 @@
+[
+  {
+    "sector_id": 1,
+    "sector": "Finance & Banking",
+    "jolts_key": "finance_insurance",
+    "jolts_series": "JTS520000000000000TSR",
+    "jolts_base_rate": 2.07,
+    "monthly_tsr_pct": 2.15,
+    "adjusted": true,
+    "d_max": 0.3238,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 2,
+    "sector": "Insurance",
+    "jolts_key": "finance_insurance",
+    "jolts_series": "JTS520000000000000TSR",
+    "jolts_base_rate": 2.07,
+    "monthly_tsr_pct": 1.7,
+    "adjusted": true,
+    "d_max": 0.2655,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 3,
+    "sector": "Technology & Software",
+    "jolts_key": "information",
+    "jolts_series": "JTS510000000000000TSR",
+    "jolts_base_rate": 2.96,
+    "monthly_tsr_pct": 3.3,
+    "adjusted": true,
+    "d_max": 0.4534,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 4,
+    "sector": "Healthcare & Life Sciences",
+    "jolts_key": "healthcare",
+    "jolts_series": "JTS620000000000000TSR",
+    "jolts_base_rate": 2.8,
+    "monthly_tsr_pct": 2.8,
+    "adjusted": false,
+    "d_max": 0.4002,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 5,
+    "sector": "Law Firms & Legal Services",
+    "jolts_key": "prof_business",
+    "jolts_series": "JTS540099000000000TSR",
+    "jolts_base_rate": 4.55,
+    "monthly_tsr_pct": 1.8,
+    "adjusted": true,
+    "d_max": 0.2789,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 6,
+    "sector": "Management Consulting Firms",
+    "jolts_key": "prof_business",
+    "jolts_series": "JTS540099000000000TSR",
+    "jolts_base_rate": 4.55,
+    "monthly_tsr_pct": 3.2,
+    "adjusted": true,
+    "d_max": 0.4431,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 7,
+    "sector": "Accounting & Tax Firms",
+    "jolts_key": "prof_business",
+    "jolts_series": "JTS540099000000000TSR",
+    "jolts_base_rate": 4.55,
+    "monthly_tsr_pct": 2.3,
+    "adjusted": true,
+    "d_max": 0.3422,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 8,
+    "sector": "Advertising & PR Agencies",
+    "jolts_key": "prof_business",
+    "jolts_series": "JTS540099000000000TSR",
+    "jolts_base_rate": 4.55,
+    "monthly_tsr_pct": 3.0,
+    "adjusted": true,
+    "d_max": 0.422,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 9,
+    "sector": "Staffing & Recruitment Agencies",
+    "jolts_key": "prof_business",
+    "jolts_series": "JTS540099000000000TSR",
+    "jolts_base_rate": 4.55,
+    "monthly_tsr_pct": 4.55,
+    "adjusted": false,
+    "d_max": 0.5675,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 10,
+    "sector": "Real Estate & Property",
+    "jolts_key": "real_estate",
+    "jolts_series": "JTS530000000000000TSR",
+    "jolts_base_rate": 2.5,
+    "monthly_tsr_pct": 2.5,
+    "adjusted": false,
+    "d_max": 0.366,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 11,
+    "sector": "Education & Academia",
+    "jolts_key": "education",
+    "jolts_series": "JTS610000000000000TSR",
+    "jolts_base_rate": 2.22,
+    "monthly_tsr_pct": 2.22,
+    "adjusted": false,
+    "d_max": 0.3324,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 12,
+    "sector": "Government & Public Administration",
+    "jolts_key": "government",
+    "jolts_series": "JTS900000000000000TSR",
+    "jolts_base_rate": 1.38,
+    "monthly_tsr_pct": 1.38,
+    "adjusted": false,
+    "d_max": 0.2213,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 13,
+    "sector": "Media Publishing & Entertainment",
+    "jolts_key": "information",
+    "jolts_series": "JTS510000000000000TSR",
+    "jolts_base_rate": 2.96,
+    "monthly_tsr_pct": 2.5,
+    "adjusted": true,
+    "d_max": 0.366,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 14,
+    "sector": "Energy & Utilities",
+    "jolts_key": "total_nonfarm",
+    "jolts_series": "JTS000000000000000TSR",
+    "jolts_base_rate": 3.3,
+    "monthly_tsr_pct": 3.3,
+    "adjusted": false,
+    "d_max": 0.4534,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 15,
+    "sector": "Architecture & Engineering Firms",
+    "jolts_key": "prof_business",
+    "jolts_series": "JTS540099000000000TSR",
+    "jolts_base_rate": 4.55,
+    "monthly_tsr_pct": 2.2,
+    "adjusted": true,
+    "d_max": 0.33,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 16,
+    "sector": "Manufacturing",
+    "jolts_key": "manufacturing",
+    "jolts_series": "JTS300000000000000TSR",
+    "jolts_base_rate": 2.47,
+    "monthly_tsr_pct": 2.47,
+    "adjusted": false,
+    "d_max": 0.3625,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 17,
+    "sector": "Retail Trade",
+    "jolts_key": "retail",
+    "jolts_series": "JTS440000000000000TSR",
+    "jolts_base_rate": 3.81,
+    "monthly_tsr_pct": 3.81,
+    "adjusted": false,
+    "d_max": 0.503,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 18,
+    "sector": "Construction",
+    "jolts_key": "construction",
+    "jolts_series": "JTS230000000000000TSR",
+    "jolts_base_rate": 4.03,
+    "monthly_tsr_pct": 4.03,
+    "adjusted": false,
+    "d_max": 0.5231,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 19,
+    "sector": "Transportation & Logistics",
+    "jolts_key": "transport_warehouse",
+    "jolts_series": "JTS480099000000000TSR",
+    "jolts_base_rate": 3.88,
+    "monthly_tsr_pct": 3.88,
+    "adjusted": false,
+    "d_max": 0.5095,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 20,
+    "sector": "Wholesale Trade",
+    "jolts_key": "wholesale",
+    "jolts_series": "JTS420000000000000TSR",
+    "jolts_base_rate": 2.22,
+    "monthly_tsr_pct": 2.22,
+    "adjusted": false,
+    "d_max": 0.3324,
+    "source": "fallback"
+  },
+  {
+    "sector_id": 21,
+    "sector": "Accommodation & Food Services",
+    "jolts_key": "accommodation_food",
+    "jolts_series": "JTS700000000000000TSR",
+    "jolts_base_rate": 5.45,
+    "monthly_tsr_pct": 5.45,
+    "adjusted": false,
+    "d_max": 0.6353,
+    "source": "fallback"
+  }
+]

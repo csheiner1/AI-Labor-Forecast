@@ -242,10 +242,11 @@ def build_pdf():
         (1, "4", "Job-Level Automatability Approximation"),
         (2, "4.1", "Sigmoid Transform"),
         (2, "4.2", "Job-Level Decomposition"),
-        (2, "4.3", "x_depth Operationalization"),
-        (2, "4.4", "Job-Level Scoring Pipeline"),
+        (2, "4.3", "tc_adj Operationalization"),
+        (2, "4.4", "Workflow Separability (w)"),
+        (2, "4.5", "Job-Level Scoring Pipeline"),
         (1, "5", "Industry-Level Variables"),
-        (2, "5.1", "Displacement Ceiling (d_max = 0.18)"),
+        (2, "5.1", "Displacement Ceiling (d_max)"),
         (2, "5.2", "Elasticity Dampener (E)"),
         (2, "5.3", "Adoption Velocity (T)"),
         (2, "5.4", "Structural Resistance (R)"),
@@ -297,14 +298,14 @@ def build_pdf():
         "The methodology operates in three layers, each building on the one below:"
     )
     pdf.bullet(
-        "Score each of 3,552 tasks for automatability under two tech capability scenarios "
-        "(Moderate and Significant), producing 7,104 task-level scores.",
+        "Score each of 5,383 tasks for automatability under two tech capability scenarios "
+        "(Moderate and Significant), producing 10,766 task-level scores.",
         bold_prefix="Layer 1 -- Task-Level Scoring:"
     )
     pdf.bullet(
         "Aggregate task-level scores upward to approximate a job-level automatability score "
-        "for each of 462 occupations, using time-share weighting, workflow complexity, "
-        "throughput scaling, and substitutability.",
+        "for each of 310 occupations, using task-coverage depth (tc_adj) and workflow "
+        "separability (w).",
         bold_prefix="Layer 2 -- Job-Level Approximation:"
     )
     pdf.bullet(
@@ -326,7 +327,7 @@ def build_pdf():
     # =========================================================================
     pdf.section_header("2", "The Master Equation")
 
-    pdf.equation_block("d(t; i, s) = d_max * phi(a(i,s)) * E(i) * T(t; i, s) * R(i)")
+    pdf.equation_block("d(t; i, s) = d_max(i) * S(a(i,s)) * E(i) * T(t; i, s) * R(i)")
 
     pdf.body_text(
         "Read the equation left to right as a chain of multiplicative filters. Each variable "
@@ -335,8 +336,8 @@ def build_pdf():
     )
 
     pdf.bullet("d(t; i, s) = displacement rate for industry i in scenario s at time t")
-    pdf.bullet("d_max = 0.18, absolute ceiling on displacement rate (historical precedent, constant across industries and scenarios)")
-    pdf.bullet("phi(a(i,s)) = sigmoid-transformed automatability (derived from task-level scores)")
+    pdf.bullet("d_max(i) = sector-level displacement ceiling (varies by industry)")
+    pdf.bullet("S(a(i,s)) = sigmoid-transformed automatability (derived from task-level scores)")
     pdf.bullet("E(i) = elasticity dampener (Jevons paradox / demand absorption)")
     pdf.bullet("T(t; i, s) = adoption velocity (logistic S-curve, industry-level)")
     pdf.bullet("R(i) = structural resistance dampener (regulatory/liability floors)")
@@ -355,9 +356,9 @@ def build_pdf():
     pdf.section_header("3", "Task-Level Automatability Scoring")
 
     pdf.body_text(
-        "The foundation of the model is task-level scoring. Each of 3,552 tasks is scored for "
-        "its autonomy fraction under two tech capability scenarios, producing 7,104 scores "
-        "(3,552 x 2). This scoring is purely about what AI can do technically and economically "
+        "The foundation of the model is task-level scoring. Each of 5,383 tasks is scored for "
+        "its autonomy fraction under two tech capability scenarios, producing 10,766 scores "
+        "(5,383 x 2). This scoring is purely about what AI can do technically and economically "
         "-- it is independent of adoption frictions, regulation, or institutional readiness."
     )
 
@@ -497,7 +498,7 @@ def build_pdf():
 
     pdf.body_text(
         "Constraint: significant >= moderate always. More capability cannot reduce automation "
-        "potential. This produces 7,104 scores total (3,552 tasks x 2 scenarios)."
+        "potential. This produces 10,766 scores total (5,383 tasks x 2 scenarios)."
     )
 
     # 3.3
@@ -544,265 +545,190 @@ def build_pdf():
 
     pdf.body_text(
         "Task-level scores are aggregated upward to produce a job-level automatability score "
-        "for each of 462 occupations. This approximation accounts for the fact that a job is "
-        "more than the sum of its tasks -- workflow complexity, throughput dynamics, and human "
-        "substitutability all mediate how task automation translates to job-level impact."
+        "for each of 310 occupations. The aggregation uses two components: tc_adj "
+        "(task-coverage depth, computed programmatically from task-level scores) and w "
+        "(workflow separability, LLM-scored). Their product is passed through a sigmoid "
+        "transform to produce the final job-level automatability score."
     )
 
     # 4.1
     pdf.subsection_header("4.1  Sigmoid Transform")
-    pdf.equation_block("phi(a) = a^2 / (a^2 + (1-a)^2)")
+    pdf.equation_block("S(a) = a^k / (a^k + (1-a)^k)    where k = 0.8")
     pdf.body_text(
-        "The raw job-level automatability score is passed through a sigmoid transform. This "
-        "crushes scores below ~0.5 toward zero (half-automatable jobs barely register as "
-        "displacement candidates) while amplifying scores above ~0.7 toward 1.0 (once a job "
-        "is clearly automatable, partial scores do not linger). This reflects the empirical "
-        "reality that displacement is a threshold phenomenon, not a linear one."
+        "The raw job-level automatability score is passed through a sigmoid transform with "
+        "exponent k=0.8. This softer sigmoid (compared to k=2 or higher) preserves meaningful "
+        "displacement signal across a wider range of automatability scores. At k=0.8, a job "
+        "with a=0.30 maps to S=0.26, while a=0.70 maps to S=0.74. The transform compresses "
+        "extreme values (very low a toward zero, very high a toward one) while maintaining "
+        "sensitivity in the mid-range where most occupations fall."
     )
 
     # 4.2
     pdf.subsection_header("4.2  Job-Level Decomposition")
-    pdf.equation_block("a(i,s) = x_depth * avg(x_scale, x_sub)")
+    pdf.equation_block("a(j, s) = tc_adj(j, s) * w(j)")
     pdf.body_text(
-        "x_depth is the hard gate: if AI cannot do the core tasks, a = 0 regardless of "
-        "scaling potential or substitutability. x_scale and x_sub modulate the magnitude "
-        "but neither can independently zero out an otherwise automatable job."
+        "The job-level automatability score is the product of two components: tc_adj "
+        "(task-coverage depth) captures how much of a job's time is spent on automatable "
+        "tasks, while w (workflow separability) captures whether those automatable tasks "
+        "can be structurally separated from the rest of the job."
     )
     pdf.body_text(
-        "x_depth is a continuous [0, 1] value derived from task-level scores (see 4.3). "
-        "x_scale and x_sub are scored directly at the job level on a 5-point anchored "
-        "scale {0.00, 0.25, 0.50, 0.75, 1.00}, matching the task-level autonomy fraction "
-        "scale. This ensures all inputs to the composition are on a consistent [0, 1] scale "
-        "with the midpoint at 0.50, and the sigmoid phi(a) is the sole source of "
-        "non-linearity in the pipeline."
+        "tc_adj is computed programmatically from task-level scores and varies by scenario "
+        "(moderate vs. significant). w is an LLM-scored structural property of the job that "
+        "is scenario-independent. Both are on a [0, 1] scale, and their product feeds into "
+        "the sigmoid S(a) as the sole source of non-linearity."
     )
 
     cw = [25, 38, 73, 30]
     pdf.table_header(cw, ["Component", "Name", "What It Captures", "Scale"])
     pdf.table_row(cw, [
-        "x_depth", "Task Depth",
-        "Can AI do the core tasks? Derived from task-level autonomy fraction scores. "
-        "Operationalized as task_coverage * workflow_simplicity. This is the GATE -- "
-        "if x_depth = 0, the job is not automatable.",
+        "tc_adj", "Task-Coverage Depth",
+        "How much of the job's time-weighted task load is automatable? Computed from "
+        "task-level autonomy scores with adjustments for zero-autonomy drag and "
+        "high-autonomy concentration. Varies by scenario.",
         "[0, 1]"
     ], ["C", "L", "L", "C"])
     pdf.table_row(cw, [
-        "x_scale", "Throughput",
-        "Does AI increase capacity/speed at scale? Some tasks automate well individually "
-        "but bottleneck at volume. Modulates magnitude, does not gate.",
-        "5-point"
-    ], ["C", "L", "L", "C"])
-    pdf.table_row(cw, [
-        "x_sub", "Substitutability",
-        "Is the human the product? In some roles the value is intrinsically human -- a "
-        "therapist, a trial lawyer, a live performer. AI doing the task does "
-        "not deliver the same product. Modulates magnitude, does not gate.",
-        "5-point"
+        "w", "Workflow Separability",
+        "Can the automatable tasks be structurally separated from non-automatable tasks? "
+        "A job where automated and manual tasks are interleaved in continuous flow scores "
+        "lower than one where they operate independently. Scenario-independent.",
+        "4-point"
     ], ["C", "L", "L", "C"])
 
     pdf.body_text(
-        "The gated structure reflects a key insight: task automation depth is a prerequisite "
-        "for displacement, while scaling and substitutability determine how much displacement "
-        "results. A job with high x_depth but low x_sub (human is the product) will see "
-        "reduced displacement, but not zero -- the pressure still exists."
+        "The multiplicative structure means both components must be non-trivial for "
+        "displacement to register. A job with high tc_adj but low w (automatable tasks "
+        "deeply interleaved with non-automatable ones) will see reduced displacement. "
+        "Conversely, high w with low tc_adj (tasks are separable but few are automatable) "
+        "also yields low displacement."
     )
-
-    pdf.sub_subsection_header("x_sub Anchor Definitions")
-    cw = [20, 50, 96]
-    pdf.table_header(cw, ["Score", "Level", "Definition and Exemplars"])
-    pdf.table_row(cw, [
-        "0.00", "Human IS the product",
-        "The value delivered is intrinsically human. AI performing the task does not produce "
-        "an equivalent output. Exemplars: psychotherapist, elected official, trial lawyer "
-        "(courtroom performance), clergy."
-    ], ["C", "L", "L"])
-    pdf.table_row(cw, [
-        "0.25", "Strong human pref.",
-        "Human presence is strongly valued but some substitution is emerging. Exemplars: "
-        "surgeon (robotic surgery emerging), K-12 teacher (AI tutoring exists), personal "
-        "fitness trainer, live performing artist."
-    ], ["C", "L", "L"])
-    pdf.table_row(cw, [
-        "0.50", "Mixed / contested",
-        "Human element matters for a meaningful fraction of the market, but substitution is "
-        "already happening for another meaningful fraction. Exemplars: financial advisor "
-        "(robo-advisors exist), real estate agent, management consultant, journalist."
-    ], ["C", "L", "L"])
-    pdf.table_row(cw, [
-        "0.75", "Weak human pref.",
-        "Most clients would accept AI if cheaper/faster. Human preference is residual and "
-        "eroding. Exemplars: customer service rep, tax preparer, paralegal, insurance "
-        "underwriter, technical writer."
-    ], ["C", "L", "L"])
-    pdf.table_row(cw, [
-        "1.00", "Fully substitutable",
-        "No human-is-the-product effect. Output is the product, not the human. Exemplars: "
-        "warehouse worker, data entry keyer, assembly line worker, file clerk, meter reader."
-    ], ["C", "L", "L"])
-
-    pdf.sub_subsection_header("x_scale Anchor Definitions")
-    cw = [20, 50, 96]
-    pdf.table_header(cw, ["Score", "Level", "Definition and Exemplars"])
-    pdf.table_row(cw, [
-        "0.00", "No throughput gain",
-        "AI provides no meaningful throughput advantage at production volume. Physical or "
-        "situational constraints cap speed. Exemplars: artisanal crafts, emergency first "
-        "responders, hands-on physical therapy."
-    ], ["C", "L", "L"])
-    pdf.table_row(cw, [
-        "0.25", "Modest scaling",
-        "AI helps but significant bottlenecks remain. Throughput gains are incremental, not "
-        "transformative. Exemplars: construction supervision, surgical procedures, field "
-        "inspection roles."
-    ], ["C", "L", "L"])
-    pdf.table_row(cw, [
-        "0.50", "Moderate scaling",
-        "AI doubles or triples throughput in some task areas but is constrained in others. "
-        "Meaningful gains but not unlimited. Exemplars: financial analysis, software QA "
-        "testing, marketing content creation."
-    ], ["C", "L", "L"])
-    pdf.table_row(cw, [
-        "0.75", "Strong scaling",
-        "AI handles large volumes with minimal human oversight in most task areas. "
-        "Exemplars: legal document review, medical image screening, customer inquiry "
-        "routing, insurance claims processing."
-    ], ["C", "L", "L"])
-    pdf.table_row(cw, [
-        "1.00", "Near-unlimited",
-        "AI processes at machine speed with no human bottleneck. Volume is limited only by "
-        "compute. Exemplars: automated trading, data processing, email filtering, "
-        "code linting, log analysis."
-    ], ["C", "L", "L"])
 
     # 4.3
-    pdf.subsection_header("4.3  x_depth Operationalization")
-    pdf.equation_block("x_depth = task_coverage * workflow_simplicity")
+    pdf.subsection_header("4.3  tc_adj Operationalization")
+    pdf.equation_block("tc_adj = tc_mean * (1-z)^0.5 * min(1, h/tc)")
+
+    pdf.body_text(
+        "tc_adj (task-coverage depth, adjusted) is computed programmatically from the "
+        "task-level autonomy scores in the Tasks sheet. It captures how much of a job's "
+        "time is spent on automatable tasks, with two adjustments:"
+    )
+
     pdf.bullet(
-        "Time-share-weighted mean of individual task autonomy fraction scores from the "
-        "Tasks sheet. This is the direct aggregation of Layer 1 scores into the job level.",
-        bold_prefix="task_coverage ="
+        "Importance-weighted mean of individual task autonomy fraction scores, "
+        "using Time_Share_Pct as the weighting. This is the direct aggregation of "
+        "Layer 1 scores into the job level.",
+        bold_prefix="tc_mean ="
     )
     pdf.bullet(
-        "Discount factor for coordination complexity: task independence, branching logic, "
-        "error propagation, and dynamic sequencing. A job with 10 individually automatable "
-        "tasks that must be tightly sequenced scores lower than one with 10 independent "
-        "automatable tasks. Scored on the same 5-point anchored scale:",
-        bold_prefix="workflow_simplicity ="
+        "Time share of zero-autonomy tasks (autonomy = 0.00). The (1-z)^0.5 term "
+        "penalizes jobs with large blocks of completely non-automatable work. The square "
+        "root softens the penalty -- a job with 25% zero-autonomy tasks loses ~13%, not 25%.",
+        bold_prefix="z ="
+    )
+    pdf.bullet(
+        "Time share of high-autonomy tasks (autonomy >= 0.65). The min(1, h/tc) term "
+        "caps tc_adj when high-autonomy task concentration is lower than the raw average "
+        "would suggest -- preventing jobs with many moderately-automatable tasks from "
+        "scoring as high as jobs with truly deep automation potential.",
+        bold_prefix="h ="
+    )
+
+    pdf.body_text(
+        "tc_adj is computed separately for each scenario (moderate and significant), since "
+        "task-level autonomy scores differ between scenarios. It ranges from 0 (no "
+        "automatable tasks) to ~0.98 (nearly all time on highly automatable tasks)."
+    )
+
+    # 4.4
+    pdf.subsection_header("4.4  Workflow Separability (w)")
+    pdf.body_text(
+        "w captures whether a job's automatable tasks can be structurally separated from "
+        "its non-automatable tasks. This is a property of the job's workflow architecture, "
+        "not of AI capability, so w is scenario-independent."
     )
 
     pdf.ln(2)
     cw = [20, 50, 96]
     pdf.table_header(cw, ["Score", "Level", "Definition and Exemplars"])
     pdf.table_row(cw, [
-        "1.00", "Independent / trivial",
-        "Tasks are independent or follow a fixed linear pipeline with no branching. No human "
-        "judgment at transitions. Exemplars: data entry pipeline, assembly line steps, "
-        "document scan-OCR-file."
+        "1.00", "Fully separable",
+        "Automatable and non-automatable tasks are independent. Can fully offload automated "
+        "work without disrupting human tasks. Exemplars: data entry keyers, court reporters, "
+        "financial clerks."
     ], ["C", "L", "L"])
     pdf.table_row(cw, [
-        "0.75", "Mostly independent",
-        "Most tasks execute independently, a few require coordination. Transition decisions "
-        "are routine. Exemplars: standard accounting close, routine legal review, "
-        "customer service ticket handling."
+        "0.75", "Mostly separable",
+        "Natural handoff boundaries exist between automated and human tasks. Some coordination "
+        "needed but workflows can be restructured. Exemplars: paralegals, insurance "
+        "underwriters, accountants, technical writers."
     ], ["C", "L", "L"])
     pdf.table_row(cw, [
-        "0.50", "Moderate interdep.",
-        "Meaningful dependencies and some branching. Intermediate outputs need evaluation "
-        "before proceeding. Some iteration loops. Exemplars: software dev cycle, financial "
-        "modeling, marketing campaign execution."
+        "0.50", "Partially separable",
+        "Automatable and non-automatable tasks are interleaved throughout the workday. "
+        "Workflow redesign needed to separate them. Exemplars: registered nurses, "
+        "general managers, architects, compliance officers."
     ], ["C", "L", "L"])
     pdf.table_row(cw, [
-        "0.25", "Tightly coupled",
-        "Highly interdependent with frequent branching, backtracking, real-time adaptation. "
-        "Failure at any stage requires replanning. Exemplars: surgical procedures, complex "
-        "negotiations, crisis management."
-    ], ["C", "L", "L"])
-    pdf.table_row(cw, [
-        "0.00", "Fully dynamic",
-        "Sequence and nature of tasks determined in real-time by evolving conditions. No "
-        "predetermined workflow exists. Exemplars: battlefield command, emergency room "
-        "triage-to-treatment, live field investigation."
+        "0.25", "Minimally separable",
+        "Continuous flow between automated and human judgment. Cannot disaggregate without "
+        "fundamentally changing the job. Exemplars: physicians, psychologists, clergy, "
+        "dentists."
     ], ["C", "L", "L"])
 
-    # 4.4
+    pdf.body_text(
+        "Diagnostic questions used in scoring: Do automatable tasks cluster in time or "
+        "interleave throughout the day? What is the handoff friction between automated "
+        "and human work? How tightly coupled is the information flow between task types? "
+        "Does the work require physical co-location of judgment and action? Can tasks be "
+        "batched at a granularity that enables separation?"
+    )
+
+    # 4.5
     pdf.add_page()
-    pdf.subsection_header("4.4  Job-Level Scoring Pipeline")
+    pdf.subsection_header("4.5  Job-Level Scoring Pipeline")
     pdf.body_text(
-        "x_scale, x_sub, and workflow_simplicity are scored for all 462 occupations using "
-        "a dedicated AI pipeline. These variables are scenario-independent (they describe "
-        "structural properties of the job, not AI capability), producing 462 x 3 = 1,386 "
-        "scores total."
+        "w is scored for all 310 occupations using a dedicated AI pipeline. tc_adj is "
+        "computed programmatically and requires no LLM scoring. The pipeline produces "
+        "310 w scores."
     )
 
-    pdf.sub_subsection_header("Phase 0: Pre-Processing (Programmatic)")
+    pdf.sub_subsection_header("Phase 0: Profile Extraction (Programmatic)")
     pdf.body_text(
-        "For each occupation, assemble a structured profile: O*NET title and description, "
-        "BLS employment count, education requirements, industry concentration, and task-level "
-        "data summaries (mean/std/IQR of autonomy scores, task heterogeneity index, the 3 "
-        "highest- and 3 lowest-autonomy tasks). Task-level features are curated per variable "
-        "to avoid construct contamination -- e.g., the x_sub prompt receives interpersonal "
-        "and judgment task proportions, while the x_scale prompt receives digital/physical "
-        "task splits and output type."
+        "For each occupation, extract a structured profile from the workbook: SOC code, "
+        "title, sector, employment, wage, and task-level data organized for separability "
+        "assessment. Tasks are grouped by autonomy level (high >= 0.65, mid 0.30-0.65, "
+        "low <= 0.30) with GWA composition per group, time shares, and tc_adj values."
     )
 
-    pdf.sub_subsection_header("Phase 1: Calibration Agent (Claude Opus 4.6)")
+    pdf.sub_subsection_header("Phase 1: Calibration (Claude Opus 4.6)")
     pdf.body_text(
-        "Scores a curated set of 30 boundary-case occupations -- jobs where reasonable raters "
-        "might disagree (e.g., Management Analyst, Radiologic Technologist, Real Estate Agent, "
-        "Airline Pilot, Chef/Head Cook). Each occupation is scored individually with full "
-        "chain-of-thought reasoning. Output is human-reviewed before proceeding. Temperature=0.1."
+        "Scores 31 boundary-case occupations spanning the full w range -- jobs where "
+        "separability is genuinely debatable (e.g., software developers, registered nurses, "
+        "veterinarians, social workers). Each case includes an expected w value and reasoning. "
+        "Scored in batches of 10 with full chain-of-thought reasoning. Temperature=0.2."
     )
 
-    pdf.sub_subsection_header("Phase 2: Batch Scorer (Claude Opus 4.6)")
+    pdf.sub_subsection_header("Phase 2: Batch Scoring (Claude Opus 4.6)")
     pdf.body_text(
-        "Processes all 462 occupations in batches of 25. All three variables are scored jointly "
-        "per occupation for coherence, but the prompt enforces structured independent reasoning "
-        "blocks to mitigate halo effects:"
-    )
-    pdf.bullet(
-        "Model reasons ONLY about throughput and scaling properties, ignoring "
-        "human-relationship and workflow dimensions.",
-        bold_prefix="x_scale block:"
-    )
-    pdf.bullet(
-        "Model reasons ONLY about whether the human is essential to the service, "
-        "ignoring workflow complexity and scaling.",
-        bold_prefix="x_sub block:"
-    )
-    pdf.bullet(
-        "Model reasons ONLY about orchestration complexity of the task flow, "
-        "ignoring scaling and substitutability.",
-        bold_prefix="workflow block:"
-    )
-    pdf.bullet(
-        "Model notes tensions between variable assessments without adjusting "
-        "scores. Frequent tensions signal genuinely complex occupations.",
-        bold_prefix="coherence note:"
-    )
-    pdf.body_text(
-        "8-10 calibration exemplars from Phase 1 are embedded in each batch prompt as "
-        "reference anchors. Temperature=0.2."
+        "Processes all 310 occupations in batches of 20 with calibration anchors embedded "
+        "in context. Checkpoint/resume support via incremental JSON saves. Temperature=0.2."
     )
 
     pdf.sub_subsection_header("Phase 3: Hybrid Auditor")
     pdf.body_text(
-        "Two-component quality assurance. First, programmatic checks (Python): distributional "
-        "analysis (no variable >35% concentrated at a single anchor), SOC-group coherence "
-        "(within-group standard deviation checks), cross-variable correlation caps (x_scale "
-        "vs. x_sub correlation should not exceed 0.80), and predefined consistency rules "
-        "(e.g., low x_sub + high workflow_simplicity is flagged as rare). Second, a semantic "
-        "auditor agent (Claude Opus 4.6) reviews flagged occupations (~10-15% of total) "
-        "individually at temperature=0.1, either confirming or revising scores with reasoning."
+        "Two-component quality assurance. First, programmatic checks: distribution skew "
+        "(no single w value > 45%), SOC-group coherence (within 2-digit SOC group, "
+        "standard deviation < 0.35), and consistency checks (high tc_adj + low w is "
+        "flagged as suspicious). Second, a semantic auditor (Claude Opus 4.6) re-scores "
+        "flagged occupations individually at temperature=0.1, either confirming or revising."
     )
 
     pdf.sub_subsection_header("Phase 4: Reliability Verification")
     pdf.body_text(
-        "A stratified random sample of 46 occupations (10%) is re-scored through Phase 2 "
-        "with an independent run. Weighted quadratic kappa is computed for each variable. "
-        "Acceptable thresholds: kappa >= 0.75, within-one-step agreement >= 90%, exact "
-        "agreement >= 65%. If any variable fails, the pipeline enters a diagnostic loop: "
-        "examine discrepant occupations, identify patterns, revise prompt guidance, and "
-        "re-run full scoring."
+        "A stratified random sample (~10%) is re-scored with an independent run. Weighted "
+        "quadratic kappa is computed. Thresholds: kappa >= 0.75, within-one-step agreement "
+        ">= 90%, exact agreement >= 65%."
     )
 
     # =========================================================================
@@ -821,19 +747,18 @@ def build_pdf():
     )
 
     # 5.1 d_max
-    pdf.subsection_header("5.1  d_max -- Displacement Ceiling")
+    pdf.subsection_header("5.1  d_max(i) -- Displacement Ceiling")
     pdf.body_text(
-        "The absolute maximum rate at which jobs can disappear, based on "
-        "historical precedent. No industry has ever shed more than approximately 12% of "
-        "employment per year, even during massive disruptions (typesetters, switchboard "
-        "operators, etc.). Over the 18-month forecast window, that translates to 18%."
+        "The maximum rate at which jobs can disappear within a sector, scored per industry. "
+        "Historical precedent sets the reference: no industry has ever shed more than "
+        "approximately 12% of employment per year, even during massive disruptions "
+        "(typesetters, switchboard operators). d_max is calibrated per sector to reflect "
+        "structural differences in how rapidly employment can contract."
     )
     pdf.body_text(
-        "d_max = 0.18 is a universal constant, applied identically across all industries "
-        "and scenarios. Industry-specific adoption differences are already captured by T "
-        "(adoption velocity) and R (structural resistance), so varying the ceiling would "
-        "double-count those effects. Everything else in the equation multiplies against "
-        "this ceiling to pull the number down."
+        "d_max is scenario-stable -- the structural ceiling on displacement speed does not "
+        "change based on AI capability level. Everything else in the equation multiplies "
+        "against this ceiling to pull the realized displacement number down."
     )
 
     # 5.2 E
@@ -894,30 +819,31 @@ def build_pdf():
     pdf.bullet("t_0 = inflection point (when adoption is at 50%)")
     pdf.bullet("alpha = steepness (convexity) of the transition curve")
 
-    pdf.sub_subsection_header("alpha -- Convexity Exponent (fixed at ~3)")
+    pdf.sub_subsection_header("alpha -- Convexity Exponent (fixed at 1.2)")
     pdf.body_text(
         "alpha controls how sharply industries transition from low to high adoption once they "
-        "pass the inflection point. Fixed at alpha ~ 3 for all industries. Squaring the "
-        "transition slope punishes industries near the inflection and rewards those well past "
-        "it, analogous to k ~ 2 in the sigmoid transform phi(a)."
+        "pass the inflection point. Fixed at alpha = 1.2 for all industries, producing a "
+        "gradual S-curve that avoids extreme separation between early and late adopters. "
+        "This moderate steepness reflects the reality that AI adoption is a continuous "
+        "process rather than a sharp switch."
     )
 
     cw = [40, 40, 86]
     pdf.table_header(cw, ["t_0 (inflection)", "T(18mo)", "Interpretation"])
     pdf.table_row(cw, [
-        "0.5 years", "0.953", "Already past inflection; near-full adoption by 18mo"
+        "0.5 years", "0.769", "Past inflection; strong adoption by 18mo"
     ], ["C", "C", "L"])
     pdf.table_row(cw, [
-        "1.0 years", "0.818", "Adoption well underway, majority adopted"
+        "1.0 years", "0.646", "Adoption underway, majority adopted"
     ], ["C", "C", "L"])
     pdf.table_row(cw, [
         "1.5 years", "0.500", "At inflection point at 18mo; half adopted"
     ], ["C", "C", "L"])
     pdf.table_row(cw, [
-        "2.0 years", "0.182", "Still early; most adoption ahead"
+        "2.0 years", "0.354", "Still early; most adoption ahead"
     ], ["C", "C", "L"])
     pdf.table_row(cw, [
-        "2.5 years", "0.047", "Pre-inflection; minimal adoption within window"
+        "2.5 years", "0.231", "Pre-inflection; limited adoption within window"
     ], ["C", "C", "L"])
 
     pdf.ln(2)
@@ -943,46 +869,33 @@ def build_pdf():
     ], ["C", "L", "L"])
 
     pdf.sub_subsection_header("Derived Formulas")
-    pdf.equation_block("D_base   = avg(T1, T2, T3)")
-    pdf.equation_block("D_spread = max(T1, T2, T3) - D_base")
-    pdf.equation_block("D        = D_base + 0.25 * D_spread")
+    pdf.equation_block("D        = avg(T1, T2, T3, T4)")
     pdf.equation_block("t_0      = 1.5*D - 0.5*T4 - 0.5")
     pdf.equation_block("T(18mo)  = 1 / (1 + exp(-alpha * (1.5 - t_0)))")
 
     pdf.body_text(
-        "T1-T3 act as drag factors (higher score = slower adoption), while T4 (Competitive "
-        "Pressure) acts as an accelerant (higher score = faster adoption, pulling the inflection "
-        "point earlier)."
+        "D averages all four sub-scores. T4 (Competitive Pressure) acts as an accelerant -- "
+        "it appears both in the D average and as a direct subtraction in the t_0 formula, "
+        "effectively giving it greater weight in pulling the inflection point earlier. T1-T3 "
+        "act primarily as drag factors (higher score = slower adoption)."
     )
 
     pdf.body_text(
-        "The bottleneck adjustment (D_spread) captures the reality that a single extreme drag "
-        "-- e.g., an unresolved regulatory barrier -- can slow adoption beyond what the average "
-        "would suggest. When all three drags are equal, D_spread = 0 and D collapses to the "
-        "simple average. When one drag is much worse, D is pulled partially toward the "
-        "bottleneck. The coefficient is set to 0.25 (rather than higher) because T is scored "
-        "at the industry level and industries are heterogeneous -- a systems integration "
-        "bottleneck at large hospital systems does not equally bind a solo-practice "
-        "dermatologist. The partial adjustment acknowledges bottleneck effects without "
-        "overstating them across diverse actors within a sector."
+        "T is scored separately for each friction scenario (Low and High). In the low-friction "
+        "scenario, tools integrate more easily and competitive pressure accelerates adoption. "
+        "In the high-friction scenario, institutional resistance stiffens and customer "
+        "acceptance lags."
     )
 
     pdf.body_text(
-        "T is scored separately for each scenario. In the high-tech scenarios, tools are more "
-        "mature and integration is easier, so T2 may decrease; competitive pressure (T4) may "
-        "increase as early movers demonstrate value. In high-friction scenarios, T1 increases "
-        "as institutional resistance stiffens."
-    )
-
-    pdf.body_text(
-        "Full separate T1-T4 per scenario with separate alpha, yielding independent "
-        "T(18mo) values for each of the four 2x2 scenarios."
+        "Separate T1-T4 scores per friction scenario with fixed alpha=1.2, yielding "
+        "independent T(18mo) values for the Low and High friction scenarios."
     )
 
     pdf.sub_subsection_header("Adoption-Gated Flag ('Powder Kegs')")
     pdf.body_text(
         "Industries are flagged as 'adoption-gated' when T < 0.2 AND the displacement "
-        "ceiling (d_max * phi(a) * E) > 0.10. These are industries where the technical and "
+        "ceiling (d_max * S(a) * E) > 0.10. These are industries where the technical and "
         "economic conditions for significant displacement are already met, but adoption "
         "timing is the sole constraint. A single catalyst -- a competitor automating, a "
         "turnkey vendor launching, a regulatory green light -- could trigger rapid "
@@ -1020,7 +933,7 @@ def build_pdf():
     pdf.equation_block("R = 1 - 0.7 * (F - 3) / 9")
     pdf.body_text(
         "Range: F=3 -> R=1.00 (no barrier), F=12 -> R=0.30 (strong barrier). "
-        "Most occupations cluster near R=1.0; R bites hard on approximately 50-80 of 462 jobs "
+        "Most occupations cluster near R=1.0; R bites hard on approximately 50-80 of 310 jobs "
         "(healthcare providers, licensed professionals, safety-critical operators)."
     )
 
@@ -1044,8 +957,8 @@ def build_pdf():
         "Varies (mod/sig)", "Not applicable"
     ], ["L", "L", "C", "C"])
     pdf.table_row(cw, [
-        "d_max", "Displacement ceiling (0.18)",
-        "Constant", "Constant"
+        "d_max(i)", "Displacement ceiling",
+        "Fixed", "Fixed"
     ], ["L", "L", "C", "C"])
     pdf.table_row(cw, [
         "E(i)", "Elasticity dampener",
@@ -1099,13 +1012,13 @@ def build_pdf():
     cw = [30, 82, 54]
     pdf.table_header(cw, ["Level", "Data", "Rows"])
     pdf.table_row(cw, [
-        "Industries", "70 NAICS codes rolled to 17 sectors", "17 summary rows"
+        "Industries", "70 NAICS codes rolled to 21 sectors", "21 summary rows"
     ], ["L", "L", "L"])
     pdf.table_row(cw, [
-        "Jobs", "462 job titles with BLS employment, wages, projections", "462 rows"
+        "Jobs", "310 occupations with BLS employment, wages, projections", "310 rows"
     ], ["L", "L", "L"])
     pdf.table_row(cw, [
-        "Tasks", "Tasks with Time_Share_Pct, Importance, Frequency, GWA", "3,552 rows"
+        "Tasks", "Tasks with Time_Share_Pct, Importance, Frequency, GWA", "5,383 rows"
     ], ["L", "L", "L"])
     pdf.table_row(cw, [
         "Staffing", "Top occupations by share within each sector", "Variable"
@@ -1118,7 +1031,7 @@ def build_pdf():
         "foundation; higher levels are derived by aggregation."
     )
     pdf.body_text(
-        "19 GWA (Generalized Work Activity) categories classify all 3,552 tasks, providing a "
+        "19 GWA (Generalized Work Activity) categories classify all 5,383 tasks, providing a "
         "structured taxonomy for understanding the distribution of task types across occupations."
     )
 
@@ -1132,12 +1045,12 @@ def build_pdf():
         "separate from task-level automatability scoring:"
     )
 
-    pdf.subsection_header("Industry Frictions Tab (17 industries)")
+    pdf.subsection_header("Industry Frictions Tab (21 sectors)")
     pdf.bullet("Reference columns: Sector ID, Industry Name, Employment (K), Avg Median Wage")
     pdf.bullet(
         "T sub-component columns: T1 (Institutional Inertia), T2 (Systems Integration), "
-        "T3 (Customer Acceptance), T4 (Competitive Pressure) -- scored per scenario, "
-        "with derived D_base, D_spread, D, t0, alpha, and T(18mo)"
+        "T3 (Customer Acceptance), T4 (Competitive Pressure) -- scored per friction scenario, "
+        "with derived D, t0, and T(18mo)"
     )
     pdf.bullet("R sub-component columns: f1 Liability, f2 Statutory Human Mandate, f3 Labor & Gatekeeping, F sum, R Value")
     pdf.bullet("E column: Elasticity dampener (dropdown from {0.25, 0.50, 1.00})")

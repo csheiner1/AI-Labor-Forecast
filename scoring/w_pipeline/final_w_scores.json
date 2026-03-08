@@ -1,0 +1,2498 @@
+[
+  {
+    "soc_code": "43-9021",
+    "title": "Data entry keyers",
+    "w": 1.0,
+    "w_reasoning": "Data entry is the canonical example of fully separable work. Each record or document is an independent unit that can be processed without affecting other tasks. There is virtually no interleaving of automatable and non-automatable work\u2014the entire job consists of discrete, self-contained data input tasks. Handoff friction is minimal since batches of records can be processed independently.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-3092",
+    "title": "Court reporters and simultaneous captioners",
+    "w": 0.75,
+    "w_reasoning": "Court reporting involves real-time transcription that is tightly coupled to the proceedings. The captioning/transcription task (highly automatable via speech-to-text) occurs simultaneously with the need for accuracy verification and formatting decisions. However, the core automatable task (transcription) is relatively self-contained\u2014AI can produce a draft transcript that a human reviews afterward. The real-time captioning component has higher coupling, but post-session editing is separable. Overall mostly separable with natural phase boundaries between capture and review.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-3099",
+    "title": "Financial clerks, all other",
+    "w": 1.0,
+    "w_reasoning": "Financial clerks perform routine processing tasks\u2014data entry, transaction recording, reconciliation, filing\u2014that are largely discrete and independent. These tasks are temporally clustered and can be batched. The automatable portions (calculations, data processing, record-keeping) can be separated from any remaining human tasks (exception handling, customer communication) at natural boundaries. Very high separability.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "23-2011",
+    "title": "Paralegals and legal assistants",
+    "w": 0.75,
+    "w_reasoning": "Paralegal work divides naturally into document review/research (highly automatable) and client-facing/attorney-support work (less automatable). Document review, legal research, and drafting can be offloaded to AI in distinct phases, with results handed off at natural boundaries. Some interleaving occurs when research informs ongoing case strategy discussions, but handoffs are manageable. This is the textbook example of mostly separable work.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-2053",
+    "title": "Insurance underwriters",
+    "w": 0.75,
+    "w_reasoning": "Underwriting involves data gathering, risk assessment calculations, and decision-making. The data gathering and initial risk scoring are highly automatable and can be separated from the judgment-intensive final decision and negotiation phases. The workflow has natural phases: intake/data collection \u2192 analysis \u2192 decision \u2192 communication. AI can handle the first two phases largely independently, with humans focusing on complex cases and final approvals. Some information coupling exists but at phase boundaries.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-2011",
+    "title": "Accountants and auditors",
+    "w": 0.75,
+    "w_reasoning": "Accounting work separates well into bookkeeping/data processing (automatable) and advisory/judgment tasks (less automatable). Routine tasks like journal entries, reconciliations, and standard tax preparation can be batched and offloaded. The advisory, audit judgment, and client relationship components remain human. These operate in different functional domains with natural handoff points (e.g., AI processes the books, human reviews and advises). Minor workflow adjustment needed for audit work where analysis and judgment interleave more.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-3042",
+    "title": "Technical writers",
+    "w": 0.5,
+    "w_reasoning": "Technical writing involves research/information gathering, drafting, editing, and stakeholder consultation. AI can handle initial drafting and formatting, which are significant portions of the work. However, the writing process involves iterative cycles of drafting, reviewing with subject matter experts, and revising\u2014creating moderate interleaving. The information gathering phase is separable, but the core writing-revision cycle has tighter coupling between AI-assistable drafting and human judgment about clarity and accuracy. Partially to mostly separable.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-1161",
+    "title": "Market research analysts and marketing specialists",
+    "w": 0.75,
+    "w_reasoning": "Market research involves data collection, statistical analysis, report generation, and strategic interpretation. Data collection and analysis are automatable and can be temporally separated from the strategic interpretation and presentation phases. However, the analytical process often involves iterative exploration where insights from one analysis inform the next query\u2014creating moderate coupling. Report drafting is separable, but the insight-generation process interleaves automatable computation with human judgment. Overall mostly separable with some interleaving during the analysis phase.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-2034",
+    "title": "Radiologic technologists and technicians",
+    "w": 0.25,
+    "w_reasoning": "Radiologic technologists position patients, operate imaging equipment, and ensure image quality\u2014all requiring physical presence and real-time judgment. The automatable portions (image processing, protocol selection, documentation) are deeply embedded within the patient encounter workflow. The technologist must be physically present during imaging, and decisions about positioning and technique happen in rapid succession with the physical task. Documentation can be separated, but it's a small portion. Very low task coverage further limits separability relevance, but the physical-cognitive interleaving is tight.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-2081",
+    "title": "Tax examiners and collectors, and revenue agents",
+    "w": 0.75,
+    "w_reasoning": "Tax examination involves case review, data analysis, taxpayer communication, and enforcement decisions. The data analysis and initial case screening are automatable and can be separated from the judgment-intensive examination and taxpayer interaction phases. Cases can be pre-screened and flagged by AI before human review. However, during active examination, the agent alternates between reviewing documents (automatable) and making judgment calls, with some interleaving. The collection/enforcement component requires human interaction. Overall mostly separable with natural case-level boundaries.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-2052",
+    "title": "Pharmacy technicians",
+    "w": 0.75,
+    "w_reasoning": "Pharmacy tech work includes discrete, separable tasks like data entry for prescriptions, inventory management, and insurance claim processing that can be temporally clustered and offloaded. However, tasks like counting/dispensing medications, customer interactions, and verifying labels are interleaved with these automatable components. The handoff friction is moderate\u2014AI could handle prescription data entry and insurance processing in batches, while the tech focuses on physical dispensing and customer service. Overall, mostly separable with natural phase boundaries.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "15-1251",
+    "title": "Software Developers & Programmers",
+    "w": 0.75,
+    "w_reasoning": "Software development involves writing code, debugging, testing, code review, and design\u2014activities where AI-assistable tasks (boilerplate code generation, unit test writing, documentation) are deeply interleaved with non-automatable tasks (architectural decisions, complex debugging, understanding requirements). Developers alternate between AI-assistable coding and judgment-heavy design within the same work session, often within minutes. AI assists in real-time (copilot-style) rather than handling discrete separable chunks. Information coupling is tight\u2014the developer needs AI output immediately to continue their thought process.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-2051",
+    "title": "Financial and investment analysts",
+    "w": 0.75,
+    "w_reasoning": "Financial analysts have clearly separable phases: data gathering, financial modeling, and report generation are automatable and can be temporally clustered, while client advisory, investment judgment, and strategic recommendations require human expertise. Data collection and preliminary analysis can be batched and handed off at natural boundaries. However, the analytical process itself involves iterative judgment interleaved with computation. On balance, the workflow has good natural separation points between research/data phases and advisory/judgment phases.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1141",
+    "title": "Registered nurses",
+    "w": 0.5,
+    "w_reasoning": "Nursing involves charting, medication administration documentation, and care plan updates (automatable) deeply interleaved with patient assessment, physical care, and clinical judgment throughout each shift. A nurse alternates between documenting vitals and responding to patient needs every few minutes. The automatable documentation tasks are sub-steps embedded within continuous patient care episodes rather than separate activities. Information coupling is tight\u2014charting happens in real-time alongside care delivery.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-1021",
+    "title": "General and operations managers",
+    "w": 0.75,
+    "w_reasoning": "Management involves reporting, scheduling, budgeting (automatable) alongside leadership, decision-making, conflict resolution, and relationship management (non-automatable). Reporting and data analysis can be batched and reviewed later\u2014managers don't need to be present during AI-generated report creation. However, in construction specifically, managers frequently alternate between reviewing data/plans and making on-site decisions. The administrative tasks cluster reasonably well into separate time blocks from interpersonal/judgment tasks.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-1011",
+    "title": "Architects, except landscape and naval",
+    "w": 0.5,
+    "w_reasoning": "Architecture involves drafting, code compliance checking, and rendering (automatable) alongside creative design, client consultation, and site assessment (non-automatable). The design process itself is iterative\u2014architects move between creative ideation and technical execution within the same work session. AI-generated drafts require immediate human review and modification. While some tasks like code compliance and energy modeling are separable, the core design workflow tightly couples creative and technical elements.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-2021",
+    "title": "Elementary & Middle School Teachers",
+    "w": 0.5,
+    "w_reasoning": "Teaching has some separable components: lesson planning, grading, and administrative paperwork can be temporally clustered outside classroom hours. However, classroom instruction (the majority of work time) mixes automatable elements (content delivery) with non-automatable elements (student engagement, behavior management, real-time adaptation). The separable tasks (grading, planning) occur at natural boundaries (before/after school), making them extractable, but they represent a minority of total work time.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1131",
+    "title": "Veterinarians",
+    "w": 0.25,
+    "w_reasoning": "Veterinary work involves physical examination, surgery, and diagnosis interleaved with record-keeping, lab result interpretation, and treatment planning. During patient encounters, cognitive assessment and physical action alternate rapidly. AI could assist with diagnostic image analysis or medical records, but the vet must be present and continuously integrating information during examinations and procedures. The workflow is similar to physicians\u2014judgment, physical action, and documentation are tightly coupled.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "33-3021",
+    "title": "Detectives and criminal investigators",
+    "w": 0.75,
+    "w_reasoning": "Detective work includes evidence analysis, database searches, report writing, and surveillance footage review (automatable) alongside interviews, interrogations, undercover work, and judgment-heavy case strategy (non-automatable). Many automatable tasks like background checks and data analysis can be batched and reviewed at natural boundaries. However, during active investigations, detectives need real-time information integration. The research/analysis phase is reasonably separable from fieldwork and interpersonal investigation phases.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-3051",
+    "title": "Urban and regional planners",
+    "w": 0.75,
+    "w_reasoning": "Urban planning involves data analysis, GIS mapping, demographic projections (automatable) alongside community engagement, policy negotiation, and stakeholder management (non-automatable). The analytical work can be temporally clustered and batched\u2014planners can review AI-generated analyses at natural workflow boundaries. Community meetings and stakeholder interactions are distinct from desk-based analytical work. The two domains have relatively clean handoff points, though planners do iterate between analysis and judgment during plan development.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-1041",
+    "title": "Compliance officers",
+    "w": 0.75,
+    "w_reasoning": "Compliance officers have a mix of document review, regulatory monitoring, report writing, and interpersonal investigation/advisory tasks. The automatable portions (scanning regulations, monitoring data, generating compliance reports) are temporally clustered and can be batched separately from judgment-heavy tasks like conducting interviews, advising management, and interpreting ambiguous situations. Handoff friction is moderate\u2014AI can pre-process documents and flag issues, which the officer reviews periodically rather than continuously. Information coupling is moderate but manageable at natural phase boundaries.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "21-1021",
+    "title": "Child, family, and school social workers",
+    "w": 0.5,
+    "w_reasoning": "Social workers spend significant time in direct client interaction (counseling, home visits, crisis intervention) where judgment and empathy are deeply interleaved. Some administrative tasks (case documentation, referral paperwork, scheduling) are separable and can be batched. However, much of the cognitive work\u2014assessing family dynamics, making safety determinations\u2014happens in real-time during client encounters. The automatable portions (documentation, information gathering) are partially separable but often interleaved with client-facing work throughout the day.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1122",
+    "title": "Therapists",
+    "w": 0.5,
+    "w_reasoning": "Therapists (occupational, recreational, speech-language, etc.) combine hands-on physical treatment with real-time clinical assessment. During treatment sessions, they continuously observe patient responses, adjust techniques, and make clinical decisions\u2014automatable cognitive support (e.g., treatment planning, progress documentation) is interleaved with physical and interpersonal tasks. Documentation and treatment planning can be separated to some degree, but the core therapeutic work tightly couples assessment and intervention. AI assistance would need to operate in real-time during sessions.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1021",
+    "title": "Dentists, general",
+    "w": 0.25,
+    "w_reasoning": "Dentistry involves continuous interleaving of physical procedures, real-time diagnostic judgment, and patient communication. During procedures, the dentist simultaneously assesses tissue condition, makes treatment decisions, and performs manual work. Some tasks like reviewing X-rays, treatment planning, and administrative work are temporally separable, but the core clinical work (60%+ of time) tightly couples cognition and physical action. The dentist must be physically present and cognitively engaged throughout procedures.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1071",
+    "title": "Physician assistants",
+    "w": 0.5,
+    "w_reasoning": "PAs conduct patient examinations, diagnose conditions, prescribe treatments, and perform procedures\u2014all involving rapid cycling between observation, judgment, and action during patient encounters. Some tasks like reviewing lab results, documentation, prescription management, and referral letters are separable. However, the core clinical encounter (the majority of work time) deeply interleaves automatable information processing with non-automatable physical examination and interpersonal care. Handoff friction would be high during patient encounters but low for between-encounter administrative work.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1211",
+    "title": "Physicians & Surgeons",
+    "w": 0.25,
+    "w_reasoning": "Physicians and especially surgeons operate in workflows where diagnostic reasoning, physical examination/intervention, and real-time decision-making are tightly coupled. Surgeons exemplify minimal separability\u2014assessment, decision, and physical action interleave continuously. For non-surgical physicians, some administrative tasks (charting, ordering, reviewing results) can be separated, but the core patient encounter involves rapid alternation between automatable cognition and non-automatable judgment/physical tasks. The surgical component pulls this toward lower separability.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-3034",
+    "title": "School psychologists",
+    "w": 0.75,
+    "w_reasoning": "School psychologists administer and score assessments (highly separable\u2014AI can score and generate preliminary reports), write evaluation reports, and conduct counseling/consultation. Test scoring and report drafting are temporally clustered and can be batched. However, direct student assessment, counseling sessions, and consultation with teachers/parents involve real-time interpersonal judgment. The automatable tasks (scoring, data analysis, report generation) occur at natural boundaries between the non-automatable tasks (direct interaction), making separation feasible.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "21-2011",
+    "title": "Clergy",
+    "w": 0.5,
+    "w_reasoning": "Clergy work involves sermon preparation, counseling, leading worship, community organizing, and administrative duties. Sermon research/drafting and administrative tasks are temporally separable from pastoral counseling and worship leadership. However, the core of clergy work\u2014spiritual guidance, emotional support, community presence\u2014is deeply interpersonal and non-automatable. The automatable portions (research, scheduling, communication drafting) are relatively discrete and can be handled at natural boundaries. Moderate separability overall.",
+    "source": "calibration",
+    "audit_action": "revised",
+    "audit_notes": "Original w=0.75 is too high given tc_adj_sig of only 0.068 and all tasks scoring 0.00 autonomy. In healthcare settings, clergy work (chaplaincy) is overwhelmingly interpersonal \u2014 bedside spiritual care, grief counseling, end-of-life support \u2014 with minimal temporally separable AI-augmentable components. The original justification cited ancillary tasks (research, scheduling, drafting) not reflected in the actual task distribution. Comparable interpersonal occupations like therapists, social workers, and clinical psychologists score 0.50. Revised to 0.50 to align with these anchors and the low automation signal."
+  },
+  {
+    "soc_code": "19-3033",
+    "title": "Clinical and counseling psychologists",
+    "w": 0.5,
+    "w_reasoning": "Clinical psychologists spend most of their time in therapy sessions where observation, empathy, clinical judgment, and intervention are continuously interleaved. Some tasks\u2014test scoring, report writing, treatment planning, literature review\u2014are separable and can be batched between sessions. However, during the therapeutic encounter itself (the majority of work), automatable elements (e.g., tracking symptom patterns) are deeply embedded in the interpersonal flow. The between-session work is separable but the in-session work is not.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1215",
+    "title": "Family medicine physicians",
+    "w": 0.5,
+    "w_reasoning": "Family medicine physicians conduct patient encounters involving history-taking, physical examination, diagnosis, and treatment planning in rapid succession. During each encounter, cognitive processing (differential diagnosis, reviewing records) interleaves with physical examination and patient communication. Between encounters, documentation and order management are more separable. However, the core workflow\u2014patient encounters\u2014involves continuous alternation between automatable information processing and non-automatable clinical judgment and physical tasks. AI can assist in real-time but cannot take over distinct chunks.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-9161",
+    "title": "Emergency management directors",
+    "w": 0.5,
+    "w_reasoning": "Emergency management directors coordinate disaster preparedness, response, and recovery efforts. Their work involves significant planning phases (developing emergency plans, writing reports, coordinating with agencies) that are somewhat separable from real-time crisis management. During non-emergency periods, tasks like updating plans, analyzing risk data, and preparing training materials could be partially offloaded to AI. However, during actual emergencies, decision-making, communication, and coordination are tightly interleaved and require continuous human judgment. The handoff friction is moderate\u2014AI could handle document drafting, data analysis, and routine communications in batches, but strategic decisions and stakeholder coordination remain deeply integrated. Given the mix of separable planning/administrative work and interleaved crisis management responsibilities, this occupation falls in the partially separable range.",
+    "source": "calibration",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-1121",
+    "title": "Meeting, convention, and event planners",
+    "w_reasoning": "Event planning involves vendor research, budget tracking, scheduling, and logistics coordination (automatable) alongside client relationship management, on-site event execution, and creative problem-solving (non-automatable). Many automatable tasks like venue comparison, budget spreadsheets, and email drafting can be temporally clustered and offloaded at natural boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-3051",
+    "title": "Payroll and timekeeping clerks",
+    "w_reasoning": "Payroll and timekeeping work consists of highly routine, discrete tasks: data entry, calculating wages, processing deductions, generating reports, and maintaining records. These tasks are largely independent and can be fully offloaded to automated systems with minimal human intervention needed only for exception handling.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-2082",
+    "title": "Tax preparers",
+    "w_reasoning": "Tax preparation involves data gathering, form completion, calculation, and filing (highly automatable) alongside client consultation and judgment on complex situations. The automatable portions are concentrated in specific phases and can be separated from the advisory/client-facing components with relatively clean handoffs.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-2011",
+    "title": "Advertising and promotions managers",
+    "w_reasoning": "Advertising managers oversee campaign strategy, creative direction, team leadership, and client relationships (non-automatable) alongside market analysis, performance reporting, budget tracking, and media planning analytics (automatable). The automatable analytical and reporting tasks can be offloaded at natural workflow boundaries, though strategic decisions depend on those outputs.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "41-3011",
+    "title": "Advertising sales agents",
+    "w_reasoning": "Advertising sales involves prospecting, client meetings, relationship building, and negotiation (non-automatable) alongside lead generation research, proposal drafting, CRM data entry, and performance reporting (automatable). The automatable tasks are largely preparatory or follow-up activities that occur at natural boundaries before and after client interactions.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "23-1022",
+    "title": "Arbitrators, mediators, and conciliators",
+    "w_reasoning": "The core work of mediation and arbitration involves real-time interpersonal facilitation, active listening, reading emotional dynamics, and guiding negotiations\u2014all deeply non-automatable. Automatable tasks like case research, document review, and decision drafting are preparatory or follow-up, but the central mediation process requires continuous human judgment and presence.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-1011",
+    "title": "Art directors",
+    "w_reasoning": "Art direction involves creative vision, team leadership, client consultation, and aesthetic judgment (non-automatable) alongside mood board creation, asset generation, layout iteration, and production file preparation (partially automatable). AI-generated drafts and mockups can assist but creative direction requires continuous human evaluation interleaved with production tasks.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-2032",
+    "title": "Diagnostic medical sonographers",
+    "w_reasoning": "Sonographers must be physically present to position patients, manipulate the transducer in real-time based on what they observe on screen, and make immediate adjustments. The imaging process requires continuous physical action interleaved with real-time diagnostic judgment. AI image analysis could assist but the core scanning workflow is inseparable.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-1024",
+    "title": "Graphic designers",
+    "w_reasoning": "Graphic design involves creative concepting, client consultation, and aesthetic judgment (non-automatable) alongside layout production, asset creation, resizing, and file preparation (automatable). AI can generate drafts and variations, but designers typically iterate rapidly between creative judgment and production, making these tasks moderately interleaved.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "21-1022",
+    "title": "Healthcare social workers",
+    "w_reasoning": "Healthcare social workers spend most of their time in direct patient/family interaction\u2014counseling, crisis intervention, discharge planning meetings, and advocacy\u2014where empathy and judgment are continuously required. Documentation and resource research are automatable but deeply interleaved with patient encounters throughout the day.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-3091",
+    "title": "Interpreters and translators",
+    "w_reasoning": "Translation work (written) is highly separable\u2014documents can be batch-processed by AI with human review. However, interpretation (spoken, real-time) requires continuous human presence and judgment. The mix of these modalities matters; for written translation, separability is high, but simultaneous interpretation is tightly coupled. Overall, the occupation spans both modes.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-1022",
+    "title": "Microbiologists",
+    "w_reasoning": "Microbiology involves laboratory work (culturing, staining, microscopy) requiring physical presence and hands-on technique, interleaved with data analysis, literature review, and report writing (automatable). The automatable analytical and writing tasks can be separated into distinct phases, but experimental design and lab work are tightly coupled with ongoing data interpretation.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-2032",
+    "title": "Public relations managers",
+    "w_reasoning": "PR managers handle media monitoring, press release drafting, analytics reporting, and content scheduling (automatable) alongside crisis management, media relationship building, strategic counsel, and team leadership (non-automatable). The automatable tasks are largely preparatory or routine and can be offloaded at natural workflow boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-3031",
+    "title": "Public relations specialists",
+    "w_reasoning": "PR specialists draft press releases, monitor media coverage, compile reports, and manage social media content (automatable) alongside pitching journalists, managing events, handling crises, and building relationships (non-automatable). The content creation and monitoring tasks can be temporally clustered and offloaded with natural handoff points.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1224",
+    "title": "Radiologists",
+    "w_reasoning": "Radiologists primarily interpret medical images and generate diagnostic reports\u2014tasks where AI can pre-screen and flag findings. However, complex cases require integrating clinical context, consulting with referring physicians, and performing interventional procedures. Image interpretation is relatively separable (AI pre-reads), but clinical judgment and consultation are interleaved.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "21-1018",
+    "title": "Substance abuse, behavioral disorder, and mental health counselors",
+    "w_reasoning": "Counselors spend the majority of their time in direct therapeutic sessions where empathy, clinical judgment, and real-time responsiveness are continuously required. Documentation and treatment plan updates are automatable but are deeply interleaved with the therapeutic process. Similar to clinical psychologists.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-3022",
+    "title": "Survey researchers",
+    "w_reasoning": "Survey research involves questionnaire design, data collection management, statistical analysis, and report writing (largely automatable) alongside research design decisions, interpretation of results, and stakeholder communication (less automatable). The automatable tasks are concentrated in distinct phases\u2014data processing and analysis\u2014that can be cleanly offloaded.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-2056",
+    "title": "Veterinary technologists and technicians",
+    "w_reasoning": "Vet techs perform physical tasks\u2014restraining animals, administering medications, assisting in surgery, collecting samples\u2014that require continuous physical presence and real-time judgment. Record-keeping and lab data entry are automatable but represent a small portion of work that is deeply interleaved with hands-on animal care throughout the day.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-9041",
+    "title": "Architectural and engineering managers",
+    "w_reasoning": "These managers handle project budgeting, scheduling, resource allocation, and reporting (automatable) alongside technical oversight, team leadership, client relationships, and strategic decision-making (non-automatable). The automatable administrative and analytical tasks can be offloaded at natural workflow boundaries, similar to general operations managers.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-2051",
+    "title": "Civil engineers",
+    "w_reasoning": "Civil engineering involves structural calculations, CAD drafting, code compliance checking, and data analysis (automatable) alongside site visits, client consultation, design judgment, and project coordination (non-automatable). The computational and drafting tasks can be separated into distinct phases, though design iteration involves cycling between analysis and judgment. Similar to architects.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-3011, 17-3012, 17-3013, 17-3019",
+    "title": "Drafters",
+    "w_reasoning": "Drafting work involves creating technical drawings, CAD modeling, and documentation that are largely discrete tasks. These automatable tasks (generating standard drawings, applying codes/standards, dimensioning) can be separated from the non-automatable tasks (interpreting engineer/architect intent, resolving ambiguities, coordinating with project teams). Handoffs occur at natural boundaries between design phases.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-2071",
+    "title": "Electrical engineers",
+    "w_reasoning": "Electrical engineering involves circuit design, simulation, analysis (partially automatable) interleaved with creative problem-solving, physical testing, client consultation, and site visits. The analytical and computational tasks can be somewhat separated, but design iteration requires frequent cycling between automated analysis and human judgment.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-3021, 17-3022, 17-3023, 17-3024, 17-3025, 17-3026, 17-3027, 17-3028, 17-3029",
+    "title": "Engineering Technologists & Technicians",
+    "w_reasoning": "Engineering technicians perform testing, data collection, equipment calibration, and documentation alongside hands-on physical work with equipment and prototypes. The data recording and report generation tasks are separable, but much of the work requires physical presence and real-time judgment during testing procedures, making full separation difficult.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-2081",
+    "title": "Environmental engineers",
+    "w_reasoning": "Environmental engineering involves data analysis, modeling, regulatory compliance checking, and report writing (automatable) alongside site assessments, stakeholder engagement, and complex judgment about remediation strategies. The analytical and documentation phases are reasonably separable from fieldwork and advisory tasks.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-4043",
+    "title": "Geological technicians, except hydrologic technicians",
+    "w_reasoning": "Geological technicians collect field samples, operate testing equipment, and record/analyze data. The data entry, analysis, and report generation tasks are separable from the physical fieldwork and sample collection. However, field tasks and lab work require physical presence and real-time judgment that interleave with data recording.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-2042",
+    "title": "Geoscientists, except hydrologists and geographers",
+    "w_reasoning": "Geoscientists perform data analysis, modeling, literature review, and report writing (automatable) alongside fieldwork, sample interpretation, and strategic geological judgment. The analytical and documentation phases can be temporally separated from field investigations and interpretive work.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-2111",
+    "title": "Health and safety engineers, except mining safety engineers and inspectors",
+    "w_reasoning": "Health and safety engineers conduct risk assessments, analyze incident data, write compliance reports, and review regulations (automatable) alongside physical site inspections, stakeholder consultations, and judgment-heavy safety system design. The analytical and documentation tasks are reasonably separable from on-site and advisory work.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-1025",
+    "title": "Interior designers",
+    "w_reasoning": "Interior design involves rendering, space planning calculations, material specification research, and documentation (automatable) deeply interleaved with creative design vision, client consultation, site visits, and aesthetic judgment. Similar to architects, the creative and technical tasks cycle frequently during the design process.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-1012",
+    "title": "Landscape architects",
+    "w_reasoning": "Landscape architecture involves drafting, rendering, grading calculations, plant database research, and code compliance (automatable) alongside creative design, site assessment, client consultation, and environmental judgment. Very similar to architecture in workflow structure, with automatable and non-automatable tasks interleaved during design iterations.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-2141",
+    "title": "Mechanical engineers",
+    "w_reasoning": "Mechanical engineering involves CAD modeling, simulation, stress analysis, and documentation (automatable) interleaved with creative design, physical prototyping, testing, and complex problem-solving. Design iteration requires frequent cycling between computational tools and engineering judgment, though some phases like analysis and documentation are separable.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-2151",
+    "title": "Mining and geological engineers, including mining safety engineers",
+    "w_reasoning": "Mining engineers perform geological modeling, resource estimation, mine planning calculations, and regulatory compliance documentation (automatable) alongside site inspections, safety assessments, and operational decision-making requiring physical presence. The analytical and planning phases are somewhat separable from on-site work, but operational decisions often require rapid integration of both.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-2161",
+    "title": "Nuclear engineers",
+    "w_reasoning": "Nuclear engineering involves simulation, safety analysis, regulatory compliance documentation, and data analysis (automatable) alongside complex system design, safety judgment, and on-site oversight. The computational and documentation tasks can be separated from the judgment-heavy design and oversight work, though safety-critical decisions require tight integration.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-1021, 17-1022, 17-3031",
+    "title": "Surveyors & Cartographers",
+    "w_reasoning": "Surveying involves fieldwork with physical instruments (non-automatable) and data processing, map generation, GIS analysis, and report writing (automatable). These phases are naturally temporally separated\u2014field collection happens on-site, then data processing happens in the office. This creates strong natural boundaries for task separation.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-3031",
+    "title": "Bookkeeping, accounting, and auditing clerks",
+    "w_reasoning": "Bookkeeping involves transaction recording, account reconciliation, invoice processing, payroll calculations, and financial report generation\u2014nearly all discrete, routine tasks that operate independently. These tasks are highly separable and can be offloaded with minimal workflow disruption.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-9021",
+    "title": "Construction managers",
+    "w_reasoning": "Construction management involves scheduling, budgeting, reporting, and compliance documentation (automatable) alongside on-site supervision, subcontractor coordination, problem-solving, and safety oversight requiring physical presence and real-time judgment. The administrative tasks are separable but the on-site management requires continuous integration of information and decision-making.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-1051",
+    "title": "Cost estimators",
+    "w_reasoning": "Cost estimation involves data gathering, quantity takeoffs, pricing database lookups, spreadsheet calculations, and report generation (highly automatable) alongside judgment about project complexity, risk assessment, and client negotiation. The computational and data-gathering phases are well-separated from the judgment and advisory phases.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-5011",
+    "title": "Occupational health and safety specialists",
+    "w_reasoning": "OHS specialists conduct site inspections (physical presence required), investigate incidents, and interact with workers alongside data analysis, regulatory monitoring, report writing, and compliance documentation. The documentation and analysis tasks are separable from the on-site inspection and interpersonal tasks, though findings from inspections feed directly into reports.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-1082",
+    "title": "Project management specialists",
+    "w_reasoning": "Project management involves scheduling, resource allocation, status reporting, budget tracking, and documentation (automatable) alongside stakeholder management, team leadership, conflict resolution, and strategic decision-making. The administrative and tracking tasks are reasonably separable from the interpersonal and judgment tasks, similar to general managers.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-3011",
+    "title": "Adult basic education, adult secondary education, and english as a second language instructors",
+    "w_reasoning": "Adult education instructors prepare lessons, grade assignments, and handle administrative tasks (automatable) alongside direct classroom instruction, student interaction, and adaptive teaching. Similar to K-12 teachers, the prep and grading tasks can be temporally separated from classroom time, but instruction itself requires continuous human engagement.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-2023",
+    "title": "Career/technical education teachers, middle school",
+    "w_reasoning": "CTE middle school teachers prepare lessons, grade work, and manage administrative tasks (automatable) alongside hands-on instruction, student supervision in labs/workshops, and real-time teaching. The hands-on nature of career/technical education makes classroom tasks less separable than purely academic teaching, but prep and grading remain separable.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-2071",
+    "title": "Credit counselors",
+    "w_reasoning": "Credit counselors perform financial analysis, credit report review, and budget planning (automatable) alongside direct client counseling, empathy-driven conversations, and motivational support (non-automatable). The analytical/data tasks can be clustered and separated from counseling sessions, though some interleaving occurs during sessions when reviewing financial data with clients.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "21-2021",
+    "title": "Directors, religious activities and education",
+    "w_reasoning": "This role involves curriculum development, scheduling, budgeting, and communications (automatable) alongside leading worship activities, mentoring volunteers, community engagement, and pastoral care (non-automatable). Administrative tasks are naturally separable from interpersonal/spiritual leadership tasks, occurring at different times.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-9039",
+    "title": "Education administrators, all other",
+    "w_reasoning": "Education administrators handle budgeting, reporting, scheduling, data analysis, and compliance documentation (automatable) alongside leadership, stakeholder management, policy decisions, and staff supervision (non-automatable). These administrative/analytical tasks are largely separable from interpersonal leadership duties, similar to general managers.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-9032",
+    "title": "Education administrators, kindergarten through secondary",
+    "w_reasoning": "K-12 principals and administrators manage budgets, scheduling, compliance reporting, and data tracking (automatable) while also handling student discipline, parent meetings, teacher evaluations, and crisis management (non-automatable). The administrative tasks can be temporally separated, but the interpersonal demands frequently interrupt planned administrative work, reducing separability somewhat.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-9033",
+    "title": "Education administrators, postsecondary",
+    "w_reasoning": "Postsecondary administrators handle enrollment data analysis, budget management, report generation, and scheduling (automatable) alongside faculty governance, strategic planning, student affairs, and stakeholder relations (non-automatable). The data-heavy tasks are naturally clustered and separable from leadership functions.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-9031",
+    "title": "Education and childcare administrators, preschool and daycare",
+    "w_reasoning": "Preschool/daycare administrators manage licensing paperwork, billing, scheduling, and regulatory compliance documentation (automatable) alongside direct supervision of staff, parent communication, and ensuring child safety (non-automatable). The administrative tasks are somewhat separable but the small-scale nature of these operations means administrators frequently shift between administrative and hands-on roles throughout the day.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-9099",
+    "title": "Educational instruction and library workers, all other",
+    "w_reasoning": "This catch-all category includes tutors, teaching assistants, and other instructional support workers who perform record-keeping, material preparation, and grading (automatable) alongside direct student interaction and instructional support (non-automatable). Some tasks are separable but much of the work involves real-time student engagement.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "21-1012",
+    "title": "Educational, guidance, and career counselors and advisors",
+    "w_reasoning": "Counselors perform data analysis on student records, career assessment scoring, report writing, and scheduling (automatable) alongside direct counseling sessions, crisis intervention, and relationship building (non-automatable). The analytical and documentation tasks can be temporally separated from face-to-face counseling, though some interleaving occurs during sessions.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-1123",
+    "title": "English language and literature teachers, postsecondary",
+    "w_reasoning": "Postsecondary English professors have grading essays, creating reading lists, literature research, and administrative tasks (automatable) alongside lecturing, leading seminars, mentoring students, and original scholarship (non-automatable). Grading and research tasks are naturally separable from teaching hours, though essay evaluation involves significant judgment that interleaves with pedagogical goals.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-1131",
+    "title": "Fundraisers",
+    "w_reasoning": "Fundraisers perform donor database management, prospect research, campaign analytics, and communication drafting (automatable) alongside relationship cultivation, event hosting, personal solicitation, and donor stewardship (non-automatable). The research and data tasks are naturally separable from the interpersonal fundraising activities.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-2033",
+    "title": "Fundraising managers",
+    "w_reasoning": "Fundraising managers oversee campaign analytics, reporting, budget tracking, and donor database management (automatable) alongside team leadership, major donor relationship management, strategic planning, and organizational representation (non-automatable). The analytical and reporting tasks are temporally separable from leadership and relationship functions.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-9031",
+    "title": "Instructional coordinators",
+    "w_reasoning": "Instructional coordinators analyze student performance data, review curriculum materials, develop assessment tools, and generate reports (automatable) alongside training teachers, observing classrooms, facilitating workshops, and building consensus around curriculum changes (non-automatable). The data analysis and material review phases are naturally separable from the interpersonal coaching phases.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-2012",
+    "title": "Kindergarten teachers, except special education",
+    "w_reasoning": "Kindergarten teaching is overwhelmingly hands-on: managing young children's behavior, facilitating social-emotional development, physical care, and interactive play-based learning dominate the day. While some lesson planning and documentation can be separated, the vast majority of work requires continuous physical presence and real-time responsiveness to very young children.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-4022",
+    "title": "Librarians and media collections specialists",
+    "w_reasoning": "Librarians perform cataloging, collection development analysis, database management, and acquisitions processing (automatable) alongside reference consultations, community programming, reader advisory, and teaching information literacy (non-automatable). The technical/cataloging tasks are highly separable from patron-facing services and occur at natural workflow boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-4031",
+    "title": "Library technicians",
+    "w_reasoning": "Library technicians handle cataloging, shelving records, circulation system management, interlibrary loan processing, and database maintenance (automatable) alongside patron assistance at service desks and physical material handling (non-automatable). The technical processing tasks are highly separable and can be batched independently from public service duties.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-1011",
+    "title": "Postsecondary Teachers",
+    "w_reasoning": "Postsecondary teachers perform grading, course material preparation, literature reviews, data analysis for research, and administrative tasks (automatable) alongside lecturing, mentoring, leading discussions, conducting original research, and committee service (non-automatable). Grading and prep work are temporally separable from teaching, but research involves deep interleaving of automatable data tasks with creative judgment.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-2011",
+    "title": "Preschool teachers, except special education",
+    "w_reasoning": "Preschool teaching is almost entirely hands-on: supervising very young children, facilitating play-based learning, managing behavior, and providing physical care throughout the day. The minimal administrative and planning tasks that could be automated are a tiny fraction of the role, and the work is dominated by continuous physical presence and real-time interaction.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "21-2099",
+    "title": "Religious workers, all other",
+    "w_reasoning": "Religious workers perform community outreach, spiritual counseling, worship support, and educational programming (non-automatable) alongside some administrative tasks, communications, and scheduling (automatable). The interpersonal and spiritual dimensions dominate, but administrative tasks can be separated. Similar to clergy but potentially more hands-on community work.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-2051",
+    "title": "Secondary & Special Education Teachers",
+    "w_reasoning": "Secondary and special education teachers handle grading, IEP documentation, lesson planning, and progress reporting (automatable) alongside direct instruction, behavior management, individualized student support, and parent conferences (non-automatable). Special education in particular requires continuous real-time adaptation to individual student needs, making separation more challenging than general teaching.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-3021",
+    "title": "Self-enrichment teachers",
+    "w_reasoning": "Self-enrichment teaching (arts, crafts, cooking, fitness, etc.) is primarily hands-on, interactive instruction where the core value is the in-person experience. Some lesson planning and material preparation could be offloaded, but the bulk of the work is real-time demonstration and student interaction, similar to other teaching roles.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-4061",
+    "title": "Social science research assistants",
+    "w_reasoning": "Research assistants perform data collection, literature reviews, coding/data entry, statistical analysis, and report drafting\u2014many of which are discrete, separable tasks that can be offloaded to AI. The remaining tasks (fieldwork, participant interaction, nuanced interpretation) occur at natural boundaries from the automatable work.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-1069",
+    "title": "Social sciences teachers, postsecondary, all other",
+    "w_reasoning": "Postsecondary teaching involves lecture preparation, grading, and administrative tasks (separable) alongside classroom instruction, mentoring, and research guidance (non-automatable). Similar to elementary/middle school teachers, the separable tasks cluster outside of classroom hours.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-2057",
+    "title": "Special education teachers, middle school",
+    "w_reasoning": "Special education teaching requires continuous adaptation to individual student needs, behavioral management, and IEP implementation during instruction. While IEP documentation, grading, and lesson planning can be separated, the in-classroom work demands constant real-time judgment interleaved with teaching. Similar to the elementary/middle school teacher anchor.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-2058",
+    "title": "Special education teachers, secondary school",
+    "w_reasoning": "Like middle school special education teachers, secondary special ed teachers have separable administrative and planning tasks but deeply interleaved classroom instruction requiring individualized attention, behavioral support, and real-time adaptation. Consistent with the teaching anchor at 0.50.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-3099",
+    "title": "Teachers and instructors, all other",
+    "w_reasoning": "This catch-all category covers various teaching roles. Like other teaching occupations, lesson planning, grading, and administrative work can be temporally separated from interactive instruction. The core teaching activity remains non-automatable and interleaved with judgment.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-9045",
+    "title": "Teaching assistants, except postsecondary",
+    "w_reasoning": "Teaching assistants work directly with students under teacher supervision, providing one-on-one or small group support, managing classroom materials, and handling some administrative tasks. The administrative/clerical tasks are separable, but the core student-facing work involves continuous real-time interaction and judgment.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-9044",
+    "title": "Teaching assistants, postsecondary",
+    "w_reasoning": "Postsecondary TAs grade assignments, hold office hours, lead discussion sections, and assist with course administration. Grading and administrative tasks are fairly separable from interactive teaching duties, and these phases occur at natural temporal boundaries (grading batches vs. section meetings).",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-3041",
+    "title": "Tutors",
+    "w_reasoning": "Tutoring is primarily one-on-one or small group interactive instruction where real-time assessment of student understanding drives the session. Some preparation and progress tracking can be separated, but the core activity is deeply interactive and not easily disaggregated.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-4051",
+    "title": "Nuclear technicians",
+    "w_reasoning": "Nuclear technicians operate monitoring equipment, collect samples, perform radiation surveys, and maintain safety protocols\u2014all requiring physical presence and real-time judgment. Data logging and report generation are separable, but these are embedded within hands-on operational workflows.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-2171",
+    "title": "Petroleum engineers",
+    "w_reasoning": "Petroleum engineering involves reservoir modeling, data analysis, simulation, and report generation (automatable and separable) alongside field oversight, well design decisions, and stakeholder coordination (non-automatable). These phases occur at natural boundaries, similar to other engineering roles.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-3011",
+    "title": "Bill and account collectors",
+    "w_reasoning": "Bill collectors perform account research, payment tracking, record updating (automatable) alongside phone calls and negotiations with debtors (non-automatable). The automatable tasks can be batched and separated from the interpersonal collection calls, though some real-time data lookup occurs during calls.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-4011",
+    "title": "Brokerage clerks",
+    "w_reasoning": "Brokerage clerks handle transaction processing, record-keeping, document preparation, and account maintenance\u2014largely discrete clerical tasks that are highly separable. The work is predominantly routine data processing with minimal interleaving of non-automatable judgment.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-2041",
+    "title": "Credit analysts",
+    "w_reasoning": "Credit analysts gather financial data, run credit models, prepare reports, and make lending recommendations. Data gathering and modeling are separable from the judgment-intensive credit decision and client communication phases. Similar to financial/investment analysts.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-4041",
+    "title": "Credit authorizers, checkers, and clerks",
+    "w_reasoning": "These clerks process credit applications, verify information, check credit histories, and make routine authorization decisions based on established criteria. The work is largely sequential, rule-based processing that can be fully offloaded with minimal disruption.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-2061",
+    "title": "Financial examiners",
+    "w_reasoning": "Financial examiners review financial records, analyze compliance with regulations, prepare reports, and conduct on-site examinations. Document review and data analysis are separable from the investigative interviews and judgment-heavy enforcement decisions, similar to compliance officers and tax examiners.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-3031",
+    "title": "Financial managers",
+    "w_reasoning": "Financial managers oversee reporting, budgeting, forecasting (automatable) alongside strategic decision-making, team leadership, and stakeholder management (non-automatable). Similar to the general/operations manager anchor, these phases separate at natural boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-2054",
+    "title": "Financial risk specialists",
+    "w_reasoning": "Financial risk specialists build risk models, analyze data, generate reports, and monitor risk metrics (automatable) alongside interpreting results, advising management, and making strategic risk decisions (non-automatable). The analytical and reporting phases are naturally separable from advisory work.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-2099",
+    "title": "Financial specialists, all other",
+    "w_reasoning": "This residual category covers various financial specialist roles involving data analysis, report preparation, and regulatory compliance (automatable) alongside advisory, client-facing, and judgment tasks (non-automatable). These phases generally separate at natural workflow boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-4131",
+    "title": "Loan interviewers and clerks",
+    "w_reasoning": "Loan clerks process applications, verify documentation, enter data, and prepare loan packages\u2014largely discrete clerical tasks. The interview component involves some interpersonal interaction, but much of the data collection and verification workflow is highly separable and can be automated independently.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-2072",
+    "title": "Loan officers",
+    "w_reasoning": "Loan officers have separable phases: data gathering, credit analysis, document verification, and compliance checking (automatable) versus client relationship management, negotiation, and judgment on borderline cases (non-automatable). These phases occur at natural boundaries in the loan origination workflow.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-4141",
+    "title": "New accounts clerks",
+    "w_reasoning": "New accounts clerks primarily perform data entry, identity verification, form processing, and account setup\u2014tasks that are largely routine and discrete. Customer interaction is present but relatively scripted. The automatable tasks (data entry, verification lookups) can be cleanly separated from the remaining customer-facing tasks.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-2052",
+    "title": "Personal financial advisors",
+    "w_reasoning": "Personal financial advisors have separable back-office tasks like portfolio analysis, financial modeling, report generation, and market research (automatable) alongside deeply relational client advisory, trust-building, and personalized goal-setting (non-automatable). The automatable tasks can be clustered and offloaded before or after client meetings.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "41-3031",
+    "title": "Securities, commodities, and financial services sales agents",
+    "w_reasoning": "These agents perform market research, trade execution, compliance documentation, and report generation (automatable) alongside client relationship management, sales pitching, and investment advisory (non-automatable). The analytical and documentation tasks can be separated from the interpersonal sales tasks at natural workflow boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-2011",
+    "title": "Switchboard operators, including answering service",
+    "w_reasoning": "Switchboard operators route calls, take messages, and provide basic information\u2014tasks that are largely routine and can be automated as discrete units. The entire workflow is relatively homogeneous and automatable, with minimal non-automatable components that would need separation.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-3071",
+    "title": "Tellers",
+    "w_reasoning": "Tellers process transactions, handle deposits/withdrawals, and perform routine account inquiries (highly automatable) alongside customer service interactions that sometimes require judgment (fraud detection, problem resolution). The transactional tasks are discrete and separable, though some customer interaction is interleaved.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "41-3041",
+    "title": "Travel agents",
+    "w_reasoning": "Travel agents perform itinerary research, booking, price comparison, and documentation (automatable) alongside personalized client consultation, preference elicitation, and problem-solving for complex trips (non-automatable). The research and booking phases are naturally separable from the advisory phases.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "23-1021",
+    "title": "Administrative law judges, adjudicators, and hearing officers",
+    "w_reasoning": "Administrative law judges conduct hearings requiring real-time judgment, credibility assessment, and legal reasoning deeply interleaved with evidence review. While case research and preliminary document review are separable, the core adjudicative function involves continuous integration of legal analysis, procedural management, and human judgment during hearings.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-2021",
+    "title": "Agricultural engineers",
+    "w_reasoning": "Agricultural engineers perform data analysis, modeling, and design calculations (automatable) alongside field assessments, client consultation, and creative problem-solving for site-specific conditions (non-automatable). The computational and analytical tasks can be separated but are often interleaved with physical site work and iterative design judgment.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-3011",
+    "title": "Architectural and civil drafters",
+    "w_reasoning": "Drafting involves producing technical drawings, performing calculations, and checking code compliance (highly automatable) alongside interpreting design intent and coordinating with engineers/architects. The production drafting tasks are naturally separable from the coordination and interpretation tasks, occurring in distinct phases.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-4011",
+    "title": "Archivists",
+    "w_reasoning": "Archivists perform cataloging, metadata creation, digitization management, and database maintenance (automatable) alongside appraisal decisions, preservation judgment, and researcher consultation (non-automatable). These tasks occur in relatively distinct phases, with cataloging and data management being naturally separable.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-1019",
+    "title": "Artists and related workers, all other",
+    "w_reasoning": "Artists' work is primarily creative, with automatable tasks (reference gathering, preliminary rendering, administrative tasks) deeply embedded within the creative process. The creative judgment and physical execution are tightly coupled, making it difficult to separate automatable sub-steps from the core artistic workflow.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-2021",
+    "title": "Atmospheric and space scientists",
+    "w_reasoning": "Atmospheric scientists perform data collection, statistical modeling, numerical weather prediction, and report generation (automatable) alongside interpretive forecasting, research design, and communicating uncertainty to stakeholders (non-automatable). The data processing and modeling phases are naturally separable from the interpretive and communication phases.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-2031",
+    "title": "Budget analysts",
+    "w_reasoning": "Budget analysts perform data compilation, spreadsheet modeling, variance analysis, and report generation (automatable) alongside policy interpretation, stakeholder negotiation, and strategic budget recommendations (non-automatable). The analytical and reporting tasks are naturally clustered and separable from the advisory and negotiation tasks.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-1199",
+    "title": "Business operations specialists, all other",
+    "w_reasoning": "This broad category involves data analysis, report generation, process documentation, and compliance monitoring (automatable) alongside stakeholder coordination, problem-solving, and strategic planning (non-automatable). The analytical and documentation tasks generally occur in separable phases from the interpersonal and judgment-heavy tasks.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-1194",
+    "title": "Career/technical education teachers, postsecondary",
+    "w_reasoning": "CTE teachers combine hands-on instruction and demonstration (non-automatable, physical) with lesson planning, grading, and administrative tasks (automatable). The automatable tasks can be temporally clustered outside of teaching hours, similar to other teaching roles, but the hands-on nature of technical education limits in-class automation.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "21-1099",
+    "title": "Community and social service specialists, all other",
+    "w_reasoning": "These specialists engage in direct client interaction, counseling, and community outreach (non-automatable) alongside case documentation, resource database searches, and report writing (automatable). The documentation tasks can be separated but are often interleaved with client-facing work throughout the day.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "15-1221",
+    "title": "Computer and information research scientists",
+    "w_reasoning": "Research scientists engage in literature review, data analysis, and code generation (partially automatable) deeply interleaved with novel algorithm design, theoretical reasoning, and experimental design (non-automatable). The creative and analytical aspects of research are tightly coupled, with automatable sub-tasks embedded within larger non-automatable research processes.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-1031",
+    "title": "Conservation scientists",
+    "w_reasoning": "Conservation scientists perform GIS analysis, data collection processing, environmental modeling, and report writing (automatable) alongside fieldwork, stakeholder engagement, and policy recommendations (non-automatable). The analytical and field components occur in naturally distinct phases, though field observations and data interpretation can be interleaved.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-4031",
+    "title": "Court, municipal, and license clerks",
+    "w_reasoning": "These clerks perform data entry, document filing, record maintenance, fee processing, and form preparation (highly automatable) alongside some public-facing counter service. The clerical processing tasks are discrete, routine, and naturally separable from the limited interpersonal components.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-4012",
+    "title": "Curators",
+    "w_reasoning": "Curators perform research, cataloging, collection management, and exhibition planning. Research and cataloging tasks are relatively separable from the creative/interpretive and relationship-building aspects of the role, with natural phase boundaries between desk work and gallery/stakeholder engagement.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-3011",
+    "title": "Economists",
+    "w_reasoning": "Economists' work divides into data collection, statistical modeling, and report generation (automatable) versus theoretical interpretation, policy advising, and strategic judgment (non-automatable). These phases are largely sequential and temporally separable, similar to financial analysts.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-4061",
+    "title": "Eligibility interviewers, government programs",
+    "w_reasoning": "Eligibility interviewers conduct client interviews (requiring interpersonal judgment) interleaved with data entry, form processing, and eligibility verification. The data processing and verification tasks can be partially separated, but the interview itself requires real-time toggling between interpersonal and clerical tasks.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-2199",
+    "title": "Engineers, all other",
+    "w_reasoning": "Engineering work involves calculations, modeling, and documentation (automatable) alongside design judgment, physical site work, and problem-solving. The computational and documentation tasks can be separated at phase boundaries, but design iteration often requires tight coupling between analysis and judgment.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-2041",
+    "title": "Environmental scientists and specialists, including health",
+    "w_reasoning": "Environmental scientists perform data collection (fieldwork), data analysis, report writing, and regulatory consultation. Data analysis and report generation are separable from fieldwork and stakeholder engagement, with natural temporal boundaries between office and field phases.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-1041",
+    "title": "Epidemiologists",
+    "w_reasoning": "Epidemiologists' work involves data collection, statistical analysis, literature review, and report writing (highly automatable and separable) alongside study design, interpretation of findings, and policy recommendations. These phases are largely sequential with clear handoff points.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-9021",
+    "title": "Farm and home management educators",
+    "w_reasoning": "These educators prepare educational materials, conduct workshops, and provide one-on-one consultation. Material preparation and research are separable from direct teaching and community engagement, similar to teachers but with more temporal separation between prep and delivery.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-4092",
+    "title": "Forensic science technicians",
+    "w_reasoning": "Forensic science technicians collect physical evidence at crime scenes, conduct laboratory analyses, and write reports. Evidence collection requires physical presence and real-time judgment, while lab analysis and report writing involve some separable data processing. However, the physical and analytical tasks are deeply interleaved during evidence processing.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-4071",
+    "title": "Forest and conservation technicians",
+    "w_reasoning": "These technicians perform fieldwork (measuring trees, collecting samples, monitoring wildlife) alongside data recording and report writing. The fieldwork is physical and requires presence, while data entry and reporting are separable but represent a smaller portion. The physical nature of most tasks limits separability.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-1032",
+    "title": "Foresters",
+    "w_reasoning": "Foresters combine extensive fieldwork (site assessment, timber cruising, monitoring) with data analysis, GIS mapping, management plan writing, and stakeholder consultation. The analytical and documentation tasks are separable from field and interpersonal work, with natural phase boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-3092",
+    "title": "Geographers",
+    "w_reasoning": "Geographers perform GIS analysis, spatial data processing, mapping, and report generation (highly automatable and separable) alongside fieldwork, interpretation, and policy consultation. The data analysis and mapping phases are clearly separable from interpretive and advisory work.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1299",
+    "title": "Healthcare diagnosing or treating practitioners, all other",
+    "w_reasoning": "These practitioners diagnose and treat patients, involving physical examination, real-time clinical judgment, and patient interaction tightly coupled with documentation and treatment planning. Similar to physicians, the diagnostic and treatment workflow is deeply interleaved.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-3093",
+    "title": "Historians",
+    "w_reasoning": "Historians conduct archival research, analyze primary sources, write scholarly works, and may consult or teach. Research compilation and literature review are separable from interpretive analysis and writing, though the interpretive work is deeply intertwined with source analysis.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-4161",
+    "title": "Human resources assistants, except payroll and timekeeping",
+    "w_reasoning": "HR assistants perform data entry, record maintenance, filing, scheduling, and correspondence\u2014largely discrete clerical tasks that are highly separable from occasional interpersonal duties like answering employee questions. Most tasks can be independently offloaded.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-4044",
+    "title": "Hydrologic technicians",
+    "w_reasoning": "Hydrologic technicians collect water samples, operate monitoring equipment in the field, and process/record data. Fieldwork requires physical presence and real-time judgment, while data processing is separable. The mix of physical and desk tasks creates moderate separability.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-2043",
+    "title": "Hydrologists",
+    "w_reasoning": "Hydrologists perform data analysis, modeling, and report writing (automatable and separable) alongside fieldwork, interpretation, and stakeholder consultation. The analytical and modeling phases have clear boundaries from field and advisory work, similar to environmental scientists.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-4199",
+    "title": "Information and record clerks, all other",
+    "w_reasoning": "Information and record clerks primarily handle data entry, record maintenance, filing, and information retrieval\u2014discrete clerical tasks that are highly independent and can be fully offloaded to AI with minimal disruption to any remaining interpersonal duties.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "23-1023",
+    "title": "Judges, magistrate judges, and magistrates",
+    "w_reasoning": "Judges preside over proceedings requiring real-time legal judgment, evaluate evidence, manage courtroom dynamics, and render decisions. While legal research and case summary preparation are separable, the core judicial function involves continuous interleaving of listening, questioning, reasoning, and ruling that is minimally separable.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "23-1012",
+    "title": "Judicial law clerks",
+    "w_reasoning": "Judicial law clerks conduct legal research, draft memoranda and opinions, and review case materials\u2014tasks that are largely desk-based and sequential. Research and initial drafting are highly separable from the judgment-intensive review and discussion with judges, similar to paralegals.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-1031",
+    "title": "Legislators",
+    "w_reasoning": "Legislators engage in policy deliberation, constituent relations, negotiation, and voting\u2014deeply interpersonal and judgment-heavy activities. While research, speech drafting, and correspondence are separable, the core legislative functions of negotiation, debate, and relationship-building are tightly coupled with real-time judgment.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-9199",
+    "title": "Managers, all other",
+    "w_reasoning": "General managers typically handle reporting, scheduling, budgeting (automatable) alongside leadership, decision-making, and relationship management (non-automatable). These phases are reasonably separable, similar to the general and operations managers anchor.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "15-2099",
+    "title": "Mathematical science occupations, all other",
+    "w_reasoning": "Mathematical scientists perform data analysis, modeling, and computation (highly automatable) alongside problem formulation, interpretation, and communication of results. The computational phases can be cleanly separated from the conceptual and interpretive phases.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "15-2021",
+    "title": "Mathematicians",
+    "w_reasoning": "Mathematicians engage in deep theoretical reasoning, proof construction, and creative problem-solving where AI-assistable computation and literature review are interleaved with non-automatable conceptual insight. The automatable portions (numerical computation, symbolic manipulation, literature search) can be somewhat separated but the core work is deeply cognitive.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-4099",
+    "title": "Media and communication equipment workers, all other",
+    "w_reasoning": "These workers operate, maintain, and set up media equipment, requiring physical presence and real-time technical judgment during broadcasts or events. Automatable tasks like scheduling or logging are minor and interleaved with hands-on equipment operation.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-4013",
+    "title": "Museum technicians and conservators",
+    "w_reasoning": "Conservators perform delicate physical restoration and preservation work requiring hands-on skill and real-time judgment. Automatable tasks like cataloging, documentation, and condition reporting can be separated, but the core physical conservation work dominates and is deeply interleaved with assessment.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-9199",
+    "title": "Office and administrative support workers, all other",
+    "w_reasoning": "Office and administrative support tasks are predominantly routine\u2014data entry, filing, scheduling, correspondence\u2014that are discrete and can be cleanly offloaded to AI with minimal disruption to remaining interpersonal or judgment tasks.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-2099",
+    "title": "Physical scientists, all other",
+    "w_reasoning": "Physical scientists conduct experiments (physical presence required), analyze data (automatable), write papers, and interpret results. Data analysis and literature review phases are separable from lab work and conceptual interpretation, though some interleaving exists.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-3094",
+    "title": "Political scientists",
+    "w_reasoning": "Political scientists perform data collection, statistical analysis, and literature review (automatable) alongside theoretical reasoning, qualitative interpretation, and policy advising (non-automatable). These phases are reasonably separable with natural handoff points.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "21-1092",
+    "title": "Probation officers and correctional treatment specialists",
+    "w_reasoning": "Probation officers conduct face-to-face client meetings, home visits, and court appearances (non-automatable) interleaved with report writing, case documentation, and risk assessment scoring (automatable). The documentation tasks can be temporally clustered but judgment during client interactions is continuous.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-3061",
+    "title": "Procurement clerks",
+    "w_reasoning": "Procurement clerks process purchase orders, maintain records, verify receipts, and handle routine correspondence\u2014largely discrete, routine tasks that can be cleanly offloaded to AI. Similar to other financial/administrative clerks.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-3039",
+    "title": "Psychologists, all other",
+    "w_reasoning": "This residual category includes research psychologists, industrial-organizational psychologists, and others. Many involve research and assessment where data analysis and report generation are separable from clinical or consultative judgment. Similar to school psychologists anchor.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-9151",
+    "title": "Social and community service managers",
+    "w_reasoning": "These managers handle budgeting, reporting, grant writing, and program evaluation (automatable) alongside community engagement, staff supervision, crisis response, and stakeholder relationships (non-automatable). The administrative tasks are reasonably separable from interpersonal leadership.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-3099",
+    "title": "Social scientists and related workers, all other",
+    "w_reasoning": "Social scientists perform data collection, statistical analysis, and report writing (automatable) alongside research design, qualitative interpretation, and policy advising (non-automatable). These phases have natural boundaries and can be separated.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-3041",
+    "title": "Sociologists",
+    "w_reasoning": "Sociologists conduct surveys, perform statistical analysis, and write reports (automatable) alongside qualitative research, theoretical interpretation, and fieldwork (non-automatable). The quantitative and writing phases are reasonably separable from conceptual and fieldwork phases.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-9022",
+    "title": "Word processors and typists",
+    "w_reasoning": "Word processing and typing are canonical examples of fully separable, routine tasks. The entire workflow\u2014transcription, formatting, document preparation\u2014can be offloaded to AI with virtually no disruption.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-1023",
+    "title": "Zoologists and wildlife biologists",
+    "w_reasoning": "Zoologists conduct fieldwork requiring physical presence and observation (non-automatable) alongside data analysis, statistical modeling, literature review, and report writing (automatable). These phases are temporally distinct\u2014field vs. office\u2014making them reasonably separable.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1291",
+    "title": "Acupuncturists",
+    "w_reasoning": "Acupuncture involves continuous physical presence, patient assessment, needle placement, and real-time monitoring during treatment sessions. Automatable tasks like patient intake documentation and billing are minor. The core clinical work tightly interleaves diagnosis, physical intervention, and patient communication.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-3012",
+    "title": "Administrative services managers",
+    "w_reasoning": "Administrative services managers handle facility planning, budgeting, record-keeping, and procurement (automatable) alongside staff supervision, vendor negotiations, and organizational decision-making (non-automatable). The administrative/analytical tasks separate well from interpersonal management tasks.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-1011",
+    "title": "Animal scientists",
+    "w_reasoning": "Animal scientists conduct experiments with live animals (physical presence required), analyze data, write research papers, and advise on animal management. Data analysis and literature review are separable from hands-on animal work, but fieldwork and lab work involve interleaved observation and judgment.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-2011",
+    "title": "Astronomers",
+    "w_reasoning": "Astronomers spend significant time on data analysis, computational modeling, and literature review (highly automatable) alongside theoretical reasoning, research design, and interpretation (non-automatable). The computational and data processing phases are cleanly separable from conceptual work, with natural handoff points.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1181",
+    "title": "Audiologists",
+    "w_reasoning": "Audiologists conduct hearing assessments, fit hearing aids, and counsel patients. The automatable portions (audiogram interpretation, report generation, device programming calculations) are interleaved with physical examination, device fitting, and patient counseling, requiring significant workflow integration similar to other clinical practitioners.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-3021",
+    "title": "Billing and posting clerks",
+    "w_reasoning": "Billing and posting clerks perform largely routine, discrete tasks: entering billing data, posting payments, generating invoices, and reconciling accounts. These tasks are highly independent and can be fully offloaded to AI with minimal disruption to any remaining human oversight tasks.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-2031",
+    "title": "Bioengineers and biomedical engineers",
+    "w_reasoning": "Biomedical engineers engage in design, simulation, prototyping, testing, and regulatory documentation. Automatable tasks like literature review, simulation runs, data analysis, and documentation drafting can be separated from creative design, physical prototyping, and cross-functional collaboration, though some interleaving exists during iterative design cycles.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-1021",
+    "title": "Biological Scientists",
+    "w_reasoning": "Biological scientists conduct lab experiments, analyze data, write papers, and design studies. Data analysis, literature review, and statistical modeling are separable from hands-on lab work and experimental design. However, iterative hypothesis testing creates some interleaving between automatable analysis and non-automatable experimental judgment.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-2031",
+    "title": "Chemists",
+    "w_reasoning": "Chemists perform laboratory experiments, analyze samples, interpret results, and write reports. Data analysis, literature searches, and report drafting are separable from hands-on lab work. However, the iterative nature of experimental chemistry\u2014where analysis results immediately inform next steps\u2014creates meaningful interleaving.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-2010",
+    "title": "Clinical laboratory technologists and technicians",
+    "w_reasoning": "Lab technologists process specimens, operate instruments, perform quality control, and report results. Many automatable tasks (data entry, result validation against reference ranges, report generation) occur at natural boundaries after physical specimen processing. The workflow has relatively clear handoff points between physical and analytical phases.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-2011, 43-2021, 43-2099",
+    "title": "Communications Equipment Operators",
+    "w_reasoning": "Communications equipment operators handle calls, route messages, and manage communication systems. Many tasks like call routing, message logging, and information lookup are discrete and automatable. However, real-time call handling requires some interleaving of judgment with routine processing, though handoffs are relatively clean.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "21-1094",
+    "title": "Community health workers",
+    "w_reasoning": "Community health workers spend most of their time in direct community engagement, home visits, health education, and advocacy. Automatable tasks like data collection, resource identification, and report writing are interleaved with relationship-building and culturally sensitive outreach that requires continuous human judgment and presence.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-4021",
+    "title": "Correspondence clerks",
+    "w_reasoning": "Correspondence clerks draft, review, and process written communications and respond to inquiries using standard templates. These tasks are highly discrete and text-based, making them almost entirely separable. AI can handle drafting, categorizing, and responding to routine correspondence independently.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "21-1013",
+    "title": "Counselors",
+    "w_reasoning": "Counselors (substance abuse, rehabilitation, mental health) spend the majority of their time in direct client interaction where empathy, rapport, and clinical judgment are continuously interleaved. Automatable tasks like documentation, treatment plan drafting, and progress tracking can be separated but are secondary to the core therapeutic work.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-2031",
+    "title": "Diagnostic Imaging Technologists",
+    "w_reasoning": "Diagnostic imaging technologists position patients, operate imaging equipment, and ensure image quality\u2014all requiring physical presence and real-time judgment. Automatable tasks like scheduling, image post-processing, and preliminary quality checks are embedded within the physical workflow. This aligns with the radiologic technologist anchor.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-2051",
+    "title": "Dietetic technicians",
+    "w_reasoning": "Dietetic technicians assist with meal planning, nutritional screening, and food service management. Automatable tasks like menu calculation, nutritional analysis, and data entry can be separated from patient interaction and food preparation oversight, with relatively natural handoff points between analytical and interpersonal/physical tasks.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1031",
+    "title": "Dietitians and nutritionists",
+    "w_reasoning": "Dietitians conduct nutritional assessments, develop meal plans, and counsel patients. Automatable tasks like nutritional calculations, meal plan generation, and documentation can be separated from patient counseling and clinical assessment, though patient encounters involve some interleaving of analysis and interpersonal work.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-3013",
+    "title": "Facilities managers",
+    "w_reasoning": "Facilities managers handle budgeting, scheduling maintenance, vendor management, compliance tracking, and space planning. Automatable tasks like budget reporting, work order tracking, energy monitoring, and compliance documentation are separable from on-site inspections, vendor negotiations, and emergency response decisions.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-1011",
+    "title": "First-line supervisors of office and administrative support workers",
+    "w_reasoning": "These supervisors handle scheduling, performance tracking, report generation, and workflow coordination alongside direct staff supervision, conflict resolution, and training. Automatable administrative tasks (scheduling, reporting, metrics tracking) can be separated from interpersonal leadership tasks at natural boundaries, similar to general managers.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-9092",
+    "title": "Genetic counselors",
+    "w_reasoning": "Genetic counselors interpret genetic test results, assess risk, and counsel patients on implications. Automatable tasks like variant interpretation, risk calculation, and report generation can be partially separated, but the core work involves deeply interleaved patient counseling where emotional support and clinical explanation occur simultaneously with data interpretation.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "21-1091",
+    "title": "Health education specialists",
+    "w_reasoning": "Health education specialists develop educational materials, conduct community assessments, plan programs, and deliver training. Automatable tasks like data analysis, material creation, and program evaluation reporting can be temporally separated from community engagement, training delivery, and stakeholder coordination.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-9021",
+    "title": "Health information technologists and medical registrars",
+    "w_reasoning": "Health information technologists manage medical records, code diagnoses, ensure data quality, and maintain health information systems. These tasks are predominantly data-centric and discrete\u2014coding, classification, data auditing, and report generation can be cleanly offloaded to AI with minimal disruption to remaining tasks.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-9099",
+    "title": "Healthcare practitioners and technical workers, all other",
+    "w_reasoning": "This residual category encompasses diverse healthcare practitioners. Given the clinical nature of most roles in this category, automatable tasks (documentation, data analysis) are typically interleaved with hands-on patient care and clinical judgment, making separation moderately difficult.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-3121",
+    "title": "Human resources managers",
+    "w_reasoning": "HR managers have separable automatable tasks like payroll processing, benefits administration, compliance reporting, and data analytics that can be offloaded to AI. Non-automatable tasks like employee relations, leadership, and strategic decision-making occur at natural boundaries from these administrative functions.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-4111",
+    "title": "Interviewers, except eligibility and loan",
+    "w_reasoning": "Interviewers conduct structured data collection through questionnaires and forms, with significant portions involving data entry, scheduling, and record management that are highly separable. The actual interviewing component involves interpersonal interaction, but much of the surrounding workflow (transcription, data coding, report generation) can be cleanly offloaded.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-1075",
+    "title": "Labor relations specialists",
+    "w_reasoning": "Labor relations specialists perform contract analysis, grievance documentation, regulatory research, and report writing (automatable) alongside negotiation, mediation, and relationship management (non-automatable). These phases are reasonably separable with natural handoff points, though negotiation strategy depends on research outputs.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-2032",
+    "title": "Materials scientists",
+    "w_reasoning": "Materials scientists conduct physical experiments, operate lab equipment, and perform hands-on material testing interleaved with data analysis, literature review, and computational modeling. The computational/analytical tasks are separable from lab work, but experimental design and interpretation require tight coupling between physical observation and cognitive judgment.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-9111",
+    "title": "Medical and health services managers",
+    "w_reasoning": "Medical and health services managers handle budgeting, scheduling, regulatory compliance reporting, and data analytics (automatable) alongside leadership, staff management, policy decisions, and stakeholder relations (non-automatable). Similar to general operations managers, these functions separate at natural workflow boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-2036",
+    "title": "Medical dosimetrists",
+    "w_reasoning": "Medical dosimetrists calculate radiation dose distributions using treatment planning software, which involves computational modeling (potentially automatable) tightly coupled with clinical judgment about patient anatomy and treatment goals. The computational optimization can be partially separated, but real-time adjustments and quality assurance require continuous human oversight during planning.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-2072",
+    "title": "Medical records specialists",
+    "w_reasoning": "Medical records specialists primarily handle coding, classification, data entry, record organization, and compliance checking\u2014tasks that are largely discrete and can be independently automated. Quality auditing and complex case coding require judgment but occur at natural boundaries from routine processing.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-1042",
+    "title": "Medical scientists, except epidemiologists",
+    "w_reasoning": "Medical scientists conduct laboratory experiments, design studies, analyze data, write papers, and interpret results. Physical lab work is deeply interleaved with analytical reasoning, but literature review, data analysis, and manuscript drafting can be partially separated from bench work. However, experimental design and interpretation require tight feedback loops with physical experimentation.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-9121",
+    "title": "Natural sciences managers",
+    "w_reasoning": "Natural sciences managers handle budgeting, grant administration, reporting, and scheduling (automatable) alongside scientific direction, team leadership, and strategic planning (non-automatable). Administrative tasks separate naturally from leadership and scientific judgment functions, similar to other management roles.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-2057",
+    "title": "Ophthalmic medical technicians",
+    "w_reasoning": "Ophthalmic medical technicians perform diagnostic tests, operate specialized equipment, take patient measurements, and record results\u2014all requiring physical presence and real-time patient interaction. Data recording can be partially separated, but most tasks involve hands-on equipment operation interleaved with patient positioning and communication.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-2081",
+    "title": "Opticians, dispensing",
+    "w_reasoning": "Dispensing opticians fit and adjust eyewear, take facial measurements, help customers select frames, and process orders. The physical fitting and customer consultation are tightly coupled with the technical specifications. Order processing and inventory management are separable, but the core customer-facing work involves continuous interleaving of physical and interpersonal tasks.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1041",
+    "title": "Optometrists",
+    "w_reasoning": "Optometrists conduct eye examinations using specialized equipment, diagnose conditions, and prescribe corrective lenses\u2014all requiring physical presence and real-time clinical judgment during patient encounters. Record-keeping and prescription processing are separable, but the core diagnostic workflow tightly couples physical examination with clinical reasoning.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-2091",
+    "title": "Orthotists and prosthetists",
+    "w_reasoning": "Orthotists and prosthetists evaluate patients, design custom devices, fabricate/fit orthotic and prosthetic devices, and adjust them based on patient feedback. The physical assessment, fabrication, and fitting are deeply interleaved with design decisions and patient interaction, making separation very difficult.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-9179",
+    "title": "Personal service managers, all other",
+    "w_reasoning": "Personal service managers handle scheduling, budgeting, inventory, and reporting (automatable) alongside customer relations, staff supervision, and operational decision-making (non-automatable). These administrative tasks separate at natural boundaries from interpersonal management functions, similar to other management roles.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-2012",
+    "title": "Physicists",
+    "w_reasoning": "Physicists conduct theoretical analysis, computational modeling, data analysis, and experimental work. Literature review, data processing, and simulation tasks are separable from experimental design and theoretical reasoning, but interpretation and hypothesis generation require tight feedback loops with computational results.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1081",
+    "title": "Podiatrists",
+    "w_reasoning": "Podiatrists perform physical examinations, diagnose foot conditions, perform surgical procedures, and prescribe treatments\u2014all involving continuous interleaving of physical procedures, real-time diagnostic judgment, and patient communication. Similar to dentists and other procedural physicians, the workflow is minimally separable.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-2053",
+    "title": "Psychiatric technicians",
+    "w_reasoning": "Psychiatric technicians provide direct patient care, monitor behavior, assist with daily living activities, and implement treatment plans. Their work requires continuous physical presence and real-time judgment about patient safety and behavior, with documentation tasks deeply embedded in ongoing patient interaction.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-5031",
+    "title": "Public safety telecommunicators",
+    "w_reasoning": "Public safety telecommunicators (911 dispatchers) handle emergency calls requiring real-time information gathering, decision-making about resource dispatch, and simultaneous communication with callers and responders. While call logging and data entry could theoretically be automated, these tasks occur simultaneously with the critical real-time communication and judgment, making separation difficult.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1124",
+    "title": "Radiation therapists",
+    "w_reasoning": "Radiation therapists position patients, operate radiation equipment, monitor patients during treatment, and adjust dosages\u2014all requiring physical presence and real-time judgment tightly coupled with technical execution. Automatable tasks like treatment planning calculations and record-keeping are embedded within the physical workflow of patient care.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-4171",
+    "title": "Receptionists and information clerks",
+    "w_reasoning": "Receptionist tasks like scheduling, data entry, call routing, and information lookup are largely discrete and can be automated independently. The remaining human tasks (greeting visitors, handling complex inquiries) operate at natural handoff points. Most automatable tasks can be cleanly separated.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-4012/19-4013/19-4021/19-4031/19-4042/19-4099",
+    "title": "Science Technicians",
+    "w_reasoning": "Science technicians perform lab work requiring physical manipulation of samples and equipment, interleaved with data recording, analysis, and reporting. The physical lab tasks and cognitive/data tasks alternate frequently, but data analysis and report generation can be somewhat separated from hands-on work phases.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-6011/43-6012/43-6013/43-6014",
+    "title": "Secretaries & Administrative Assistants",
+    "w_reasoning": "Administrative tasks like scheduling, correspondence drafting, document formatting, data entry, and filing are largely discrete and can be offloaded to AI with minimal disruption. However, coordination overhead, context-dependent judgment calls, and interpersonal elements woven into routine work prevent perfect separability.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "21-1021/21-1022/21-1023/21-1029",
+    "title": "Social Workers",
+    "w_reasoning": "Social workers spend significant time in direct client interaction\u2014counseling, home visits, crisis intervention\u2014where judgment and empathy are deeply interleaved with documentation and assessment. Some tasks like case documentation and resource research are separable, but core work resists disaggregation.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "21-1093",
+    "title": "Social and human service assistants",
+    "w_reasoning": "Social and human service assistants handle eligibility determination paperwork, referral processing, and record-keeping (separable) alongside direct client support, intake interviews, and crisis assistance. The administrative tasks can be clustered and offloaded, but client-facing work is interleaved throughout the day.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-9093",
+    "title": "Surgical assistants",
+    "w_reasoning": "Surgical assistants work directly in the operating room, handing instruments, retracting tissue, suturing, and assisting the surgeon in real time. The work is almost entirely physical and requires continuous presence and real-time judgment. There is virtually no separable automatable component.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-2055",
+    "title": "Surgical technologists",
+    "w_reasoning": "Surgical technologists prepare operating rooms, sterilize instruments, pass instruments during surgery, and maintain the sterile field\u2014all requiring physical presence and real-time responsiveness. Automatable tasks like inventory tracking are minimal compared to the tightly coupled physical workflow.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1122/29-1125/29-1126/29-1127/29-1128/29-1129",
+    "title": "Therapists",
+    "w_reasoning": "Therapists (occupational, physical, speech-language, etc.) conduct hands-on patient treatment sessions where assessment, physical intervention, and real-time adjustment are continuously interleaved. Documentation and treatment planning can be partially separated, but the core therapeutic work resists disaggregation.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-3131",
+    "title": "Training and development managers",
+    "w_reasoning": "Training managers oversee program design, budgeting, needs assessment reporting, and vendor management (automatable) alongside leadership, stakeholder engagement, and strategic decision-making. The automatable tasks like content curation, scheduling, and reporting occur at natural phase boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-1151",
+    "title": "Training and development specialists",
+    "w_reasoning": "Training specialists create content, design curricula, and conduct training sessions. Content development and assessment scoring are separable from live facilitation and coaching. However, customizing training to audience needs requires interleaving research with delivery.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "15-2011",
+    "title": "Actuaries",
+    "w_reasoning": "Actuarial work involves data gathering, statistical modeling, and report generation (highly automatable and separable) alongside professional judgment on risk assumptions, regulatory interpretation, and client advisory. The analytical phases can be cleanly offloaded with results reviewed by the actuary.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-1031",
+    "title": "Claims adjusters, examiners, and investigators",
+    "w_reasoning": "Claims work involves document review, data extraction, damage estimation, and report generation (automatable) alongside field inspections, claimant interviews, and negotiation. The desk-based analytical tasks are separable from the interpersonal and field components at natural workflow boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-3111",
+    "title": "Compensation and benefits managers",
+    "w_reasoning": "Compensation managers perform market salary analysis, benefits cost modeling, compliance reporting (automatable) alongside strategic planning, executive advising, and employee relations. The analytical and reporting tasks can be cleanly separated from leadership and advisory functions.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-1141",
+    "title": "Compensation, benefits, and job analysis specialists",
+    "w_reasoning": "These specialists conduct salary surveys, job classification analysis, benefits administration data processing, and compliance documentation\u2014largely discrete analytical tasks that can be offloaded. The remaining work involves consultation with managers and policy interpretation at natural handoff points.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-2099",
+    "title": "Health technologists and technicians, all other",
+    "w_reasoning": "This catch-all category includes various health techs who typically operate equipment, collect samples, or perform procedures requiring physical presence. Automatable tasks like data recording and result processing are interleaved with hands-on patient care and equipment operation.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-1032",
+    "title": "Insurance appraisers, auto damage",
+    "w_reasoning": "Auto damage appraisers inspect vehicles (physical, requires presence), estimate repair costs using databases and software (partially automatable), and write reports. AI can handle photo-based damage assessment and cost estimation, but physical inspection and negotiation remain. The automatable estimation phase is somewhat separable from inspection.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-9041",
+    "title": "Insurance claims and policy processing clerks",
+    "w_reasoning": "Claims and policy processing clerks perform data entry, document review, form processing, and record maintenance\u2014largely routine, discrete tasks that can be fully offloaded to AI. The work is highly structured with minimal interleaving of judgment-heavy tasks.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "41-3021",
+    "title": "Insurance sales agents",
+    "w_reasoning": "Insurance sales involves lead generation, quote preparation, policy comparison, and paperwork (automatable) alongside relationship building, needs assessment conversations, and persuasion (non-automatable). The back-office tasks are separable from client-facing sales activities at natural boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-4099",
+    "title": "Life, physical, and social science technicians, all other",
+    "w_reasoning": "These technicians perform laboratory procedures, data collection, and equipment operation (physical, less automatable) alongside data analysis, record-keeping, and report preparation (automatable). The analytical and documentation tasks can be partially separated from hands-on lab work, though they alternate throughout the workday.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-9051",
+    "title": "Mail clerks and mail machine operators, except postal service",
+    "w_reasoning": "Mail clerks perform discrete, routine tasks\u2014sorting, distributing, metering, and logging mail\u2014that are largely independent and can be automated in batch. These tasks don't require continuous human judgment interleaving, making them highly separable.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1229",
+    "title": "Physicians, all other",
+    "w_reasoning": "Physicians operate in workflows where diagnostic reasoning, patient examination, and treatment decisions are tightly coupled. Automatable tasks like literature review or documentation are interleaved with real-time clinical judgment and physical presence requirements.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-9111",
+    "title": "Statistical assistants",
+    "w_reasoning": "Statistical assistants perform data entry, coding, tabulation, and routine statistical computations that are discrete and batch-processable. These tasks can be cleanly separated from any supervisory or interpretive handoffs, making them highly separable.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "41-9041",
+    "title": "Telemarketers",
+    "w_reasoning": "Telemarketing involves scripted conversations where the automatable parts (dialing, script delivery, data logging) are tightly interleaved with real-time conversational adaptation. However, AI can handle entire calls end-to-end for scripted scenarios, making the workflow fairly separable at the call level.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-4071",
+    "title": "File clerks",
+    "w_reasoning": "File clerks perform sorting, filing, retrieving, and organizing documents\u2014tasks that are discrete, routine, and operate independently. These can be fully offloaded to automated document management systems with minimal disruption.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "23-1011",
+    "title": "Lawyers",
+    "w_reasoning": "Lawyers have separable phases: legal research, document review, and drafting (automatable) versus courtroom advocacy, client counseling, negotiation, and strategic judgment (non-automatable). However, legal reasoning permeates research and drafting, creating moderate interleaving.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "23-2011, 23-2093, 23-2099",
+    "title": "Legal Support Workers",
+    "w_reasoning": "Legal support work divides naturally into document review, research, filing, and citation checking (highly automatable and separable) versus client-facing support and attorney coordination. These phases occur at natural boundaries, consistent with the paralegal anchor.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-3091",
+    "title": "Anthropologists and archeologists",
+    "w_reasoning": "Anthropologists and archeologists perform fieldwork requiring physical presence and real-time judgment (excavation, ethnographic observation) deeply interleaved with data analysis and literature review. The field and lab phases are somewhat separable, but fieldwork itself resists automation separation.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-3032",
+    "title": "Industrial-organizational psychologists",
+    "w_reasoning": "I-O psychologists conduct survey design, data analysis, and report generation (automatable and separable) alongside organizational consulting, interviews, and intervention design requiring human judgment. These phases have natural temporal boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-1111",
+    "title": "Management analysts",
+    "w_reasoning": "Management analysts have clearly separable phases: data gathering, benchmarking analysis, financial modeling, and report generation (automatable) versus client interviews, stakeholder management, and strategic recommendation delivery (non-automatable). Handoffs occur at natural project phase boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-1013",
+    "title": "Soil and plant scientists",
+    "w_reasoning": "Soil and plant scientists perform field sampling and physical experimentation requiring presence and judgment, interleaved with data analysis and literature review. The lab/field work is not easily separable from the analytical interpretation that guides it.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-2011",
+    "title": "Aerospace engineers",
+    "w_reasoning": "Aerospace engineering involves simulation, computational analysis, and documentation (automatable) alongside design judgment, testing oversight, and cross-functional collaboration. The analytical and design phases are moderately interleaved, with iterative cycles between computation and engineering judgment.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-1020",
+    "title": "Buyers and purchasing agents",
+    "w_reasoning": "Buyers perform market research, price comparison, order processing, and inventory tracking (automatable and batch-processable) alongside vendor negotiation, relationship management, and quality assessment. These phases have natural temporal boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-2041",
+    "title": "Chemical engineers",
+    "w_reasoning": "Chemical engineering involves process simulation, data analysis, and documentation (automatable) interleaved with plant oversight, experimental design, and safety judgment. The iterative nature of process design creates moderate coupling between computational and judgment tasks.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-1021",
+    "title": "Commercial and industrial designers",
+    "w_reasoning": "Industrial design involves rendering, CAD modeling, and specification documentation (automatable) deeply interleaved with creative ideation, user research, and prototyping evaluation. The creative process cycles rapidly between generation and evaluation, similar to architecture.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-1012",
+    "title": "Food scientists and technologists",
+    "w_reasoning": "Food scientists conduct laboratory testing, sensory evaluation, and quality control requiring physical presence, interleaved with data analysis and regulatory documentation. Lab work and analysis are moderately coupled, though documentation and literature review can be separated.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-2112",
+    "title": "Industrial engineers",
+    "w_reasoning": "Industrial engineers perform time studies, process simulation, and data analysis (automatable) alongside shop floor observation, stakeholder consultation, and implementation oversight. The analytical phases can be temporally clustered and separated from on-site work.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-3051",
+    "title": "Industrial production managers",
+    "w_reasoning": "Production managers handle scheduling, reporting, budgeting, and performance tracking (automatable) alongside real-time floor management, personnel decisions, and problem-solving. Similar to general managers, the administrative tasks are separable from leadership functions.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-1081",
+    "title": "Logisticians",
+    "w_reasoning": "Logisticians perform supply chain analysis, inventory optimization, route planning, and reporting (automatable) alongside vendor coordination, exception handling, and strategic planning. The analytical and optimization tasks can be cleanly offloaded at natural workflow boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-2121",
+    "title": "Marine engineers and naval architects",
+    "w_reasoning": "Marine engineers perform structural analysis, CAD design, and compliance documentation (automatable) interleaved with site inspections, sea trials, and design judgment. The iterative design-test cycle creates moderate coupling, similar to aerospace engineering.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-2131",
+    "title": "Materials engineers",
+    "w_reasoning": "Materials engineering involves lab testing, material characterization, data analysis, and simulation (automatable) alongside physical experimentation, design judgment, and cross-functional collaboration (non-automatable). The computational and analytical phases are reasonably separable from hands-on lab work and design decisions, though they do inform each other iteratively.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-5061",
+    "title": "Production, planning, and expediting clerks",
+    "w_reasoning": "Production clerks handle scheduling, inventory tracking, order processing, and data entry\u2014tasks that are largely discrete and can be offloaded to AI systems. The remaining coordination and communication tasks occur at natural handoff points. This is primarily clerical workflow with high separability.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-3061",
+    "title": "Purchasing managers",
+    "w_reasoning": "Purchasing managers perform data analysis, vendor comparison, contract review, and spend reporting (automatable) alongside supplier relationship management, negotiation, and strategic sourcing decisions (non-automatable). These phases separate reasonably well, similar to general operations managers.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-3031",
+    "title": "Surveying and mapping technicians",
+    "w_reasoning": "Surveying technicians perform fieldwork (physical measurement, equipment operation) interleaved with data processing, mapping, and calculations. The office-based data processing is separable, but field tasks require physical presence and real-time judgment. The mix of field and office work creates moderate separability.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-1011",
+    "title": "Agents and business managers of artists, performers, and athletes",
+    "w_reasoning": "Agent work involves contract analysis, market research, scheduling, and financial tracking (automatable) alongside relationship building, negotiation, talent assessment, and career strategy (non-automatable). The administrative and analytical tasks can be separated from the interpersonal and judgment-heavy tasks at natural boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-3011",
+    "title": "Broadcast announcers and radio disc jockeys",
+    "w_reasoning": "Broadcast announcing involves live on-air performance where personality, improvisation, and audience engagement are central and non-automatable. Script preparation, music scheduling, and show planning are more separable, but the core live performance task dominates and is tightly coupled with real-time content decisions.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-9031",
+    "title": "Desktop publishers",
+    "w_reasoning": "Desktop publishing involves formatting, layout design, typesetting, and file preparation\u2014tasks that are largely discrete and sequential. AI can handle template application, formatting, and initial layout with human review at defined checkpoints. The workflow is highly structured and separable.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-3041",
+    "title": "Editors",
+    "w_reasoning": "Editing involves copyediting, fact-checking, and formatting (automatable) alongside substantive editorial judgment, author collaboration, and content strategy (non-automatable). AI can handle grammar/style checks and initial passes, with editors focusing on higher-order decisions. These phases separate at natural draft-review boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-3023",
+    "title": "Electrical and electronic engineering technologists and technicians",
+    "w_reasoning": "These technicians perform hands-on testing, equipment calibration, circuit assembly, and troubleshooting that require physical presence, interleaved with data recording, analysis, and documentation. The physical and analytical tasks alternate frequently, making separation difficult.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-4032",
+    "title": "Film and video editors",
+    "w_reasoning": "Film editing involves creative storytelling decisions deeply interleaved with technical operations like cutting, color grading, and audio syncing. While AI can assist with rough cuts, scene detection, and transcription, the creative judgment is continuously applied throughout the editing process, making full separation challenging.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-1013",
+    "title": "Fine artists, including painters, sculptors, and illustrators",
+    "w_reasoning": "Fine art creation is deeply personal and physical, with creative vision, manual execution, and aesthetic judgment tightly coupled throughout the process. Automatable tasks (reference research, color palette generation, preliminary sketches) are sub-steps embedded within the larger creative process.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-3099",
+    "title": "Media and communication workers, all other",
+    "w_reasoning": "This broad category includes social media management, content creation, and communications coordination. Tasks like content scheduling, analytics reporting, and drafting routine communications are separable from strategic messaging, stakeholder engagement, and creative direction.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-2041",
+    "title": "Music directors and composers",
+    "w_reasoning": "Composition involves creative ideation deeply interleaved with notation, arrangement, and orchestration. While AI can assist with transcription, arrangement suggestions, and score formatting, the core creative act of composing is continuous and judgment-intensive. Directing rehearsals and performances requires real-time human presence.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-3023",
+    "title": "News analysts, reporters, and journalists",
+    "w_reasoning": "Journalism involves research, data gathering, and initial draft writing (automatable) alongside source cultivation, interviewing, investigative judgment, and narrative crafting (non-automatable). Research and fact-checking phases can be separated from fieldwork and writing, though they inform each other iteratively.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-2012",
+    "title": "Producers and directors",
+    "w_reasoning": "Producing and directing involve scheduling, budgeting, and logistics (automatable) alongside creative vision, talent management, on-set direction, and real-time decision-making (non-automatable). The administrative tasks separate well, but the core creative and leadership functions are deeply embedded in the production process.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-9081",
+    "title": "Proofreaders and copy markers",
+    "w_reasoning": "Proofreading involves reviewing text for errors in grammar, spelling, punctuation, and formatting\u2014tasks that are discrete, document-based, and highly structured. AI can handle the bulk of error detection independently, with human review at natural document boundaries. This is a highly separable workflow.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-1027",
+    "title": "Set and exhibit designers",
+    "w_reasoning": "Set design involves creative conceptualization, physical construction oversight, and spatial problem-solving deeply interleaved with drafting, rendering, and materials specification. The physical and creative aspects are tightly coupled, with automatable drafting/rendering tasks embedded within iterative design processes.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "15-2051",
+    "title": "Data scientists",
+    "w_reasoning": "Data science involves data cleaning, feature engineering, model training, and visualization (automatable) alongside problem framing, stakeholder communication, and interpreting results in business context (non-automatable). The computational pipeline phases are well-separated from the strategic and interpretive phases.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "15-1242",
+    "title": "Database administrators",
+    "w_reasoning": "Database administration involves routine maintenance, backup scheduling, query optimization, and monitoring (automatable) alongside architecture decisions, security planning, and troubleshooting complex issues (non-automatable). Routine tasks can be automated and run independently with human oversight at defined intervals.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-3029",
+    "title": "Engineering technologists and technicians, except drafters, all other",
+    "w_reasoning": "These technicians perform hands-on testing, equipment operation, and field measurements interleaved with data recording, analysis, and report writing. The physical tasks require presence and real-time judgment, while documentation and analysis phases are more separable. Overall moderate separability.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-2020",
+    "title": "Property appraisers and assessors",
+    "w_reasoning": "Property appraisal involves data gathering (comparable sales, property records, market trends), valuation calculations, and report writing\u2014all highly separable from physical site inspections and judgment calls on property condition. The automatable analytical and documentation phases occur at natural boundaries before/after inspections.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-9141",
+    "title": "Property, real estate, and community association managers",
+    "w_reasoning": "Property management involves rent collection, lease administration, financial reporting, and maintenance scheduling (automatable) alongside tenant relations, property inspections, conflict resolution, and vendor negotiations (non-automatable). These tasks cluster into separable administrative vs. interpersonal/physical phases.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "41-9021",
+    "title": "Real estate brokers",
+    "w_reasoning": "Brokerage involves market analysis, listing management, contract preparation, and marketing (automatable) deeply interleaved with client relationship management, negotiations, property showings, and deal-closing. The relationship and negotiation aspects are core and interleave with data-driven tasks throughout transactions.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "41-9022",
+    "title": "Real estate sales agents",
+    "w_reasoning": "Sales agents have automatable tasks like MLS searches, CMA preparation, marketing material creation, and paperwork processing that can be separated from client-facing activities like showings, negotiations, and relationship building. These phases have natural temporal boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-4021",
+    "title": "Biological technicians",
+    "w_reasoning": "Biological technicians perform hands-on lab work\u2014preparing specimens, operating equipment, conducting experiments\u2014where physical tasks and data recording are tightly interleaved. Data analysis and report writing are separable, but the core lab work requires continuous physical presence and real-time judgment.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-4051",
+    "title": "Customer service representatives",
+    "w_reasoning": "Many customer service interactions follow scripted workflows\u2014answering FAQs, processing returns, updating accounts, routing tickets\u2014that are highly automatable and can be fully offloaded to AI chatbots/voice systems. Complex or emotionally sensitive cases requiring human judgment can be escalated at natural handoff points.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1241",
+    "title": "Ophthalmologists, except pediatric",
+    "w_reasoning": "Ophthalmologists perform surgical procedures, physical examinations, and real-time diagnostic assessments where clinical judgment, manual dexterity, and patient interaction are tightly coupled. Automatable tasks like image analysis and documentation are sub-steps within larger clinical encounters.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1051",
+    "title": "Pharmacists",
+    "w_reasoning": "Pharmacists have separable tasks like drug interaction checking, insurance processing, and inventory management (automatable) alongside patient counseling, clinical judgment on prescriptions, and collaboration with physicians. The verification and counseling tasks interleave with dispensing but have natural boundaries.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "13-1071",
+    "title": "Human resources specialists",
+    "w_reasoning": "HR work includes resume screening, benefits administration, payroll processing, compliance tracking, and report generation (automatable) alongside interviewing, employee relations, conflict mediation, and strategic workforce planning (non-automatable). These phases separate well with natural handoff points.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "25-2022",
+    "title": "Middle school teachers, except special and career/technical education",
+    "w_reasoning": "Teaching has separable components like lesson planning, grading, and administrative paperwork that can be temporally clustered outside classroom hours. However, in-class instruction, student engagement, and behavioral management are non-automatable and constitute the core of the role.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-1029",
+    "title": "Biological scientists, all other",
+    "w_reasoning": "Biological scientists conduct research involving literature review, data analysis, statistical modeling, and manuscript writing (automatable) alongside experimental design, lab work, and scientific interpretation (non-automatable). The analytical and writing phases are reasonably separable from hands-on research.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-1011",
+    "title": "Chief executives",
+    "w_reasoning": "CEO work is dominated by strategic decision-making, stakeholder management, leadership, and relationship building. Automatable tasks like report synthesis, data analysis, and scheduling are support functions that can be easily offloaded, but they represent a small share of the role. The separable tasks are cleanly extractable.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-3021",
+    "title": "Computer and information systems managers",
+    "w_reasoning": "IT managers handle budgeting, project tracking, vendor evaluation, and reporting (automatable) alongside team leadership, strategic planning, stakeholder communication, and crisis management (non-automatable). These administrative and analytical tasks cluster at natural boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-2061",
+    "title": "Computer hardware engineers",
+    "w_reasoning": "Hardware engineering involves simulation, circuit analysis, documentation, and testing automation (automatable) interleaved with physical prototyping, hands-on debugging, and design creativity. The analytical/simulation phases are somewhat separable but design iteration cycles tightly couple digital and physical work.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "15-1299",
+    "title": "Computer occupations, all other",
+    "w_reasoning": "This broad category includes various IT roles where coding, scripting, testing, and documentation (automatable) interleave with problem-solving, system design, and stakeholder interaction. Similar to software developers, AI-assistable tasks are meaningfully interleaved with judgment-heavy work.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "15-1211",
+    "title": "Computer systems analysts",
+    "w_reasoning": "Systems analysts gather requirements, document specifications, analyze data flows, and create reports (automatable) alongside stakeholder interviews, organizational change management, and strategic system recommendations (non-automatable). The documentation and analysis phases separate reasonably well from interpersonal work.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "15-2031",
+    "title": "Data Scientists & Statisticians",
+    "w_reasoning": "Data science involves data cleaning, feature engineering, model training, and visualization (automatable) interleaved with problem framing, model interpretation, and communicating insights to stakeholders. The computational pipeline is separable, but iterative model refinement requires continuous human judgment.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "confirmed",
+    "audit_notes": "The flag notes tc_adj_sig=0.000 with 0 high/low autonomy tasks listed, but this appears to be a data gap in the task distribution rather than evidence against the score. The substantive reasoning in the original score is sound: data science workflows have clearly separable computational components (data cleaning, feature engineering, model training, visualization) that can be handed off to AI asynchronously, while problem framing, model interpretation, and stakeholder communication remain human-driven. This mirrors the separability profile of financial analysts (w=0.75) and market research analysts (w=0.75). Notably, software developers are scored at w=0.50 due to tighter iteration loops; data science pipelines arguably have more natural batch-handoff points (e.g., run a training pipeline, return results for human review), supporting a slightly higher separability. The w=0.75 score is well-calibrated against anchors."
+  },
+  {
+    "soc_code": "17-2072",
+    "title": "Electronics engineers, except computer",
+    "w_reasoning": "Electronics engineering involves circuit simulation, PCB layout, documentation, and test automation (automatable) interleaved with physical prototyping, hands-on testing, and creative design decisions. The design-test iteration cycle tightly couples analytical and physical tasks.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "15-1231",
+    "title": "IT Support Specialists",
+    "w_reasoning": "IT support involves ticket triage, password resets, software installation, and knowledge base queries (highly automatable and separable) alongside hands-on hardware troubleshooting and complex problem diagnosis. Tier-1 support tasks are cleanly separable; escalation to human agents occurs at natural boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "confirmed",
+    "audit_notes": "The flag notes tc_adj_sig=0.000 with w=0.75, questioning whether few automatable tasks justify high separability. However, the task distribution data is missing (N/A), so the flag is based on incomplete metadata rather than substantive concern. On the merits: IT Support Specialists perform a large volume of Tier-1 tasks (password resets, ticket triage, software installation, knowledge base lookups, basic troubleshooting scripts) that are highly separable and automatable via AI chatbots, automated workflows, and scripted diagnostics. These constitute a substantial share of total work time. More complex tasks like hands-on hardware repair and escalated diagnosis require physical presence and human judgment, but the natural escalation boundary between Tier-1 and Tier-2/3 support creates clean separability. Compared to anchors: this is more automatable than software developers (0.50) due to the routine/repetitive nature of much support work, and comparable to financial clerks and compliance officers at 0.75. The score of 0.75 is well-calibrated."
+  },
+  {
+    "soc_code": "15-1212",
+    "title": "Information security analysts",
+    "w_reasoning": "Security analysts have separable tasks like log monitoring, vulnerability scanning, report generation, and compliance documentation (automatable) alongside incident response, threat hunting requiring judgment, and stakeholder communication (non-automatable). However, during active incidents, analysis and response are tightly coupled. Overall, many monitoring and reporting tasks can be offloaded at natural boundaries.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-4121",
+    "title": "Library assistants, clerical",
+    "w_reasoning": "Library assistants perform discrete clerical tasks like cataloging, data entry, shelving records, and processing returns that are largely independent. Customer-facing tasks (helping patrons, answering questions) are separable from back-office processing. Most automatable tasks (catalog lookups, record updates) can be fully offloaded.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-2021",
+    "title": "Marketing managers",
+    "w_reasoning": "Marketing managers oversee strategy, team leadership, and stakeholder relationships (non-automatable) alongside data analysis, campaign performance reporting, budgeting, and content scheduling (automatable). These phases are relatively separable, similar to general managers, with automatable tasks clusterable into distinct work phases.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "15-1241, 15-1244",
+    "title": "Network Engineers & Administrators",
+    "w_reasoning": "Network administration involves monitoring, configuration management, log analysis, and documentation (automatable) alongside physical hardware setup, troubleshooting complex outages, and vendor negotiations (non-automatable). Monitoring and routine configuration can be offloaded, but troubleshooting often requires rapid cycling between automated diagnostics and hands-on judgment.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-9071",
+    "title": "Office machine operators, except computer",
+    "w_reasoning": "Office machine operators run copiers, mail machines, and similar equipment. The work is largely physical operation of machines with some data entry and sorting. Automatable tasks (scheduling, logging) are simple and separable, but the core physical operation tasks are not easily separated from the few cognitive tasks involved. The automatable portion is small but cleanly separable.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "41-9031",
+    "title": "Sales engineers",
+    "w_reasoning": "Sales engineers combine technical expertise with relationship-driven sales. Automatable tasks include proposal generation, technical documentation, CRM data entry, and market research, which can be separated from client meetings, demonstrations, and consultative selling. However, technical customization often interleaves with client interaction.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "41-3091",
+    "title": "Sales representatives of services, except advertising, insurance, financial services, and travel",
+    "w_reasoning": "Sales reps have separable tasks like lead generation, CRM updates, proposal drafting, and follow-up scheduling (automatable) alongside client meetings, negotiations, and relationship building (non-automatable). These phases occur at natural boundaries\u2014prep work before meetings, documentation after.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "15-1251, 15-1252, 15-1254",
+    "title": "Software Developers & Programmers",
+    "w_reasoning": "Software development involves writing code, debugging, testing, code review, and design where AI-assistable tasks (boilerplate code generation, unit test writing, documentation) are deeply interleaved with non-automatable tasks (architectural decisions, complex debugging, understanding requirements). This matches the calibration anchor.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "15-1253",
+    "title": "Software quality assurance analysts and testers",
+    "w_reasoning": "QA work includes test case generation, automated test script writing, regression testing, and bug reporting (automatable) alongside exploratory testing, understanding user requirements, and judgment about release readiness (non-automatable). Test automation tasks are more separable than in development since testing phases are more discrete, but test design and execution still interleave with judgment.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-1014",
+    "title": "Special effects artists and animators",
+    "w_reasoning": "Animation involves creative design, storyboarding, and artistic direction (non-automatable) alongside rendering, in-betweening, texture generation, and repetitive asset creation (automatable). These tasks interleave significantly\u2014artists iterate between creative decisions and technical execution within each scene or shot, requiring frequent handoffs.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "15-1255",
+    "title": "Web and digital interface designers",
+    "w_reasoning": "Web designers combine creative design decisions, user research, and client consultation (non-automatable) with wireframing, prototyping, CSS/HTML coding, and responsive layout generation (automatable). Creative iteration cycles tightly couple design judgment with technical implementation, similar to architecture.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "27-3042, 27-3043",
+    "title": "Writers & Authors",
+    "w_reasoning": "Writing involves research, drafting, editing, and revision where AI can assist with research compilation, first drafts, and copy editing, but creative voice, narrative judgment, and stakeholder consultation are interleaved throughout. Technical writing is more separable than creative writing; this combined category sits at the boundary. Matches the technical writers anchor closely.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-5032",
+    "title": "Dispatchers, except police, fire, and ambulance",
+    "w_reasoning": "Dispatching involves route optimization, scheduling, tracking, and record-keeping (highly automatable) alongside real-time communication with drivers and handling exceptions. However, the automatable tasks (routing, scheduling, logging) can largely be offloaded to AI systems with dispatchers handling exceptions and human communication. The workflow has natural handoff points.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "19-4013",
+    "title": "Food science technicians",
+    "w_reasoning": "Food science technicians perform lab tests, record data, maintain equipment, and prepare samples\u2014physical tasks interleaved with data recording and analysis. The data analysis and documentation portions are separable, but the core lab work requires physical presence and real-time judgment about sample quality and test procedures.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-3013",
+    "title": "Mechanical drafters",
+    "w_reasoning": "Mechanical drafting involves creating technical drawings, CAD work, dimension calculations, and bill-of-materials generation (highly automatable) alongside interpreting engineer specifications and coordinating design changes. The automatable drafting tasks are concentrated in specific work phases and can be largely offloaded, with human review at natural checkpoints.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-4181",
+    "title": "Reservation and transportation ticket agents and travel clerks",
+    "w_reasoning": "These roles involve booking reservations, processing payments, looking up schedules, and issuing tickets (automatable) alongside handling customer complaints, special requests, and complex itinerary changes (less automatable). The transactional tasks are highly separable and can be offloaded to automated systems, with humans handling exceptions.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-3071",
+    "title": "Transportation, storage, and distribution managers",
+    "w_reasoning": "These managers handle logistics optimization, inventory tracking, reporting, and scheduling (automatable) alongside team leadership, vendor negotiations, crisis management, and strategic planning (non-automatable). Similar to general operations managers, the automatable analytical and reporting tasks cluster naturally into separable phases.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "41-1012",
+    "title": "First-line supervisors of non-retail sales workers",
+    "w_reasoning": "Sales supervisors handle performance reporting, scheduling, CRM analytics, and quota tracking (automatable) alongside coaching, motivating teams, resolving conflicts, and making hiring decisions (non-automatable). These tasks separate at natural boundaries similar to general managers.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "43-4151",
+    "title": "Order clerks",
+    "w_reasoning": "Order clerks process orders, enter data, verify pricing, track shipments, and handle invoicing\u2014largely routine, discrete tasks that operate independently. Customer communication about order status is also relatively formulaic. Nearly all tasks can be offloaded to automated systems with minimal workflow disruption.",
+    "w": 1.0,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "29-1126",
+    "title": "Respiratory therapists",
+    "w_reasoning": "Respiratory therapists administer treatments, monitor ventilators, assess patients, and adjust therapy in real time\u2014requiring continuous physical presence and rapid cycling between observation, judgment, and intervention. Documentation and protocol lookups are automatable but deeply embedded in the clinical workflow, similar to nursing but with even tighter coupling during critical care.",
+    "w": 0.25,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "11-2022",
+    "title": "Sales managers",
+    "w_reasoning": "Sales managers have automatable tasks like sales forecasting, CRM data analysis, reporting, pipeline tracking, and scheduling that can be temporally clustered and offloaded to AI. Non-automatable tasks include team leadership, coaching, client relationship management, and strategic decision-making. These phases are reasonably separable, similar to general and operations managers.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "41-4011",
+    "title": "Sales representatives, wholesale and manufacturing, technical and scientific products",
+    "w_reasoning": "Technical sales reps have automatable tasks like lead research, proposal drafting, CRM updates, pricing calculations, and market analysis that can be separated from client-facing activities. However, during client interactions, technical knowledge, relationship-building, and real-time problem-solving are interleaved. The preparation and follow-up phases are clearly separable from the selling phases, yielding mostly separable workflow.",
+    "w": 0.75,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "17-1022",
+    "title": "Surveyors",
+    "w_reasoning": "Surveyors perform fieldwork requiring physical presence, precise instrument operation, and real-time measurement decisions that are tightly coupled. Office-based tasks like data processing, CAD drafting, calculations, and report generation are more separable and automatable. However, the field component is a large portion of the work and requires continuous judgment. The office/field split creates a natural boundary but the field tasks themselves have embedded cognitive-physical coupling.",
+    "w": 0.5,
+    "source": "batch",
+    "audit_action": "passed"
+  },
+  {
+    "soc_code": "15-1242, 15-1243",
+    "title": "Database Administrators & Architects",
+    "w": 0.75,
+    "w_reasoning": "Same as Database administrators (15-1242) \u2014 merged SOC variant.",
+    "source": "alias"
+  },
+  {
+    "soc_code": "29-1021, 29-1029",
+    "title": "Dentists",
+    "w": 0.25,
+    "w_reasoning": "Same as Dentists, general (29-1021) \u2014 merged SOC variant.",
+    "source": "alias"
+  },
+  {
+    "soc_code": "29-1141, 29-1171",
+    "title": "Nurses",
+    "w": 0.5,
+    "w_reasoning": "Same as Registered nurses (29-1141) \u2014 merged SOC variant.",
+    "source": "alias"
+  }
+]
